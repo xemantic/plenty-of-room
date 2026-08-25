@@ -192,6 +192,15 @@ private class T316Cell(
     /** `in sample gain / out of sample gain` — how much of the search survived the change of stream. */
     val inSampleGain: Double,
     val outOfSampleGain: Double,
+    /**
+     * `T-337`. The `exceedance` the [flatAtP90] verdict below IS, on the SEARCHED distribution's
+     * out-of-sample grading ensemble — `C-0223` derives the identity and checks it at `1 440`
+     * committed booleans. `bestTransferredFlatAtP90` is a verdict on a DIFFERENT distribution
+     * and is deliberately not covered by this one field.
+     */
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?,
     val flatAtP90: Boolean,
     val bestTransferredFlatAtP90: Boolean,
     val ratioInsideBuildableWindow: Boolean,
@@ -222,6 +231,10 @@ private class T316RungRow(
     val bestTransferredP90: Double,
     val searchedP90: Double,
     val searchedRatio: Double,
+    // `T-337`. This row transcribes the cell's own verdict, so it transcribes its proportion.
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?,
     val flatAtP90: Boolean
 )
 
@@ -418,7 +431,16 @@ private fun t316Placements(
     )
 }
 
-private class T316Graded(val nominal: Double, val p90: Double, val flat: Boolean)
+private class T316Graded(
+    val nominal: Double,
+    val p90: Double,
+    val flat: Boolean,
+    // `T-337`. `C-0223`: `flat` IS `exceedance <= tolerance`, so the proportion the verdict is
+    // a function of is carried instead of being discarded on the next line.
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?
+)
 
 private fun t316Grade(
     surrogate: InfluenceSurrogate,
@@ -432,7 +454,10 @@ private fun t316Grade(
     val summary = summariseDropoutDishing(
         sample, nominal, ensemble.meanSurvivors, T316_TOLERANCE
     )
-    return T316Graded(nominal, summary.p90, summary.flatAtP90)
+    return T316Graded(
+        nominal, summary.p90, summary.flatAtP90,
+        summary.exceedance, summary.exceedanceStandardError, summary.exceedanceOneSidedBound
+    )
 }
 
 /** `C-0208`'s own published cell, keyed on every dimension its sweep varied. */
@@ -647,6 +672,9 @@ fun main() {
                 inSampleGain = searched.bestTransferredTrainingObjective /
                         searched.trainingObjective,
                 outOfSampleGain = best.third.p90 / outOfSample.p90,
+                exceedance = outOfSample.exceedance,
+                exceedanceStandardError = outOfSample.exceedanceStandardError,
+                exceedanceOneSidedBound = outOfSample.exceedanceOneSidedBound,
                 flatAtP90 = outOfSample.flat,
                 bestTransferredFlatAtP90 = best.third.flat,
                 ratioInsideBuildableWindow =
@@ -770,6 +798,9 @@ fun main() {
             bestTransferredP90 = found.cell.bestTransferredP90,
             searchedP90 = found.cell.searchedP90,
             searchedRatio = found.cell.searchedRatio,
+            exceedance = found.cell.exceedance,
+            exceedanceStandardError = found.cell.exceedanceStandardError,
+            exceedanceOneSidedBound = found.cell.exceedanceOneSidedBound,
             flatAtP90 = found.cell.flatAtP90
         )
     }

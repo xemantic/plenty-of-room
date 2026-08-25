@@ -24,10 +24,25 @@
 # `baselineRef`.  `CH-0246` forbids re-running this class of file as a control on a later change --
 # the re-run re-bases the measurement onto today's corpus and OVERWRITES the record.
 #
-# WHY IT EMITS TWO STATES.  Wiring the census into `build.gradle.kts` adds two `tools/` scripts to
-# the very set it counts, so the pass MOVES its own answer -- `CH-0182`, and the third artifact of
-# this task to run into it.  Both readings are emitted and each is named: `atBaselineRef` is the
-# corpus before this task, `atThisPassesTree` is after it.
+# WHY IT EMITS TWO STATES, AND WHY NEITHER OF THEM IS A TREE.  Wiring the census into
+# `build.gradle.kts` adds two `tools/` scripts to the very set it counts, so the pass MOVES its own
+# answer -- `CH-0182`, and the third artifact of this task to run into it.  Both readings are
+# emitted and each is named: `atBaselineRef` is the corpus before this task, and
+# `atTheCommitThatCarriedThisFile` is after it.
+#
+# The second reading was originally `atThisPassesTree`, taken at the UNCOMMITTED working tree, and
+# `CH-0293` established that it was wrong at the moment it was committed: four of its thirteen
+# leaves read 12 where every committed state from `bb678d2` onward reads 13, because a sibling
+# agent added and wired the thirteenth helper harness in that same commit.  On a shared checkout
+# the tree an emitter READS and the tree its commit RECORDS are different objects.
+#
+# `T-340` measured the general case and removed the reading rather than renaming it.  A synthesis
+# wanting to state what its own pass will look like is asking for a number that is unpinnable
+# PRECISELY BECAUSE the pass's own files are about to land, so it is stale before the commit that
+# carries it: A QUANTITY THAT CANNOT BE TRUE AT THE MOMENT IT IS WRITTEN IS NOT A QUANTITY.  What
+# replaces it is not a renamed key but a different measurement -- the same census at the COMMIT
+# that carried this file, which is available one commit later and was not available at emit time,
+# and which re-derives for ever.
 """Emit gpd/results/T-334-the-gate-census-by-reachability.json."""
 
 import argparse
@@ -38,6 +53,11 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULT_OUT = os.path.join(ROOT, "gpd", "results", "T-334-the-gate-census-by-reachability.json")
+
+#: The commit that CARRIED this result file.  It is the state the removed `atThisPassesTree` block
+#: was reaching for, and the earliest one that can be named: an emitter runs before its own commit
+#: exists, so this constant could only be written by a LATER pass (`T-340`).
+CARRYING_COMMIT = "bb678d2"
 
 
 def _load(name, filename):
@@ -137,11 +157,27 @@ def _reading(tree):
     }
 
 
+def repository_available(ref="d9a3522"):
+    """Whether a git repository holding `ref` sits under `ROOT`.
+
+    `tools/snapshot.sh` excludes `./.git`, so every path of this emitter -- the self-test
+    included, because every arm reads a built document -- is unrunnable inside a
+    `tools/verify.sh` snapshot.  `C-0195`: refuse VISIBLY rather than degrade silently or crash
+    with a traceback, and write it to **stderr**, because `--self-test > /dev/null` swallows
+    stdout.  This emitter is deliberately NOT wired into `build.gradle.kts` for that reason.
+    """
+    try:
+        gate.Tree(ref)
+    except Exception:
+        return False
+    return True
+
+
 def build(ref="d9a3522"):
     baseline = gate.Tree(ref)
-    working = gate.Tree(None)
+    carrier = gate.Tree(CARRYING_COMMIT)
     at_ref = _reading(baseline)
-    at_tree = _reading(working)
+    at_carrier = _reading(carrier)
     older = gate.Tree("71d126e")
     document = {
         "task": "T-334",
@@ -174,13 +210,19 @@ def build(ref="d9a3522"):
                            "build.gradle.kts or tools/"),
         },
         "atBaselineRef": at_ref,
-        "atThisPassesTree": at_tree,
+        "atTheCommitThatCarriedThisFile": at_carrier,
         "theCensusMovesItsOwnAnswer": {
             "atBaselineRef": at_ref["distinctToolsThatCanFailADefaultVerifyShRun"],
-            "atThisPassesTree": at_tree["distinctToolsThatCanFailADefaultVerifyShRun"],
+            "atTheCommitThatCarriedThisFile":
+                at_carrier["distinctToolsThatCanFailADefaultVerifyShRun"],
             "why": ("wiring this census into build.gradle.kts adds tools/T-334-gate-census.py and "
                     "tools/T-334-mutation-test.py to the set it counts (CH-0182); the task file "
                     "predicted +1 from the TASK count and the answer is a TOOL count"),
+            "bothTermsArePinned": ("T-340: the second term was an UNCOMMITTED tree reading and is "
+                                   "now the same census at the commit that carried this file, so "
+                                   "the finding survives and both of its terms re-derive. The "
+                                   "HEADLINE was right at that commit and four of the removed "
+                                   "block's other leaves were not (CH-0293)"),
         },
         "againstWhatIsInPrint": [],
         "armOneAtThreeRefs": [],
@@ -201,7 +243,7 @@ def build(ref="d9a3522"):
             "terms": split["terms"],
         })
     for label, tree in (("C-0210 baseline", older), ("C-0220 baseline", gate.Tree("d7b7074")),
-                        ("this pass's tree", working)):
+                        ("the commit that carried this file", carrier)):
         reading = gate.census(tree)
         document["armOneAtThreeRefs"].append({
             "state": label,
@@ -226,9 +268,18 @@ def _self_test():
     ok("T-334-emit the resolved sha is recorded beside the ref that was asked for",
        len(document["baselineRef"]) == 40
        and document["baselineRefRequested"] == "71d126e")
-    ok("T-334-emit the baseline reading is the ref's and not the working tree's",
+    # INVERTED by `T-340`, never struck: this test used to ASSERT the defect -- that the second
+    # reading carried `"ref": None`.  `CLAUDE.md`: a named test pinning a deliberately-left defect
+    # must be inverted when the defect is repaired, because a test asserting a repaired defect is
+    # not a record but a false assertion.
+    ok("T-334-emit NO reading names an uncommitted tree: every state key resolves to a sha",
        document["atBaselineRef"]["ref"] == document["baselineRef"]
-       and document["atThisPassesTree"]["ref"] is None)
+       and "atThisPassesTree" not in document
+       and len(document["atTheCommitThatCarriedThisFile"]["ref"]) == 40
+       and all(len(row["ref"] or "") == 40 for row in document["armOneAtThreeRefs"]))
+    ok("T-334-emit the census still MOVES its own answer, with both terms pinned (CH-0182)",
+       document["theCensusMovesItsOwnAnswer"]["atBaselineRef"]
+       != document["theCensusMovesItsOwnAnswer"]["atTheCommitThatCarriedThisFile"])
     ok("T-334-emit every published figure is decomposed into three terms that sum to the difference",
        all(sum(row["terms"].values()) == row["difference"]
            for row in document["againstWhatIsInPrint"]))
@@ -267,6 +318,13 @@ def main(argv=None):
     parser.add_argument("--out", default=DEFAULT_OUT, help="where to write the result file")
     parser.add_argument("--self-test", dest="self_test", action="store_true")
     arguments = parser.parse_args(argv)
+    if not repository_available(arguments.ref if not arguments.self_test else "71d126e"):
+        sys.stderr.write(
+            "T-334-emit: REFUSING -- no git repository holding the ref under %s, so neither the "
+            "pinned reading nor the reading at %s can be built. 0 of 11 self-test arms ran. This "
+            "is expected inside a tools/verify.sh snapshot and is why this emitter is not wired; "
+            "run it directly in the checkout.\n" % (ROOT, CARRYING_COMMIT))
+        return 2
     if arguments.self_test:
         return _self_test()
     document = build(arguments.ref)
@@ -274,10 +332,13 @@ def main(argv=None):
         json.dump(document, handle, indent=2, ensure_ascii=False)
         handle.write("\n")
     print("written to %s" % os.path.relpath(arguments.out, ROOT))
-    print("# %d distinct tool(s) can fail a default tools/verify.sh run at %s (%d at this tree)"
+    print("# %d distinct tool(s) can fail a default tools/verify.sh run at %s (%d at %s, the "
+          "commit that carried this file)"
           % (document["atBaselineRef"]["distinctToolsThatCanFailADefaultVerifyShRun"],
              arguments.ref,
-             document["atThisPassesTree"]["distinctToolsThatCanFailADefaultVerifyShRun"]))
+             document["atTheCommitThatCarriedThisFile"][
+                 "distinctToolsThatCanFailADefaultVerifyShRun"],
+             CARRYING_COMMIT))
     return 0
 
 

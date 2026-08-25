@@ -111,3 +111,30 @@ If `--check` cannot come clean in a git-free copy (`G3`), the arm is not wireabl
 | `G7` | `tools/verify.sh --committed` is red at the assembled `HEAD` for a reason this task introduced | OPEN |
 | `G8` | the arm `T-340` ships is **not** red on exactly the two records before `T-340`'s repair, or not green after — i.e. the brief's *"arm C"* description matches nothing that can be built | OPEN |
 | `G9` | more than **one** constant has to change for the promotion, contra `C-0224` §7 | OPEN |
+
+---
+
+## Execute
+
+`PROSE_ARM_IS_GATED = False → True`, one constant, exactly as `C-0224` §7 promised; the named test
+that pinned it is **inverted, not struck**; and the header comment that named `T-339` now records
+what the flip waited for. Nothing else in the tool changed for this row.
+
+Two named tests were added, because `C-0177`'s hazard is the one that matters here — **a promoted
+gate that cannot fail is worse than a printed one**, and this corpus shipped exactly that for thirty
+iterations. They drive a **constructed red fixture** through the gated path: a deliverable quoting a
+figure no record pins, and a result file recording a registry quantity at a tree. `_gated_rows`
+reproduces `main`'s own composition rather than restating it, so a change to what `--check` gates
+cannot pass the test while failing the tool.
+
+## Verify
+
+| | reading |
+|---|---|
+| `--prose --strict` at `HEAD`, `dfce9c1`, `7ff9d07`, **before** the flip | exit **0** at all three — `G1` fired as declared |
+| `--check` at `HEAD` after the flip | exit **0**, reported **GATED** |
+| `--check`, `--self-test`, `--prose --strict` in a copy with **no `./.git`** | exit **0**, **0**, **0** |
+| the mutation harness, before against after | **43** rows both sides, **0** survivors both sides, **0** rows whose killer count shrank, **0** rows that disappeared |
+| `gpd/results/T-336-*.json` | not re-emitted: its `baselineRef` is `52a7bf3` and its counts are pinned there |
+
+Filed as [`C-0226`](../claims/C-0226-a-working-tree-reading-at-the-emitter.md), with `T-340`.

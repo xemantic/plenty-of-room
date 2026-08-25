@@ -144,6 +144,8 @@ python3 tools/check-markdown-tables.py         # every tracked table renders; ex
 tools/test-result-transfers.py                 # the transfer detector's own tests (T-158)
 python3 tools/result-transfers.py --subsets    # is one claim's number another's? advisory (T-158)
 tools/verify.sh --no-checks                    # Gradle only, without the census check (P-22)
+python3 tools/T-337-verdict-exceedance-census.py --check      # every flatness verdict is emitted beside the datum it IS; residue printed, not gated (T-337)
+python3 tools/T-337-verdict-exceedance-census.py --self-test  # its own 38 tests, wired into `test` as testVerdictExceedance (T-337)
 python3 tools/check-kotlin-format-strings.py   # every String.format balances; exit 1 if not (T-207)
 python3 tools/check-kotlin-format-strings.py --self-test   # its own 19 tests, wired into `test` (T-207)
 python3 tools/check-result-file-hygiene.py     # no result file carries a raw % conversion; exit 1 (T-208)

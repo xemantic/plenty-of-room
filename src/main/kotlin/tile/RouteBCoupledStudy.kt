@@ -218,6 +218,14 @@ private class T322Cell(
     val bestTransferredTrainingP90: Double,
     val inSampleGain: Double,
     val outOfSampleGain: Double,
+    /**
+     * `T-337`. The `exceedance` the [flatAtP90] verdict below IS, on the SEARCHED distribution's
+     * out-of-sample grading ensemble (`C-0223`). `bestTransferredFlatAtP90` is a verdict on a
+     * different distribution and is deliberately not covered by this one field.
+     */
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?,
     val flatAtP90: Boolean,
     val peakInsideUnzipCeiling: Boolean,
     val ratioInsideFlatRatioWindow: Boolean,
@@ -266,6 +274,10 @@ private class T322RungRow(
     val bestTransferredP90: Double,
     val searchedP90: Double,
     val searchedRatio: Double,
+    // `T-337`. This row transcribes the cell's own verdict, so it transcribes its proportion.
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?,
     val flatAtP90: Boolean
 )
 
@@ -507,7 +519,15 @@ private fun t322Placements(
     )
 }
 
-private class T322Graded(val nominal: Double, val p90: Double, val flat: Boolean)
+private class T322Graded(
+    val nominal: Double,
+    val p90: Double,
+    val flat: Boolean,
+    // `T-337`. `C-0223`: `flat` IS `exceedance <= tolerance`, so the proportion travels with it.
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?
+)
 
 private fun t322Grade(
     surrogate: InfluenceSurrogate,
@@ -521,7 +541,10 @@ private fun t322Grade(
     val summary = summariseDropoutDishing(
         sample, nominal, ensemble.meanSurvivors, T322_TOLERANCE
     )
-    return T322Graded(nominal, summary.p90, summary.flatAtP90)
+    return T322Graded(
+        nominal, summary.p90, summary.flatAtP90,
+        summary.exceedance, summary.exceedanceStandardError, summary.exceedanceOneSidedBound
+    )
 }
 
 /** `C-0212`'s own published cell at the `116 bp` block, keyed on every dimension it varied. */
@@ -871,6 +894,9 @@ fun main() {
                 inSampleGain = searched.bestTransferredTrainingObjective /
                         searched.trainingObjective,
                 outOfSampleGain = best.third.p90 / outOfSample.p90,
+                exceedance = outOfSample.exceedance,
+                exceedanceStandardError = outOfSample.exceedanceStandardError,
+                exceedanceOneSidedBound = outOfSample.exceedanceOneSidedBound,
                 flatAtP90 = admissibility.flatAtP90,
                 peakInsideUnzipCeiling = admissibility.peakInsideUnzipCeiling,
                 ratioInsideFlatRatioWindow = searched.ratio > T322_FLAT_RATIO_FLOOR &&
@@ -1031,6 +1057,9 @@ fun main() {
             bestTransferredP90 = found.cell.bestTransferredP90,
             searchedP90 = found.cell.searchedP90,
             searchedRatio = found.cell.searchedRatio,
+            exceedance = found.cell.exceedance,
+            exceedanceStandardError = found.cell.exceedanceStandardError,
+            exceedanceOneSidedBound = found.cell.exceedanceOneSidedBound,
             flatAtP90 = found.cell.flatAtP90
         )
     }

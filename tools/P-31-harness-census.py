@@ -233,6 +233,11 @@ HARNESSES = (
      "T-334-gate-census.py", ("killed-by", "survives")),
     ("T-327-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
      "T-327-flatness-resolution.py", ("killed-by", "survives")),
+    # `T-337` -- the exceedance beside every verdict.  Its fixture carries `tools/` and the
+    # committed `gpd/results/`, because three of the subject's arms read the live corpus and a
+    # silently skipped arm would land in the subtracted baseline (`C-0195`).
+    ("T-337-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
+     "T-337-verdict-exceedance-census.py", ("killed-by", "survives")),
 )
 
 # Which module file each ATTRIBUTE receiver in a harness stands for.  A receiver not named here is

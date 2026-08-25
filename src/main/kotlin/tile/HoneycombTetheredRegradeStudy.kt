@@ -186,6 +186,12 @@ private class T299Cell(
     val p95OverStroke: Double,
     val worstOverStroke: Double,
     val exceedance: Double,
+    // `T-337`. This record carried the exceedance and its saturated ONE-SIDED bound and not the
+    // symmetric standard error, so the ensemble size could not be backed out of it and had to be
+    // assumed -- `C-0223`'s conditions demand the opposite. `T-337`'s own gate found it: an
+    // exceedance emitted without its standard error is a probability without one, which
+    // `DropoutSummary`'s KDoc already forbids.
+    val exceedanceStandardError: Double,
     val exceedanceOneSidedBound: Double?,
     val meanSurvivors: Double,
     val uncoupledDishingOverStroke: Double,
@@ -263,6 +269,11 @@ private class T299LinkStiffness(
     val linkStiffness: Double,
     val ground: String,
     val p90OverStroke: Double,
+    // `T-337`. `C-0223`: the verdict below IS `exceedance <= tolerance`. `T-303` TRANSCRIBES
+    // these rows, so without the proportion here that study cannot publish one either.
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?,
     val flatAtP90: Boolean
 )
 
@@ -519,6 +530,7 @@ private fun gradeT299Cell(
             p95OverStroke = summary.p95,
             worstOverStroke = summary.worst,
             exceedance = summary.exceedance,
+            exceedanceStandardError = summary.exceedanceStandardError,
             exceedanceOneSidedBound = summary.exceedanceOneSidedBound,
             meanSurvivors = summary.meanSurvivors,
             uncoupledDishingOverStroke = uncoupled,
@@ -1027,6 +1039,9 @@ fun main() {
                 linkStiffness = stiffness,
                 ground = ground,
                 p90OverStroke = summary.p90,
+                exceedance = summary.exceedance,
+                exceedanceStandardError = summary.exceedanceStandardError,
+                exceedanceOneSidedBound = summary.exceedanceOneSidedBound,
                 flatAtP90 = summary.flatAtP90
             )
         }

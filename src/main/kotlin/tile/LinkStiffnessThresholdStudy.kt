@@ -44,6 +44,7 @@ import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.encodeToJsonElement
 import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.jsonPrimitive
 import java.io.File
 import kotlin.math.abs
@@ -133,6 +134,9 @@ private class T303LadderRow(
     val ground: String,
     val p90OverStroke: Double,
     val nominalOverStroke: Double,
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?,
     val flatAtP90: Boolean
 )
 
@@ -176,6 +180,9 @@ private class T303Cell(
     val distribution: String,
     val nominalOverStroke: Double,
     val p90OverStroke: Double,
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?,
     val flatAtNominal: Boolean,
     val flatAtP90: Boolean,
     val uncoupledDishingOverStroke: Double,
@@ -210,6 +217,13 @@ private class T303RouteBRow(
     val cell: String,
     val linkStiffness: Double,
     val p90OverStroke: Double,
+    // `T-337`. This row TRANSCRIBES `T-299`'s verdict rather than grading its own, so the
+    // proportion the verdict is a function of is read across with it -- and `getValue` is
+    // deliberate: a source that cannot supply the datum must stop this study loudly rather
+    // than let a transcribed verdict be published without its sample.
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?,
     val flatAtP90: Boolean,
     val source: String
 )
@@ -398,7 +412,15 @@ private fun t303Placements(
     )
 }
 
-private class T303Graded(val nominal: Double, val p90: Double, val flat: Boolean)
+private class T303Graded(
+    val nominal: Double,
+    val p90: Double,
+    val flat: Boolean,
+    // `T-337`. `C-0223`: `flat` IS `exceedance <= tolerance`, so the proportion travels with it.
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?
+)
 
 private fun t303Grade(
     surrogate: InfluenceSurrogate,
@@ -412,7 +434,10 @@ private fun t303Grade(
     val summary = summariseDropoutDishing(
         sample, nominal, ensemble.meanSurvivors, T303_TOLERANCE
     )
-    return T303Graded(nominal, summary.p90, summary.flatAtP90)
+    return T303Graded(
+        nominal, summary.p90, summary.flatAtP90,
+        summary.exceedance, summary.exceedanceStandardError, summary.exceedanceOneSidedBound
+    )
 }
 
 private fun t303Published(
@@ -592,6 +617,9 @@ fun main() {
                 ground = ground,
                 p90OverStroke = graded.p90,
                 nominalOverStroke = graded.nominal,
+                exceedance = graded.exceedance,
+                exceedanceStandardError = graded.exceedanceStandardError,
+                exceedanceOneSidedBound = graded.exceedanceOneSidedBound,
                 flatAtP90 = graded.flat
             )
         }
@@ -684,6 +712,9 @@ fun main() {
                             distribution = label,
                             nominalOverStroke = graded.nominal,
                             p90OverStroke = graded.p90,
+                            exceedance = graded.exceedance,
+                            exceedanceStandardError = graded.exceedanceStandardError,
+                            exceedanceOneSidedBound = graded.exceedanceOneSidedBound,
                             flatAtNominal = graded.nominal < T303_TOLERANCE,
                             flatAtP90 = graded.flat,
                             uncoupledDishingOverStroke = tile.uncoupledDishing,
@@ -816,6 +847,11 @@ fun main() {
             cell = it.getValue("cell").jsonPrimitive.content,
             linkStiffness = it.getValue("linkStiffness").jsonPrimitive.content.toDouble(),
             p90OverStroke = it.getValue("p90OverStroke").jsonPrimitive.content.toDouble(),
+            exceedance = it.getValue("exceedance").jsonPrimitive.content.toDouble(),
+            exceedanceStandardError =
+                it.getValue("exceedanceStandardError").jsonPrimitive.content.toDouble(),
+            exceedanceOneSidedBound =
+                it["exceedanceOneSidedBound"]?.jsonPrimitive?.contentOrNull?.toDouble(),
             flatAtP90 = it.getValue("flatAtP90").jsonPrimitive.content.toBoolean(),
             source = ResultInputs.T_299.path + " (C-0201), read and not re-run"
         )

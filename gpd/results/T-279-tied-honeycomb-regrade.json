@@ -4602,6 +4602,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.058560196,
             "p90OverStroke": 0.140190553,
+            "exceedance": 0.29525,
+            "exceedanceStandardError": 0.00721244476,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 0.0016722883
@@ -4616,6 +4619,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0585014412,
             "p90OverStroke": 0.136965461,
+            "exceedance": 0.29925,
+            "exceedanceStandardError": 0.00724050132,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -0.001552803
@@ -4630,6 +4636,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0591106,
             "p90OverStroke": 0.145974944,
+            "exceedance": 0.302,
+            "exceedanceStandardError": 0.00725940769,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 0.00188914649
@@ -4644,6 +4653,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0590249639,
             "p90OverStroke": 0.142334547,
+            "exceedance": 0.31,
+            "exceedanceStandardError": 0.00731266025,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -0.00175125026
@@ -4658,6 +4670,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.211590397,
             "p90OverStroke": 0.253686142,
+            "exceedance": 0.93325,
+            "exceedanceStandardError": 0.00394634126,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -2.23869941E-4
@@ -4672,6 +4687,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.212148405,
             "p90OverStroke": 0.254133882,
+            "exceedance": 0.9325,
+            "exceedanceStandardError": 0.00396685486,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 2.23869941E-4
@@ -4686,6 +4704,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.216202829,
             "p90OverStroke": 0.260341139,
+            "exceedance": 0.93575,
+            "exceedanceStandardError": 0.00387691686,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -2.7887174E-4
@@ -4700,6 +4721,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.21686966,
             "p90OverStroke": 0.260898882,
+            "exceedance": 0.93575,
+            "exceedanceStandardError": 0.00387691686,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 2.7887174E-4
@@ -4714,6 +4738,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0580473294,
             "p90OverStroke": 0.141260684,
+            "exceedance": 0.27925,
+            "exceedanceStandardError": 0.00709347301,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 8.79746288E-4
@@ -4728,6 +4755,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0579611782,
             "p90OverStroke": 0.141657627,
+            "exceedance": 0.2895,
+            "exceedanceStandardError": 0.00717094398,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 0.00127668916
@@ -4742,6 +4772,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0586230341,
             "p90OverStroke": 0.146466152,
+            "exceedance": 0.303,
+            "exceedanceStandardError": 0.00726620603,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 5.09637062E-4
@@ -4756,6 +4789,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0585054102,
             "p90OverStroke": 0.146870107,
+            "exceedance": 0.2965,
+            "exceedanceStandardError": 0.00722128365,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 9.13592484E-4
@@ -4770,6 +4806,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.213660427,
             "p90OverStroke": 0.248514273,
+            "exceedance": 0.89375,
+            "exceedanceStandardError": 0.00487239514,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -2.99698873E-4
@@ -4784,6 +4823,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.214244889,
             "p90OverStroke": 0.249113671,
+            "exceedance": 0.8935,
+            "exceedanceStandardError": 0.0048774417,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 2.99698873E-4
@@ -4798,6 +4840,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.218283197,
             "p90OverStroke": 0.254598467,
+            "exceedance": 0.896,
+            "exceedanceStandardError": 0.004826593,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -3.60012049E-4
@@ -4812,6 +4857,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.218984061,
             "p90OverStroke": 0.255318492,
+            "exceedance": 0.89675,
+            "exceedanceStandardError": 0.00481117027,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 3.60012049E-4
@@ -4826,6 +4874,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0552857822,
             "p90OverStroke": 0.141968264,
+            "exceedance": 0.29625,
+            "exceedanceStandardError": 0.00721952106,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -4.78004151E-4
@@ -4840,6 +4891,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0575174111,
             "p90OverStroke": 0.141230653,
+            "exceedance": 0.293,
+            "exceedanceStandardError": 0.00719637061,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -0.00121561549
@@ -4854,6 +4908,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0563582645,
             "p90OverStroke": 0.147278437,
+            "exceedance": 0.30775,
+            "exceedanceStandardError": 0.00729794385,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -9.94592978E-4
@@ -4868,6 +4925,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0585258398,
             "p90OverStroke": 0.146543219,
+            "exceedance": 0.30625,
+            "exceedanceStandardError": 0.00728801992,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -0.00172981114
@@ -4882,6 +4942,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.207762682,
             "p90OverStroke": 0.247701786,
+            "exceedance": 0.91425,
+            "exceedanceStandardError": 0.00442710225,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -2.20717906E-4
@@ -4896,6 +4959,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.208197794,
             "p90OverStroke": 0.248143222,
+            "exceedance": 0.91425,
+            "exceedanceStandardError": 0.00442710225,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 2.20717906E-4
@@ -4910,6 +4976,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.212497612,
             "p90OverStroke": 0.253979949,
+            "exceedance": 0.9145,
+            "exceedanceStandardError": 0.00442124841,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -2.74941103E-4
@@ -4924,6 +4993,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.213039015,
             "p90OverStroke": 0.254529831,
+            "exceedance": 0.9145,
+            "exceedanceStandardError": 0.00442124841,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 2.74941103E-4
@@ -4938,6 +5010,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0561034958,
             "p90OverStroke": 0.145007265,
+            "exceedance": 0.29525,
+            "exceedanceStandardError": 0.00721244476,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 0.00151537296
@@ -4952,6 +5027,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0582320861,
             "p90OverStroke": 0.141318755,
+            "exceedance": 0.285,
+            "exceedanceStandardError": 0.00713748905,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -0.00217313745
@@ -4966,6 +5044,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0573368255,
             "p90OverStroke": 0.150070306,
+            "exceedance": 0.3085,
+            "exceedanceStandardError": 0.00730287187,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 8.190748E-4
@@ -4980,6 +5061,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0593986514,
             "p90OverStroke": 0.146829289,
+            "exceedance": 0.30675,
+            "exceedanceStandardError": 0.00729133797,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -0.00242194151
@@ -4994,6 +5078,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.20823396,
             "p90OverStroke": 0.240389066,
+            "exceedance": 0.8975,
+            "exceedanceStandardError": 0.00479566862,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -3.28245704E-4
@@ -5008,6 +5095,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.208695876,
             "p90OverStroke": 0.241045557,
+            "exceedance": 0.89625,
+            "exceedanceStandardError": 0.00482146081,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 3.28245704E-4
@@ -5022,6 +5112,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.2130122,
             "p90OverStroke": 0.247286541,
+            "exceedance": 0.89775,
+            "exceedanceStandardError": 0.00479048373,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -3.94668273E-4
@@ -5036,6 +5129,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.213588418,
             "p90OverStroke": 0.248064689,
+            "exceedance": 0.89875,
+            "exceedanceStandardError": 0.00476965506,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 3.8347979E-4
@@ -5050,6 +5146,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0377479206,
             "p90OverStroke": 0.146454229,
+            "exceedance": 0.351,
+            "exceedanceStandardError": 0.00754650581,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 0.00152504133
@@ -5064,6 +5163,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0362901128,
             "p90OverStroke": 0.14422188,
+            "exceedance": 0.33825,
+            "exceedanceStandardError": 0.00748059051,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -7.07307243E-4
@@ -5078,6 +5180,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0389999752,
             "p90OverStroke": 0.150427198,
+            "exceedance": 0.37375,
+            "exceedanceStandardError": 0.00764952511,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 0.0014976436
@@ -5092,6 +5197,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.037138285,
             "p90OverStroke": 0.147742875,
+            "exceedance": 0.354,
+            "exceedanceStandardError": 0.00756115071,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -0.00118667983
@@ -5106,6 +5214,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.182314945,
             "p90OverStroke": 0.227231438,
+            "exceedance": 0.978,
+            "exceedanceStandardError": 0.00231926713,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -8.47283977E-4
@@ -5120,6 +5231,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.183435883,
             "p90OverStroke": 0.228503042,
+            "exceedance": 0.9785,
+            "exceedanceStandardError": 0.00229334635,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 4.2431947E-4
@@ -5134,6 +5248,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.187456663,
             "p90OverStroke": 0.233169192,
+            "exceedance": 0.979,
+            "exceedanceStandardError": 0.00226710167,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -5.18597521E-4
@@ -5148,6 +5265,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.188764673,
             "p90OverStroke": 0.234420295,
+            "exceedance": 0.97975,
+            "exceedanceStandardError": 0.00222710224,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 7.32505434E-4
@@ -5162,6 +5282,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0413778048,
             "p90OverStroke": 0.157186412,
+            "exceedance": 0.38775,
+            "exceedanceStandardError": 0.0077038941,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 6.76171721E-4
@@ -5176,6 +5299,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.039903854,
             "p90OverStroke": 0.155420045,
+            "exceedance": 0.37025,
+            "exceedanceStandardError": 0.00763486964,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -0.00109019552
@@ -5190,6 +5316,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0427881006,
             "p90OverStroke": 0.161463797,
+            "exceedance": 0.4025,
+            "exceedanceStandardError": 0.00775393045,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 9.6617165E-4
@@ -5204,6 +5333,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0409059551,
             "p90OverStroke": 0.1594034,
+            "exceedance": 0.39575,
+            "exceedanceStandardError": 0.0077319457,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -0.00109422519
@@ -5218,6 +5350,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.181936058,
             "p90OverStroke": 0.225363762,
+            "exceedance": 0.97125,
+            "exceedanceStandardError": 0.0026421316,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -6.61626893E-4
@@ -5232,6 +5367,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.182988593,
             "p90OverStroke": 0.226690487,
+            "exceedance": 0.97325,
+            "exceedanceStandardError": 0.00255119764,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 6.65097622E-4
@@ -5246,6 +5384,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.187309513,
             "p90OverStroke": 0.231450719,
+            "exceedance": 0.97325,
+            "exceedanceStandardError": 0.00255119764,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -6.06061648E-4
@@ -5260,6 +5401,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.188592054,
             "p90OverStroke": 0.232901085,
+            "exceedance": 0.9735,
+            "exceedanceStandardError": 0.00253957428,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 8.44304172E-4
@@ -5274,6 +5418,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0383515938,
             "p90OverStroke": 0.147111773,
+            "exceedance": 0.35825,
+            "exceedanceStandardError": 0.0075813412,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -8.04433824E-5
@@ -5288,6 +5435,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0361679714,
             "p90OverStroke": 0.147008293,
+            "exceedance": 0.35075,
+            "exceedanceStandardError": 0.00754527066,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -1.83923499E-4
@@ -5302,6 +5452,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0394320977,
             "p90OverStroke": 0.151482799,
+            "exceedance": 0.38275,
+            "exceedanceStandardError": 0.00768525272,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -4.50251827E-5
@@ -5316,6 +5469,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0369894873,
             "p90OverStroke": 0.15106707,
+            "exceedance": 0.37,
+            "exceedanceStandardError": 0.00763380639,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -4.60753525E-4
@@ -5330,6 +5486,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.178923989,
             "p90OverStroke": 0.22171247,
+            "exceedance": 0.9705,
+            "exceedanceStandardError": 0.00267533876,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -3.96463436E-4
@@ -5344,6 +5503,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.179789958,
             "p90OverStroke": 0.222646113,
+            "exceedance": 0.972,
+            "exceedanceStandardError": 0.00260844781,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 5.37178914E-4
@@ -5358,6 +5520,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.184156002,
             "p90OverStroke": 0.227967545,
+            "exceedance": 0.9735,
+            "exceedanceStandardError": 0.00253957428,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -4.10144556E-4
@@ -5372,6 +5537,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.185177033,
             "p90OverStroke": 0.228707332,
+            "exceedance": 0.974,
+            "exceedanceStandardError": 0.00251614785,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 3.29642975E-4
@@ -5386,6 +5554,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0407385318,
             "p90OverStroke": 0.156540317,
+            "exceedance": 0.3945,
+            "exceedanceStandardError": 0.00772770584,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 0.00119151724
@@ -5400,6 +5571,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0398646606,
             "p90OverStroke": 0.154624417,
+            "exceedance": 0.38175,
+            "exceedanceStandardError": 0.00768142138,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -7.24382886E-4
@@ -5414,6 +5588,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0421462253,
             "p90OverStroke": 0.160817149,
+            "exceedance": 0.412,
+            "exceedanceStandardError": 0.00778228758,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 0.00118230672
@@ -5428,6 +5605,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0409502453,
             "p90OverStroke": 0.158977861,
+            "exceedance": 0.39675,
+            "exceedanceStandardError": 0.00773529957,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -6.56981956E-4
@@ -5442,6 +5622,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.181363648,
             "p90OverStroke": 0.221605693,
+            "exceedance": 0.9685,
+            "exceedanceStandardError": 0.00276169106,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -2.24882332E-4
@@ -5456,6 +5639,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.182258139,
             "p90OverStroke": 0.22222911,
+            "exceedance": 0.97,
+            "exceedanceStandardError": 0.00269722079,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 3.98534454E-4
@@ -5470,6 +5656,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.186797138,
             "p90OverStroke": 0.22721737,
+            "exceedance": 0.97075,
+            "exceedanceStandardError": 0.00266432156,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -2.88126219E-4
@@ -5484,6 +5673,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.187858429,
             "p90OverStroke": 0.228374488,
+            "exceedance": 0.9715,
+            "exceedanceStandardError": 0.00263095753,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": false,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 8.68991337E-4
@@ -5498,6 +5690,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.033267846,
             "p90OverStroke": 0.124124839,
+            "exceedance": 0.25375,
+            "exceedanceStandardError": 0.006880424,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 1.82233987E-4
@@ -5512,6 +5707,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0345448261,
             "p90OverStroke": 0.123390226,
+            "exceedance": 0.24075,
+            "exceedanceStandardError": 0.0067599822,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -5.52379468E-4
@@ -5526,6 +5724,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0344217226,
             "p90OverStroke": 0.127657499,
+            "exceedance": 0.27175,
+            "exceedanceStandardError": 0.00703388117,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 5.35149524E-4
@@ -5540,6 +5741,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0354282363,
             "p90OverStroke": 0.126353679,
+            "exceedance": 0.26075,
+            "exceedanceStandardError": 0.00694189163,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -7.68670259E-4
@@ -5554,6 +5758,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0212781088,
             "p90OverStroke": 0.10014682,
+            "exceedance": 0.1015,
+            "exceedanceStandardError": 0.00477487565,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 5.72342976E-4
@@ -5568,6 +5775,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0218050364,
             "p90OverStroke": 0.0993228684,
+            "exceedance": 0.09725,
+            "exceedanceStandardError": 0.00468488093,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": true,
             "movementFromZeroPrestrain": -2.51608351E-4
@@ -5582,6 +5792,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0216727793,
             "p90OverStroke": 0.102047762,
+            "exceedance": 0.11075,
+            "exceedanceStandardError": 0.00496196628,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 5.92007917E-4
@@ -5596,6 +5809,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0223852276,
             "p90OverStroke": 0.101408531,
+            "exceedance": 0.10625,
+            "exceedanceStandardError": 0.00487239514,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -4.72228124E-5
@@ -5610,6 +5826,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0360148393,
             "p90OverStroke": 0.133825391,
+            "exceedance": 0.29225,
+            "exceedanceStandardError": 0.00719096547,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 8.08127624E-4
@@ -5624,6 +5843,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0376901881,
             "p90OverStroke": 0.131934153,
+            "exceedance": 0.28,
+            "exceedanceStandardError": 0.00709929574,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -0.00108310982
@@ -5638,6 +5860,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0373488287,
             "p90OverStroke": 0.137181004,
+            "exceedance": 0.312,
+            "exceedanceStandardError": 0.00732557165,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 7.90243881E-4
@@ -5652,6 +5877,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0388196313,
             "p90OverStroke": 0.134932731,
+            "exceedance": 0.30075,
+            "exceedanceStandardError": 0.00725085232,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -0.00145802961
@@ -5666,6 +5894,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.018280493,
             "p90OverStroke": 0.107298929,
+            "exceedance": 0.1265,
+            "exceedanceStandardError": 0.0052558955,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 7.13709474E-4
@@ -5680,6 +5911,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0188875173,
             "p90OverStroke": 0.105916646,
+            "exceedance": 0.12075,
+            "exceedanceStandardError": 0.00515192773,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -6.68573824E-4
@@ -5694,6 +5928,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0185644547,
             "p90OverStroke": 0.109454346,
+            "exceedance": 0.13475,
+            "exceedanceStandardError": 0.0053988989,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 8.48060271E-4
@@ -5708,6 +5945,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0192916735,
             "p90OverStroke": 0.107571247,
+            "exceedance": 0.12875,
+            "exceedanceStandardError": 0.00529559811,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -0.00103503939
@@ -5722,6 +5962,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0374007812,
             "p90OverStroke": 0.128488835,
+            "exceedance": 0.27525,
+            "exceedanceStandardError": 0.00706200109,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 3.95288976E-4
@@ -5736,6 +5979,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0400175708,
             "p90OverStroke": 0.127750802,
+            "exceedance": 0.2635,
+            "exceedanceStandardError": 0.00696541007,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -3.42743182E-4
@@ -5750,6 +5996,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0380692379,
             "p90OverStroke": 0.131951434,
+            "exceedance": 0.2965,
+            "exceedanceStandardError": 0.00722128365,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 1.74695772E-4
@@ -5764,6 +6013,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0409670971,
             "p90OverStroke": 0.130993538,
+            "exceedance": 0.2845,
+            "exceedanceStandardError": 0.00713371835,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -7.83200358E-4
@@ -5778,6 +6030,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0641974873,
             "p90OverStroke": 0.11761461,
+            "exceedance": 0.226,
+            "exceedanceStandardError": 0.00661294186,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -0.00110692952
@@ -5792,6 +6047,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0655350393,
             "p90OverStroke": 0.119478341,
+            "exceedance": 0.23725,
+            "exceedanceStandardError": 0.00672611399,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 7.56801745E-4
@@ -5806,6 +6064,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0654869823,
             "p90OverStroke": 0.12033287,
+            "exceedance": 0.244,
+            "exceedanceStandardError": 0.00679087623,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -7.40998422E-4
@@ -5820,6 +6081,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0670599105,
             "p90OverStroke": 0.121949774,
+            "exceedance": 0.25675,
+            "exceedanceStandardError": 0.00690705142,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 8.75905942E-4
@@ -5834,6 +6098,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0396163792,
             "p90OverStroke": 0.139002426,
+            "exceedance": 0.32575,
+            "exceedanceStandardError": 0.00741007654,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 5.98475712E-4
@@ -5848,6 +6115,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.042231113,
             "p90OverStroke": 0.138117013,
+            "exceedance": 0.313,
+            "exceedanceStandardError": 0.00733196768,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -2.86937187E-4
@@ -5862,6 +6132,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0404971306,
             "p90OverStroke": 0.142309409,
+            "exceedance": 0.34825,
+            "exceedanceStandardError": 0.00753279393,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 9.72971961E-5
@@ -5876,6 +6149,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0433923576,
             "p90OverStroke": 0.141584435,
+            "exceedance": 0.337,
+            "exceedanceStandardError": 0.00747380425,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -6.27676228E-4
@@ -5890,6 +6166,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0601643496,
             "p90OverStroke": 0.118344694,
+            "exceedance": 0.21175,
+            "exceedanceStandardError": 0.00645972015,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -1.11932472E-4
@@ -5904,6 +6183,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0615241362,
             "p90OverStroke": 0.11898913,
+            "exceedance": 0.22425,
+            "exceedanceStandardError": 0.00659473156,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 5.32503249E-4
@@ -5918,6 +6200,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.061340693,
             "p90OverStroke": 0.120270485,
+            "exceedance": 0.22475,
+            "exceedanceStandardError": 0.00659995147,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -3.35844714E-4
@@ -5932,6 +6217,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0629421428,
             "p90OverStroke": 0.12111018,
+            "exceedance": 0.24,
+            "exceedanceStandardError": 0.00675277721,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 5.03849698E-4
@@ -5946,6 +6234,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0310054447,
             "p90OverStroke": 0.114136185,
+            "exceedance": 0.20125,
+            "exceedanceStandardError": 0.00633933036,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 7.42077764E-4
@@ -5960,6 +6251,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0303346236,
             "p90OverStroke": 0.112964858,
+            "exceedance": 0.192,
+            "exceedanceStandardError": 0.00622768015,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -4.29248875E-4
@@ -5974,6 +6268,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0320209633,
             "p90OverStroke": 0.117262532,
+            "exceedance": 0.22475,
+            "exceedanceStandardError": 0.00659995147,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 8.29727634E-4
@@ -5988,6 +6285,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0312143628,
             "p90OverStroke": 0.116142866,
+            "exceedance": 0.20825,
+            "exceedanceStandardError": 0.00642031809,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -2.89937871E-4
@@ -6002,6 +6302,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0605886931,
             "p90OverStroke": 0.102636448,
+            "exceedance": 0.1175,
+            "exceedanceStandardError": 0.00509150641,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -5.00449863E-4
@@ -6016,6 +6319,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0618011187,
             "p90OverStroke": 0.103919757,
+            "exceedance": 0.127,
+            "exceedanceStandardError": 0.00526476495,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 7.82859365E-4
@@ -6030,6 +6336,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0625222218,
             "p90OverStroke": 0.105082142,
+            "exceedance": 0.1335,
+            "exceedanceStandardError": 0.00537767956,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -3.2321575E-4
@@ -6044,6 +6353,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0638539203,
             "p90OverStroke": 0.106427557,
+            "exceedance": 0.1485,
+            "exceedanceStandardError": 0.00562244942,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 0.00102219925
@@ -6058,6 +6370,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0335048646,
             "p90OverStroke": 0.123756571,
+            "exceedance": 0.2735,
+            "exceedanceStandardError": 0.00704800947,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 0.00109506899
@@ -6072,6 +6387,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0345560904,
             "p90OverStroke": 0.122327929,
+            "exceedance": 0.2595,
+            "exceedanceStandardError": 0.00693108487,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -3.33573104E-4
@@ -6086,6 +6404,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.034718357,
             "p90OverStroke": 0.127155354,
+            "exceedance": 0.303,
+            "exceedanceStandardError": 0.00726620603,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 0.00115628789
@@ -6100,6 +6421,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0356685285,
             "p90OverStroke": 0.125422404,
+            "exceedance": 0.2845,
+            "exceedanceStandardError": 0.00713371835,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -5.76661807E-4
@@ -6114,6 +6438,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0584093547,
             "p90OverStroke": 0.099361573,
+            "exceedance": 0.09575,
+            "exceedanceStandardError": 0.00465247078,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": true,
             "movementFromZeroPrestrain": -5.17530164E-4
@@ -6128,6 +6455,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.059575134,
             "p90OverStroke": 0.10109276,
+            "exceedance": 0.1055,
+            "exceedanceStandardError": 0.0048572047,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 0.00121365679
@@ -6142,6 +6472,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0602040868,
             "p90OverStroke": 0.101315887,
+            "exceedance": 0.11125,
+            "exceedanceStandardError": 0.00497175617,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -9.95843234E-4
@@ -6156,6 +6489,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.061547694,
             "p90OverStroke": 0.103382779,
+            "exceedance": 0.12275,
+            "exceedanceStandardError": 0.00518850743,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 0.00107104885
@@ -6170,6 +6506,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.035326793,
             "p90OverStroke": 0.111557138,
+            "exceedance": 0.17525,
+            "exceedanceStandardError": 0.00601118619,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -3.34274995E-5
@@ -6184,6 +6523,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0337405631,
             "p90OverStroke": 0.111244869,
+            "exceedance": 0.173,
+            "exceedanceStandardError": 0.00598061452,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -3.45696634E-4
@@ -6198,6 +6540,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0363833115,
             "p90OverStroke": 0.114515095,
+            "exceedance": 0.19525,
+            "exceedanceStandardError": 0.00626752418,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -7.81883724E-5
@@ -6212,6 +6557,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.034580722,
             "p90OverStroke": 0.114049083,
+            "exceedance": 0.19125,
+            "exceedanceStandardError": 0.00621838881,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -5.44201072E-4
@@ -6226,6 +6574,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.065254403,
             "p90OverStroke": 0.109770817,
+            "exceedance": 0.17625,
+            "exceedanceStandardError": 0.00602465637,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 5.16706931E-5
@@ -6240,6 +6591,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0635595775,
             "p90OverStroke": 0.110089429,
+            "exceedance": 0.1765,
+            "exceedanceStandardError": 0.00602801273,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 3.70283598E-4
@@ -6254,6 +6608,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0672286985,
             "p90OverStroke": 0.11215384,
+            "exceedance": 0.20075,
+            "exceedanceStandardError": 0.00633343188,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -1.36487006E-4
@@ -6268,6 +6625,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.065610423,
             "p90OverStroke": 0.112469163,
+            "exceedance": 0.20075,
+            "exceedanceStandardError": 0.00633343188,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 1.78835915E-4
@@ -6282,6 +6642,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0370156981,
             "p90OverStroke": 0.119017139,
+            "exceedance": 0.24,
+            "exceedanceStandardError": 0.00675277721,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 4.38089634E-4
@@ -6296,6 +6659,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0360167598,
             "p90OverStroke": 0.118203542,
+            "exceedance": 0.23325,
+            "exceedanceStandardError": 0.00668663663,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -3.7550742E-4
@@ -6310,6 +6676,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0382413342,
             "p90OverStroke": 0.122141101,
+            "exceedance": 0.26625,
+            "exceedanceStandardError": 0.00698857885,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 7.14245187E-4
@@ -6324,6 +6693,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0370777906,
             "p90OverStroke": 0.121274216,
+            "exceedance": 0.2545,
+            "exceedanceStandardError": 0.00688712113,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": -1.52640341E-4
@@ -6338,6 +6710,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0624478923,
             "p90OverStroke": 0.105853399,
+            "exceedance": 0.13825,
+            "exceedanceStandardError": 0.00545749342,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 2.50874127E-5
@@ -6352,6 +6727,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0615512938,
             "p90OverStroke": 0.106097635,
+            "exceedance": 0.14425,
+            "exceedanceStandardError": 0.00555522136,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 2.69323244E-4
@@ -6366,6 +6744,9 @@
             "signAssignment": "every turn the same way, positive",
             "nominalOverStroke": 0.0643257119,
             "p90OverStroke": 0.108154861,
+            "exceedance": 0.15775,
+            "exceedanceStandardError": 0.0057633527,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 1.86397677E-4
@@ -6380,6 +6761,9 @@
             "signAssignment": "every turn the same way, negative",
             "nominalOverStroke": 0.0635391119,
             "p90OverStroke": 0.108391712,
+            "exceedance": 0.16,
+            "exceedanceStandardError": 0.0057965507,
+            "exceedanceOneSidedBound": null,
             "flatAtNominal": true,
             "flatAtP90": false,
             "movementFromZeroPrestrain": 4.23247902E-4

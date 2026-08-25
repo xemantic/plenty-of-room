@@ -305,4 +305,14 @@ if [ "$checks" = "yes" ]; then
     echo "--- every tool that WRITES refuses an argument it does not recognise (CH-0268) ---"
     tools/cli_guard.py --self-test > /dev/null
     tools/cli_guard.py --check
+
+    # `T-337`. `C-0223` derives that a `flatAt*P90` verdict IS the binomial statement
+    # `exceedance <= 0.10`, so a record that writes the boolean and withholds the proportion has
+    # published a hypothesis test without its sample. This gate is SCOPED to the files `T-337`
+    # re-emitted -- `C-0083`'s *a gate that cannot come clean is not a gate* is a statement about
+    # a predicate -- and it PRINTS, ungated, the residue it does not reach, with the count and
+    # the per-file list, which is `C-0129`'s prescription and the only thing that stops a narrow
+    # predicate becoming a claim of cleanliness. It reads `gpd/results/` and needs no repository.
+    echo "--- every flatness verdict is emitted beside the datum it IS (T-337) ---"
+    tools/T-337-verdict-exceedance-census.py --check
 fi

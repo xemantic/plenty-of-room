@@ -176,6 +176,12 @@ private class T279Prestrain(
     val signAssignment: String,
     val nominalOverStroke: Double,
     val p90OverStroke: Double,
+    // `T-337`. `C-0223` derives that `flatAtP90` IS the binomial statement
+    // `exceedance <= tolerance`, so a record that writes the verdict and withholds the
+    // proportion has published a hypothesis test without its sample.
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?,
     val flatAtNominal: Boolean,
     val flatAtP90: Boolean,
     val movementFromZeroPrestrain: Double
@@ -684,6 +690,9 @@ fun main() {
                             else "every turn the same way, negative",
                             nominalOverStroke = nominal,
                             p90OverStroke = summary.p90,
+                            exceedance = summary.exceedance,
+                            exceedanceStandardError = summary.exceedanceStandardError,
+                            exceedanceOneSidedBound = summary.exceedanceOneSidedBound,
                             flatAtNominal = nominal < T279_TOLERANCE,
                             flatAtP90 = summary.flatAtP90,
                             movementFromZeroPrestrain = summary.p90 - bare.p90OverStroke

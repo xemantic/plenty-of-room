@@ -166,6 +166,11 @@ private class T284Cell(
     val distribution: String,
     val nominalOverStroke: Double,
     val p90OverStroke: Double,
+    // `T-337`. `C-0223`: the verdict below IS `exceedance <= tolerance`, so the proportion it
+    // is a function of is emitted beside it rather than discarded at the grading site.
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?,
     val flatAtNominal: Boolean,
     val flatAtP90: Boolean,
     val zeroPrestrainP90OverStroke: Double,
@@ -680,6 +685,9 @@ fun main() {
                             distribution = label,
                             nominalOverStroke = nominal,
                             p90OverStroke = summary.p90,
+                            exceedance = summary.exceedance,
+                            exceedanceStandardError = summary.exceedanceStandardError,
+                            exceedanceOneSidedBound = summary.exceedanceOneSidedBound,
                             flatAtNominal = nominal < T284_TOLERANCE,
                             flatAtP90 = summary.flatAtP90,
                             zeroPrestrainP90OverStroke = zeroP90,

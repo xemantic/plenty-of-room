@@ -690,6 +690,26 @@ tasks.register<Exec>("testJointPlacementDistributionMutations") {
 }
 
 /*
+ * `T-340` -- whether a working-tree reading has any legitimate use, measured over every committed
+ * result file.
+ *
+ * Only the emitter's `--self-test` is wired: it is git-free and reads no repository state, while
+ * the emission itself needs `git` to resolve its pinned ref and REFUSES visibly without one
+ * (`CH-0246`: a corpus-subject result file must name the state it measured, and
+ * `tools/snapshot.sh` excludes `./.git`).  Arm C -- the gate this measurement justifies, *no
+ * result file records a declared registry quantity under a working-tree key* -- lives in
+ * `tools/T-336-pinned-count-census.py` and is already wired above.  There is no second gate and
+ * no second harness: the ten new mutations go into `tools/T-336-mutation-test.py`, which
+ * `P-31`'s table already declares.
+ */
+tasks.register<Exec>("testWorkingTreeReading") {
+    group = "verification"
+    description = "Runs tools/T-340-emit-result.py --self-test, the census behind T-336's arm C"
+    workingDir = projectDir
+    commandLine("$projectDir/tools/T-340-emit-result.py", "--self-test")
+}
+
+/*
  * `T-327` -- the resolution of the flatness census.
  *
  * `flatAtP90` is exactly `exceedance <= 0.10`, so a flatness verdict is a binomial statement and
@@ -698,6 +718,35 @@ tasks.register<Exec>("testJointPlacementDistributionMutations") {
  * emitter beside it is pinned to a ref, because a corpus-subject result file that defaults to
  * `HEAD` re-bases its own measurement (`CH-0246`).
  */
+/*
+ * `T-337` -- the exceedance beside every verdict.
+ *
+ * `C-0223` derives that a `flatAt*P90` verdict IS the binomial statement
+ * `exceedance <= tolerance`, so a record writing the boolean and withholding the proportion has
+ * published a hypothesis test without its sample. These three run the census's own self-tests,
+ * the emitter's, and the mutation table over the census's rules. The corpus GATE
+ * (`--check`) lives in `tools/verify.sh`, with its residue printed ungated (`C-0083`).
+ */
+tasks.register<Exec>("testVerdictExceedance") {
+    group = "verification"
+    description = "Runs tools/T-337-verdict-exceedance-census.py --self-test, the census and " +
+        "the determinacy re-read a flatness verdict's own exceedance makes possible"
+    commandLine("$projectDir/tools/T-337-verdict-exceedance-census.py", "--self-test")
+}
+
+tasks.register<Exec>("testVerdictExceedanceEmitter") {
+    group = "verification"
+    description = "Runs tools/T-337-emit-result.py --self-test, which builds the document and " +
+        "reproduces C-0223's own census at a PINNED ref before reading today's tree"
+    commandLine("$projectDir/tools/T-337-emit-result.py", "--self-test")
+}
+
+tasks.register<Exec>("testVerdictExceedanceMutations") {
+    group = "verification"
+    description = "Runs tools/T-337-mutation-test.py, the mutation table over the census's rules"
+    commandLine("$projectDir/tools/T-337-mutation-test.py")
+}
+
 tasks.register<Exec>("testFlatnessResolution") {
     group = "verification"
     description = "Runs tools/T-327-flatness-resolution.py --self-test, the census and the " +
@@ -755,7 +804,11 @@ tasks.named("test") {
         // `T-336` -- a count the deliverables PRINT against the one a result file PINS.
         "testPinnedCountCensus", "testPinnedCountCensusCheck", "testPinnedCountCensusMutations",
         // `T-327` -- what a flatness verdict can resolve, and the mutation table over its rules.
-        "testFlatnessResolution", "testFlatnessResolutionEmitter", "testFlatnessResolutionMutations"
+        "testFlatnessResolution", "testFlatnessResolutionEmitter", "testFlatnessResolutionMutations",
+        // `T-337` -- the exceedance beside every verdict, and the re-read it makes possible.
+        "testVerdictExceedance", "testVerdictExceedanceEmitter", "testVerdictExceedanceMutations",
+        // `T-340` -- what a working-tree reading IS, which is what justifies T-336's arm C.
+        "testWorkingTreeReading"
     )
 }
 

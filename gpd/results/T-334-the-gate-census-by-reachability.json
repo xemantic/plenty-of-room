@@ -213,9 +213,9 @@
     "missing": [],
     "notExecutable": []
   },
-  "atThisPassesTree": {
-    "state": "working tree",
-    "ref": null,
+  "atTheCommitThatCarriedThisFile": {
+    "state": "bb678d2",
+    "ref": "bb678d2a836dbdc5125cb2a1da29315d49d5b909",
     "routeA": {
       "predicate": "a command word of a comment-stripped line of tools/verify.sh",
       "count": 18,
@@ -347,7 +347,7 @@
     ],
     "notCounted": {
       "execTasksUnreachableFromTest": {
-        "count": 12,
+        "count": 13,
         "names": [
           "T-294-mutation-test.py",
           "T-297-mutation-test.py",
@@ -360,6 +360,7 @@
           "T-316-mutation-test.py",
           "T-322-mutation-test.py",
           "T-323-mutation-test.py",
+          "T-326-mutation-test.py",
           "T-330-mutation-test.py"
         ],
         "why": "Gradle never executes them; build.gradle.kts's own comment says they are runnable by name and NOT reachable from :test"
@@ -398,14 +399,14 @@
         "datedBy": "CH-0286"
       },
       "gradleHelper": {
-        "count": 12,
+        "count": 13,
         "datedBy": "this task"
       }
     },
     "armOne": {
       "invariant": "the Exec tasks unreachable from :test EQUAL the harnesses P-31-harness-census.py declares BY-HAND, in both directions",
-      "unreachable": 12,
-      "declaredByHand": 12,
+      "unreachable": 13,
+      "declaredByHand": 13,
       "equal": true
     },
     "missing": [],
@@ -413,8 +414,9 @@
   },
   "theCensusMovesItsOwnAnswer": {
     "atBaselineRef": 44,
-    "atThisPassesTree": 46,
-    "why": "wiring this census into build.gradle.kts adds tools/T-334-gate-census.py and tools/T-334-mutation-test.py to the set it counts (CH-0182); the task file predicted +1 from the TASK count and the answer is a TOOL count"
+    "atTheCommitThatCarriedThisFile": 46,
+    "why": "wiring this census into build.gradle.kts adds tools/T-334-gate-census.py and tools/T-334-mutation-test.py to the set it counts (CH-0182); the task file predicted +1 from the TASK count and the answer is a TOOL count",
+    "bothTermsArePinned": "T-340: the second term was an UNCOMMITTED tree reading and is now the same census at the commit that carried this file, so the finding survives and both of its terms re-derive. The HEADLINE was right at that commit and four of the removed block's other leaves were not (CH-0293)"
   },
   "againstWhatIsInPrint": [
     {
@@ -498,10 +500,10 @@
       "equal": true
     },
     {
-      "state": "this pass's tree",
-      "ref": null,
-      "unreachable": 12,
-      "declaredByHand": 12,
+      "state": "the commit that carried this file",
+      "ref": "bb678d2a836dbdc5125cb2a1da29315d49d5b909",
+      "unreachable": 13,
+      "declaredByHand": 13,
       "equal": true
     }
   ]

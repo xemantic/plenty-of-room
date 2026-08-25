@@ -230,4 +230,60 @@ This task does not own `ANSWERS.md`, `DECISIONS-FOR-NDI.md`, `TASKS.md`, `JOURNA
 
 ## 7. Execute
 
-*(to be written after the Formulate and Plan are committed)*
+### 7a. TDD, and the two watched failures
+
+**The Kotlin gate first.** `src/test/kotlin/coupling/VerdictExceedanceTest.kt` — five gates over the re-emitted files: the datum is there, it agrees with the verdict (`C-0223`'s identity), the realisation count backs out of it, the exceedance is a whole count of the ensemble, and the gate really reads every file it claims to gate. Run before a line of the carry was written it reads **`5` tests completed, `1` failed**, and the failing one says
+
+> `731` verdict-bearing record(s) carry no exceedance, so their verdict cannot be tested against its own sampling error: `T-279/prestrained/0`, …
+
+`731 = 128 + 128 + 36 + 348 + 37 + 54`, which is the cheap bound's own per-file census of the six files gated at that moment.
+
+**The Python census next.** `tools/T-337-verdict-exceedance-census.py` was written with its self-tests and `NotImplementedError` bodies, and its first run stops on the first stub. Implemented, it is **`36` gate-named self-tests, `0` failed**, and `--check` on the un-swept corpus exits **`1`** at **`747`** defects.
+
+### 7b. The order, re-derived rather than inherited
+
+`tools/reemission-order.py` reads the **committed** census, which is stale by **seven studies** — three of them this task's (`SearchedDistributionStudy`, `RouteBCoupledStudy`, `JointPlacementDistributionStudy`). Derived fresh from `tools/result-reader-census.py`'s own `census_of_tree`, the constraints inside the seven are **four**, not two:
+
+`T-279 → T-284`, `T-297 → T-303`, `T-316 → T-322`, `T-316 → T-323`
+
+and over all ten the graph is very nearly a **chain**. The stale census reports two constraints and would have permitted `T-322` before `T-316`.
+
+**And one constraint the census could not have shown until the carry was written**: `T-303`'s `routeB` block *transcribes* `T-299`'s verdicts rather than grading its own, so `T-299` became a hard prerequisite for `T-303` being able to carry a proportion at all. `T-299` joined the committed set for that reason and not for its yield — it has **`0`** positive verdicts.
+
+### 7c. What was run, and what it cost
+
+Two snapshots, run in parallel: the four cheap studies plus `T-299` in one, the two searches in the other. Every re-emission was checked for additivity **before** any number was read out of it.
+
+| | study | seconds | moved leaves | added | unexpected | removed |
+|---|---|---|---|---|---|---|
+| `T-279` | `tile.HoneycombTiedRegradeStudyKt` | `371` | **`0`** | `384` | `0` | `0` |
+| `T-299` | `tile.HoneycombTetheredRegradeStudyKt` | `953` (two runs) | **`0`** | `432` | `0` | `0` |
+| `T-284` | `tile.RasterTurnPrestrainSignStudyKt` | `208` | **`0`** | `384` | `0` | `0` |
+| `T-297` | `tile.CommonModeLinkStudyKt` | `87` | **`0`** | `108` | `0` | `0` |
+| `T-303` | `tile.LinkStiffnessThresholdStudyKt` | `486` | **`0`** | `1 044` | `0` | `0` |
+| `T-316` | `tile.SearchedDistributionStudyKt` | `3 123` | **`0`** | `111` | `0` | `0` |
+| `T-322` | `tile.RouteBCoupledStudyKt` | `4 074` | **`0`** | `162` | `0` | `0` |
+
+**`9 302` s of study time, `7 197` of it the two searches.** `F2` did not fire anywhere.
+
+**A `SMOKE` switch prices the ENSEMBLE and not the SEARCH.** Grading realisations fall `4 000 → 150` (`26.7×`) and *training* realisations only `120 → 40` (`3×`), so a search study has no cheap plumbing pass: `T-316`'s smoke was cut at `320` s having graded `8` of `32` cells, and the plumbing evidence came from the five studies that did smoke clean (`66 / 98 / 39 / 34 / 88` s) plus the compile. That decision is logged rather than silent.
+
+**A second defect, found by this task's own gate.** Its third gate demands the ensemble size be *backed out* of the record rather than assumed, and it failed at `384` records of `T-299` carrying an `exceedance` and **no** `exceedanceStandardError`. Censused corpus-wide that is **`680` records in `6` files**; `384` are repaired here, `296` are residue with a row (`T-341`).
+
+**`F6` fired**, on an arm nobody predicted — `T-327`'s `recordsCompared == 1184`, a population asserted as an invariant. See `C-0225` §4b and `CH-0294` §4b.
+
+### 7d. What was cut, and the rate that cut it
+
+**`T-323`, the declared elastic, cut from the bottom of §5d's table.**
+
+| | positives | of which `p90 ≥ 0.0975` | seconds | positives per minute |
+|---|---|---|---|---|
+| the five cheap studies | `20` | **`20`** | `2 105` | `0.57` |
+| `T-316` | `27` | `3` | `3 123` | `0.52` |
+| `T-322` | `33` | `2` | `4 074` | `0.49` |
+| **`T-323`** | **`7`** | **`0`** | ≤ `18 000` declared | **`≤ 0.023`** |
+
+`T-323` declares a five-hour budget of its own, carries seven positive verdicts and **none** of the `32` marginal ones. Cutting it leaves `7` of the `106` positives untestable, all in one file, all printed in the gate's residue on every run. It is `T-342`.
+
+`T-291` and `T-310` were the second elastic and were not run: `474` verdict-bearing records between them and **`0`** positive verdicts. `T-299` was pulled **in** rather than left out, for the transcription constraint in §7b and not for its yield.
+

@@ -199,3 +199,66 @@ is `CH-0246` and forbids the re-emission entirely.
 | `F12` | scoping the arm by `CENSUS_MARKERS` would have reached `T-327`'s block — i.e. the measured hole does not exist and the wider scope is unmotivated | OPEN |
 | `F13` | a re-emission moves a number quoted in either deliverable, in any claim, or in any challenge | OPEN |
 | `F14` | the repair of `T-332`'s broken AFTER anchor changes what the emitter asserts rather than where it asserts it — i.e. the anchor table is trimmed instead of widened | OPEN |
+
+---
+
+## Execute
+
+Three deliverables, in the order the Plan sets, because the arm may not ship red (`C-0083`).
+
+**D1 — the measurement.** [`tools/T-340-emit-result.py`](../../tools/T-340-emit-result.py), **13**
+named self-tests over in-memory fixtures, emitting
+[`gpd/results/T-340-a-working-tree-reading-at-the-emitter.json`](../results/T-340-a-working-tree-reading-at-the-emitter.json)
+at a pinned `--ref` of `91f9a48` and recording the resolved sha as `baselineRef`. Two runs are
+byte-identical. The kind table and the reader-role table are **declared with a per-row evidence
+line**, and an occurrence matching no declared role **refuses** — because a consumer would invert
+this task's recommendation from *remove* to *rename*, and that is not a thing to infer from a
+filename. A filename regular expression read **three** occurrences wrong on its first run.
+
+**D2 — the two records repaired at their emitters, by REMOVAL.** The coordinator's decision, on the
+ground that a renamed key is one a gate must keep refusing for ever. What replaces each removed
+reading is not a rename but a **different, pinned measurement**: the same census at the commit that
+carried the file, `bb678d2` for `T-334` and `bee6b06` for `T-332`, which is available one commit
+later and was not available at emit time. Both emitters' `--ref` defaults are pinned shas; both now
+**refuse visibly on stderr** in a tree with no `./.git` instead of crashing; and the two self-tests
+that **asserted** the unpinned shape are **inverted, not struck**.
+
+**D3 — arm C**, in [`tools/T-336-pinned-count-census.py`](../../tools/T-336-pinned-count-census.py):
+*no result file records a declared registry quantity under a working-tree key*, scoped by the key
+and not by `CENSUS_MARKERS`. **10** new mutations in the existing
+[`tools/T-336-mutation-test.py`](../../tools/T-336-mutation-test.py), so no new harness and no
+`P-31` row. The arm exposed two limitations of the registry it extends, both repaired with named
+tests: a pinned block may now name **its own `ref`**, and a registry leaf is matched with the state
+key **stripped**, so one quantity at two pinned states is two records.
+
+## Verify
+
+| gate | reading |
+|---|---|
+| dimensional consistency | no physics; every quantity is a count of files, keys, leaves, occurrences or commits |
+| limiting cases | arm C on a file with no census marker (**fires**), on kind A (**silent**), on a repaired file (**silent**); `_ref_for` with a `ref` that is not a sha (**falls back**); `reader_role` on an unclassified path (**refuses**) |
+| symmetry and conservation | the re-emission partition — **0** leaves move outside a working-tree block in either file, which is what makes the change surgical rather than a re-measurement |
+| numerical convergence | not applicable; the counts are exact. Determinism is asserted instead: two runs of the new emitter are byte-identical, and the file is excluded from its own population by name so the count does not differ between a first emission and a second (`CH-0182`) |
+| literature cross-check | `gpd/README.md`'s *"reproducible from it alone"*, run as a test rather than cited |
+
+**Run directly as Python, in the checkout and in a copy of the tree carrying no `./.git`.** No
+`./gradlew` and no `tools/verify.sh`: a sibling agent held Kotlin studies in flight for the whole
+iteration.
+
+| | |
+|---|---|
+| `tools/T-336-pinned-count-census.py --self-test` | **83**, 0 failures |
+| `tools/T-336-pinned-count-census.py --check` | **0** defects (**4** before the repair) |
+| `tools/T-336-pinned-count-census.py --rederive` | **15** records, **0** mismatches (was 11) |
+| `tools/T-336-mutation-test.py` | **43** mutations, **0** survivors, green subtracted baseline |
+| `tools/T-340-emit-result.py --self-test` | **13**, 0 failures |
+| `tools/T-334-emit-result.py --self-test` | **11**, 0 failures |
+| `tools/T-332-emit-result.py --self-test` | **15**, 0 failures |
+| `tools/T-334-gate-census.py --check` | **0** defects |
+| `tools/T-295-mutation-input-census.py --check` | this harness **43 / 43 fixture-backed / 0 corpus-dependent / 0 survivors** |
+| `tools/cli_guard.py --check` | **51** writers, 51 parse or refuse |
+| links, tables, identifiers, result paths | **0** attributable to this task |
+
+Filed as [`C-0226`](../claims/C-0226-a-working-tree-reading-at-the-emitter.md), raising
+[`CH-0295`](../challenges/CH-0295-a-task-declared-by-registering-is-unreachable.md) and
+[`CH-0296`](../challenges/CH-0296-a-quantity-under-a-synonym-is-invisible.md).

@@ -695,6 +695,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.022922214,
       "p90OverStroke": 0.107701645,
+      "exceedance": 0.1365,
+      "exceedanceStandardError": 0.00542834574,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.107701645,
       "movementFromZeroTerm": 0.0
@@ -710,6 +713,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0468326423,
       "p90OverStroke": 0.124347289,
+      "exceedance": 0.25275,
+      "exceedanceStandardError": 0.00687145249,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.107701645,
       "movementFromZeroTerm": 0.0166456442
@@ -725,6 +731,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0446385904,
       "p90OverStroke": 0.12226202,
+      "exceedance": 0.2445,
+      "exceedanceStandardError": 0.0067955822,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.107701645,
       "movementFromZeroTerm": 0.014560375
@@ -740,6 +749,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0595053819,
       "p90OverStroke": 0.103971919,
+      "exceedance": 0.1285,
+      "exceedanceStandardError": 0.00529121324,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.103971919,
       "movementFromZeroTerm": 0.0
@@ -755,6 +767,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0725163279,
       "p90OverStroke": 0.117779018,
+      "exceedance": 0.254,
+      "exceedanceStandardError": 0.00688265937,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.103971919,
       "movementFromZeroTerm": 0.0138070996
@@ -770,6 +785,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0899343051,
       "p90OverStroke": 0.126033436,
+      "exceedance": 0.34225,
+      "exceedanceStandardError": 0.00750191538,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.103971919,
       "movementFromZeroTerm": 0.0220615175
@@ -785,6 +803,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.022230027,
       "p90OverStroke": 0.10306316,
+      "exceedance": 0.11525,
+      "exceedanceStandardError": 0.00504894636,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.10306316,
       "movementFromZeroTerm": 0.0
@@ -800,6 +821,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0488138931,
       "p90OverStroke": 0.123845039,
+      "exceedance": 0.24,
+      "exceedanceStandardError": 0.00675277721,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.10306316,
       "movementFromZeroTerm": 0.0207818797
@@ -815,6 +839,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0488563703,
       "p90OverStroke": 0.119761318,
+      "exceedance": 0.23825,
+      "exceedanceStandardError": 0.00673585439,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.10306316,
       "movementFromZeroTerm": 0.0166981585
@@ -830,6 +857,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0588382162,
       "p90OverStroke": 0.101678429,
+      "exceedance": 0.1135,
+      "exceedanceStandardError": 0.00501541997,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.101678429,
       "movementFromZeroTerm": 0.0
@@ -845,6 +875,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0710756722,
       "p90OverStroke": 0.11492924,
+      "exceedance": 0.22925,
+      "exceedanceStandardError": 0.006646323,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.101678429,
       "movementFromZeroTerm": 0.0132508115
@@ -860,6 +893,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0958290465,
       "p90OverStroke": 0.128816794,
+      "exceedance": 0.36775,
+      "exceedanceStandardError": 0.00762413827,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.101678429,
       "movementFromZeroTerm": 0.027138365
@@ -875,6 +911,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0216139353,
       "p90OverStroke": 0.0999026162,
+      "exceedance": 0.1,
+      "exceedanceStandardError": 0.00474341649,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": true,
       "zeroTermP90OverStroke": 0.0999026162,
       "movementFromZeroTerm": 0.0
@@ -890,6 +929,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0533129487,
       "p90OverStroke": 0.123659712,
+      "exceedance": 0.24775,
+      "exceedanceStandardError": 0.00682586876,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0999026162,
       "movementFromZeroTerm": 0.0237570963
@@ -905,6 +947,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0564399521,
       "p90OverStroke": 0.118282522,
+      "exceedance": 0.241,
+      "exceedanceStandardError": 0.00676237754,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0999026162,
       "movementFromZeroTerm": 0.018379906
@@ -920,6 +965,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0586502287,
       "p90OverStroke": 0.0999353736,
+      "exceedance": 0.1,
+      "exceedanceStandardError": 0.00474341649,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": true,
       "zeroTermP90OverStroke": 0.0999353736,
       "movementFromZeroTerm": 0.0
@@ -935,6 +983,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0719985035,
       "p90OverStroke": 0.112717044,
+      "exceedance": 0.198,
+      "exceedanceStandardError": 0.00630071425,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0999353736,
       "movementFromZeroTerm": 0.0127816706
@@ -950,6 +1001,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.101593643,
       "p90OverStroke": 0.132251126,
+      "exceedance": 0.413,
+      "exceedanceStandardError": 0.00778509794,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0999353736,
       "movementFromZeroTerm": 0.0323157527
@@ -965,6 +1019,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0215415726,
       "p90OverStroke": 0.0995744768,
+      "exceedance": 0.098,
+      "exceedanceStandardError": 0.00470095735,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": true,
       "zeroTermP90OverStroke": 0.0995744768,
       "movementFromZeroTerm": 0.0
@@ -980,6 +1037,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0542395428,
       "p90OverStroke": 0.124123744,
+      "exceedance": 0.249,
+      "exceedanceStandardError": 0.00683737888,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0995744768,
       "movementFromZeroTerm": 0.0245492669
@@ -995,6 +1055,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0582374242,
       "p90OverStroke": 0.118598536,
+      "exceedance": 0.24175,
+      "exceedanceStandardError": 0.00676954462,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0995744768,
       "movementFromZeroTerm": 0.0190240589
@@ -1010,6 +1073,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0586348964,
       "p90OverStroke": 0.0998791032,
+      "exceedance": 0.0995,
+      "exceedanceStandardError": 0.00473285722,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": true,
       "zeroTermP90OverStroke": 0.0998791032,
       "movementFromZeroTerm": 0.0
@@ -1025,6 +1091,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0727533223,
       "p90OverStroke": 0.112133506,
+      "exceedance": 0.195,
+      "exceedanceStandardError": 0.00626448322,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0998791032,
       "movementFromZeroTerm": 0.0122544025
@@ -1040,6 +1109,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.102309533,
       "p90OverStroke": 0.132802852,
+      "exceedance": 0.4215,
+      "exceedanceStandardError": 0.0078076525,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0998791032,
       "movementFromZeroTerm": 0.032923749
@@ -1055,6 +1127,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0215342191,
       "p90OverStroke": 0.0995426168,
+      "exceedance": 0.098,
+      "exceedanceStandardError": 0.00470095735,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": true,
       "zeroTermP90OverStroke": 0.0995426168,
       "movementFromZeroTerm": 0.0
@@ -1070,6 +1145,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0543392007,
       "p90OverStroke": 0.124154465,
+      "exceedance": 0.2495,
+      "exceedanceStandardError": 0.00684196152,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0995426168,
       "movementFromZeroTerm": 0.0246118478
@@ -1085,6 +1163,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0584295216,
       "p90OverStroke": 0.118572702,
+      "exceedance": 0.24225,
+      "exceedanceStandardError": 0.00677430693,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0995426168,
       "movementFromZeroTerm": 0.0190300853
@@ -1100,6 +1181,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0586334208,
       "p90OverStroke": 0.0998756402,
+      "exceedance": 0.0995,
+      "exceedanceStandardError": 0.00473285722,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": true,
       "zeroTermP90OverStroke": 0.0998756402,
       "movementFromZeroTerm": 0.0
@@ -1115,6 +1199,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0728332159,
       "p90OverStroke": 0.112180421,
+      "exceedance": 0.1945,
+      "exceedanceStandardError": 0.00625838937,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0998756402,
       "movementFromZeroTerm": 0.0123047807
@@ -1130,6 +1217,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.102382721,
       "p90OverStroke": 0.132875472,
+      "exceedance": 0.422,
+      "exceedanceStandardError": 0.00780890517,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0998756402,
       "movementFromZeroTerm": 0.0329998318
@@ -1145,6 +1235,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0215334826,
       "p90OverStroke": 0.0995369555,
+      "exceedance": 0.09775,
+      "exceedanceStandardError": 0.00469560799,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": true,
       "zeroTermP90OverStroke": 0.0995369555,
       "movementFromZeroTerm": 0.0
@@ -1160,6 +1253,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0543492422,
       "p90OverStroke": 0.124147314,
+      "exceedance": 0.2495,
+      "exceedanceStandardError": 0.00684196152,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0995369555,
       "movementFromZeroTerm": 0.0246103589
@@ -1175,6 +1271,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0584488648,
       "p90OverStroke": 0.118560097,
+      "exceedance": 0.24225,
+      "exceedanceStandardError": 0.00677430693,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0995369555,
       "movementFromZeroTerm": 0.0190231417
@@ -1190,6 +1289,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0586332739,
       "p90OverStroke": 0.0998752932,
+      "exceedance": 0.0995,
+      "exceedanceStandardError": 0.00473285722,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": true,
       "zeroTermP90OverStroke": 0.0998752932,
       "movementFromZeroTerm": 0.0
@@ -1205,6 +1307,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.0728412527,
       "p90OverStroke": 0.112185141,
+      "exceedance": 0.1945,
+      "exceedanceStandardError": 0.00625838937,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0998752932,
       "movementFromZeroTerm": 0.0123098478
@@ -1220,6 +1325,9 @@
       "compositeFraction": 0.3,
       "nominalOverStroke": 0.102390055,
       "p90OverStroke": 0.132873735,
+      "exceedance": 0.422,
+      "exceedanceStandardError": 0.00780890517,
+      "exceedanceOneSidedBound": null,
       "flatAtP90": false,
       "zeroTermP90OverStroke": 0.0998752932,
       "movementFromZeroTerm": 0.0329984417

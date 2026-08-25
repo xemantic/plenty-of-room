@@ -595,9 +595,17 @@ def build(ref=DEFAULT_REF, out=DEFAULT_OUT):
          "fired": a["negativeUndetermined"] > 5},
     ]
     document["baselineControl"] = {
-        "statement": ("this task writes no file into gpd/results/ other than its own, so the "
-                      "reading at the pinned ref and the reading at this pass's tree must agree"),
+        "statement": ("the reading at the pinned ref beside the reading at this pass's tree. "
+                      "T-327 itself writes no file into gpd/results/ other than its own, so "
+                      "these agreed when this task ran; they DISAGREE as soon as the corpus "
+                      "legitimately moves, which is the record working and not a defect "
+                      "(CH-0294). The pinned reading is the answer; this is a staleness "
+                      "DETECTOR and is reported, never gated."),
         "agree": json.dumps(at_ref, sort_keys=True) == json.dumps(at_tree, sort_keys=True),
+        "whyThisIsNotAGate": ("an arm asserting that a working tree agrees with a pinned corpus "
+                              "must fire the first time the corpus legitimately moves, so it "
+                              "cannot be a pass/fail arm. C-0083's a gate that cannot come "
+                              "clean is not a gate, read on a control rather than on a rule."),
     }
 
     document = rounding.walk(document, rounding.RESULT_SIGNIFICANT_DIGITS,
@@ -630,8 +638,22 @@ def _self_test():
         ok("T-327-emit the resolved sha is recorded beside the ref that was asked for",
            len(document["baselineRef"]) == 40
            and document["baselineRefRequested"] == DEFAULT_REF)
-        ok("T-327-emit the pinned reading and the working-tree control agree",
-           document["baselineControl"]["agree"])
+        # `CH-0294`. This WAS `ok(... document["baselineControl"]["agree"])`, and it was a
+        # staleness detector wearing a pass/fail hat: `T-337` re-emitted seven of the eighteen
+        # files this census reads, and the arm went red at the first legitimate movement of the
+        # corpus. What is asserted now is what the control is FOR -- that both readings were
+        # built and the comparison was taken -- and the verdict is printed for a reader
+        # instead of failing a build.  The reproducibility statement the arm was doing duty
+        # for is separately and better made below: two builds at the same ref are identical.
+        ok("T-327-emit the pinned reading and the working-tree control are both taken",
+           isinstance(document["baselineControl"]["agree"], bool)
+           and "whyThisIsNotAGate" in document["baselineControl"])
+        if not document["baselineControl"]["agree"]:
+            sys.stderr.write(
+                "# NOTE: the working-tree reading DIFFERS from the pinned reading at %s.\n"
+                "#   That is a corpus that has legitimately moved since this task ran, not a\n"
+                "#   defect: the answer is the PINNED reading (CH-0246, CH-0294).\n"
+                % DEFAULT_REF)
     # The guard itself, in BOTH states -- these two run whether or not a repository is present,
     # so the degradation is asserted rather than merely observed the day it fires.
     ok("T-327-emit repository_available refuses a ref that does not EXIST, not merely one that "
@@ -654,9 +676,19 @@ def _self_test():
     ok("T-327-emit each deciding cell's discretisation step is its OWN, matched on its own p90",
        abs(cells[0]["discretisationDeparture"] - 4.570659e-4) < 1e-9
        and abs(cells[1]["discretisationDeparture"] - 1.011413e-4) < 1e-9)
-    ok("T-327-emit the exact verdict and the normal approximation agree at every record",
+    # `CH-0294`. This arm read `recordsCompared == 1184` -- the population as it stood at
+    # `86b3bbd`, asserted as an invariant. `T-337` carried an exceedance into 491 further
+    # records and the arm went red while its FINDING got stronger: `0` disagreements now holds
+    # at 1 931 of 1 931. What is asserted is therefore the finding and the DIRECTION the
+    # population may move in: it may only grow, because a record that LOST its exceedance would
+    # be a real defect and must still fail here. `CH-0182`'s *a census is dated by its premise
+    # set*, met on a named test.
+    ok("T-327-emit the exact verdict and the normal approximation agree at every record, over a "
+       "population that may grow and may not shrink",
        document["exactAgainstNormal"]["disagreements"] == 0
-       and document["exactAgainstNormal"]["recordsCompared"] == 1184)
+       and document["exactAgainstNormal"]["recordsCompared"] >= 1184)
+    sys.stderr.write("# T-327-emit compared %d record(s) against the 1184 this arm was written "
+                     "at.\n" % document["exactAgainstNormal"]["recordsCompared"])
     ok("T-327-emit the sampling axis is the worse-resolved one at every record carrying both",
        document["crossAxis"]["records"]
        and all(row["samplingIsTheWorseResolvedAxis"]

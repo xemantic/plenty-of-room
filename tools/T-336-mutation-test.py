@@ -127,10 +127,14 @@ MUTATIONS = (
     ),
     # --- what a deliverable may quote, which is the whole predicate --------------------------------
     (
+        # RE-ANCHORED by `T-340`: `pinned_values` now matches through `registry_quantity_of`,
+        # which orphaned this anchor.  `C-0185`: a mutation anchor is a reference into somebody
+        # else's source and a refactor orphans it -- the harness's `count == 1` assertion is what
+        # said so, loudly, instead of reporting `killed` off a mutation that never applied.
         "NARROW pinned_values to accept an UNPINNED record too -- the defect this tool exists for",
         SUBJECT,
-        '                        and classify(path) == "PINNED":',
-        "                        and True:",
+        '            if q is not None and classify(path) == "PINNED":',
+        "            if q is not None:",
     ),
     (
         "NARROW pinned_values' resolved-ref requirement, so a file with no baselineRef pins values",
@@ -139,10 +143,11 @@ MUTATIONS = (
         "        if False:\n            continue",
     ),
     (
+        # RE-ANCHORED by `T-340`, for the same reason as the row above.
         "WIDEN the record-leaf match to a suffix of length one, so any `count` pins any quantity",
         SUBJECT,
-        "                if tuple(path[-len(q.record_leaf):]) == q.record_leaf \\",
-        "                if path[-1:] == q.record_leaf[-1:] \\",
+        "        if body and len(stripped) >= len(body) and stripped[-len(body):] == body:",
+        "        if body and stripped[-1:] == body[-1:]:",
     ),
     # --- struck text, and link targets: `C-0071` and `C-0196` --------------------------------------
     (
@@ -267,6 +272,86 @@ MUTATIONS = (
         SUBJECT,
         '    if name not in QUANTITY_BY_NAME:\n        raise KeyError(',
         "    if False:\n        raise KeyError(",
+    ),
+
+    # --- arm C -- a registry quantity at an uncommitted tree (`T-340`) ---------------------------
+    (
+        "NARROW arm C away entirely, so a registry quantity at a tree is not a defect",
+        SUBJECT,
+        "    for name, path, value, q in working_tree_records(tree, quantities):\n"
+        "        if q is None:\n            continue",
+        "    for name, path, value, q in working_tree_records(tree, quantities):\n"
+        "        if True:\n            continue",
+    ),
+    (
+        "NARROW the working-tree key expression, so two of the corpus's own 23 names escape it",
+        SUBJECT,
+        'r"WorkingTree|workingTree|ThisPassesTree|InTheTree|quietTree"',
+        'r"WorkingTree|workingTree|ThisPassesTree"',
+    ),
+    (
+        "WIDEN the working-tree key expression onto a COMMITTED state key, so every pinned "
+        "reading reads as a tree reading",
+        SUBJECT,
+        'r"WorkingTree|workingTree|ThisPassesTree|InTheTree|quietTree"',
+        'r"WorkingTree|workingTree|ThisPassesTree|InTheTree|quietTree|Ref"',
+    ),
+    (
+        "NARROW registry_quantity_of so it does NOT strip the state key, after which one quantity "
+        "read at a ref and at a tree are two different quantities and arm C is blind",
+        SUBJECT,
+        "    stripped = tuple(key for key in path\n"
+        "                     if key not in PINNED_KEYS and key not in UNPINNED_KEYS\n"
+        "                     and not _WORKING_TREE_KEY.search(key))",
+        "    stripped = tuple(path)",
+    ),
+    (
+        "WIDEN registry_quantity_of onto every path, so arm C fires on the before/after half of a "
+        "repair -- kind A, which is legal and must stay legal",
+        SUBJECT,
+        "        if body and len(stripped) >= len(body) and stripped[-len(body):] == body:\n"
+        "            return q\n    return None",
+        "        if body:\n            return q\n    return None",
+    ),
+    (
+        "NARROW arm C's reach to the census family, restoring the hole T-327's 173-entry block "
+        "sits in",
+        SUBJECT,
+        "    for name in _result_names(tree):\n"
+        "        text = tree.read(os.path.join(RESULTS, name))\n"
+        "        if text is None:\n            continue",
+        "    for name, text in [(name, json.dumps(document))\n"
+        "                       for name, document in census_files(tree).items()]:\n"
+        "        if text is None:\n            continue",
+    ),
+    (
+        "NARROW _ref_for onto the file's baselineRef, so a block measured at its own commit is "
+        "re-derived at the wrong state",
+        SUBJECT,
+        "            candidate = node.get(\"ref\")\n"
+        "            if isinstance(candidate, str) and _SHA.match(candidate):\n"
+        "                ref = candidate",
+        "            candidate = None",
+    ),
+    (
+        "WIDEN _ref_for onto any string, so `\"ref\": \"HEAD\"` is accepted as a pinned state",
+        SUBJECT,
+        '            if isinstance(candidate, str) and _SHA.match(candidate):\n'
+        "                ref = candidate",
+        "            if isinstance(candidate, str):\n                ref = candidate",
+    ),
+    (
+        "NARROW the working-tree residue to zero, so a gate that comes clean stops saying what it "
+        "does not reach (C-0209)",
+        SUBJECT,
+        "    return sum(1 for row in working_tree_records(tree, quantities) if row[3] is None)",
+        "    return 0",
+    ),
+    (
+        "NARROW PINNED_KEYS back, so the state a LATER pass can name is refused as undeclared",
+        SUBJECT,
+        'PINNED_KEYS = ("atRef", "atBaselineRef", "atTheCommitThatCarriedThisFile")',
+        'PINNED_KEYS = ("atRef", "atBaselineRef")',
     ),
 )
 

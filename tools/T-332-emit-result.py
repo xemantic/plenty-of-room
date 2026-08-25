@@ -131,7 +131,13 @@ PASSAGES = (
     (
         "SELF_DESCRIBING_COUNT", "ANSWERS.md",
         "**Two hundred and thirty-one** challenges in",
-        "**Two hundred and forty-seven** challenges in",
+        # WIDENED by `T-340`, never trimmed.  `CH-0292`'s repair struck this sentence and inserted
+        # the pinned reading after it, so the eight characters `" challenges in"` no longer follow
+        # the bold run and this emitter refused to run AT ALL -- 1 of its 26 AFTER anchors.  A
+        # synthesis emitter that asserts its own prose is still LIVE is hostage to `C-0071`'s
+        # *strike, never delete*, which guarantees a later pass will amend it.  What the anchor
+        # asserts is unchanged: this pass wrote this figure into this document.
+        "**Two hundred and forty-seven**",
         1,
         "section 4: the challenge-and-claim census, derived",
     ),
@@ -284,8 +290,15 @@ def _passage_rows(ref):
     return rows
 
 
+#: The commit that CARRIED this result file.  An emitter runs BEFORE its own commit exists, so the
+#: state a synthesis wants to describe -- what its own pass looks like -- can only be named by a
+#: LATER pass.  `T-340`.
+CARRYING_COMMIT = "bee6b06"
+
+
 def build(ref):
     resolved = older._resolve(ref)
+    carrier = older._resolve(CARRYING_COMMIT)
     verify_sh = older._blob(resolved, "tools/verify.sh")
     build_kts = older._blob(resolved, "build.gradle.kts")
     names_at_ref = older._names_at(resolved, r"tools/(check-[a-z-]+|trace-answers)\.py")
@@ -321,15 +334,18 @@ def build(ref):
     prior_literal = ["tools/" + n for n in previous.gradle_gates(prior_build)]
     prior_helper = ["tools/" + n for n in snapshot_gates(prior_build)]
 
-    # The working tree's own checker census, which is the state the deliverable quotes: the ref
-    # carries iteration 52's T-330 work uncommitted, so its twelfth helper-wired harness is in the
-    # tree and not in the ref.
-    tree_verify = open(os.path.join(ROOT, "tools", "verify.sh"), encoding="utf-8").read()
-    tree_build = open(os.path.join(ROOT, "build.gradle.kts"), encoding="utf-8").read()
-    tree_own = previous.verify_invocations(tree_verify)
-    tree_literal = ["tools/" + n for n in previous.gradle_gates(tree_build)]
-    tree_helper = ["tools/" + n for n in snapshot_gates(tree_build)]
+    # The checker census AFTER this pass -- taken at the commit that carried this file, not at the
+    # uncommitted tree it was originally read from.  `T-340`: the ref carries iteration 52's T-330
+    # work uncommitted, so the pass's own reading differs from the ref's, and the honest way to
+    # say that is a SECOND COMMIT rather than a tree that resolves nowhere.
+    carrier_verify = older._blob(carrier, "tools/verify.sh")
+    carrier_build = older._blob(carrier, "build.gradle.kts")
+    tree_own = previous.verify_invocations(carrier_verify)
+    tree_literal = ["tools/" + n for n in previous.gradle_gates(carrier_build)]
+    tree_helper = ["tools/" + n for n in snapshot_gates(carrier_build)]
     tree_union = sorted(set(tree_own) | set(tree_literal) | set(tree_helper))
+    carrier_claims = older._names_at(carrier, r"gpd/claims/C-\d{4}-.*\.md")
+    carrier_challenges = older._names_at(carrier, r"gpd/challenges/CH-\d{4}-.*\.md")
 
     # The exhaustive census CH-0287 rests on: every occurrence of the corrected triple under gpd/.
     # CH-0182 -- a claim about a census enters the census -- so this pass's OWN artifacts are
@@ -376,9 +392,14 @@ def build(ref):
                 "later change re-bases the measurement and OVERWRITES the record rather than "
                 "checking it; re-emit only deliberately, at a named ref"
             ),
-            "workingTreeCaveat": (
-                "the ref carries iteration 52's T-330 work as UNCOMMITTED, so the working-tree "
-                "counts include C-0219 and CH-0284 and the ref counts do not; both are emitted"
+            "twoCommitsNotATree": (
+                "the ref carries iteration 52's T-330 work as UNCOMMITTED, so the reading after "
+                "this pass differs from the reading at its baseline. T-340: BOTH are now commits "
+                "-- baselineRef and bee6b06, the commit that carried this file -- where this file "
+                "originally recorded the second as an uncommitted tree. A quantity that cannot be "
+                "true at the moment it is written is not a quantity: a synthesis wanting to state "
+                "what its own pass will look like is asking for a number that is unpinnable "
+                "PRECISELY BECAUSE its own files are about to land (CH-0292)"
             ),
         },
         "selfDescribingCounts": {
@@ -389,7 +410,16 @@ def build(ref):
                 "atRef": len(claims_before) + len(challenges_before),
                 "command": "tools/check-corpus-identifiers.py prints the sum on every run",
             },
-            "workingTreeBeforeThisClaimsOwnFiles": {"challenges": 247, "claims": 214, "sum": 461},
+            # REMOVED by `T-340`, and it was the sharpest member of the class: a HARDCODED
+            # literal `{"challenges": 247, "claims": 214, "sum": 461}` that no `--ref` reproduces
+            # and no `--ref` refutes, occurring at 0 of the repository's 298 commits (`CH-0292`).
+            # What replaces it is the same census DERIVED at the commit that carried this file.
+            "atTheCommitThatCarriedThisFile": {
+                "ref": carrier,
+                "challenges": len(carrier_challenges),
+                "claims": len(carrier_claims),
+                "sum": len(carrier_challenges) + len(carrier_claims),
+            },
             "asWrittenBeforeThisPass": {"challenges": 231, "claims": 204},
             "staleAgain": True,
             "stalePassesOfTotal": {"stale": 8, "passes": 9},
@@ -425,15 +455,17 @@ def build(ref):
                 ),
             },
             "distinctToolsThatCanFailVerifySh": len(union),
-            "atThisPassesWorkingTree": {
+            "atTheCommitThatCarriedThisFile": {
+                "ref": carrier,
                 "verifyShOwn": len(tree_own),
                 "gradleLiteral": len(tree_literal),
                 "gradleHelper": len(tree_helper),
                 "distinct": len(tree_union),
                 "why": (
                     "the ref carries iteration 52's T-330 work uncommitted, so its twelfth "
-                    "helper-wired harness is in the tree and not in the ref; the deliverable quotes "
-                    "the tree and names it"
+                    "helper-wired harness is in that pass's own commit and not in the ref. T-340: "
+                    "this block read the uncommitted TREE and now reads the COMMIT that carried "
+                    "this file, so the deliverable has a state it can name"
                 ),
             },
             "asPublishedByC0210": 37,
@@ -528,12 +560,15 @@ def build(ref):
             "STALE_PRICE is 6 after being 7 and then 0 -- the two classes have now swapped places "
             "twice, which is only visible because both are declared.",
             "The challenge-and-claim census is stale for the EIGHTH time in NINE passes: 231/204 "
-            "as written against {}/{} derived at the ref and 247/214 at the working tree.".format(
-                len(challenges_before), len(claims_before)),
+            "as written against {}/{} derived at the ref and {}/{} at the commit that "
+            "carried this file.".format(
+                len(challenges_before), len(claims_before),
+                len(carrier_challenges), len(carrier_claims)),
             "The checker census's NUMBER held at one predicate and its PREDICATE is dated at "
             "another: {} Kotlin-subject mutation harnesses are wired through a helper and are "
-            "invisible to the literal-path regex, so the honest count is {} at this pass's working "
-            "tree ({} at the ref) and not 37, and 37 was an undercount of {} at its own ref "
+            "invisible to the literal-path regex, so the honest count is {} at the commit that "
+            "carried this file ({} at the ref) and not 37, and 37 was an undercount of {} at its "
+            "own ref "
             "(CH-0286).".format(
                 len(tree_helper), len(tree_union), len(union),
                 len(set(prior_own) | set(prior_literal) | set(prior_helper))),
@@ -596,13 +631,26 @@ def _self_test():
 def main():
     parser = argparse.ArgumentParser(
         description="emit gpd/results/T-332-fifteenth-answers-synthesis.json")
-    parser.add_argument("--ref", default="HEAD", help="the corpus state to measure against")
+    # PINNED, never `HEAD`: a corpus-subject emitter defaulting to a moving ref re-bases its own
+    # measurement between the draft and the emission (`CH-0246`), and re-running it as a control
+    # then OVERWRITES the record instead of checking it.  `T-340`.
+    parser.add_argument("--ref", default="d7b7074",
+                        help="the corpus state to measure against (this file's own baselineRef)")
     parser.add_argument("--self-test", action="store_true")
     parser.add_argument("--out", default=os.path.join(
         ROOT, "gpd", "results", "T-332-fifteenth-answers-synthesis.json"))
     arguments = parser.parse_args()
     if arguments.self_test:
         return _self_test()
+    try:
+        older._resolve(arguments.ref)
+    except Exception:
+        sys.stderr.write(
+            "T-332-emit: REFUSING to emit -- no git repository holding {} under {}. A "
+            "corpus-subject result file must name the state it measured (CH-0246), so this path "
+            "does NOT degrade; the 15 self-test arms are git-free and do run.\n".format(
+                arguments.ref, ROOT))
+        return 2
     document = build(arguments.ref)
     with open(arguments.out, "w", encoding="utf-8") as handle:
         json.dump(document, handle, indent=2, ensure_ascii=False)

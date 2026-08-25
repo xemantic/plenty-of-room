@@ -144,6 +144,9 @@ private class T297CellRow(
     val compositeFraction: Double,
     val nominalOverStroke: Double,
     val p90OverStroke: Double,
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?,
     val flatAtP90: Boolean,
     val zeroTermP90OverStroke: Double,
     val movementFromZeroTerm: Double
@@ -299,7 +302,12 @@ private class T297Cell(
 private class T297Graded(
     val nominal: Double,
     val p90: Double,
-    val flat: Boolean
+    val flat: Boolean,
+    // `T-337`. The verdict IS `exceedance <= tolerance` (`C-0223`), so the proportion the
+    // verdict is a function of travels with it instead of being discarded here.
+    val exceedance: Double,
+    val exceedanceStandardError: Double,
+    val exceedanceOneSidedBound: Double?
 )
 
 @Suppress("LongMethod", "ComplexMethod", "LongParameterList")
@@ -322,7 +330,10 @@ private fun t297Grade(
     val summary = summariseDropoutDishing(
         sample, nominal, ensemble.meanSurvivors, T297_TOLERANCE
     )
-    return T297Graded(nominal, summary.p90, summary.flatAtP90)
+    return T297Graded(
+        nominal, summary.p90, summary.flatAtP90,
+        summary.exceedance, summary.exceedanceStandardError, summary.exceedanceOneSidedBound
+    )
 }
 
 @Suppress("LongMethod", "ComplexMethod")
@@ -732,6 +743,9 @@ fun main() {
                         compositeFraction = 0.30,
                         nominalOverStroke = graded.nominal,
                         p90OverStroke = graded.p90,
+                        exceedance = graded.exceedance,
+                        exceedanceStandardError = graded.exceedanceStandardError,
+                        exceedanceOneSidedBound = graded.exceedanceOneSidedBound,
                         flatAtP90 = graded.flat,
                         zeroTermP90OverStroke = zero.p90,
                         movementFromZeroTerm = graded.p90 - zero.p90

@@ -1,0 +1,132 @@
+{
+  "what": "What T-337's re-emission cost and what it moved. An INPUT to tools/T-337-emit-result.py, not a measurement taken by it: a wall clock in a result file is a step counter by another name (CLAUDE.md), so the seconds are recorded once, as a cost, beside what they bought, and no field of the document is a function of them.",
+  "orderWasReDerived": "tools/reemission-order.py reads the COMMITTED census, which was stale by seven studies, three of them this task's. Derived fresh from tools/result-reader-census.py's own census_of_tree, the constraints inside the seven are FOUR (T-279 before T-284, T-297 before T-303, T-316 before T-322, T-316 before T-323), not the two the stale census reports.",
+  "files": [
+    {
+      "tag": "T-279",
+      "study": "tile.HoneycombTiedRegradeStudyKt",
+      "seconds": 371,
+      "movedLeaves": 0,
+      "addedKeys": 384,
+      "unexpectedKeys": 0,
+      "removedKeys": 0,
+      "positiveVerdictsCarried": 2
+    },
+    {
+      "tag": "T-299",
+      "study": "tile.HoneycombTetheredRegradeStudyKt",
+      "seconds": 953,
+      "movedLeaves": 0,
+      "addedKeys": 432,
+      "unexpectedKeys": 0,
+      "removedKeys": 0,
+      "positiveVerdictsCarried": 0,
+      "note": "two runs: the linkStiffness carry, then the cells standardError this task's own gate found missing. 478 s and 475 s."
+    },
+    {
+      "tag": "T-284",
+      "study": "tile.RasterTurnPrestrainSignStudyKt",
+      "seconds": 208,
+      "movedLeaves": 0,
+      "addedKeys": 384,
+      "unexpectedKeys": 0,
+      "removedKeys": 0,
+      "positiveVerdictsCarried": 2
+    },
+    {
+      "tag": "T-297",
+      "study": "tile.CommonModeLinkStudyKt",
+      "seconds": 87,
+      "movedLeaves": 0,
+      "addedKeys": 108,
+      "unexpectedKeys": 0,
+      "removedKeys": 0,
+      "positiveVerdictsCarried": 8
+    },
+    {
+      "tag": "T-303",
+      "study": "tile.LinkStiffnessThresholdStudyKt",
+      "seconds": 486,
+      "movedLeaves": 0,
+      "addedKeys": 1044,
+      "unexpectedKeys": 0,
+      "removedKeys": 0,
+      "positiveVerdictsCarried": 8
+    },
+    {
+      "tag": "T-316",
+      "study": "tile.SearchedDistributionStudyKt",
+      "seconds": 3123,
+      "movedLeaves": 0,
+      "addedKeys": 111,
+      "unexpectedKeys": 0,
+      "removedKeys": 0,
+      "positiveVerdictsCarried": 27,
+      "note": "a SEARCH study: CLAUDE.md records that a descent lands on a manifold, and this one reproduced its committed file exactly apart from the additions."
+    },
+    {
+      "tag": "T-322",
+      "study": "tile.RouteBCoupledStudyKt",
+      "seconds": 4074,
+      "movedLeaves": 0,
+      "addedKeys": 162,
+      "unexpectedKeys": 0,
+      "removedKeys": 0,
+      "positiveVerdictsCarried": 33,
+      "note": "the second SEARCH study, likewise exact apart from the additions."
+    }
+  ],
+  "totalStudySeconds": 9302,
+  "smokeSeconds": {
+    "T-279": 66,
+    "T-299": 98,
+    "T-284": 39,
+    "T-297": 34,
+    "T-303": 88,
+    "T-316": "cut at 320 s, 8 of 32 cells",
+    "T-322": "not run"
+  },
+  "smokeIsNotCheapForASearch": "A SMOKE switch prices the ENSEMBLE and not the SEARCH: grading realisations fall 4000 -> 150 (26.7x) and TRAINING realisations only 120 -> 40 (3x), so a search study has no cheap plumbing pass. T-316's smoke was cut at 320 s having graded 8 of 32 cells; the plumbing evidence came from the five studies that did smoke clean and from the compile.",
+  "everyRecordBacksOutFourThousand": true,
+  "byteIdenticalOnASecondRun": true,
+  "byteIdenticalHow": "T-297 re-run in the same snapshot and cmp-ed against the first run's copy OUTSIDE the study.",
+  "joinDisagreements": 0,
+  "joinConfirmed": "All five readings the cheap bound recovered by a whole-corpus p90 equality join are confirmed EXACTLY by the re-emission (gpd/data/T-337-cheap-bound/join-confirmed.py).",
+  "consumerMovedFields": 0,
+  "consumerContainment": "Every one of the ELEVEN studies that read one of the ten files does so with parseToJsonElement plus a named getValue; ZERO use decodeFromString. A new key is therefore invisible to every consumer by construction, which is a containment argument about the consumers' INPUTS (CH-0246) and not an assurance about their outputs.",
+  "gateIsClean": true,
+  "gitlessGreen": true,
+  "unpredictedGateWentRed": true,
+  "predictedGateThatWentRed": "tools/T-327-emit-result.py's arm 'the pinned reading and the working-tree control agree' -- predicted in the Plan as the only gate that would fire, and repaired under CH-0294.",
+  "secondDefectFoundByTheGate": {
+    "what": "a record emitting an exceedance and NOT its standard error, so the ensemble size cannot be backed out of it and has to be assumed",
+    "corpusWide": 680,
+    "files": {
+      "T-162": 14,
+      "T-197": 16,
+      "T-206": 8,
+      "T-299": 384,
+      "T-304": 256,
+      "T-327": 2
+    },
+    "repairedHere": 384,
+    "residue": 296,
+    "row": "T-341"
+  },
+  "cut": {
+    "tag": "T-323",
+    "study": "tile.JointPlacementDistributionStudyKt",
+    "positiveVerdictsLeftUntestable": 7,
+    "marginalPositivesLeftUntestable": 0,
+    "why": "the declared elastic, cut on the measured rate: T-316 ran 3123 s for 27 positives and T-322 4074 s for 33, so the two searches alone were 2 h 0 m of the 2 h 35 m spent. T-323 declares a five-hour budget of its own, carries SEVEN positives and NONE of the 25 at p90 >= 0.0975 -- the worst yield per minute in the set by two orders of magnitude.",
+    "row": "T-342"
+  },
+  "gatesThatWentRed": {
+    "predicted": "tools/T-327-emit-result.py, arm 'the pinned reading and the working-tree control agree' -- named in the Plan as the only gate that would fire.",
+    "unpredicted": "tools/T-327-emit-result.py, arm 'the exact verdict and the normal approximation agree at every record', whose second conjunct asserted recordsCompared == 1184 -- the population as it stood at 86b3bbd. T-337 took it to 1931 and the arm went red while its FINDING got stronger: 0 disagreements at 1931 of 1931. F6 fired, honestly, and both arms are repaired under CH-0294.",
+    "recordsComparedBefore": 1184,
+    "recordsComparedAfter": 1931,
+    "disagreementsBefore": 0,
+    "disagreementsAfter": 0
+  }
+}

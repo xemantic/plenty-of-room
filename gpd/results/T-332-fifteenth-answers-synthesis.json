@@ -20,7 +20,7 @@
     "whatIsDerived": "every count in this file is derived at baselineRef or from the working tree; only the passage CLASSIFICATION is declared, and each declared row's two anchors are asserted against both trees before the file is written",
     "noTiming": "no wall-clock field and no step counter, per CLAUDE.md: a timing is less reproducible than a step count and one such field makes a file un-diffable",
     "reRunHazard": "CH-0246: this file's subject is the corpus, so re-running it as a control on a later change re-bases the measurement and OVERWRITES the record rather than checking it; re-emit only deliberately, at a named ref",
-    "workingTreeCaveat": "the ref carries iteration 52's T-330 work as UNCOMMITTED, so the working-tree counts include C-0219 and CH-0284 and the ref counts do not; both are emitted"
+    "twoCommitsNotATree": "the ref carries iteration 52's T-330 work as UNCOMMITTED, so the reading after this pass differs from the reading at its baseline. T-340: BOTH are now commits -- baselineRef and bee6b06, the commit that carried this file -- where this file originally recorded the second as an uncommitted tree. A quantity that cannot be true at the moment it is written is not a quantity: a synthesis wanting to state what its own pass will look like is asking for a number that is unpinnable PRECISELY BECAUSE its own files are about to land (CH-0292)"
   },
   "selfDescribingCounts": {
     "claims": {
@@ -35,10 +35,11 @@
       "atRef": 459,
       "command": "tools/check-corpus-identifiers.py prints the sum on every run"
     },
-    "workingTreeBeforeThisClaimsOwnFiles": {
-      "challenges": 247,
-      "claims": 214,
-      "sum": 461
+    "atTheCommitThatCarriedThisFile": {
+      "ref": "bee6b060499391cb30ccad610e05b4234111ecb9",
+      "challenges": 249,
+      "claims": 215,
+      "sum": 464
     },
     "asWrittenBeforeThisPass": {
       "challenges": 231,
@@ -142,12 +143,13 @@
       "whyAHelper": "a harness that mutates Kotlin sources must be handed a snapshot directory and cannot be run bare, so it cannot be wired as a literal path"
     },
     "distinctToolsThatCanFailVerifySh": 50,
-    "atThisPassesWorkingTree": {
+    "atTheCommitThatCarriedThisFile": {
+      "ref": "bee6b060499391cb30ccad610e05b4234111ecb9",
       "verifyShOwn": 18,
       "gradleLiteral": 21,
       "gradleHelper": 12,
       "distinct": 51,
-      "why": "the ref carries iteration 52's T-330 work uncommitted, so its twelfth helper-wired harness is in the tree and not in the ref; the deliverable quotes the tree and names it"
+      "why": "the ref carries iteration 52's T-330 work uncommitted, so its twelfth helper-wired harness is in that pass's own commit and not in the ref. T-340: this block read the uncommitted TREE and now reads the COMMIT that carried this file, so the deliverable has a state it can name"
     },
     "asPublishedByC0210": 37,
     "sameQuantityAtC0210sOwnRef": 43,
@@ -419,8 +421,8 @@
     "28 passages moved over 6 of the seven declared kinds, 16 of them in the document NDI reads.",
     "The answer to section 3 row (g) moved twice more and neither deliverable knew it: a coupled cell is now flat AND inside C-0023's per-path allowable, at 7 of 48 cells on route B's own tile, which no previous synthesis could say.",
     "SUPERSEDED_RATIO is prosecuted and EMPTY for the second consecutive pass, and STALE_PRICE is 6 after being 7 and then 0 -- the two classes have now swapped places twice, which is only visible because both are declared.",
-    "The challenge-and-claim census is stale for the EIGHTH time in NINE passes: 231/204 as written against 246/213 derived at the ref and 247/214 at the working tree.",
-    "The checker census's NUMBER held at one predicate and its PREDICATE is dated at another: 12 Kotlin-subject mutation harnesses are wired through a helper and are invisible to the literal-path regex, so the honest count is 51 at this pass's working tree (50 at the ref) and not 37, and 37 was an undercount of 43 at its own ref (CH-0286).",
+    "The challenge-and-claim census is stale for the EIGHTH time in NINE passes: 231/204 as written against 246/213 derived at the ref and 249/215 at the commit that carried this file.",
+    "The checker census's NUMBER held at one predicate and its PREDICATE is dated at another: 12 Kotlin-subject mutation harnesses are wired through a helper and are invisible to the literal-path regex, so the honest count is 51 at the commit that carried this file (50 at the ref) and not 37, and 37 was an undercount of 43 at its own ref (CH-0286).",
     "Of the 27 occurrences of the triple C-0219 moved (excluding this pass's own), exactly ONE non-owner still states it live -- C-0191 section 2(b), a synthesis claim's own correction table -- and no gate in this repository can see it, because the withdrawn value is still CITED by the claims that withdrew it (CH-0287)."
   ]
 }

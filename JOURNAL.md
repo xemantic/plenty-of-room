@@ -13443,3 +13443,190 @@ by three emitters and never read back.
 unit transfer, the other an unpinned reading made stale by a commit landing in the same act. That is the third
 and fourth instance of the receiving side catching the sending side, and the argument for pairing rather than
 serialising remains the strongest process result this session has produced.
+
+## Iteration 55 — 2026-08-25: a datum computed and thrown away, and a reading that was right seven times out of thirteen
+
+Both agents' task files committed before either wrote code. The larger row was a six-study re-emission and
+the smaller was a two-line removal, and both turned on a question the plan had to answer before any code:
+what is recoverable without re-running, and what is legitimate to emit at all.
+
+### `T-340` + `T-339` — a working-tree reading, measured before it was refused
+
+`C-0224` opened two rows and put the honest question in the second: **does a working-tree reading
+have any legitimate use?** If it does, the fix is a key a gate can refuse; if it does not, the fix
+is to stop emitting it. The row insisted it be answered first, and it was answered with a census
+rather than a preference.
+
+**It is answered both ways, and the split is what the whole task turns on.** Over every committed
+result file, **13** carry a reading of an uncommitted working tree, under **23** distinct key names
+and **155** integer leaves (**199** counting floats) — against the row's *"the two in the corpus"*,
+which is what `C-0224`'s own `CENSUS_MARKERS` scope could see. **Seven of the thirteen are
+legitimate**: the *after* half of a before/after measurement of a repair the pass itself performs —
+`T-285`'s **21 → 0**, `T-281`'s **21 → 21** (the repair moved no pre-existing defect, which is the
+finding), `T-282`'s **9** against **8** at its ref. The *before* is pinned at the file's own
+`baselineRef`; the *after* cannot be pinned **by construction**, because an emitter runs before its
+own commit exists, and deleting it would delete the corpus's standard evidence that a repair worked.
+
+So the refusal cannot be on the key. **It is on the quantity**: the two offending records carry a
+*declared registry quantity* — a count the deliverable prints about itself — so the same count sits
+in two publishable readings and a prose writer must choose. `CH-0292` is what choosing wrong looks
+like.
+
+**A mechanical test settles it with no taste at all.** `gpd/README.md` requires a result file to be
+reproducible from itself. Re-run `tools/T-334-emit-result.py` at its own `baselineRef` and **55**
+leaves move, **55 of 55** inside a working-tree block, the pinned half at **0**. `T-327` at
+`86b3bbd` is identical — kind C, stable by luck. And `tools/T-332-emit-result.py` **refused to run
+at all**: **1** of its **26** declared AFTER anchors no longer occurs, and it is the very passage
+`CH-0292`'s repair struck. A synthesis emitter that asserts its own prose is still *live* is
+hostage to *strike, never delete*, which guarantees a later pass will amend it.
+
+**The decision was REMOVE, not rename**, and the coordinator's sentence is the one worth keeping: *a
+quantity that cannot be true at the moment it is written is not a quantity.* A synthesis wanting to
+state what its own pass will look like is asking for a number that is unpinnable **precisely
+because** its own files are about to land. What replaces each removed reading is not a renamed key
+but a **different, pinned measurement** — the same census at the commit that carried the file,
+`bee6b06` and `bb678d2`, which is available one commit later and was not available at emit time.
+After it `CH-0293`'s four wrong leaves read **13**, and `theCensusMovesItsOwnAnswer` keeps its
+`CH-0182` finding with **both terms pinned**, `44 → 46`.
+
+The surprise inside the surprise: **the two records were not alike, and no reader could tell.**
+`T-332`'s removed value was a *hardcoded literal* that no `--ref` reproduces and none refutes;
+its neighbouring checker-census tree reading, `18 / 21 / 12 / 51`, was **right** and is the same at
+`bee6b06`. `T-334`'s was a live derivation, four of whose thirteen leaves were **wrong at the moment
+they were committed**. One right, one wrong, neither nameable — **unpinnable is a defect
+independently of whether the value happens to be correct.**
+
+Arm C — *no result file records a declared registry quantity under a working-tree key* — is scoped
+by the **key** and not by the census family, because `T-327`'s file carries a **173**-entry
+`atThisPassesTree` block and none of the three markers. It was **4** leaves in **2** blocks before
+the repair and is **0** after, which is what let `T-339` be the one-constant promotion it was
+described as. Building it exposed two limitations of the registry it extends, both repaired with
+named tests: a pinned block may now name **its own `ref`** (the re-derivation goes 11 → **15**
+records, 0 mismatches), and a registry leaf is matched with the state key **stripped**, so one
+quantity at two pinned states is two records.
+
+`T-339`'s own premise had already been discharged: the prose arm has been **green at `HEAD` since
+`7ff9d07`**, so the flip was available before this iteration began. What was worth doing was the
+thing `C-0177` warns about — **a promoted gate that cannot fail is worse than a printed one** — and
+it is refused by a constructed red fixture rather than by argument, with the mutation harness's
+killer sets compared before and after the flip (**43 rows both sides, 0 survivors, nothing shrank**).
+
+Two challenges out. `CH-0295`: a Gradle task written `val x by tasks.registering(Exec::class)` is
+**invisible** to `T-334`'s reachability parser and reads as a by-hand harness — **0 of 61** Exec
+tasks use that form, so the hole is latent and writing the 62nd is what found it. `CH-0296`: arm C
+matches a registry quantity by its record leaf's **name**, so `sum` (which is `claimsAndChallenges`)
+and `distinct` (which is `gateCensusUnion`) are invisible to it; both were removed anyway because
+they sat in blocks it did see, which is **adjacency** doing the reasoning again.
+
+### `T-337` — the exceedance beside every verdict, and the `87` that could not be tested without one
+
+`C-0223` derived that a `flatAtP90` verdict *is* the binomial statement `exceedance ≤ 0.10`, and then had to
+**refuse** `87` of the corpus's `106` positive flatness verdicts, because their record emits no exceedance.
+This row lifted the refusal, and the first thing the cheap bound established is that the datum was never
+missing in the sense that mattered: **all ten studies already call `summariseDropoutDishing` and discard the
+proportion one line before writing the verdict.**
+
+The cheap bound also answered the scoping question the row turns on. Nothing is recoverable **within** a
+record — population C carries no second order statistic of the same sample. **Five** of the `87` are
+recoverable **across** the corpus, by an exact `p90` equality against a donor that does carry an exceedance;
+all five are `C-0180`'s two recovered cells graded again elsewhere, and all five read `UNDETERMINED`. So
+**`82` needed a re-emission and `5` did not** — and the runs later confirmed those five values *exactly*,
+which is the strongest form the cheap-bound discipline takes.
+
+Seven files re-emitted, `2 h 35 m` of study time, and the answer over `C-0223`'s own eighteen files is
+**`99` of `106` positive verdicts now testable against `19`, and `31` `UNDETERMINED` against `7`** — including
+**`31` of the `32`** at `p90 ≥ 0.0975` and **six that sit at exactly `400` of `4 000`**, the tolerance itself.
+`C-0212`'s `22 of 32` survives at `19` determined and `C-0215`'s `27 of 48` at `26`, so both counts the
+deliverables lead with stand and both now have a third state. `C-0223`'s asymmetry is upheld and sharpened:
+`31.3 %` of positives are undetermined against `0.87 %` of `1 832` negatives.
+
+**What surprised us, three times.**
+
+**First, `F2` did not fire.** The Plan named it the largest risk in the row: three of the seven studies are
+**searches**, and `CLAUDE.md` records that a descent lands on a manifold rather than a point. Measured file by
+file, the re-emission is **purely additive at `7 of 7`** — `0` moved leaves, `0` unexpected keys, `0`
+removals — including `T-316` and `T-322`. The searches reproduced their committed files exactly.
+
+**Second, the task's own gate found a defect nobody had named.** Its third gate demands the ensemble size be
+*backed out* of the record rather than assumed, and it failed at `384` records of `T-299` that carry an
+`exceedance` and **no** `exceedanceStandardError`. Corpus-wide that is **`680` records in `6` files** —
+`DropoutSummary`'s own KDoc says *"a probability without one is not a result"*. `384` repaired here, `296`
+left as a row.
+
+**Third, `F6` fired**, on an arm nobody predicted. The Plan predicted exactly one gate would go red —
+`T-327`'s working-tree control, which asserts that today's tree equals a corpus pinned at `86b3bbd` — and a
+**second** arm of the same emitter went with it: `recordsCompared == 1184`, the population frozen as an
+invariant. Enlarging the census breaks the count while making the finding **stronger** (`0` disagreements at
+`1 931` of `1 931`). A count broke and a claim did not; both arms are repaired under `CH-0294`, and the
+repair turns a frozen size into a **direction** so a shrinking population still fails.
+
+**What was cut, and why, with the rate.** `T-323` was the declared elastic and was cut: seven positive
+verdicts, **none** of them marginal, against a five-hour budget of its own — `≤ 0.023` positives per minute
+where the five cheap studies deliver `0.57`. Its `7` verdicts are printed in the gate's residue on every run
+rather than being quietly absent. `T-291` and `T-310` were not run either; between them they carry `474`
+verdict-bearing records and `0` positive verdicts.
+
+**And a scoping lesson worth keeping**: `T-299` joined the committed set for a reason no census could show.
+`T-303`'s `routeB` block *transcribes* `T-299`'s verdicts rather than grading its own, so without `T-299`
+carrying the datum `T-303` could not publish one either — a constraint that only appeared once the carry was
+written. The re-emission order was re-derived rather than inherited, and the committed census was stale by
+seven studies, three of them this task's: it reports **two** constraints inside the seven where there are
+**four**.
+
+### Iteration 55's close-out — two questions answered before any code, and one of them both ways
+
+**`T-337`'s finding is the kind that is embarrassing in retrospect and invisible in prospect.** Seven studies
+built a full `DropoutSummary`, kept `p90` and `flatAtP90`, and **discarded the `exceedance` on the very next
+line** — so the corpus spent `C-0223` establishing that `87` of its `106` positive flatness verdicts could not
+be tested against their own sampling error, and then a second claim establishing that the datum could not be
+recovered from what a record carried. It could not. It was simply never written down. Carried, **`99 of 106`**
+are testable and **`31` are `UNDETERMINED`** against `C-0223`'s `7`, with **six sitting at exactly `400` of
+`4 000`** — the tolerance itself.
+
+**The sweep was purely additive at `7 of 7`**, including both search studies, where this file records that a
+descent lands on a manifold and two runs of identical code have differed before. `T-316` reproduced **byte for
+byte** with the new field removed, which is the strongest form that check takes.
+
+**`T-340` asked whether a working-tree reading has any legitimate use, and the honest answer was *sometimes*.**
+The plan expected a blanket removal. Measured over every committed result file — **13** carriers, **23** key
+names, **155** integer leaves — **7 of the 13 are correct**: they are the *after* half of a repair the pass
+itself performs, which `C-0092` requires and which is un-pinnable by construction. So the refusal belongs on
+the **quantity**, not the key, and only the two carrying a declared registry quantity were removed. That is the
+difference between a rule and a reflex, and it was worth the measurement.
+
+**Two predicted failures fired and both were designed for.** `T-337`'s `F6` predicted that `T-327`'s
+working-tree control arm would go red the moment the first file landed, and it did — an arm asserting that a
+working tree agrees with a pinned corpus is a **staleness detector wearing a pass/fail hat**, and it *must*
+fire when the corpus legitimately moves. `T-339`'s promotion was held behind `T-340` for the same reason in
+reverse: a gate may not be promoted while it is red.
+
+**And what `F6` actually caught was a count frozen as an invariant.** A second arm of the same emitter
+asserted `recordsCompared == 1184` — a population that was true when written and is not a property of
+anything. Both arms of that emitter therefore had to fire the moment the corpus legitimately grew, and the
+repair in each case is the same: the pinned reading stays a gate, the moving comparison becomes a printed
+residue. **A closed falsifier can be wrong about a POPULATION as easily as about an arithmetic**, and neither
+kind announces itself, because a check that never fires looks identical whether it is sound or vacuous.
+
+**One coordination note against myself.** Writing `T-337`'s closing queue row I cited two challenge filenames
+from memory and both were wrong — `CH-0291` is *a prior is not a bound*, not what I guessed. The link gate
+caught them immediately, which is what it is for, and it is this file's own *a cross-reference is a filename,
+and a filename is a number like any other*. The rule does not exempt the coordinator, which is now the second
+time this session that sentence has needed writing.
+
+### And a report that contradicted itself, caught by the rule that exists for it
+
+Agent W's two reports on `T-337` disagreed materially. The first said `F9` had been **withdrawn** as
+arithmetically false and that the cut study was `T-322`; the second said `F9` **holds** — `31 / 31 / 34` at
+`90 / 95 / 99 %`, monotone as nested intervals require — and that the cut was `T-323`, `T-322` having been run
+at `4 074` s. I had already written the first version into the queue row, the journal, the cold-start note and
+a `CLAUDE.md` entry.
+
+`C-0225` settles it: `F9` holds, `T-323` is the declared cut, and the falsifier that fired is `F6`, on a second
+arm asserting `recordsCompared == 1184`. All four artifacts are corrected against the claim.
+
+This is the rule `SESSION-PROMPT.md` states in as many words — *a subagent's chat report is a summary written
+by an agent that may still be working; the claim, the challenge and the result JSON are the artifacts* — and it
+is the fifth recorded instance. What is new is the direction: previous instances were a report that overstated
+what had been done, and this one was a report that **understated its own result**, reporting a sound falsifier
+as withdrawn. Both are cured by the same one-minute `grep`, and the reason to keep writing it down is that the
+coordinator is the one who propagates the error, three times in two iterations now.

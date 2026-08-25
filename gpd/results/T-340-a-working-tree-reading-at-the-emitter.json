@@ -1,0 +1,312 @@
+{
+ "emission": {
+  "lattice": "none",
+  "regime": []
+ },
+ "task": "T-340",
+ "title": "whether a working-tree reading has any legitimate use - measured over every committed result file, and answered BOTH ways by what the reading is OF",
+ "baselineRef": "91f9a486f9d9c4e6a6ee66d2b4f350333a737947",
+ "baselineRefRequested": "91f9a48",
+ "parameters": {
+  "workingTreeKeyExpression": "WorkingTree|workingTree|ThisPassesTree|InTheTree|quietTree",
+  "howTheExpressionWasDerived": "from the 23 such key names the corpus carries at 91f9a48, listed in tools/T-336-pinned-count-census.py's WORKING_TREE_KEY_NAMES and held against all 23 by a named test -- a predicate is dated by its premise set (CH-0182), so what it was measured against travels with it",
+  "kindRule": "A: the AFTER half of a before/after measurement of a repair the pass performs, un-pinnable because an emitter runs before its own commit exists. B: a rival ABSOLUTE reading of a declared registry quantity, whose pinned counterpart already answers the same question. C: a reading of a corpus the pass does not change, pinnable at its own commit",
+  "readerScope": [
+   "src",
+   "tools",
+   "build.gradle.kts"
+  ],
+  "selfExclusion": "this file is excluded from its own population by name: its own armC/atTheWorkingTree key matches the working-tree key expression, so it enters the census the moment it exists and the count would differ between a first emission and a second. CH-0182, discharged by NAMING the exclusion",
+  "whyProseIsExcludedFromTheReaderScope": "a sentence ABOUT the defect is not a reader OF it, and counting one would make every repair look load-bearing",
+  "whyThisRef": "91f9a48 carries this task's Formulate and Plan and is the state the crux was measured at, BEFORE any repair. Pinned rather than defaulted to HEAD: a corpus-subject emitter defaulting to a moving ref re-bases its own measurement between the draft and the emission (CH-0246)",
+  "reRunHazard": "CH-0246: this file's subject is the corpus, so re-running it as a control on a later change re-bases the measurement and OVERWRITES the record rather than checking it. Re-emit only deliberately, at the named ref"
+ },
+ "theCrux": {
+  "question": "does a working-tree reading have any legitimate use -- if it does the fix is a key a gate can refuse, if it does not the fix is to stop emitting it",
+  "answer": "BOTH, and the discriminator is what the reading is OF rather than where it is written. Kind A is legitimate and un-pinnable by construction; kind B is a rival reading of a count the deliverable prints about itself, and for it the answer is REMOVAL",
+  "whyRemovalAndNotARenamedKey": "a synthesis wanting to state what its own pass will look like is asking for a number that is unpinnable PRECISELY BECAUSE the pass's own files are about to land, so it is stale before the commit that carries it. A quantity that cannot be true at the moment it is written is not a quantity. A renamed key is one a gate must keep refusing for ever; a removed one leaves arm C an EMPTY POPULATION BY CONSTRUCTION",
+  "andTheStateITWASREACHINGFORBECOMESNAMEABLEONECOMMITLATER": "an emitter cannot name its own commit, but a LATER pass can -- which is why the replacement is not a rename but a different, pinned measurement: the same census at bee6b06 for T-332 and at bb678d2 for T-334"
+ },
+ "populationAtTheRef": {
+  "files": 13,
+  "distinctKeyNames": 23,
+  "numericLeaves": 155,
+  "numericLeavesIncludingFloats": 199,
+  "registryLeaves": 4,
+  "byKind": {
+   "A": [
+    "P-30-queue-row-coverage",
+    "T-250-prose-interpolation-sweep",
+    "T-281-name-the-discharge",
+    "T-282-classification-regeneration",
+    "T-285-a-slug-is-not-a-statement",
+    "T-289-a-verdict-in-the-wrong-column",
+    "T-292-the-column-repair"
+   ],
+   "B": [
+    "T-332-fifteenth-answers-synthesis",
+    "T-334-the-gate-census-by-reachability"
+   ],
+   "C": [
+    "T-207-format-string-repair",
+    "T-280-debt-line-as-a-ratio",
+    "T-286-a-regime-is-a-set",
+    "T-327-the-resolution-of-the-flatness-census"
+   ]
+  },
+  "perFile": {
+   "P-30-queue-row-coverage": {
+    "keys": [
+     "workingTreeReadings",
+     "workingTreeRepairedReader"
+    ],
+    "numericLeaves": 1,
+    "numericLeavesIncludingFloats": 1,
+    "registryLeaves": 0,
+    "kind": "A",
+    "evidence": "workingTreeRepairedReader is the open-row count AFTER this pass's own repair of the reader, against the pre-repair reading the same file records"
+   },
+   "T-207-format-string-repair": {
+    "keys": [
+     "aNINEDIGITREPRODUCTIONDEPARTUREIsStillInTheTree"
+    ],
+    "numericLeaves": 0,
+    "numericLeavesIncludingFloats": 0,
+    "registryLeaves": 0,
+    "kind": "C",
+    "evidence": "a prose note that a nine-digit departure is still in the tree; no numeric leaf"
+   },
+   "T-250-prose-interpolation-sweep": {
+    "keys": [
+     "afterInTheWorkingTree"
+    ],
+    "numericLeaves": 5,
+    "numericLeavesIncludingFloats": 5,
+    "registryLeaves": 0,
+    "kind": "A",
+    "evidence": "afterInTheWorkingTree against beforeAtHead -- the pass's own prose repair"
+   },
+   "T-280-debt-line-as-a-ratio": {
+    "keys": [
+     "priceInTheTree"
+    ],
+    "numericLeaves": 12,
+    "numericLeavesIncludingFloats": 14,
+    "registryLeaves": 0,
+    "kind": "C",
+    "evidence": "priceInTheTree is a corpus census this pass does not change, beside atTheBaselineRef"
+   },
+   "T-281-name-the-discharge": {
+    "keys": [
+     "preExistingDefectsAfterOnTheWorkingTree",
+     "preExistingDefectsBeforeOnTheWorkingTree"
+    ],
+    "numericLeaves": 2,
+    "numericLeavesIncludingFloats": 2,
+    "registryLeaves": 0,
+    "kind": "A",
+    "evidence": "preExistingDefectsBefore/AfterOnTheWorkingTree, 21 against 21 -- the repair moved no pre-existing defect, which is the finding"
+   },
+   "T-282-classification-regeneration": {
+    "keys": [
+     "gateWithThePredicateAloneOnTheWorkingTree",
+     "quietTree"
+    ],
+    "numericLeaves": 1,
+    "numericLeavesIncludingFloats": 1,
+    "registryLeaves": 0,
+    "kind": "A",
+    "evidence": "gateWithThePredicateAloneOnTheWorkingTree 9 against 8 at the baseline ref, with the reason in quietTree"
+   },
+   "T-285-a-slug-is-not-a-statement": {
+    "keys": [
+     "gateDefectsAfterOnTheWorkingTree",
+     "gateDefectsBeforeOnTheWorkingTree"
+    ],
+    "numericLeaves": 2,
+    "numericLeavesIncludingFloats": 2,
+    "registryLeaves": 0,
+    "kind": "A",
+    "evidence": "gateDefectsBefore/AfterOnTheWorkingTree, 21 against 0 -- the pass's own repair"
+   },
+   "T-286-a-regime-is-a-set": {
+    "keys": [
+     "workingTreeCorpus",
+     "workingTreeStatedFiles"
+    ],
+    "numericLeaves": 9,
+    "numericLeavesIncludingFloats": 9,
+    "registryLeaves": 0,
+    "kind": "C",
+    "evidence": "workingTreeCorpus is a census of result files this pass does not change"
+   },
+   "T-289-a-verdict-in-the-wrong-column": {
+    "keys": [
+     "atTheWorkingTree",
+     "byHeadingOnTheWorkingTree",
+     "onTheWorkingTree",
+     "perTablePartitionOnTheWorkingTree",
+     "verdictsOnTheWorkingTree"
+    ],
+    "numericLeaves": 17,
+    "numericLeavesIncludingFloats": 17,
+    "registryLeaves": 0,
+    "kind": "A",
+    "evidence": "atTheWorkingTree against atTheBaselineRef throughout, over the pass's own predicate"
+   },
+   "T-292-the-column-repair": {
+    "keys": [
+     "whyTheWorkingTreeReadingDiffers"
+    ],
+    "numericLeaves": 0,
+    "numericLeavesIncludingFloats": 0,
+    "registryLeaves": 0,
+    "kind": "A",
+    "evidence": "whyTheWorkingTreeReadingDiffers is prose naming which rows moved and why"
+   },
+   "T-327-the-resolution-of-the-flatness-census": {
+    "keys": [
+     "atThisPassesTree"
+    ],
+    "numericLeaves": 85,
+    "numericLeavesIncludingFloats": 127,
+    "registryLeaves": 0,
+    "kind": "C",
+    "evidence": "atThisPassesTree reads result files this pass does not re-emit; identical to its own baselineRef reading today, which is luck and not design"
+   },
+   "T-332-fifteenth-answers-synthesis": {
+    "keys": [
+     "atThisPassesWorkingTree",
+     "workingTreeBeforeThisClaimsOwnFiles",
+     "workingTreeCaveat"
+    ],
+    "numericLeaves": 7,
+    "numericLeavesIncludingFloats": 7,
+    "registryLeaves": 2,
+    "kind": "B",
+    "evidence": "workingTreeBeforeThisClaimsOwnFiles records the challenge-and-claim census, a DECLARED registry quantity, at a tree -- and as a HARDCODED literal at that"
+   },
+   "T-334-the-gate-census-by-reachability": {
+    "keys": [
+     "atThisPassesTree"
+    ],
+    "numericLeaves": 14,
+    "numericLeavesIncludingFloats": 14,
+    "registryLeaves": 2,
+    "kind": "B",
+    "evidence": "atThisPassesTree records the gate-census union and the naming predicate, both DECLARED registry quantities, at a tree that resolves nowhere"
+   }
+  }
+ },
+ "populationAfterTheRepair": {
+  "files": 11,
+  "numericLeaves": 134,
+  "registryLeaves": 0,
+  "whatChanged": [
+   "T-332-fifteenth-answers-synthesis",
+   "T-334-the-gate-census-by-reachability"
+  ]
+ },
+ "readers": {
+  "nonProseConsumers": 0,
+  "consumers": [],
+  "occurrencesByRole": {
+   "CENSUS-CLASSIFIES": 43,
+   "EMITTER-WRITES": 55,
+   "PROSE": 2
+  },
+  "whatThisDecides": "removing a working-tree block breaks nothing downstream, so the repair is a deletion rather than a schema migration -- and if this number were not zero the recommendation would invert from REMOVE to RENAME"
+ },
+ "armC": {
+  "predicate": "no result file records a DECLARED REGISTRY QUANTITY under a working-tree key -- scoped by the KEY and not by CENSUS_MARKERS",
+  "whyKeyScopedAndNotFamilyScoped": "gpd/results/T-327-the-resolution-of-the-flatness-census.json carries a 173-entry atThisPassesTree block and none of the three census markers, so a family-scoped arm would have had a measured hole on its first day",
+  "atTheRef": [
+   {
+    "file": "gpd/results/T-332-fifteenth-answers-synthesis.json",
+    "path": "selfDescribingCounts/workingTreeBeforeThisClaimsOwnFiles/challenges",
+    "value": 247,
+    "quantity": "challenges"
+   },
+   {
+    "file": "gpd/results/T-332-fifteenth-answers-synthesis.json",
+    "path": "selfDescribingCounts/workingTreeBeforeThisClaimsOwnFiles/claims",
+    "value": 214,
+    "quantity": "claims"
+   },
+   {
+    "file": "gpd/results/T-334-the-gate-census-by-reachability.json",
+    "path": "atThisPassesTree/distinctToolsThatCanFailADefaultVerifyShRun",
+    "value": 46,
+    "quantity": "gateCensusUnion"
+   },
+   {
+    "file": "gpd/results/T-334-the-gate-census-by-reachability.json",
+    "path": "atThisPassesTree/theFourPredicatesThisReplaces/namingPrefix/count",
+    "value": 11,
+    "quantity": "namingPredicate"
+   }
+  ],
+  "atTheWorkingTree": [],
+  "gatedAt": "tools/T-336-pinned-count-census.py --check"
+ },
+ "theReproducibilityTest": {
+  "rule": "gpd/README.md requires a result file to be reproducible from it alone; re-run the emitter at the file's own recorded baselineRef and diff",
+  "beforeTheRepair": [
+   {
+    "file": "T-334-the-gate-census-by-reachability.json",
+    "ref": "d9a3522",
+    "movedLeaves": 55,
+    "insideAWorkingTreeBlock": 55,
+    "outside": 0
+   },
+   {
+    "file": "T-327-the-resolution-of-the-flatness-census.json",
+    "ref": "86b3bbd",
+    "movedLeaves": 0,
+    "insideAWorkingTreeBlock": 0,
+    "outside": 0
+   },
+   {
+    "file": "T-332-fifteenth-answers-synthesis.json",
+    "ref": "d7b7074",
+    "movedLeaves": null,
+    "insideAWorkingTreeBlock": null,
+    "outside": null,
+    "why": "the emitter REFUSED to run: 1 of its 26 declared AFTER anchors no longer occurs, and it is the passage CH-0292's own repair struck"
+   }
+  ],
+  "afterTheRepair": [
+   {
+    "file": "T-334-the-gate-census-by-reachability.json",
+    "ref": "d9a3522",
+    "removed": 155,
+    "added": 157,
+    "changed": 4,
+    "removedOutsideAWorkingTreeBlock": 0,
+    "what": "the atThisPassesTree block, replaced by the same census at bb678d2; the four changed leaves are armOneAtThreeRefs[2], whose two counts go 12 to 13 exactly as CH-0293 says they must"
+   },
+   {
+    "file": "T-332-fifteenth-answers-synthesis.json",
+    "ref": "d7b7074",
+    "removed": 9,
+    "added": 11,
+    "changed": 2,
+    "removedOutsideAWorkingTreeBlock": 0,
+    "what": "the two tree blocks, replaced by the same counts at bee6b06; the two changed leaves are prose findings that quoted the tree reading"
+   }
+  ]
+ },
+ "theTwoRecordsWereNOTALIKE": {
+  "T-332": "the removed value was a HARDCODED literal -- 247/214/461 typed into the emitter -- so no --ref reproduces it and no --ref refutes it, and it occurs at 0 of the repository's 298 commits (CH-0292). Its checker-census tree reading, by contrast, was RIGHT: 18/21/12/51 at the tree and the same at bee6b06",
+  "T-334": "the removed value was a live derivation, and four of its thirteen leaves were WRONG at the moment they were committed, because a sibling agent added and wired the thirteenth helper harness in that same commit (CH-0293). Its HEADLINE, 46, was right at bb678d2",
+  "theLesson": "one was right and one was wrong and NO READER COULD TELL WHICH, because neither named a state. Unpinnable is a defect independently of whether the value happens to be correct"
+ },
+ "findings": [
+  "The crux is answered BOTH ways and the split is measured: 13 files carry a working-tree reading, 7 of them legitimately (kind A, the after half of a repair the pass performs, which cannot be pinned because an emitter runs before its own commit exists) and 2 of them as a rival reading of a count the deliverable prints about itself.",
+  "The row said TWO records; the population is 13 files, 23 distinct key names and 155 numeric leaves, and the census that raised the row could see only four of the files because it is scoped by CENSUS_MARKERS.",
+  "Non-prose consumers of a working-tree leaf: 0. Nothing in src/, tools/ or build.gradle.kts reads one except the emitter that writes it and the census that classifies it, so removal is a deletion and not a schema migration.",
+  "The mechanical test needs no taste at all: a working-tree block is exactly the part of a corpus-subject file that makes it irreproducible from itself. T-334 re-run at its own baselineRef moved 55 leaves, 55 of 55 inside a working-tree block, its pinned half at 0.",
+  "A quantity that cannot be true at the moment it is written is not a quantity, and the state it was reaching for becomes nameable one commit later -- which is why the replacement is a different PINNED measurement and not a renamed key.",
+  "Arm C's population goes from 4 leaves at the ref to 0 at the repaired tree, which is what makes T-339 a one-constant promotion rather than a widening."
+ ]
+}

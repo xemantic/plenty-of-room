@@ -89,9 +89,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RESULTS = "gpd/results"
 DELIVERABLES = ("ANSWERS.md", "DECISIONS-FOR-NDI.md")
 
-#: `T-339` flips this to True once `ANSWERS.md` carries the pinned reading.  It is ONE constant on
-#: purpose: a promotion that needs a rewrite is a promotion nobody performs.
-PROSE_ARM_IS_GATED = False
+#: `T-339`: FLIPPED, iteration 55.  It was ONE constant on purpose -- a promotion that needs a
+#: rewrite is a promotion nobody performs -- and the promotion cost exactly that one line plus the
+#: inversion of the named test below.  `C-0083`: a gate that cannot come clean is not a gate, so
+#: the flip waited for two things and both are demonstrated rather than argued: the coordinator's
+#: `CH-0292` substitution in `7ff9d07`, after which this arm reads 0 at `HEAD`, and `T-340`'s
+#: removal of the two working-tree registry readings, after which arm C does too.
+PROSE_ARM_IS_GATED = True
 
 
 def _load(name, filename):
@@ -222,8 +226,12 @@ def quantity(name):
 
 # --- pinned and unpinned records ------------------------------------------------------------------
 
-#: A key under which a recorded value is PINNED to the file's own resolved `baselineRef`.
-PINNED_KEYS = ("atRef", "atBaselineRef")
+#: A key under which a recorded value is PINNED -- to the nearest enclosing resolved `ref`, and to
+#: the file's own `baselineRef` where there is none.  `atTheCommitThatCarriedThisFile` is `T-340`'s:
+#: an emitter runs BEFORE its own commit exists, so the state a synthesis wants to describe -- what
+#: its own pass looks like -- can only be named by a LATER pass, and when it is, it is a state like
+#: any other rather than a tree.
+PINNED_KEYS = ("atRef", "atBaselineRef", "atTheCommitThatCarriedThisFile")
 
 #: A key under which a recorded value names NO state that resolves.  Declared, so that such a
 #: record is legal and listed rather than silently read as pinned -- and so the prose arm can
@@ -247,6 +255,30 @@ UNPINNED_KEYS = (
     # measurement of this file's own state, and `C-0092`'s *a repair must leave the defect
     # measurable* is why it is retained rather than removed.
     "asPublishedByC0210",
+)
+
+#: A key whose NAME says its value was read at an UNCOMMITTED working tree -- the FIRST of the
+#: three kinds `C-0224` section 2 distinguishes, and the only one that is a reading of a *tree*
+#: rather than a transcription.  It is ONE expression rather than an enumeration, because
+#: `C-0176`'s *a mutation must replace a rule wholesale* is also an argument about how a rule ages:
+#: an enumerated set is a set the next key falls out of.  It was DERIVED from the 23 such names the
+#: corpus carries at `91f9a48`, listed below, and a named test holds it against all 23.
+_WORKING_TREE_KEY = re.compile(r"WorkingTree|workingTree|ThisPassesTree|InTheTree|quietTree")
+
+#: The corpus's own 23 working-tree key names at `91f9a48`.  A FIXTURE, not the rule: it records
+#: what the expression above was measured against, so a future key that escapes it is a visible
+#: failure of a named test rather than a silent widening (`CH-0182`: a census is dated by its
+#: premise set, and so is a predicate).
+WORKING_TREE_KEY_NAMES = (
+    "aNINEDIGITREPRODUCTIONDEPARTUREIsStillInTheTree", "afterInTheWorkingTree",
+    "atTheWorkingTree", "atThisPassesTree", "atThisPassesWorkingTree",
+    "byHeadingOnTheWorkingTree", "gateDefectsAfterOnTheWorkingTree",
+    "gateDefectsBeforeOnTheWorkingTree", "gateWithThePredicateAloneOnTheWorkingTree",
+    "onTheWorkingTree", "perTablePartitionOnTheWorkingTree",
+    "preExistingDefectsAfterOnTheWorkingTree", "preExistingDefectsBeforeOnTheWorkingTree",
+    "priceInTheTree", "quietTree", "verdictsOnTheWorkingTree", "whyTheWorkingTreeReadingDiffers",
+    "workingTreeBeforeThisClaimsOwnFiles", "workingTreeCaveat", "workingTreeCorpus",
+    "workingTreeReadings", "workingTreeRepairedReader", "workingTreeStatedFiles",
 )
 
 #: A result file carrying one of these anywhere is a census-family file and must be classifiable.
@@ -351,6 +383,33 @@ def records(tree):
     return out
 
 
+def _ref_for(document, path, baseline):
+    """The state a value at `path` is pinned to: the NEAREST enclosing resolved `ref`, else the
+    file's own `baselineRef`.
+
+    `T-340`: a pinned block may name its own commit -- `T-334` now records one census at its
+    `baselineRef` and a second at the commit that carried the file -- and a re-derivation that
+    used the file's `baselineRef` for both would report a false mismatch on the second. The
+    attribution is a property of the BLOCK, not of the file.
+    """
+    node = document
+    ref = baseline
+    for key in path:
+        if isinstance(node, dict):
+            candidate = node.get("ref")
+            if isinstance(candidate, str) and _SHA.match(candidate):
+                ref = candidate
+            node = node.get(key)
+        elif isinstance(node, list):
+            try:
+                node = node[int(key)]
+            except (ValueError, IndexError):
+                return ref
+        else:
+            return ref
+    return ref
+
+
 def pinned_values(tree, quantities=QUANTITIES):
     """`{quantity name: {value: [(file, ref)]}}` -- what a deliverable is allowed to quote."""
     out = dict((q.name, {}) for q in quantities)
@@ -361,11 +420,80 @@ def pinned_values(tree, quantities=QUANTITIES):
         for path, value in _walk(document):
             if not isinstance(value, int) or isinstance(value, bool):
                 continue
-            for q in quantities:
-                if tuple(path[-len(q.record_leaf):]) == q.record_leaf \
-                        and classify(path) == "PINNED":
-                    out[q.name].setdefault(value, []).append((name, base))
+            # The leaf is matched with the STATE KEY STRIPPED (`registry_quantity_of`), not
+            # against one hardcoded state: a quantity recorded at two pinned states is two
+            # records, and a registry that could see only `atBaselineRef` would leave the second
+            # un-re-derived -- which is how a correct new reading becomes an unchecked one.
+            q = registry_quantity_of(path, quantities)
+            if q is not None and classify(path) == "PINNED":
+                out[q.name].setdefault(value, []).append(
+                    (name, _ref_for(document, path, base)))
     return out
+
+
+def registry_quantity_of(path, quantities=QUANTITIES):
+    """The declared quantity a JSON path records, or `None` -- with every STATE key stripped.
+
+    A quantity is the same quantity whether it is recorded at a ref or at a tree, so the state key
+    is exactly what must NOT enter the match: `selfDescribingCounts/challenges/atRef` and
+    `selfDescribingCounts/workingTreeBeforeThisClaimsOwnFiles/challenges` are one count read twice,
+    and an arm that could not see that would be an arm about key names rather than about counts.
+    """
+    stripped = tuple(key for key in path
+                     if key not in PINNED_KEYS and key not in UNPINNED_KEYS
+                     and not _WORKING_TREE_KEY.search(key))
+    for q in quantities:
+        body = tuple(key for key in q.record_leaf
+                     if key not in PINNED_KEYS and key not in UNPINNED_KEYS)
+        if body and len(stripped) >= len(body) and stripped[-len(body):] == body:
+            return q
+    return None
+
+
+def _all_result_documents(tree):
+    """`{relative path: parsed json}` for EVERY result file -- not only the census family.
+
+    Arm C is scoped by the KEY and not by `CENSUS_MARKERS`, because a working-tree block does not
+    need a census marker to exist: `gpd/results/T-327-the-resolution-of-the-flatness-census.json`
+    carries a 173-entry `atThisPassesTree` block and none of the three markers, so a
+    family-scoped arm would have had a measured hole on its first day (`T-340`).
+    """
+    out = {}
+    for name in _result_names(tree):
+        text = tree.read(os.path.join(RESULTS, name))
+        if text is None:
+            continue
+        try:
+            out[os.path.join(RESULTS, name)] = json.loads(text)
+        except ValueError:
+            continue
+    return out
+
+
+def working_tree_records(tree, quantities=QUANTITIES):
+    """`(file, dotted path, value, quantity or None)` for every numeric leaf under a tree key."""
+    out = []
+    for name, document in sorted(_all_result_documents(tree).items()):
+        for path, value in _walk(document):
+            if not isinstance(value, int) or isinstance(value, bool):
+                continue
+            if not any(_WORKING_TREE_KEY.search(key) for key in path):
+                continue
+            out.append((name, "/".join(path), value, registry_quantity_of(path, quantities)))
+    return out
+
+
+def working_tree_residue(tree, quantities=QUANTITIES):
+    """Working-tree leaves carrying NO registry quantity -- printed, never gated (`C-0209`).
+
+    These are `T-340`'s kind **A**: the *after* half of a before/after measurement of a repair the
+    pass itself performs, whose *before* is pinned at the file's own `baselineRef` and whose
+    *after* cannot be pinned, because the emitter runs before its own commit exists.  Deleting them
+    would delete the corpus's standard evidence that a repair worked, which `C-0092` requires be
+    left measurable -- so they are legal, listed, and outside the arm by construction rather than
+    by exemption.
+    """
+    return sum(1 for row in working_tree_records(tree, quantities) if row[3] is None)
 
 
 # --- the prose side -------------------------------------------------------------------------------
@@ -653,6 +781,23 @@ def check(tree, quantities=QUANTITIES, window=WINDOW):
                 "claim that this count is derived on every run is false" % (q.name, q.deriver)
             )
 
+    # arm C -- a DECLARED REGISTRY QUANTITY may not be recorded at an uncommitted tree.  `T-340`
+    # measured the crux the row demanded: a working-tree reading DOES have a legitimate use (the
+    # `after` half of a repair the pass performs, seven files of it), so the refusal cannot be on
+    # the KEY.  What it can be on is the QUANTITY: a count the deliverable prints about itself,
+    # recorded twice, once pinned and once at a state that resolves nowhere -- after which a prose
+    # writer must CHOOSE, and `CH-0292` is what choosing wrong looks like.  A quantity that cannot
+    # be true at the moment it is written is not a quantity.
+    for name, path, value, q in working_tree_records(tree, quantities):
+        if q is None:
+            continue
+        defects.append(
+            "REGISTRY-QUANTITY-AT-AN-UNCOMMITTED-TREE  %s /%s = %s records the declared quantity "
+            "%r at a working tree, which resolves nowhere -- and the same quantity is pinned in "
+            "this registry. Remove the reading; a value nothing can name is not a record (T-340)"
+            % (name, path, value, q.name)
+        )
+
     prose, unreached = prose_defects(tree, quantities, window)
     return reading, defects, prose, unreached
 
@@ -716,12 +861,18 @@ def report(tree, window=WINDOW):
     print("    %-54s %s" % ("UNPINNED records nothing quotes (T-340)", len(unpinned)))
     for name, path, value, _v, _r in unpinned:
         print("        %s /%s = %s" % (name, path, value))
+    tree_rows = working_tree_records(tree)
+    print("    %-54s %s"
+          % ("working-tree leaves carrying no registry quantity",
+             "%d, in %d file(s) -- T-340 kind A, legal and NOT reached by arm C"
+             % (sum(1 for row in tree_rows if row[3] is None),
+                len(set(row[0] for row in tree_rows if row[3] is None)))))
     print("    %-54s %s" % ("figures inside struck spans", "blanked, C-0071"))
     print("    %-54s %s"
           % ("a quantity no committed tool derives on every run", "outside the registry, refused"))
     print("    %-54s %s" % ("re-derivation at a pinned ref", "--rederive; needs .git"))
     print()
-    print("  arm 1 + arm 2 defects: %d.  Arm 3 (prose) is %s: %d membership failure(s)"
+    print("  arm 1 + arm 2 + arm C defects: %d.  Arm 3 (prose) is %s: %d membership failure(s)"
           % (len(defects), "GATED" if PROSE_ARM_IS_GATED else "PRINTED, NOT GATED", len(prose)))
     print("# %d declared quantit(ies); %d pinned record(s); %d prose figure(s) pinned by nothing "
           "at %s" % (len(QUANTITIES), len(pinned), len(prose), tree.label))
@@ -762,6 +913,72 @@ _FIXTURE_RESULT = {
 }
 
 
+#: `T-340` kind **A**: a before/after pair over a repair the pass performs.  Its tree leaves carry
+#: NO registry quantity, so arm C must be silent on it -- and only a fixture in which the rule
+#: could have mattered can hold that open (`C-0161`: construct the state).
+_FIXTURE_KIND_A = {
+    "task": "T-000",
+    "baselineRef": "0" * 40,
+    "selfDescribingCounts": {"widgets": {"atRef": 7}},
+    "measurement": {
+        "gateDefectsBeforeOnTheWorkingTree": 21,
+        "gateDefectsAfterOnTheWorkingTree": 0,
+    },
+}
+
+#: The same file with its working-tree block removed -- which is what `T-340`'s repair produces,
+#: and what makes arm C's population empty BY CONSTRUCTION rather than by exemption.
+_FIXTURE_PINNED_ONLY = {
+    "task": "T-000",
+    "baselineRef": "0" * 40,
+    "selfDescribingCounts": {
+        "widgets": {"atRef": 7, "command": "tools/alpha.py"},
+        "gadgets": {"atRef": 3},
+        "challenges": {"atRef": 247},
+        "asWrittenBeforeThisPass": {"widgets": 4242},
+    },
+}
+
+#: A result file carrying a working-tree registry reading and NONE of `CENSUS_MARKERS`.  Its
+#: quantity is `sprockets`, whose record leaf carries no marker either, so the file is invisible to
+#: every family-scoped arm and arm C must still reach it.
+_FIXTURE_NO_MARKER = {
+    "task": "T-002",
+    "baselineRef": "0" * 40,
+    "atThisPassesTree": {"sprockets": {"count": 5}},
+}
+
+
+#: A file recording one quantity at TWO pinned states, the second naming its own `ref` -- which is
+#: what `T-340`'s repair of `T-334` produces, and what the census could not previously attribute.
+_FIXTURE_OWN_REF = {
+    "task": "T-000",
+    "baselineRef": "0" * 40,
+    "selfDescribingCounts": {"widgets": {"atRef": 7}},
+    "atTheCommitThatCarriedThisFile": {
+        "ref": "b" * 40,
+        "selfDescribingCounts": {"widgets": {"atRef": 11}},
+    },
+}
+
+#: The same, with a `ref` that is not a resolved sha: the fallback is the file's own `baselineRef`.
+_FIXTURE_BAD_OWN_REF = {
+    "task": "T-000",
+    "baselineRef": "0" * 40,
+    "atTheCommitThatCarriedThisFile": {
+        "ref": "HEAD",
+        "selfDescribingCounts": {"widgets": {"atRef": 7}},
+    },
+}
+
+
+#: `T-339`'s CONSTRUCTED RED FIXTURE: a deliverable quoting an anchored figure that no record
+#: pins.  It is what `ANSWERS.md` line 1385 said before `7ff9d07`, reduced to one line.
+_FIXTURE_RED_PROSE = (
+    "tools/alpha.py reports **8888** widgets, and no record pins 8888.\n"
+)
+
+
 class _StubTree(object):
     """A repository state held in memory, so every arm is reachable from a named test."""
 
@@ -770,7 +987,7 @@ class _StubTree(object):
     root = os.path.join(os.sep, "nonexistent-T-336-stub")
 
     def __init__(self, result=None, answers=None, decisions=None, tools=None,
-                 baseline_ref="0" * 40, extra_leaf=None):
+                 baseline_ref="0" * 40, extra_leaf=None, no_marker=None):
         self.result = json.loads(json.dumps(_FIXTURE_RESULT if result is None else result))
         if baseline_ref is not _KEEP:
             self.result["baselineRef"] = baseline_ref
@@ -781,9 +998,13 @@ class _StubTree(object):
         self.decisions = _FIXTURE_DECISIONS if decisions is None else decisions
         self._tools = {"alpha.py": True, "beta.py": True, "delta.py": True,
                        "gamma.py": True} if tools is None else tools
+        self.no_marker = no_marker
 
     def result_names(self):
-        return ["T-000-stub.json", "T-001-not-a-census.json"]
+        names = ["T-000-stub.json", "T-001-not-a-census.json"]
+        if self.no_marker is not None:
+            names.append("T-002-no-marker.json")
+        return names
 
     def read(self, path):
         if path == t334.BUILD:
@@ -796,6 +1017,8 @@ class _StubTree(object):
             return json.dumps(self.result)
         if path == os.path.join(RESULTS, "T-001-not-a-census.json"):
             return '{"task": "T-001", "peakDishing": 3}'
+        if path == os.path.join(RESULTS, "T-002-no-marker.json") and self.no_marker is not None:
+            return json.dumps(self.no_marker)
         if path == "ANSWERS.md":
             return self.answers
         if path == "DECISIONS-FOR-NDI.md":
@@ -820,6 +1043,18 @@ _STUB_CHALLENGES = Quantity(
 #: it no fixture can tell whether the unit is load-bearing.
 _GADGETS = Quantity("gadgets", "gadgets", "alpha.py", (("tools/alpha.py", r"gadget"),),
                     ("selfDescribingCounts", "gadgets", "atRef"), lambda tree: 3)
+#: A quantity whose record leaf carries NO census marker, so a file recording it need not be a
+#: census-family file at all.  Used only by arm C's reach test; adding it to `_STUB_QUANTITIES`
+#: would perturb every prose test for nothing.
+_SPROCKETS = Quantity("sprockets", "sprockets", "alpha.py", (("tools/alpha.py", r"sprocket"),),
+                      ("atBaselineRef", "sprockets", "count"), lambda tree: 5)
+#: A SECOND quantity whose record leaf ends in the same word as `_SPROCKETS`'.  Without it no
+#: fixture can tell whether the leaf is matched WHOLE or only on its last component -- and after
+#: `T-340` stripped the state key, every other stub quantity's leaf ends in a different word, so
+#: the mutation that shortens the match to one component became inert (`C-0161`: a mutation that
+#: fails nothing is the finding -- construct the state).
+_COGS = Quantity("cogs", "cogs", "alpha.py", (("tools/alpha.py", r"cog"),),
+                 ("atBaselineRef", "cogs", "count"), lambda tree: 9)
 _STUB_QUANTITIES = (_WIDGETS, _STUB_CHALLENGES, _GADGETS)
 
 
@@ -958,8 +1193,10 @@ def _self_test():
                              " reports 7 widgets\n", (_WIDGETS,), window=40)))
 
     # --- arm 1 ---------------------------------------------------------------------------------------
-    ok("T-336 the gate is CLEAN on a stub whose records are pinned and whose derivers run",
-       check(_StubTree(tools={"alpha.py": True, "beta.py": True, "delta.py": True,
+    ok("T-336 the gate is CLEAN on a stub whose records are pinned, whose derivers run and whose "
+       "registry quantities are recorded at no working tree",
+       check(_StubTree(result=_FIXTURE_PINNED_ONLY,
+                       tools={"alpha.py": True, "beta.py": True, "delta.py": True,
                               "gamma.py": True}), _STUB_QUANTITIES)[1] == [])
     ok("T-336 arm 1 fires where a census-family file's baselineRef is not a resolved sha",
        any("UNRESOLVED-BASELINE" in defect
@@ -992,17 +1229,103 @@ def _self_test():
                                         ("selfDescribingCounts", "widgets", "atRef"),
                                         lambda tree: 0),))[1]))
 
+    # --- a pinned block may name its OWN ref, and the re-derivation must use it (`T-340`) ---------
+    ok("T-336 a pinned value is attributed to the nearest enclosing ref, not to the file's "
+       "baselineRef, so a block measured at another commit re-derives at THAT commit",
+       pinned_values(_StubTree(result=_FIXTURE_OWN_REF), _STUB_QUANTITIES)["widgets"]
+       == {7: [(os.path.join(RESULTS, "T-000-stub.json"), "0" * 40)],
+           11: [(os.path.join(RESULTS, "T-000-stub.json"), "b" * 40)]})
+    ok("T-336 a block whose own ref is not a resolved sha falls back to the file's baselineRef",
+       pinned_values(_StubTree(result=_FIXTURE_BAD_OWN_REF), _STUB_QUANTITIES)["widgets"]
+       == {7: [(os.path.join(RESULTS, "T-000-stub.json"), "0" * 40)]})
+    ok("T-336 atTheCommitThatCarriedThisFile is DECLARED pinned, so arm 1 does not refuse it",
+       "atTheCommitThatCarriedThisFile" in PINNED_KEYS)
+    ok("T-336 one quantity recorded at TWO pinned states is TWO records, because the registry "
+       "matches the leaf with the state key STRIPPED and not with one state key hardcoded",
+       sorted(pinned_values(_StubTree(result=_FIXTURE_OWN_REF), _STUB_QUANTITIES)["widgets"])
+       == [7, 11])
+
+    # --- arm C -- a registry quantity under a WORKING-TREE key (`T-340`) --------------------------
+    ok("T-336 arm C's key expression matches all 23 working-tree key names the corpus carries",
+       [name for name in WORKING_TREE_KEY_NAMES if not _WORKING_TREE_KEY.search(name)] == [])
+    ok("T-336 arm C's key expression does NOT match a key that names a committed state",
+       not any(_WORKING_TREE_KEY.search(name)
+               for name in ("atRef", "atBaselineRef", "asWrittenBeforeThisPass",
+                            "atC0210sOwnRef", "baselineRef", "isTree")))
+    ok("T-336 arm C strips every STATE key before matching a registry leaf, so a pinned path and "
+       "a tree path of one quantity resolve to the same quantity",
+       registry_quantity_of(("selfDescribingCounts", "widgets", "atRef"), _STUB_QUANTITIES)
+       is registry_quantity_of(("selfDescribingCounts", "atThisPassesTree", "widgets"),
+                               _STUB_QUANTITIES) is _WIDGETS)
+    ok("T-336 a registry leaf is matched WHOLE: two quantities whose leaves END in the same word "
+       "are told apart by the words in front of it",
+       registry_quantity_of(("atThisPassesTree", "cogs", "count"), (_SPROCKETS, _COGS)) is _COGS
+       and registry_quantity_of(("atThisPassesTree", "sprockets", "count"),
+                                (_SPROCKETS, _COGS)) is _SPROCKETS)
+    ok("T-336 arm C attributes nothing to a path carrying no registry leaf",
+       registry_quantity_of(("measurement", "gateDefectsAfterOnTheWorkingTree"),
+                            _STUB_QUANTITIES) is None)
+    ok("T-336 arm C FIRES on a registry quantity recorded under a working-tree key",
+       any("REGISTRY-QUANTITY-AT-AN-UNCOMMITTED-TREE" in defect and "widgets" in defect
+           for defect in check(_StubTree(), _STUB_QUANTITIES)[1]))
+    ok("T-336 arm C does NOT fire on the before/after half of a repair the pass performs -- a "
+       "working-tree key carrying no registry quantity (`T-340` kind A)",
+       not any("REGISTRY-QUANTITY-AT-AN-UNCOMMITTED-TREE" in defect
+               for defect in check(_StubTree(result=_FIXTURE_KIND_A), _STUB_QUANTITIES)[1]))
+    ok("T-336 arm C reaches a result file carrying NO census marker -- it is scoped by the KEY, "
+       "and a family-scoped arm has a measured hole (T-327 carries 173 such entries)",
+       any("REGISTRY-QUANTITY-AT-AN-UNCOMMITTED-TREE" in defect and "T-002-no-marker" in defect
+           for defect in check(_StubTree(no_marker=_FIXTURE_NO_MARKER),
+                               _STUB_QUANTITIES + (_SPROCKETS,))[1]))
+    ok("T-336 arm C is CLEAN where the same file records the quantity only at a pinned key",
+       not any("REGISTRY-QUANTITY-AT-AN-UNCOMMITTED-TREE" in defect
+               for defect in check(_StubTree(result=_FIXTURE_PINNED_ONLY),
+                                   _STUB_QUANTITIES)[1]))
+    ok("T-336 arm C needs no git: it fires on a stub whose root does not exist",
+       any("REGISTRY-QUANTITY-AT-AN-UNCOMMITTED-TREE" in defect
+           for defect in check(_StubTree(), _STUB_QUANTITIES)[1])
+       and not os.path.exists(_StubTree.root))
+    ok("T-336 arm C counts a working-tree leaf carrying NO registry quantity as RESIDUE and says "
+       "so, never as clean (`C-0209`)",
+       working_tree_residue(_StubTree(result=_FIXTURE_KIND_A)) == 2)
+
     # --- the git-dependent arm refuses VISIBLY rather than degrading silently (`C-0195`) ----------
     ok("T-336 rederive SKIPS where the state carries no .git, and says so on stderr",
        _returns(lambda: rederive(_StubTree()), None))
-    ok("T-336 the prose arm is not gated until T-339 flips one constant",
-       PROSE_ARM_IS_GATED is False)
+    # INVERTED by `T-339`, never struck: this test pinned a deliberately-left defect -- that the
+    # prose arm shipped PRINTED because it was red at `HEAD` -- and `CLAUDE.md` requires such a
+    # test to be inverted when the defect is repaired, because a test asserting a repaired defect
+    # is not a record but a false assertion.
+    ok("T-336 the prose arm is GATED", PROSE_ARM_IS_GATED is True)
+    # `C-0177`: a promoted gate that cannot FAIL is worse than a printed one, and this corpus has
+    # shipped exactly that -- `tools/trace-answers.py` returned 0 from a dead local for thirty
+    # iterations while wired under `set -euo pipefail`.  Proved on a CONSTRUCTED RED FIXTURE, not
+    # by argument: a deliverable quoting a figure no record pins, and a result file recording a
+    # registry quantity at a tree, must each make the gated path non-empty.
+    ok("T-339 the GATED prose arm can still FAIL -- a constructed deliverable quoting a figure no "
+       "record pins puts a row on the gated path",
+       len(check(_StubTree(answers=_FIXTURE_RED_PROSE), _STUB_QUANTITIES)[2]) > 0)
+    ok("T-339 the GATED path is arm 1 + arm 2 + arm C + arm 3, so a constructed red fixture of "
+       "EITHER kind refuses",
+       _gated_rows(_StubTree(answers=_FIXTURE_RED_PROSE), _STUB_QUANTITIES) > 0
+       and _gated_rows(_StubTree(), _STUB_QUANTITIES) > 0)
 
     for name, passed in checks:
         print("%s  %s" % ("ok  " if passed else "FAIL", name))
     failed = [name for name, passed in checks if not passed]
     print("# %d self-test(s), %d failure(s)" % (len(checks), len(failed)))
     return 1 if failed else 0
+
+
+def _gated_rows(tree, quantities=QUANTITIES):
+    """How many rows `--check` would refuse on -- arm 1 + arm 2 + arm C, plus arm 3 once gated.
+
+    It reproduces `main`'s own composition rather than restating it, so a change to what `--check`
+    gates cannot pass this test while failing the tool (`C-0206`: assert the output, not a
+    paraphrase of it).
+    """
+    _reading, defects, prose, _unreached = check(tree, quantities)
+    return len(defects) + (len(prose) if PROSE_ARM_IS_GATED else 0)
 
 
 def _refusal_text(thunk):
