@@ -969,6 +969,25 @@ priced rather than took; **`T-327` is RELEASED UNUSED**. Agent Q took `C-0220`, 
 opened both of its rows, `T-333` and `T-334`. At the close of this iteration the following are **unused and
 unreserved**, and the next iteration takes them in order: `C-0221`, `CH-0285`, `T-327`.
 
+### Iteration 53 — numbers reserved before the agents start
+
+| agent | row | claim | challenges | new rows |
+|---|---|---|---|---|
+| R | `T-326` the two reconstructions, and whether they should be one | `C-0221` | `CH-0285`, `CH-0288` | `T-327`, `T-335` |
+| S | `T-334` the checker census's predicate, which reads a literal where the question is an invocation | `C-0222` | `CH-0289`, `CH-0290` | `T-336`, `T-337` |
+
+**Reserved and not yet taken**: `C-0221`, `C-0222`, `CH-0285`, `CH-0288`, `CH-0289`, `CH-0290`.
+
+**Agent R owns [`src/main/kotlin/tile/HoneycombGrillage.kt`](src/main/kotlin/tile/HoneycombGrillage.kt) and any
+result file it moves; agent S writes no Kotlin at all** and works in `tools/`. That is what makes the pair safe.
+
+**`T-326` is the expensive half and is scoped as such.** `T-330` moved **3** result files because it **branched**
+on an exact parity test; an unconditional adoption moves every `m = 10` reading and puts all **18** in play, and
+`C-0219`'s partition proof does **not** transfer, because that branch is precisely what makes the fifteen
+provably inert. The cheap first move is the **prediction**: the two reconstructions differ by a known geometric
+quantity, so the movement at a given load can be derived before any re-emission, and the honest first
+deliverable may be that prediction plus the one channel that crosses a live margin.
+
 
 **Agent P owns [`src/main/kotlin/tile/HoneycombGrillage.kt`](src/main/kotlin/tile/HoneycombGrillage.kt) this
 iteration — the first task in several allowed to touch it — and agent Q must not write any Kotlin at all.**
