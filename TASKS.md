@@ -1021,6 +1021,26 @@ unreserved**, and the next iteration takes them in order: `C-0221`, `CH-0285`, `
 and `CH-0289` and opened `T-336`; **`T-337` is RELEASED UNUSED**. At the close of this iteration the following
 are **unused and unreserved**, and the next iteration takes them in order: `C-0223`, `CH-0288`, `T-337`.
 
+### Iteration 54 — numbers reserved before the agents start
+
+| agent | row | claim | challenges | new rows |
+|---|---|---|---|---|
+| U | `T-327` the resolution of the flatness census, and whether a verdict inside the model's own noise is a verdict | `C-0223` | `CH-0288`, `CH-0291` | `T-337`, `T-338` |
+| V | `T-336` a self-describing count the deliverable PRINTS against what the tool DERIVES | `C-0224` | `CH-0292`, `CH-0293` | `T-339`, `T-340` |
+
+**Reserved and not yet taken**: `C-0223`, `C-0224`, `CH-0288`, `CH-0291`, `CH-0292`, `CH-0293`.
+
+**Agent U may read every result file and must re-emit none of them**, and agent V writes no Kotlin. `T-335` — the
+eighteen-file adoption sweep — is deliberately **not** scheduled beside `T-327`, because both would move the
+same readings and a resolution stated over readings that are themselves moving is not a resolution.
+
+**`T-327` is the row with the widest reach in the queue and it is a METHOD question, not a solve.** It asks the
+smallest margin at which a `p90OverStroke` verdict may be quoted, derived from the convergence departure of the
+quantity it is read on — and `99` of `1 146` verdict-bearing readings are inside that. A recorded refusal is a
+legitimate answer and the row says so; what is not legitimate is leaving the number stated and the question
+unasked. **If the answer moves a verdict either deliverable carries, that is a hand-off, not an edit** — agent U
+does not own `ANSWERS.md` or `DECISIONS-FOR-NDI.md`.
+
 
 **Agent R owns [`src/main/kotlin/tile/HoneycombGrillage.kt`](src/main/kotlin/tile/HoneycombGrillage.kt) and any
 result file it moves; agent S writes no Kotlin at all** and works in `tools/`. That is what makes the pair safe.
