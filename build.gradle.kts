@@ -503,6 +503,50 @@ tasks.register<Exec>("testGateCensusMutations") {
 }
 
 /*
+ * `T-336` -- a self-describing count the deliverable PRINTS, against the one a result file PINS.
+ *
+ * `T-334` retired the WIRING half of a recurring defect and said in its own validity range that
+ * nothing checked the QUOTING half.  It also refused one shape: a gate parsing a numeral out of
+ * prose and comparing it against a live derivation at `HEAD`.  That refusal turns on the
+ * COMPARAND -- `CH-0182` makes agreement-with-`HEAD` unsatisfiable for a census of the corpus
+ * that contains the census, and a gate that can never come clean is not a gate (`C-0083`).
+ * HAVING NOTHING STABLE TO COMPARE AGAINST IS WHY SUCH A GATE DEGENERATES INTO PARSING NUMERALS.
+ *
+ * So the comparand here is a PINNED thing: a `(quantity, value, resolvedRef)` triple that three
+ * emitters already write into committed result files and that nobody had ever read back.  A sha
+ * does not move when the corpus grows, so the equality is permanent -- and the comparison needs
+ * no `git` at all, which is the only reason it can be wired: `tools/snapshot.sh` excludes
+ * `./.git`, so a git-dependent gate would skip silently here (`C-0177`).
+ *
+ * The GATED arms are the two that are clean: a recorded count must sit under a key that says
+ * which state it names, in a file whose `baselineRef` resolves; and a quantity may not be
+ * declared against a tool that cannot fail the run.  The PROSE arm is printed and NOT gated,
+ * because it is red at `HEAD` and the task that wrote it may not edit `ANSWERS.md`; `T-339`
+ * flips one constant once the substitution lands.  Both tasks read only `gpd/results/`, the two
+ * deliverables, `build.gradle.kts` and `tools/`.
+ */
+tasks.register<Exec>("testPinnedCountCensus") {
+    group = "verification"
+    description = "Runs tools/T-336-pinned-count-census.py --self-test, the tests for the " +
+        "pinned-count census"
+    commandLine("$projectDir/tools/T-336-pinned-count-census.py", "--self-test")
+}
+
+tasks.register<Exec>("testPinnedCountCensusCheck") {
+    group = "verification"
+    description = "Runs tools/T-336-pinned-count-census.py --check: every recorded self-describing " +
+        "count names a state that resolves, and every declared quantity is derived by a tool that " +
+        "can fail the run"
+    commandLine("$projectDir/tools/T-336-pinned-count-census.py", "--check")
+}
+
+tasks.register<Exec>("testPinnedCountCensusMutations") {
+    group = "verification"
+    description = "Runs tools/T-336-mutation-test.py, the mutation test for the pinned-count census"
+    commandLine("$projectDir/tools/T-336-mutation-test.py")
+}
+
+/*
  * THE FOUR KOTLIN HARNESSES, WHICH TAKE A SNAPSHOT DIRECTORY AND ARE DELIBERATELY OUT OF `:test`.
  *
  * The Kotlin-subject harnesses mutate Kotlin sources, so one mutation is one Gradle `test` run --
@@ -645,6 +689,35 @@ tasks.register<Exec>("testJointPlacementDistributionMutations") {
     commandLine(mutationSnapshotArguments("T-323-mutation-test.py"))
 }
 
+/*
+ * `T-327` -- the resolution of the flatness census.
+ *
+ * `flatAtP90` is exactly `exceedance <= 0.10`, so a flatness verdict is a binomial statement and
+ * its resolution is that proportion's sampling error rather than the discretisation departure the
+ * corpus quotes.  The census reads the eighteen committed result files and WRITES NOTHING; the
+ * emitter beside it is pinned to a ref, because a corpus-subject result file that defaults to
+ * `HEAD` re-bases its own measurement (`CH-0246`).
+ */
+tasks.register<Exec>("testFlatnessResolution") {
+    group = "verification"
+    description = "Runs tools/T-327-flatness-resolution.py --self-test, the census and the " +
+        "exact binomial instruments a flatness verdict's resolution is read with"
+    commandLine("$projectDir/tools/T-327-flatness-resolution.py", "--self-test")
+}
+
+tasks.register<Exec>("testFlatnessResolutionEmitter") {
+    group = "verification"
+    description = "Runs tools/T-327-emit-result.py --self-test, which builds the document twice " +
+        "at its pinned ref and asserts byte-identity without writing"
+    commandLine("$projectDir/tools/T-327-emit-result.py", "--self-test")
+}
+
+tasks.register<Exec>("testFlatnessResolutionMutations") {
+    group = "verification"
+    description = "Runs tools/T-327-mutation-test.py, the mutation test for the resolution census"
+    commandLine("$projectDir/tools/T-327-mutation-test.py")
+}
+
 tasks.named("test") {
     dependsOn(
         "testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks",
@@ -678,7 +751,11 @@ tasks.named("test") {
         // `T-321` -- the dynamic arm of that guard, which OBSERVES rather than compares.
         "testDynamicGuardProbeMutations",
         // `T-334` -- the gate census by REACHABILITY, and the mutation table over its own rules.
-        "testGateCensus", "testGateCensusReachability", "testGateCensusMutations"
+        "testGateCensus", "testGateCensusReachability", "testGateCensusMutations",
+        // `T-336` -- a count the deliverables PRINT against the one a result file PINS.
+        "testPinnedCountCensus", "testPinnedCountCensusCheck", "testPinnedCountCensusMutations",
+        // `T-327` -- what a flatness verdict can resolve, and the mutation table over its rules.
+        "testFlatnessResolution", "testFlatnessResolutionEmitter", "testFlatnessResolutionMutations"
     )
 }
 

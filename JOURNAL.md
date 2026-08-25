@@ -13218,7 +13218,7 @@ One honest qualification, and it is the sharper reading: at the second cell the 
 Over the eighteen files there are **1 146** verdict-bearing readings and the tightest is `0.10000102` at `T-294/cells/92`, **`417×`** tighter in stroke units than `C-0180`'s `0.426 %`.
 `2` sit inside the collar channel, `96` inside the movement that would flip `C-0180`'s own tightest cell, `126` inside the prestrain channel, `484` inside it at `6×`.
 So **no channel is safe** and the decision could never have rested on the movement being small.
-Its twin is independent of which convention wins and is filed as `T-327`: **`99` of the `1 146` sit closer to `T-5b` than the beam-subdivision convergence departure `C-0180` measured on this very lattice**, so those verdicts are not determined by the model at all.
+Its twin is independent of which convention wins and is filed as `T-327`: ~~**`99` of the `1 146` sit closer to `T-5b` than the beam-subdivision convergence departure `C-0180` measured on this very lattice**, so those verdicts are not determined by the model at all~~ — **CORRECTED, iteration 54** (`C-0223`, `CH-0288`): that departure is relative to the VALUE, so entered commensurately the count is **`2`** and not `99`. The verdicts are indeed not determined, on a different axis and worse: `flatAtP90` is exactly `exceedance ≤ 0.10` and **`7` of the corpus's `19`** positive flatness verdicts are undetermined at exact `95 %` Clopper-Pearson.
 
 **`CH-0285`**: `integrateOverFace` lays one 6-point Gauss rule across each whole strip and `evaluate` jumps `d/4` inside each strip's end at every strip, so the shipped `areaInnerProduct` under-reports the gap by a constant `0.819693683` at all 12 readings — `CH-0284`'s own published channel sizes are `1.21997×` low.
 `F14` fired: the split moves `C-0219`'s committed `15 × 4` triple by `6.33E-5`, moving no verdict.
@@ -13281,3 +13281,165 @@ reachability gate — correctly — called a defect; leaving it undeclared would
 `UNDECLARED` instead. There was no green option that touched neither file. Both censuses read clean now, and the
 lesson is not about either agent: **a gate that reads a declaration and a declaration that describes a wiring
 will collide whenever both are edited in one iteration, and only the assembled tree shows it.**
+
+## Iteration 54 — 2026-08-25: a unit error in a number the coordinator had propagated, and a count that had never been true
+
+Both task files committed before either agent wrote code. Both cheap bounds found that the artifact the row
+was opened on was wrong in a way nobody had checked — one by a factor of ten, the other by never having been
+true of any state of the repository.
+
+### `T-336` — a count the deliverable **prints** against the one a result file **pins**
+
+`C-0222` retired the *wiring* half of a six-pass defect and left the *quoting* half open, refusing
+one shape as it went: *"a gate parsing `18 + 21 + 12` = FIFTY-ONE out of prose would be a gate on a
+numeral, which is the class of predicate this task exists to retire."*
+
+**The refusal is right and it turns on the comparand, not on the numeral.** A gate that compares
+prose against a live derivation at `HEAD` is unsatisfiable by construction for a census of the
+corpus that contains the census (`CH-0182`) — the deliverable says so itself, *"its own finished
+tree reads 248 / 215"* — and a gate that can never come clean is not a gate. **Having nothing
+stable to compare against is why such a gate degenerates into parsing numerals: the
+pattern-matching is the symptom and the missing fixed point is the disease.**
+
+The fixed point was already in the tree and nobody had read it back. Three synthesis emitters and
+`T-334`'s own write `(quantity, value, resolvedRef)` triples into committed result files; **11 of
+11 re-derive at their own recorded ref, 0 mismatches**. A sha does not move when the corpus grows,
+so the equality is *permanent* — and the comparison *prose against committed JSON* needs **no
+`git`**, which is the only reason it can be wired at all: `tools/snapshot.sh` excludes `./.git`, so
+a git-dependent gate would skip silently exactly where it is wired.
+
+**The cheap bound reversed the row's own framing.** Every `T-334` figure standing in
+`DECISIONS-FOR-NDI.md` is pinned to a sha and re-derives — `44` at `d9a3522`, `42` at `71d126e`,
+`44` at `d7b7074`, `46` at `bb678d2` — so the gate the row asked for would have come clean and
+measured the half that is already right. The defect is a **different** count in the **other**
+document, and it is a *membership* failure rather than a staleness:
+`gpd/results/T-332-fifteenth-answers-synthesis.json` records the challenge-and-claim census
+**twice**, `atRef` = **`246 / 213 / 459`** at a resolved `d7b7074` and
+`workingTreeBeforeThisClaimsOwnFiles` = **`247 / 214 / 461`** at no state at all — and `ANSWERS.md`
+line 1385 quotes **the one of the pair nothing can pin**. `(247, 214)` and `(248, 215)` occur at
+**0** and **0** of the repository's **298** commits. The rule was in print already, in the
+*previous* pass's own emitted note: *"only `atRef` is emitted, and the deliverable quotes the ref
+rather than the tree."*
+
+Shipped: `tools/T-336-pinned-count-census.py` — a declared registry that **refuses** an undeclared
+quantity, two **git-free** gated arms (a recorded count must name a state that resolves; a quantity
+may not be declared against a tool that cannot fail the run), a printed prose residue, and a
+git-dependent re-derivation arm that skips **visibly** on `stderr`. **66 self-tests, 33 mutations
+at 0 survivors, `--check` clean at `HEAD`.** The false-positive rate is measured over the corpus's
+**own history** rather than at a `HEAD` somebody has just repaired: **85 hits over 22 distinct
+triples across 103 revisions, 0 false positives**, audited by hand — including the eleven
+successive spelled headlines the row has carried since iteration 4.
+
+**The prose arm is printed and not gated.** It is red at `HEAD`, and the task that wrote it may not
+edit `ANSWERS.md`; `C-0129`'s idiom is to wire what can be made clean and print the residue beside
+it. The substitution is with the coordinator, `T-339` flips one constant, and the corrected figure
+is **itself pinned** — a substitution that swapped one unpinnable number for another would repeat
+the defect.
+
+Three findings came out of the mutation table rather than out of reading. Its first run read **15
+survivors and every one was a fixture that could not discriminate** (`C-0161`); constructing the
+states found a tool anchor with no unit attributing one tool's two printed counts to both
+quantities, a figure searched forty characters past its verb instead of fifteen, and — the one that
+matters — a `classify` that scanned the whole path for a pinned key first, so an `atRef` **nested
+inside** a working-tree block read as *pinned*, which is the single direction this gate must not
+fail in. Two more were caught by named tests on their first run and both are `CLAUDE.md` entries
+met rather than avoided: an alternation concatenated without a wrapping group, and the symmetric
+trailing guard that **refuses every number at the end of a sentence** — the third recorded instance
+of that trap, in a corpus whose figures sit at the ends of sentences.
+
+Two challenges. `CH-0292` is the quoted-unpinnable figure. `CH-0293` is the same defect inside
+`T-334`'s **own** result file: its `atThisPassesTree` block names no ref and **4 of its 13 leaves**
+read `12` where every committed state from `bb678d2` reads `13` — because the thirteenth
+helper-wired harness was added and wired **in that same commit** by a sibling. On a shared checkout
+the tree an emitter reads and the tree its commit records are different objects, so it is
+structural rather than a lapse, and `C-0222`'s pinned half is untouched and upheld entire.
+
+`F9` fired as declared and to the declared value: wiring this task's two tools takes `T-334`'s
+union **46 → 48**, attributed exactly. The working tree at the end of the iteration reads **51**,
+the other three being a sibling's — which is `CH-0246` one level out and precisely why the emitted
+figure is taken at a **pinned** ref and not at the tree. And the gate demonstrated its own central
+property live: the corpus grew by three challenges and two claims while the task ran, and the prose
+arm's verdict did not move by one.
+
+### `T-327` — the resolution of the flatness census: `flatAtP90` is a binomial statement, and the corpus has been quoting the smaller of two uncertainties
+
+Filed as [`C-0223`](gpd/claims/C-0223-the-resolution-of-the-flatness-census.md), on [`gpd/results/T-327-the-resolution-of-the-flatness-census.json`](gpd/results/T-327-the-resolution-of-the-flatness-census.json) at `baselineRef` `86b3bbd`.
+No JVM, no solve, no study run, no third-party package, and **no committed result file moved** — a `sha256` census over `gpd/results/` before and after reports `0` pre-existing files changed, `1` added, `0` removed.
+
+**The row's own premise was a unit error, and it was mine as much as the claim's.**
+`C-0180` §5 writes *"a worst departure of `4.57e−4` against a margin of `0.00426` of the tolerance — a factor of 9.3"*, so `4.57e−4` is a departure **relative to the value**; `C-0221` §5's census read it as *"of the stroke"* and entered it on a `|v − 0.10|/0.10` axis as `4.57e−3`.
+Commensurate, `99 of 1 146` is **`2`**.
+The mis-scaling is visible in the census's own channel ordering with **no code at all**: as published it places the flip margin `4.2724e−3` at `0.935` of the departure, where `C-0180`'s own sentence places it at `9.3`, and a census whose ordering contradicts its own source is wrong before it is read.
+And the `1 146` counts **leaves**: the predicate's boolean test is on the parent record, so `366` of them are medians, worsts, `p95`s and uncoupled controls that no boolean is written on.
+Raised as [`CH-0288`](gpd/challenges/CH-0288-the-transferred-departure-is-a-factor-of-ten-out.md).
+The figure had reached six documents and **four of them I wrote myself, from the claim, without re-deriving the axis** — so *grep a headline number out of the artifact* is owed by whoever propagates a number as much as by whoever produces it.
+It does not stand in `CLAUDE.md`, which I had believed it did; that file needed an addition rather than a correction.
+
+**The deeper finding is that the resolution is a different quantity, and there the answer is worse.**
+`coupling/DropoutRobustPlacement.kt` computes `flatAtP90 = orderStatistic(sample, 0.90) < tolerance` with `orderStatistic` at `sorted[ceil(0.9n) − 1]`, so at `n = 4 000` the verdict holds **iff at most 400 of 4 000 realisations exceed the tolerance** — that is, iff `exceedance ≤ 0.10`, a field the corpus **already emits**, with its own `exceedanceStandardError` beside it.
+Checked rather than argued: the identity holds at **`1 440` of `1 440`** committed booleans, `0` disagreeing.
+So a flatness verdict is a **binomial** statement whose `σ` is `18.97` realisations, and `C-0180`'s two recovered cells — the `2 of 64` four claims and both deliverables carry — are **`392` and `398` of `4 000` against `400`**, one-sided binomial `p` of **`0.349`** and **`0.471`**.
+The same margins are `9.3497×` and `11.9677×` the **discretisation** departure, which is exactly what *"and it is converged"* reports.
+Over the `11` records resolvable on both axes the sampling one is the worse-resolved at **`11 of 11`**, by `6.7×` to `458×`.
+
+**The asymmetry is the finding, and it runs the way that costs.**
+At the exact two-sided `95 %` Clopper-Pearson interval, **`7` of the `19`** verdicts in this corpus that read *flat* are `UNDETERMINED` and **`1` of the `1 421`** that read *not flat* is.
+That is structural rather than a coincidence: a design that fails does so by a wide margin and a design that passes passes by a hair, because the passing ones are the ones somebody optimised up to the threshold.
+It matters because this programme's answer to §3 row (g) is a **positive** verdict.
+
+**What survives is the ordering, and the corpus already emits the datum.**
+`T-279`'s own `paired` blocks put the recovering comparisons at **`3 854`** and **`3 478`** of `4 000` paired realisations, sign tests below the double-precision floor.
+So `C-0180`'s mechanism finding is untouched and what is withdrawn is a threshold **crossing**: the honest statement becomes *"the raster's 59 turn ties make the tile measurably flatter, and no coupled cell is demonstrably flat"*.
+
+**On the axis the row itself named the answer is nearly empty, and that is a result.**
+Of `145` nominal, zero-defect readings in range, **`131`** have no nominal discretisation axis in their own file at all — including the census's own tightest reading, whose file emits three convergence records and all three on the `p90` — and **`0`** of the remaining `14` are undetermined.
+Reading that tightest one against the `p90`'s departure anyway is the same transfer one cell across, which is why the granularity was declared in the Plan: three populations, three rules, and three axis kinds excluded by kind (a training-realisation axis is the *search's* variance, a composite-fraction axis a physical **bracket**, a penalty axis `C-0100`'s binary).
+Of the eighteen files' `115` convergence axes, `101` are discretisation, `11` search, `2` parameter, `1` penalty and **`0` unclassified**.
+
+**And `87` of the corpus's `106` positive flatness verdicts cannot be tested at all**, because their record emits no exceedance — `C-0212`'s `22 of 32` and `C-0215`'s `27 of 48` among them.
+They are a **recorded refusal with a row** (`T-337`) and are neither withdrawn nor endorsed; `T-337` is one field the studies already compute.
+
+**Two smaller things worth keeping.**
+The mutation table's first run had three defects and all three are retained in `C-0223` §8: two anchors that matched twice because a twelve-space line is a **substring** of a sixteen-space one, and one **surviving** mutation — widening `alpha` from `(1−c)/2` to `1−c` — that failed no named test because every reading the suite tested was far enough from the boundary, and the one test comparing against an inverted Clopper-Pearson interval uses the same `alpha` on both sides.
+The fixture that kills it is a reading at `x = 365`, where the lower tail is `0.0332`, between the two alphas.
+And `tools/T-295-mutation-input-census.py` **refused** the harness on its first run, correctly: one of the `21` was held open only by the live-corpus arm, so the repair was a constructed fixture and the table is now `21` mutations, `0` survivors and **`0` corpus-dependent**.
+
+### Iteration 54's close-out — the coordinator propagated a number he had not re-derived
+
+**Both rows were settled by their cheap bounds, and in both the defect was in the artifact the row was opened
+on.** `T-327` was opened because `C-0221` §5 measured `99 of 1 146` verdict-bearing readings closer to `T-5b`
+than the convergence departure. Read commensurately it is **`2`**: `C-0180`'s `4.57E-4` is a departure
+*relative to the value* — its own sentence divides `0.00426` by it and gets `9.3` — and the census entered it on
+a `|v − 0.10|/0.10` axis as though it were *of the stroke*. Visible in the census's own channel ordering with no
+code at all, since as published it puts the flip margin at `0.935` of the departure where `C-0180` puts it at
+`9.3`. And `1 146` counts **leaves**, of which `366` are medians, worsts and uncoupled controls that no boolean
+is written on.
+
+**I propagated that number into four artifacts without re-deriving its axis** — the cold-start note, the
+iteration-53 close-out, that iteration's commit message, and the brief I wrote for the agent that then caught
+it. The agent also corrected my brief in the other direction: I told it `CLAUDE.md` carried the figure, and
+`grep` plus `git log -S` show it never has. **A coordinator quoting a claim is a carrier like any other**, and
+the rule this corpus already has — *grep the headline number out of the artifact* — does not exempt the person
+assembling the iteration.
+
+**The answer on the axis the row did not name is the one that matters.** `flatAtP90` is *exactly*
+`exceedance ≤ 0.10`, checked at `1 440` of `1 440` committed booleans with none disagreeing, so a flatness
+verdict is **binomial** at `n = 4 000` and its resolution is that proportion's sampling error. At exact 95 %
+Clopper-Pearson, **`7` of the `19`** verdicts reading *flat* are undetermined against **`1` of `1 421`** reading
+*not flat*. **The positive verdicts are the unresolved ones**, which matters because this programme's answer to
+§3 row (g) is a positive verdict. The ordering survives — `3 854` and `3 478` of `4 000` paired realisations,
+sign tests below the double-precision floor — so what is withdrawn is a threshold *crossing*, not a mechanism.
+
+**`T-336` found a figure that has never been true.** `ANSWERS.md` printed `247 / 214 / 461`, which occurs at
+**`0` of `298`** commits, because `T-332`'s result file emits the census **twice** — once `atRef` at a resolved
+sha, once against a working tree at no state — and the deliverable quoted the half nothing can pin. `T-319`'s
+own record had already written the rule; nothing gated it, and the next pass inverted it. The fix is an equality
+against a **committed JSON leaf at that file's own `baselineRef`**, which needs no `git` and therefore can be
+wired — and it is the answer to the objection `C-0222` raised when it refused to gate a numeral: that refusal
+turned on the comparand being a **moving** thing, and the fixed point it lacked was already in the tree, written
+by three emitters and never read back.
+
+**Two agents each caught a defect in the other's iteration-53 output**, and neither was inattention: one was a
+unit transfer, the other an unpinned reading made stale by a commit landing in the same act. That is the third
+and fourth instance of the receiving side catching the sending side, and the argument for pairing rather than
+serialising remains the strongest process result this session has produced.

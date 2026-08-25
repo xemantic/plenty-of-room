@@ -1,0 +1,892 @@
+{
+ "emission": {
+  "lattice": "honeycomb",
+  "regime": []
+ },
+ "task": "T-327",
+ "claim": "C-0223",
+ "leaf": "A8.2",
+ "title": "the resolution of the flatness census -- a flatAtP90 verdict is a binomial statement about an exceedance, and its resolution is that proportion's sampling error and not the discretisation departure the corpus quotes",
+ "verificationType": "logical (the identity is derived from the study source and checked against every committed record) + in-silico (an exact Clopper-Pearson census over the eighteen files, with no solve)",
+ "maturity": "TRL 1-3. Model-consistent and traceable. NOT empirically demonstrated. Nothing here re-runs a study or moves a committed reading.",
+ "units": "dimensionless throughout: a dishing is a fraction of that tile's own free stroke, an exceedance is a probability, a departure is a relative movement",
+ "conventions": {
+  "tolerance": 0.1,
+  "toleranceIs": "T-5b's flatness CONVENTION, not a physical threshold",
+  "relativeAxisOfTheCensus": "|v - 0.10| / 0.10",
+  "departureAxisOfTheCorpus": "|fine - coarse| / coarse",
+  "whyTheyAreCommensurate": "for a reading in [0.09, 0.11] the two agree to within v / 0.10; a distance in STROKE FRACTIONS is 0.10 times either, and mixing the three is the factor of ten"
+ },
+ "baselineRef": "86b3bbd2fa9a9dcb8052c4d6e9184adae3d21e28",
+ "baselineRefRequested": "86b3bbd",
+ "parameters": {
+  "files": [
+   "T-253",
+   "T-254",
+   "T-263",
+   "T-267",
+   "T-279",
+   "T-284",
+   "T-291",
+   "T-294",
+   "T-297",
+   "T-299",
+   "T-303",
+   "T-304",
+   "T-307",
+   "T-310",
+   "T-315",
+   "T-316",
+   "T-322",
+   "T-323"
+  ],
+  "confidence": 0.95,
+  "confidenceLevelsSwept": [
+   0.9,
+   0.95,
+   0.99
+  ],
+  "binomialTail": "the regularised incomplete beta by continued fraction -- no third-party package, so the exact interval runs anywhere",
+  "whyThisRef": "86b3bbd is the commit this task's Formulate and Plan were committed at, PINNED rather than defaulted to HEAD: a corpus-subject emitter defaulting to HEAD re-bases its own measurement between the draft and the emission (CH-0246). This task writes no file into gpd/results/ other than its own, so the working-tree control must agree."
+ },
+ "sources": [
+  "coupling/DropoutRobustPlacement.kt -- summariseDropoutDishing, orderStatistic",
+  "gpd/claims/C-0221-the-fit-and-the-sample-in-one-reconstruction.md section 5",
+  "gpd/claims/C-0180-tied-honeycomb-coupled-regrade.md section 5",
+  "gpd/data/T-326-cheap-bound/margin-census.py"
+ ],
+ "cheapBound": {
+  "unitError": {
+   "statement": "C-0180's 4.57e-4 is a departure RELATIVE TO THE VALUE -- its own sentence divides a margin of 0.00426 by it and gets 9.3 -- and C-0221 section 5's census enters it on a |v - 0.10| / 0.10 axis as 4.57e-3",
+   "asPublished": 99,
+   "commensurate": 2,
+   "factor": 10.0,
+   "visibleWithNoCodeAtAll": "as published the census places the flip margin 4.2724e-3 at 0.935 of the departure 4.57e-3, where C-0180's own sentence places it at 9.3",
+   "flipMarginOverDepartureAsPublished": 0.93487965
+  },
+  "leavesNotVerdicts": {
+   "statement": "the predicate's boolean test is on the PARENT record, so a diagnostic sitting beside a verdict is counted as one",
+   "readings": 1146,
+   "leavesNoBooleanIsWrittenOn": 366
+  }
+ },
+ "atBaselineRef": {
+  "census": {
+   "predicate": "C-0221 section 5's, verbatim: a numeric leaf whose key ends OverStroke or contains ishing, in a JSON object that also carries at least one boolean, valued in [0.09, 0.11]",
+   "readings": 1146,
+   "tightest": 0.10000102,
+   "tightestAt": "T-294/cells/92/nominalCorrectedOverStroke",
+   "distinctLeafKeys": 25,
+   "leafKeyPartition": {
+    "nominalCorrectedOverStroke": 59,
+    "medianOverStroke": 139,
+    "p90OverStroke": 325,
+    "zeroTermP90OverStroke": 69,
+    "tiedP90OverStroke": 11,
+    "zeroPrestrainP90OverStroke": 22,
+    "tenBySixP90OverStroke": 21,
+    "referenceP90OverStroke": 60,
+    "twoLevelP90OverStroke": 44,
+    "worstSingleRemovalOverStroke": 139,
+    "relativeRollWorstOverStroke": 10,
+    "p95OverStroke": 11,
+    "worstSinglePathRemovalOverStroke": 11,
+    "nominalOverStroke": 68,
+    "untiedP90OverStroke": 7,
+    "subjectP90OverStroke": 20,
+    "nominalStandingOverStroke": 24,
+    "forcedExcessCeilingOverStroke": 2,
+    "medianCorrectedOverStroke": 28,
+    "worstWorstCornerDishing": 5,
+    "unitPeakDishingPerRadian": 1,
+    "peakDishingOverStroke": 2,
+    "tenLargestOverStroke": 1,
+    "uncoupledDishingOverStroke": 66,
+    "tenLargestRimOverStroke": 1
+   },
+   "leavesNoBooleanIsWrittenOn": 366,
+   "diagnosticLeafKeys": [
+    "medianOverStroke",
+    "worstSingleRemovalOverStroke",
+    "uncoupledDishingOverStroke",
+    "p95OverStroke",
+    "worstSinglePathRemovalOverStroke"
+   ],
+   "channelsAsPublished": [
+    {
+     "threshold": 1e-05,
+     "label": "the tightest reading itself",
+     "count": 0
+    },
+    {
+     "threshold": 0.0005,
+     "label": "CH-0284's collar channel",
+     "count": 2
+    },
+    {
+     "threshold": 0.0042724,
+     "label": "the movement that would flip C-0180's tightest recovered cell",
+     "count": 96
+    },
+    {
+     "threshold": 0.00457,
+     "label": "C-0180's beam-subdivision departure, AS PUBLISHED -- 10x too generous",
+     "count": 99
+    },
+    {
+     "threshold": 0.0067,
+     "label": "CH-0284's bond-prestrain channel",
+     "count": 126
+    },
+    {
+     "threshold": 0.0402,
+     "label": "the prestrain channel at convention C's 6x",
+     "count": 484
+    }
+   ],
+   "channelCommensurate": {
+    "threshold": 0.000457,
+    "label": "C-0180's beam-subdivision departure, commensurate",
+    "count": 2
+   }
+  },
+  "identity": {
+   "statement": "flatAt*P90 is TRUE iff exceedance <= 0.10, exactly: orderStatistic(sample, 0.90) is sorted[ceil(0.9 n) - 1], so at n = 4 000 the verdict holds iff at most 400 realisations exceed the tolerance",
+   "source": "coupling/DropoutRobustPlacement.kt",
+   "recordsCarryingBoth": 1184,
+   "booleansTested": 1440,
+   "disagreements": 0,
+   "realisationCountsStated": [
+    4000
+   ],
+   "recordsAssumingTheCount": 666
+  },
+  "populationA": {
+   "what": "an ensemble order statistic whose record emits its own exceedance",
+   "resolution": "the exact two-sided Clopper-Pearson interval on that record's own exceedance, at that record's own realisation count",
+   "confidence": 0.95,
+   "positive": 19,
+   "positiveUndetermined": 7,
+   "negative": 1421,
+   "negativeUndetermined": 1,
+   "undetermined": [
+    {
+     "tag": "T-263",
+     "path": "/cells/135",
+     "exceedanceCount": 394,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.0894361336,
+     "clopperPearsonHigh": 0.108155043,
+     "oneSidedBinomialP": 0.388427674,
+     "twoSidedBinomialP": 0.776855348,
+     "readsFlat": true
+    },
+    {
+     "tag": "T-263",
+     "path": "/cells/137",
+     "exceedanceCount": 411,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.0935082082,
+     "clopperPearsonHigh": 0.112576522,
+     "oneSidedBinomialP": 0.288332872,
+     "twoSidedBinomialP": 0.576665745,
+     "readsFlat": false
+    },
+    {
+     "tag": "T-263",
+     "path": "/cells/155",
+     "exceedanceCount": 372,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.0841742916,
+     "clopperPearsonHigh": 0.102425254,
+     "oneSidedBinomialP": 0.072494492,
+     "twoSidedBinomialP": 0.144988984,
+     "readsFlat": true
+    },
+    {
+     "tag": "T-263",
+     "path": "/cells/157",
+     "exceedanceCount": 385,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.0872824522,
+     "clopperPearsonHigh": 0.105812144,
+     "oneSidedBinomialP": 0.223238114,
+     "twoSidedBinomialP": 0.446476228,
+     "readsFlat": true
+    },
+    {
+     "tag": "T-279",
+     "path": "/cells/109",
+     "exceedanceCount": 398,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.090393804,
+     "clopperPearsonHigh": 0.109195854,
+     "oneSidedBinomialP": 0.471274768,
+     "twoSidedBinomialP": 0.942549536,
+     "readsFlat": true
+    },
+    {
+     "tag": "T-279",
+     "path": "/cells/69",
+     "exceedanceCount": 392,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.088957408,
+     "clopperPearsonHigh": 0.107634528,
+     "oneSidedBinomialP": 0.348514492,
+     "twoSidedBinomialP": 0.697028984,
+     "readsFlat": true
+    },
+    {
+     "tag": "T-299",
+     "path": "/cells/205",
+     "exceedanceCount": 392,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.088957408,
+     "clopperPearsonHigh": 0.107634528,
+     "oneSidedBinomialP": 0.348514492,
+     "twoSidedBinomialP": 0.697028984,
+     "readsFlat": true
+    },
+    {
+     "tag": "T-299",
+     "path": "/cells/325",
+     "exceedanceCount": 398,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.090393804,
+     "clopperPearsonHigh": 0.109195854,
+     "oneSidedBinomialP": 0.471274768,
+     "twoSidedBinomialP": 0.942549536,
+     "readsFlat": true
+    }
+   ]
+  },
+  "populationB": {
+   "what": "a nominal, zero-defect reading -- the axis the T-327 row itself names",
+   "resolution": "its own file's worst DISCRETISATION departure on a NOMINAL quantity; a per-(file, quantity) match and deliberately not a per-file maximum",
+   "readingsInRange": 145,
+   "noNominalDiscretisationAxisInTheirOwnFile": 131,
+   "undetermined": 0,
+   "determined": 14,
+   "byFileWithNoAxis": {
+    "T-294": 83,
+    "T-299": 48
+   },
+   "worstNominalDepartureByFile": {
+    "T-263": 0.00011
+   }
+  },
+  "populationC": {
+   "what": "a flatAt*P90 verdict whose record emits NO exceedance",
+   "resolution": "NONE is derivable from the file -- a recorded refusal, never a withdrawal",
+   "booleans": 1238,
+   "positive": 87,
+   "byFile": {
+    "T-279": 128,
+    "T-284": 128,
+    "T-291": 128,
+    "T-297": 36,
+    "T-299": 16,
+    "T-303": 348,
+    "T-310": 346,
+    "T-316": 37,
+    "T-322": 54,
+    "T-323": 17
+   },
+   "positiveByFile": {
+    "T-279": 2,
+    "T-284": 2,
+    "T-297": 8,
+    "T-303": 8,
+    "T-316": 27,
+    "T-322": 33,
+    "T-323": 7
+   }
+  }
+ },
+ "atThisPassesTree": {
+  "census": {
+   "predicate": "C-0221 section 5's, verbatim: a numeric leaf whose key ends OverStroke or contains ishing, in a JSON object that also carries at least one boolean, valued in [0.09, 0.11]",
+   "readings": 1146,
+   "tightest": 0.10000102,
+   "tightestAt": "T-294/cells/92/nominalCorrectedOverStroke",
+   "distinctLeafKeys": 25,
+   "leafKeyPartition": {
+    "nominalCorrectedOverStroke": 59,
+    "medianOverStroke": 139,
+    "p90OverStroke": 325,
+    "zeroTermP90OverStroke": 69,
+    "tiedP90OverStroke": 11,
+    "zeroPrestrainP90OverStroke": 22,
+    "tenBySixP90OverStroke": 21,
+    "referenceP90OverStroke": 60,
+    "twoLevelP90OverStroke": 44,
+    "worstSingleRemovalOverStroke": 139,
+    "relativeRollWorstOverStroke": 10,
+    "p95OverStroke": 11,
+    "worstSinglePathRemovalOverStroke": 11,
+    "nominalOverStroke": 68,
+    "untiedP90OverStroke": 7,
+    "subjectP90OverStroke": 20,
+    "nominalStandingOverStroke": 24,
+    "forcedExcessCeilingOverStroke": 2,
+    "medianCorrectedOverStroke": 28,
+    "worstWorstCornerDishing": 5,
+    "unitPeakDishingPerRadian": 1,
+    "peakDishingOverStroke": 2,
+    "tenLargestOverStroke": 1,
+    "uncoupledDishingOverStroke": 66,
+    "tenLargestRimOverStroke": 1
+   },
+   "leavesNoBooleanIsWrittenOn": 366,
+   "diagnosticLeafKeys": [
+    "medianOverStroke",
+    "worstSingleRemovalOverStroke",
+    "uncoupledDishingOverStroke",
+    "p95OverStroke",
+    "worstSinglePathRemovalOverStroke"
+   ],
+   "channelsAsPublished": [
+    {
+     "threshold": 1e-05,
+     "label": "the tightest reading itself",
+     "count": 0
+    },
+    {
+     "threshold": 0.0005,
+     "label": "CH-0284's collar channel",
+     "count": 2
+    },
+    {
+     "threshold": 0.0042724,
+     "label": "the movement that would flip C-0180's tightest recovered cell",
+     "count": 96
+    },
+    {
+     "threshold": 0.00457,
+     "label": "C-0180's beam-subdivision departure, AS PUBLISHED -- 10x too generous",
+     "count": 99
+    },
+    {
+     "threshold": 0.0067,
+     "label": "CH-0284's bond-prestrain channel",
+     "count": 126
+    },
+    {
+     "threshold": 0.0402,
+     "label": "the prestrain channel at convention C's 6x",
+     "count": 484
+    }
+   ],
+   "channelCommensurate": {
+    "threshold": 0.000457,
+    "label": "C-0180's beam-subdivision departure, commensurate",
+    "count": 2
+   }
+  },
+  "identity": {
+   "statement": "flatAt*P90 is TRUE iff exceedance <= 0.10, exactly: orderStatistic(sample, 0.90) is sorted[ceil(0.9 n) - 1], so at n = 4 000 the verdict holds iff at most 400 realisations exceed the tolerance",
+   "source": "coupling/DropoutRobustPlacement.kt",
+   "recordsCarryingBoth": 1184,
+   "booleansTested": 1440,
+   "disagreements": 0,
+   "realisationCountsStated": [
+    4000
+   ],
+   "recordsAssumingTheCount": 666
+  },
+  "populationA": {
+   "what": "an ensemble order statistic whose record emits its own exceedance",
+   "resolution": "the exact two-sided Clopper-Pearson interval on that record's own exceedance, at that record's own realisation count",
+   "confidence": 0.95,
+   "positive": 19,
+   "positiveUndetermined": 7,
+   "negative": 1421,
+   "negativeUndetermined": 1,
+   "undetermined": [
+    {
+     "tag": "T-263",
+     "path": "/cells/135",
+     "exceedanceCount": 394,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.0894361336,
+     "clopperPearsonHigh": 0.108155043,
+     "oneSidedBinomialP": 0.388427674,
+     "twoSidedBinomialP": 0.776855348,
+     "readsFlat": true
+    },
+    {
+     "tag": "T-263",
+     "path": "/cells/137",
+     "exceedanceCount": 411,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.0935082082,
+     "clopperPearsonHigh": 0.112576522,
+     "oneSidedBinomialP": 0.288332872,
+     "twoSidedBinomialP": 0.576665745,
+     "readsFlat": false
+    },
+    {
+     "tag": "T-263",
+     "path": "/cells/155",
+     "exceedanceCount": 372,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.0841742916,
+     "clopperPearsonHigh": 0.102425254,
+     "oneSidedBinomialP": 0.072494492,
+     "twoSidedBinomialP": 0.144988984,
+     "readsFlat": true
+    },
+    {
+     "tag": "T-263",
+     "path": "/cells/157",
+     "exceedanceCount": 385,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.0872824522,
+     "clopperPearsonHigh": 0.105812144,
+     "oneSidedBinomialP": 0.223238114,
+     "twoSidedBinomialP": 0.446476228,
+     "readsFlat": true
+    },
+    {
+     "tag": "T-279",
+     "path": "/cells/109",
+     "exceedanceCount": 398,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.090393804,
+     "clopperPearsonHigh": 0.109195854,
+     "oneSidedBinomialP": 0.471274768,
+     "twoSidedBinomialP": 0.942549536,
+     "readsFlat": true
+    },
+    {
+     "tag": "T-279",
+     "path": "/cells/69",
+     "exceedanceCount": 392,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.088957408,
+     "clopperPearsonHigh": 0.107634528,
+     "oneSidedBinomialP": 0.348514492,
+     "twoSidedBinomialP": 0.697028984,
+     "readsFlat": true
+    },
+    {
+     "tag": "T-299",
+     "path": "/cells/205",
+     "exceedanceCount": 392,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.088957408,
+     "clopperPearsonHigh": 0.107634528,
+     "oneSidedBinomialP": 0.348514492,
+     "twoSidedBinomialP": 0.697028984,
+     "readsFlat": true
+    },
+    {
+     "tag": "T-299",
+     "path": "/cells/325",
+     "exceedanceCount": 398,
+     "realisations": 4000,
+     "clopperPearsonLow": 0.090393804,
+     "clopperPearsonHigh": 0.109195854,
+     "oneSidedBinomialP": 0.471274768,
+     "twoSidedBinomialP": 0.942549536,
+     "readsFlat": true
+    }
+   ]
+  },
+  "populationB": {
+   "what": "a nominal, zero-defect reading -- the axis the T-327 row itself names",
+   "resolution": "its own file's worst DISCRETISATION departure on a NOMINAL quantity; a per-(file, quantity) match and deliberately not a per-file maximum",
+   "readingsInRange": 145,
+   "noNominalDiscretisationAxisInTheirOwnFile": 131,
+   "undetermined": 0,
+   "determined": 14,
+   "byFileWithNoAxis": {
+    "T-294": 83,
+    "T-299": 48
+   },
+   "worstNominalDepartureByFile": {
+    "T-263": 0.00011
+   }
+  },
+  "populationC": {
+   "what": "a flatAt*P90 verdict whose record emits NO exceedance",
+   "resolution": "NONE is derivable from the file -- a recorded refusal, never a withdrawal",
+   "booleans": 1238,
+   "positive": 87,
+   "byFile": {
+    "T-279": 128,
+    "T-284": 128,
+    "T-291": 128,
+    "T-297": 36,
+    "T-299": 16,
+    "T-303": 348,
+    "T-310": 346,
+    "T-316": 37,
+    "T-322": 54,
+    "T-323": 17
+   },
+   "positiveByFile": {
+    "T-279": 2,
+    "T-284": 2,
+    "T-297": 8,
+    "T-303": 8,
+    "T-316": 27,
+    "T-322": 33,
+    "T-323": 7
+   }
+  }
+ },
+ "resolution": {
+  "populationA": "a flatAtP90 verdict may be quoted only when the exact two-sided Clopper-Pearson interval on its own exceedance EXCLUDES 0.10; inside it the reading is UNDETERMINED and neither flat nor not flat may be written on it",
+  "populationB": "a nominal verdict may be quoted only when its distance from the tolerance, relative to its own value, exceeds its own file's worst DISCRETISATION departure on a NOMINAL quantity",
+  "populationC": "no resolution is derivable from the file; the verdict is recorded as untestable and T-337 carries the one-field repair",
+  "binomialSigmaAtTheTolerance": 0.00474341649,
+  "binomialSigmaInRealisations": 18.973666,
+  "bandInRealisations": [
+   363,
+   438
+  ],
+  "bandInExceedance": [
+   0.09075,
+   0.1095
+  ],
+  "whyNotADiscretisationDeparture": "convergence is a property of the quantity, and the quantity a flatAtP90 verdict is a function of is a PROPORTION over a finite ensemble, not a real number the mesh moves"
+ },
+ "decidingCells": [
+  {
+   "tag": "T-279",
+   "path": "/cells/69",
+   "label": "the tighter recovered cell: tied, abstract grid, 30 paths, rim-graded 5:1",
+   "p90OverStroke": 0.0995744767,
+   "marginOfTheStroke": 0.0004255233,
+   "exceedance": 0.098,
+   "exceedanceCount": 392,
+   "exceedanceCountAtTheTolerance": 400,
+   "realisations": 4000,
+   "discretisationDeparture": 0.000457065922,
+   "marginOverTheDiscretisationDeparture": 9.34967404,
+   "marginOverTheBinomialSigma": 0.421637021,
+   "oneSidedBinomialP": 0.348514492,
+   "twoSidedBinomialP": 0.697028984,
+   "clopperPearsonLow": 0.088957408,
+   "clopperPearsonHigh": 0.107634528,
+   "determinacy": "UNDETERMINED"
+  },
+  {
+   "tag": "T-279",
+   "path": "/cells/109",
+   "label": "the other recovered cell: tied, on the rooting helices, 50 paths",
+   "p90OverStroke": 0.0998791032,
+   "marginOfTheStroke": 0.0001208968,
+   "exceedance": 0.0995,
+   "exceedanceCount": 398,
+   "exceedanceCountAtTheTolerance": 400,
+   "realisations": 4000,
+   "discretisationDeparture": 0.000101141277,
+   "marginOverTheDiscretisationDeparture": 11.9677288,
+   "marginOverTheBinomialSigma": 0.105409255,
+   "oneSidedBinomialP": 0.471274768,
+   "twoSidedBinomialP": 0.942549536,
+   "clopperPearsonLow": 0.090393804,
+   "clopperPearsonHigh": 0.109195854,
+   "determinacy": "UNDETERMINED"
+  }
+ ],
+ "exactAgainstNormal": {
+  "recordsCompared": 1184,
+  "disagreements": 0,
+  "where": []
+ },
+ "crossAxis": {
+  "statement": "a reading's distance from the tolerance, counted in its OWN noise on each axis -- the only density-free way the two may be compared",
+  "records": [
+   {
+    "tag": "T-279",
+    "path": "/cells/69",
+    "marginInDiscretisationDepartures": 9.34967404,
+    "marginInBinomialSigmas": 0.421637021,
+    "discretisationOverSamplingResolvingPower": 22.174699,
+    "samplingIsTheWorseResolvedAxis": true
+   },
+   {
+    "tag": "T-279",
+    "path": "/cells/109",
+    "marginInDiscretisationDepartures": 11.9677288,
+    "marginInBinomialSigmas": 0.105409255,
+    "discretisationOverSamplingResolvingPower": 113.535845,
+    "samplingIsTheWorseResolvedAxis": true
+   },
+   {
+    "tag": "T-294",
+    "path": "/cells/227",
+    "marginInDiscretisationDepartures": 1676.41252,
+    "marginInBinomialSigmas": 99.2428139,
+    "discretisationOverSamplingResolvingPower": 16.8920293,
+    "samplingIsTheWorseResolvedAxis": true
+   },
+   {
+    "tag": "T-299",
+    "path": "/cells/204",
+    "marginInDiscretisationDepartures": 49.3342562,
+    "marginInBinomialSigmas": 7.37864787,
+    "discretisationOverSamplingResolvingPower": 6.68608355,
+    "samplingIsTheWorseResolvedAxis": true
+   },
+   {
+    "tag": "T-299",
+    "path": "/cells/206",
+    "marginInDiscretisationDepartures": 17173.1911,
+    "marginInBinomialSigmas": 122.959896,
+    "discretisationOverSamplingResolvingPower": 139.664977,
+    "samplingIsTheWorseResolvedAxis": true
+   },
+   {
+    "tag": "T-299",
+    "path": "/cells/300",
+    "marginInDiscretisationDepartures": 98.2001363,
+    "marginInBinomialSigmas": 7.58946638,
+    "discretisationOverSamplingResolvingPower": 12.9390041,
+    "samplingIsTheWorseResolvedAxis": true
+   },
+   {
+    "tag": "T-299",
+    "path": "/cells/302",
+    "marginInDiscretisationDepartures": 4077.02115,
+    "marginInBinomialSigmas": 75.8419592,
+    "discretisationOverSamplingResolvingPower": 53.7568015,
+    "samplingIsTheWorseResolvedAxis": true
+   },
+   {
+    "tag": "T-299",
+    "path": "/cells/324",
+    "marginInDiscretisationDepartures": 45.8338554,
+    "marginInBinomialSigmas": 2.79334527,
+    "discretisationOverSamplingResolvingPower": 16.4082313,
+    "samplingIsTheWorseResolvedAxis": true
+   },
+   {
+    "tag": "T-299",
+    "path": "/cells/326",
+    "marginInDiscretisationDepartures": 7254.7599,
+    "marginInBinomialSigmas": 76.3163009,
+    "discretisationOverSamplingResolvingPower": 95.0617341,
+    "samplingIsTheWorseResolvedAxis": true
+   },
+   {
+    "tag": "T-299",
+    "path": "/cells/348",
+    "marginInDiscretisationDepartures": 5804.52189,
+    "marginInBinomialSigmas": 24.9819935,
+    "discretisationOverSamplingResolvingPower": 232.348226,
+    "samplingIsTheWorseResolvedAxis": true
+   },
+   {
+    "tag": "T-299",
+    "path": "/cells/350",
+    "marginInDiscretisationDepartures": 44466.9641,
+    "marginInBinomialSigmas": 97.0819242,
+    "discretisationOverSamplingResolvingPower": 458.035463,
+    "samplingIsTheWorseResolvedAxis": true
+   }
+  ]
+ },
+ "ordering": {
+  "statement": "the corpus's own paired blocks are exact sign tests on the SAME realisations, so an ORDERING survives where a LEVEL does not",
+  "comparisons": [
+   {
+    "tag": "T-279",
+    "comparison": "the tied honeycomb lattice over C-0167's untied one",
+    "pathCount": 30,
+    "distribution": "rim-graded 5:1",
+    "realisations": 4000,
+    "wins": 3854,
+    "signTestTwoSidedP": 0.0,
+    "verdictMoved": true,
+    "signTestBelowDoublePrecisionFloor": true
+   },
+   {
+    "tag": "T-279",
+    "comparison": "the tied honeycomb lattice over C-0167's untied one",
+    "pathCount": 50,
+    "distribution": "rim-graded 5:1",
+    "realisations": 4000,
+    "wins": 3478,
+    "signTestTwoSidedP": 0.0,
+    "verdictMoved": true,
+    "signTestBelowDoublePrecisionFloor": true
+   },
+   {
+    "tag": "T-299",
+    "comparison": "the 28 nt tethered lattice over C-0180's TIED one (route B over route A)",
+    "pathCount": 30,
+    "distribution": "rim-graded 5:1",
+    "realisations": 4000,
+    "wins": 5,
+    "signTestTwoSidedP": 0.0,
+    "verdictMoved": true,
+    "signTestBelowDoublePrecisionFloor": true
+   },
+   {
+    "tag": "T-299",
+    "comparison": "the 28 nt tethered lattice over C-0180's TIED one (route B over route A)",
+    "pathCount": 50,
+    "distribution": "rim-graded 5:1",
+    "realisations": 4000,
+    "wins": 120,
+    "signTestTwoSidedP": 0.0,
+    "verdictMoved": true,
+    "signTestBelowDoublePrecisionFloor": true
+   }
+  ]
+ },
+ "convergenceAxesRead": {
+  "statement": "every convergence axis of the eighteen files, classified by KIND; only a DISCRETISATION axis may enter a resolution",
+  "byKind": {
+   "DISCRETISATION": 101,
+   "PENALTY": 1,
+   "SEARCH": 11,
+   "PARAMETER": 2
+  },
+  "excludedByKind": {
+   "SEARCH": "the search's own variance, not the verdict's",
+   "PARAMETER": "a physical bracket, not a departure",
+   "PENALTY": "a constraint's value, which is C-0100's binary",
+   "UNCLASSIFIED": "refused rather than guessed"
+  },
+  "total": 115
+ },
+ "convergence": [
+  {
+   "axis": "the confidence level the resolution is stated at",
+   "setting": "0.90",
+   "quantity": "undetermined flatAt*P90 booleans",
+   "value": 8,
+   "positiveUndetermined": 7,
+   "negativeUndetermined": 1
+  },
+  {
+   "axis": "the confidence level the resolution is stated at",
+   "setting": "0.95",
+   "quantity": "undetermined flatAt*P90 booleans",
+   "value": 8,
+   "positiveUndetermined": 7,
+   "negativeUndetermined": 1
+  },
+  {
+   "axis": "the confidence level the resolution is stated at",
+   "setting": "0.99",
+   "quantity": "undetermined flatAt*P90 booleans",
+   "value": 10,
+   "positiveUndetermined": 7,
+   "negativeUndetermined": 3
+  }
+ ],
+ "reproductions": [
+  {
+   "source": "C-0221 section 5",
+   "quantity": "verdict-bearing readings",
+   "published": 1146,
+   "here": 1146,
+   "reproduced": true
+  },
+  {
+   "source": "C-0221 section 5",
+   "quantity": "the tightest reading",
+   "published": 0.10000102,
+   "here": 0.10000102,
+   "reproduced": true
+  },
+  {
+   "source": "C-0221 section 5",
+   "quantity": "readings within the convergence departure AS PUBLISHED",
+   "published": 99,
+   "here": 99,
+   "reproduced": true
+  },
+  {
+   "source": "C-0180 section 5",
+   "quantity": "the margin over the departure, its '9.3'",
+   "published": 9.3,
+   "here": 9.34967404,
+   "reproduced": true
+  }
+ ],
+ "falsifiers": [
+  {
+   "id": "F1",
+   "statement": "the identity disagrees at any committed record",
+   "fired": false
+  },
+  {
+   "id": "F2",
+   "statement": "the commensurate recount is not 2, or the published 99 is not reproduced",
+   "fired": false
+  },
+  {
+   "id": "F3",
+   "statement": "some record's realisation count is not 4 000",
+   "fired": false
+  },
+  {
+   "id": "F5",
+   "statement": "no positive verdict is UNDETERMINED -- then the answer is the recorded refusal",
+   "fired": false
+  },
+  {
+   "id": "F6",
+   "statement": "the undetermined count is not non-decreasing in the confidence",
+   "fired": false
+  },
+  {
+   "id": "F8",
+   "statement": "a paired sign test is also undetermined at a recovering pair",
+   "fired": false
+  },
+  {
+   "id": "F4",
+   "statement": "the exact Clopper-Pearson verdict and the normal approximation disagree at any record",
+   "fired": false
+  },
+  {
+   "id": "F7",
+   "statement": "the sampling axis is the BETTER resolved one at some record where both exist -- then the general statement is false",
+   "fired": false
+  },
+  {
+   "id": "F13",
+   "statement": "the leaf-key partition does not sum to the census total",
+   "fired": false
+  },
+  {
+   "id": "F14",
+   "statement": "more than a handful of NEGATIVE verdicts are undetermined -- then the asymmetry is not the finding",
+   "fired": false
+  }
+ ],
+ "findings": [
+  "The T-327 row's own threshold is a factor of ten out: C-0180's 4.57e-4 is a departure relative to the value, and read commensurately the count is 2, not 99.",
+  "And the 1 146 counts LEAVES: 366 of them are medians, worsts, p95s and uncoupled controls that no boolean of their own record is written on.",
+  "flatAt*P90 is exactly `exceedance <= 0.10`, at 1440 of 1440 committed booleans with 0 disagreeing, so a flatness verdict is a binomial statement and its resolution is that proportion's sampling error.",
+  "At the exact two-sided 95 per cent Clopper-Pearson interval, 7 of the 19 booleans reading FLAT are UNDETERMINED and 1 of the 1421 reading NOT FLAT are. The corpus's positive flatness verdicts are the unresolved ones and its negative ones are robust.",
+  "C-0180's two recovered cells are 392 and 398 of 4 000 against 400 -- one-sided binomial p of 0.349 and 0.471. The same margins are 9.3497 and 11.9677 times the discretisation departure, which is what 'and it is converged' reports.",
+  "The ORDERING survives where the LEVEL does not: the corpus's own paired blocks put the recovering comparisons at 3854 and 3478 wins of 4 000, sign tests below the double-precision floor.",
+  "On the axis the row itself names the answer is nearly EMPTY, which is a result: of 145 nominal readings in range, 131 have no nominal discretisation axis in their own file at all and 0 of the remaining 14 are undetermined.",
+  "And 87 of the corpus's 106 POSITIVE flatness verdicts cannot be tested at all, because their record emits no exceedance. That is a recorded refusal with a queue row (T-337), never a withdrawal."
+ ],
+ "validity": [
+  "The binomial error priced here is the error of the ensemble at a GIVEN staple incorporation. C-0087's incorporation is itself a measurement with its own uncertainty, and that is a strictly larger separate term. It is named, not priced.",
+  "The instrument applies to a verdict read as a claim about the POPULATION the 4 000 draws estimate. A verdict read as a claim about this one seeded sample has no sampling error at all -- and no design content either, since the dropout ensemble is a model of fabrication and not a property of seed 197197.",
+  "Population C is refused, not estimated: 87 positive verdicts, including C-0212's 22 of 32 and C-0215's 27 of 48, are untestable from their own files.",
+  "The census is over the eighteen files' COMMITTED state at the stated baselineRef and is dated by it. A verdict written outside its own record is invisible to it.",
+  "Population B's match is per (file, quantity) and not per cell. T-263's single nominal departure is read at the recommended cell and applied to that file's 14 readings; that is stated rather than hidden, and it is the loosest match this file makes."
+ ],
+ "openQuestions": [
+  "T-337 -- emit an exceedance beside every p90 verdict. It is one field the studies already compute, and it converts 87 untestable positive verdicts into testable ones.",
+  "T-338 -- re-read the marginal verdicts of the two deliverables at the stated resolution, and carry UNDETERMINED as a third state beside flat and not flat.",
+  "Whether an ORDERING should be the corpus's primary flatness statement, given that it resolves where a level does not."
+ ],
+ "baselineControl": {
+  "statement": "this task writes no file into gpd/results/ other than its own, so the reading at the pinned ref and the reading at this pass's tree must agree",
+  "agree": true
+ }
+}

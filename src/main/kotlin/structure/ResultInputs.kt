@@ -239,9 +239,11 @@ object ResultInputs {
     val T_322: ResultInput = ResultInput("T-322", "T-322-route-b-coupled-on-its-own-stations.json")
     val T_323: ResultInput = ResultInput("T-323", "T-323-the-placement-and-the-distribution-together.json")
     val T_326: ResultInput = ResultInput("T-326", "T-326-the-fit-and-the-sample-in-one-reconstruction.json")
+    val T_327: ResultInput = ResultInput("T-327", "T-327-the-resolution-of-the-flatness-census.json")
     val T_330: ResultInput = ResultInput("T-330", "T-330-a-dishing-fit-and-the-parity-of-its-basis.json")
     val T_332: ResultInput = ResultInput("T-332", "T-332-fifteenth-answers-synthesis.json")
     val T_334: ResultInput = ResultInput("T-334", "T-334-the-gate-census-by-reachability.json")
+    val T_336: ResultInput = ResultInput("T-336", "T-336-a-quoted-count-against-a-pinned-record.json")
     val T_3A: ResultInput = ResultInput("T-3a", "T-3a-nonlinear-pb-profile.json")
     val T_3B: ResultInput = ResultInput("T-3b", "T-3b-tile-edge-load-profile.json")
     val T_4: ResultInput = ResultInput("T-4", "T-4-maximum-usable-bias.json")
@@ -283,8 +285,9 @@ object ResultInputs {
         T_260, T_261, T_262, T_263, T_267, T_274, T_275, T_276, T_278, T_279, T_280, T_281, T_282,
         T_283, T_284, T_285, T_286, T_287, T_289, T_291, T_292, T_293, T_294, T_295, T_296, T_297,
         T_298, T_299, T_3, T_30, T_300, T_302, T_303, T_304, T_307, T_310, T_315, T_316, T_319,
-        T_322, T_323, T_326, T_330, T_332, T_334, T_3A, T_3B, T_4, T_40, T_5, T_50, T_5B, T_6, T_60,
-        T_65, T_67, T_7, T_70, T_71, T_72, T_75, T_76, T_79, T_8, T_81, T_9, T_96, T_97, T_99, T_9B
+        T_322, T_323, T_326, T_327, T_330, T_332, T_334, T_336, T_3A, T_3B, T_4, T_40, T_5, T_50,
+        T_5B, T_6, T_60, T_65, T_67, T_7, T_70, T_71, T_72, T_75, T_76, T_79, T_8, T_81, T_9, T_96,
+        T_97, T_99, T_9B
     )
 
     /** The handle a task id names, or `null` where a task id names two files. */

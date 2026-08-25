@@ -234,4 +234,89 @@ If the run lands where §5e expects, the following carry a level verdict this ta
 
 ## 7. Execute
 
-*(to be filled after the run)*
+Filed as [`C-0223`](../claims/C-0223-the-resolution-of-the-flatness-census.md).
+Result: [`gpd/results/T-327-the-resolution-of-the-flatness-census.json`](../results/T-327-the-resolution-of-the-flatness-census.json), at `baselineRef` **`86b3bbd`** — the commit this Formulate and Plan were committed at, pinned rather than defaulted to `HEAD` (`CH-0246`), with the working-tree control **agreeing**.
+
+### TDD, and the two watched failures
+
+The tests were written before the implementation, in two passes, and both failures are recorded here
+because a claim that says *"written first and watched fail"* is a statement about a run.
+
+1. **The stub.** `tools/T-327-flatness-resolution.py` was first written with `binom_cdf` and three
+   siblings as `raise NotImplementedError` and one self-test calling `binom_cdf(4000, 4000, 0.1)`.
+   `--self-test` exited **1** with `NotImplementedError` from line 33.
+2. **The whole suite against stubs.** All sixteen functions were then stubbed and the complete
+   self-test block written against them — the census predicate, the identity, the realisation
+   count, the determinacy, the axis kinds, the paired ordering and the three live-corpus arms.
+   `--self-test` exited **1** at the first assertion, again `NotImplementedError`.
+
+Only then was the implementation written, and all of it passed on its first real run — which is
+unusual here and is explained the same way `C-0221` explains its own: the cheap bound had already
+produced every constant the tests assert, in Python, before a line of the tool existed. Four
+functions were added later (`nominal_population`, `_worst_nominal_discretisation`, and the emitter's
+`_cross_axis` and `_exact_against_normal`), each the same way: tests first, `NameError`, then the
+body.
+
+### The twelve targets
+
+| | |
+|---|---|
+| **P1** | **MET.** `flatAt*P90 ⟺ exceedance ≤ 0.10`, derived from `coupling/DropoutRobustPlacement.kt` and checked at **`1 440` of `1 440`** booleans over `1 184` records in five files, **`0`** disagreeing, both of `T-294`'s booleans included |
+| **P2** | **MET.** Backed out of `exceedance` and `exceedanceStandardError` at every record that states one — `{4000}`, a single value — and a record stating none yields `None` rather than a guess |
+| **P3** | **MET.** `1 146`, `0.100001020` at `T-294/cells/92`, and `0 / 2 / 96 / 99 / 126 / 484` reproduced exactly at `C-0221` §5's own thresholds; the `4.57e−3` channel restated at `4.57e−4`, exactly `10×` tighter, count **`2`** |
+| **P4** | **MET.** `25` distinct leaf keys; the five diagnostic keys total **`366`** |
+| **P5** | **MET.** `2 678` `flatAt*P90` booleans, `1 440` with an exceedance and `1 238` without; `106` reading true, `19` testable, `87` not |
+| **P6** | **MET.** Exact Clopper-Pearson and exact one- and two-sided binomial `p` per record, computed without inverting the interval — `p₀ ≥ low ⟺ P(X ≥ x \| p₀) ≥ α`, asserted equal to the inverted form at seven points |
+| **P7** | **MET.** The resolution is §4 of the claim; the undetermined band at `n = 4 000` and `95 %` is **`[363, 438]`** realisations. The sweep reads **`8 / 8 / 10`** undetermined booleans at `90 / 95 / 99 %` |
+| **P8** | **MET.** **`7` of `19`** positive and **`1` of `1 421`** negative, by name, with both of `C-0180`'s cells among them at one-sided `p = 0.349` and `0.471` |
+| **P9** | **MET.** The paired sign test beside every level reading it exists for: `3 854` and `3 478` of `4 000` at the two recovering comparisons, `p` below the double-precision floor and flagged as such rather than emitted as a bare `0.0` |
+| **P10** | **MET, and nearly EMPTY, which is the result.** `145` nominal readings in range, **`131`** with no nominal discretisation axis in their own file, **`0`** of the remaining `14` undetermined |
+| **P11** | **MET**, with the caveat carried: the ratio needs the tail density, so the claim headlines the density-free form — `9.3497×` and `11.9677×` against `0.422 σ` and `0.105 σ` |
+| **P12** | **MET.** `87` untestable positive verdicts partitioned by file, `T-337` raised, and `C-0212`/`C-0215` named as refused rather than withdrawn |
+
+### The fourteen falsifiers
+
+`F9` was declared **CLOSED** and holds. `F5` was declared **OPEN and expected not to fire**, and did not — `7 of 19`, which is why the deliverable is a resolution and not a refusal. `F1`, `F2`, `F3`, `F6`, `F8`, `F13`, `F14` did not fire; **`F4`** (exact against the normal approximation) is `0` disagreements over `1 184` records, **`F7`** (is the sampling axis ever the better-resolved one) is `0` of the `11` records carrying both, and **`F12`** is `21` mutations with `0` survivors over a subtracted baseline. **`F10` and `F11` were discharged by measurement**: `0` pre-existing result files moved (`197 → 198`, one added, none removed), and two independent emissions byte-identical at `sha256 5eb07163…`, `cmp`-ed outside the emitter.
+
+### What the run cost, and what it did not need
+
+No JVM, no solve, no study run and no third-party package. `61` self-tests in `0.5 s`; the emitter's `14` in `6 s`; the mutation table's `21` rows in under a minute. The one thing the Plan predicted and got wrong in size is the mutation table: it needed **three** repairs on its first run and a **fourth** after `tools/T-295-mutation-input-census.py` refused it, and all four are retained in `C-0223` §8 — two are a fact about `str.count`, the third is a real gap in the tests, and the fourth is `C-0195`'s question answered: `1` of the `21` was held open by the corpus rather than by a fixture, and is now held open by a constructed one.
+
+### The defect only the assembled-tree run could see
+
+`tools/verify.sh` at the assembled `HEAD` came back **RED** on `:testFlatnessResolutionEmitter`, and it was mine.
+The wiring was right and the self-test passed in the checkout; it failed **inside a snapshot**, because
+`tools/snapshot.sh` excludes `./.git` and the self-test builds its document at a **pinned ref**.
+`git rev-parse 86b3bbd` exits `128` where there is no repository.
+
+Both remedies were open. **Degrading visibly was taken and unwiring refused, on a count**: only **2** of the
+emitter's 18 named arms need the ref, so unwiring the task would have retired 16 live checks to avoid 2.
+The two are skipped with a `stderr` notice — `stderr` because `--self-test > /dev/null` swallows stdout
+(`C-0195`) — the document is built from the working tree instead, and the arm count drops `18 → 16`, which is
+itself a signal. **The `--emit` path is deliberately not degraded**: it exits `2` rather than write a
+corpus-subject file with a `null` `baselineRef` (`CH-0246`).
+
+Verified by running, not by reading, in a `.git`-less snapshot built the way `tools/snapshot.sh` builds one:
+
+| | in the checkout | in a `.git`-less snapshot |
+|---|---|---|
+| `T-327-flatness-resolution.py --self-test` | `61` arms, exit `0` | `61` arms, exit `0` — **no dependency** |
+| `T-327-emit-result.py --self-test` | `18` arms, exit `0` | **`16` arms, exit `0`, 2 skipped loudly** |
+| `T-327-mutation-test.py` | `21 / 0` survivors, exit `0` | `21 / 0` survivors, exit `0` — **no dependency** |
+
+**The other two tasks were checked the same way rather than argued about, and neither has the
+dependency**: the census reads `gpd/results/` and never `git`, and the harness copies `tools/` and
+`gpd/results/` into its own fixture. The census does carry a visible skip of its own, but it fires
+on a different condition — an **emptied** corpus, which is `tools/T-295-mutation-input-census.py`'s
+treatment arm (`58` arms there) — and a snapshot has the corpus, only not the repository. **Two
+skips, two conditions; neither stands in for the other**, which is why both were run rather than
+reasoned about.
+**And the guard's own named test failed on its first run, on a defect in the guard**: `git rev-parse <40-hex>`
+validates an object name's *syntax* and not its existence, echoing an all-zero sha back at exit `0`, so the
+first draft would have moved the crash to `git archive` rather than preventing it. Both the guard and the
+resolver now use `rev-parse --verify --quiet <ref>^{commit}`. The emitted result file is **byte-identical**
+across the whole repair.
+
+### What was cut
+
+The density route of §5a — `SE(p90) = √(pq/n)/f` with `f` estimated from `(p95 − p90)` — is retained in the cheap-bound directory as a cross-check and no headline rests on it, exactly as the Plan said. Nothing else was cut.

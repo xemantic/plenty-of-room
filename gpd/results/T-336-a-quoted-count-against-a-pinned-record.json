@@ -1,0 +1,107 @@
+{
+  "emission": {
+    "lattice": "none",
+    "regime": null
+  },
+  "task": "T-336",
+  "title": "a self-describing count the deliverable PRINTS against the one a result file PINS",
+  "baselineRef": "52a7bf349d0e6982ed2a1ef92eefee249fc8ec23",
+  "baselineRefRequested": "52a7bf3",
+  "parameters": {
+    "deliverables": [
+      "ANSWERS.md",
+      "DECISIONS-FOR-NDI.md"
+    ],
+    "proseAnchorWindow": 120,
+    "proseArmIsGated": false,
+    "pinnedKeys": [
+      "atRef",
+      "atBaselineRef"
+    ],
+    "unpinnedKeys": [
+      "atThisPassesTree",
+      "atThisPassesWorkingTree",
+      "workingTreeBeforeThisClaimsOwnFiles",
+      "workingTree",
+      "thisPassesTree",
+      "atC0210sOwnRef",
+      "sameQuantityAtC0210sOwnRef",
+      "asWrittenBeforeThisPass",
+      "asPublishedByC0210"
+    ]
+  },
+  "atRef": {
+    "state": "52a7bf3",
+    "declaredQuantities": 5,
+    "censusFamilyResultFiles": 4,
+    "pinnedRecords": 44,
+    "unpinnedRecords": 37,
+    "gatedArmDefects": 0,
+    "proseFiguresPinnedByNothing": 4,
+    "unreachedNumeralsOnFlaggedLines": 4,
+    "rederivedAtTheirOwnRef": {
+      "records": 11,
+      "mismatches": 0
+    }
+  },
+  "theDefect": {
+    "where": "ANSWERS.md line 1385",
+    "quoted": {
+      "challenges": 247,
+      "claims": 214,
+      "claimsAndChallenges": 461
+    },
+    "pinnedByItsOwnPassesResultFile": {
+      "file": "gpd/results/T-332-fifteenth-answers-synthesis.json",
+      "atRef": "d7b7074a2be0367429bd63762fd2c8082bbd498d",
+      "challenges": 246,
+      "claims": 213,
+      "claimsAndChallenges": 459
+    },
+    "commitsInTheWholeHistoryCarryingTheQuotedPair": {
+      "commitsSearched": 298,
+      "challenges247claims214": 0,
+      "challenges248claims215": 0
+    },
+    "whyItHappened": "T-332's emitter records BOTH a pinned atRef reading and an unpinned workingTreeBeforeThisClaimsOwnFiles reading, and the deliverable quotes the one of the pair that nothing can pin.  T-319's own emitted note already states the rule -- 'only atRef is emitted, and the deliverable quotes the ref rather than the tree' -- and nothing gated it."
+  },
+  "falsePositiveRateOverHistory": {
+    "predicate": "an anchored live figure attributed to a declared quantity",
+    "revisionsOfTheTwoDeliverablesScanned": 103,
+    "distinctTriplesEverProduced": 22,
+    "totalHits": 85,
+    "falsePositives": 0,
+    "audited": "exhaustively, by hand, over the 22 distinct triples"
+  },
+  "proseAnchorWindowSweep": {
+    "windows": [
+      40,
+      60,
+      80,
+      100,
+      120,
+      150,
+      200,
+      300
+    ],
+    "proseFigures": [
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "plateauFrom": 80,
+    "chosen": 120
+  },
+  "notReached": {
+    "unpinnedRecordsNothingQuotes": 37,
+    "numeralsOnFlaggedLinesCarryingNoAnchor": 4,
+    "struckFigures": "blanked, C-0071",
+    "quantitiesNoCommittedToolDerives": "outside the registry, refused rather than defaulted",
+    "rederivationWithoutGit": "prints a visible stderr skip; tools/snapshot.sh excludes ./.git"
+  }
+}

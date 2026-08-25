@@ -1101,7 +1101,15 @@ whose comparison row this discharges.
 **Three things a reader must carry with that count.**
 **(1) The margin is 0.426 % of the tolerance** — 0.000425523 of the stroke at the tighter cell — and it is
 converged exactly there: **0 of 6** deciding-cell convergence steps move it, at a worst departure of **`4.57e−4`**,
-a factor of **9.3**.
+a factor of **9.3**. **AND THAT IS THE SMALLER OF TWO UNCERTAINTIES, iteration 54**
+([`C-0223`](gpd/claims/C-0223-the-resolution-of-the-flatness-census.md), `T-327`): a `flatAtP90` verdict is
+**exactly** the binomial statement *fewer than one realisation in ten exceeds the tolerance*, and these two cells
+are **392 and 398 of 4 000 against 400** — one-sided binomial `p` of **0.349** and **0.471**. **At the exact
+two-sided 95 % Clopper-Pearson interval both are UNDETERMINED**, so the `2 of 64` is not a measured pass; it is a
+count this corpus's own ensemble cannot resolve. **The ordering it rests on does resolve**: the tie is flatter at
+**3 854** and **3 478** of the same 4 000 paired realisations. **62 of 64 cells still fail and the recommended cell
+is still among them**, so no decision on this page changes — what changes is that the two exceptions are
+**UNDETERMINED** rather than **FLAT**.
 **(2) The free tile is not an order statistic of the coupled answer.** Its own ratio is **0.890395426**, i.e.
 `1.123×`; the **median of the per-realisation ratio** across the 64 paired cells runs **0.902845544 to
 0.988116016**, i.e. `1.012–1.108×` — so the free tile is a **ceiling the coupled cells never reach** and the
@@ -1745,7 +1753,7 @@ self-test is wired, in `build.gradle.kts`); and of the eight, **four** read this
 **RE-DERIVED, iteration 45 — the count moved AGAIN, the wiring clause is now false in the OTHER direction, and the
 predicate under all three is a FILENAME PREFIX rather than a census of gates**
 ([`CH-0243`](gpd/challenges/CH-0243-a-checker-census-keyed-on-a-filename-prefix.md)).
-`ls tools/check-*.py tools/trace-answers.py` returns **ten**, not eight — `check-cold-start-note.py` and
+`ls tools/check-*.py tools/trace-answers.py` returns **ten** at `05562ea`, not eight — `check-cold-start-note.py` and
 `check-queue-vocabulary.py` were added in iteration 42 — and **all ten are wired** into
 [`tools/verify.sh`](tools/verify.sh), because `trace-answers.py` was wired by `T-277`
 ([`C-0173`](gpd/claims/C-0173-trace-answers-wired.md)) in the *same* iteration the struck sentence was written,

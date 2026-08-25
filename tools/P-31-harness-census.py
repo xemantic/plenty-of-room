@@ -227,8 +227,12 @@ HARNESSES = (
     # `T-295`'s emptied arm.  Six of its rows RESTORE a predecessor's defect (the literal-only
     # tool pattern, the missing reachability filter, the `--self-test` exclusion, the
     # disjointness assumption) and five over-widen a rule, which is `C-0176`'s both directions.
+    ("T-336-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
+     "T-336-pinned-count-census.py", ("killed-by", "survives")),
     ("T-334-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
      "T-334-gate-census.py", ("killed-by", "survives")),
+    ("T-327-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
+     "T-327-flatness-resolution.py", ("killed-by", "survives")),
 )
 
 # Which module file each ATTRIBUTE receiver in a harness stands for.  A receiver not named here is
