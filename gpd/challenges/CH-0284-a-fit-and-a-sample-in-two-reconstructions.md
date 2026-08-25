@@ -55,6 +55,6 @@ The queue row is `T-326`.
 
 | | |
 |---|---|
-| **Status** | **RAISED**, iteration 52 |
+| **Status** | ~~**RAISED**, iteration 52~~ **ANSWERED**, iteration 53, by [`C-0221`](../claims/C-0221-the-fit-and-the-sample-in-one-reconstruction.md) (`T-326`) |
 | **Raised by** | [`C-0219`](../claims/C-0219-a-dishing-fit-and-the-parity-of-its-basis.md) (`T-330`) |
-| **Severity** | **a convention, priced** — it moves no number today, and adopting it moves 18 result files and could cross `T-5b` at one recovered cell |
+| **Severity** | **a convention, priced** — it moves no number today. ~~and adopting it moves 18 result files and could cross `T-5b` at one recovered cell~~ **MEASURED, iteration 53**: adopting it still moves 18 result files, and at the two cells `C-0180`'s verdict rests on the movement is `0.00143` with the verdict at `0 of 2`. §2's channel sizes are `1.21997×` low (`CH-0285`) and §4's first remedy is not well posed; the consistent convention is a third one nobody named. The sweep is `T-335` |

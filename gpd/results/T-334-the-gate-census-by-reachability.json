@@ -1,0 +1,508 @@
+{
+  "emission": {
+    "lattice": "none",
+    "regime": []
+  },
+  "task": "T-334",
+  "title": "how many distinct tools can fail a tools/verify.sh run - the census taken by REACHABILITY rather than by the shape of a wiring",
+  "baselineRef": "d9a3522d7ad2f2c98866fb012927a69cab7864c9",
+  "baselineRefRequested": "d9a3522",
+  "parameters": {
+    "predicate": "a tool under tools/ can fail a DEFAULT tools/verify.sh run iff verify.sh runs it as a command word of its own body, or ./gradlew test runs it through an Exec task :test depends on",
+    "deliberatelyNoSelfTestFilter": "a failing self-test fails the same run; the filter separates gates from self-tests, which is a different question",
+    "distinctBy": "os.path.basename",
+    "reachabilitySource": "tasks.named(\"test\") { dependsOn(...) } and nothing else",
+    "wiringShapesResolved": [
+      "commandLine(\"$projectDir/tools/x.py\")",
+      "commandLine(mutationSnapshotArguments(\"x.py\"))"
+    ],
+    "resolutionImportedFrom": "tools/P-31-harness-census.py -- strip_kotlin_comments, command_line_spans and shell_command_words, so use-not-mention (C-0206) has ONE implementation",
+    "whyThisRef": "d9a3522 is HEAD as this task's Formulate began, PINNED rather than defaulted: on a shared checkout HEAD moves while a claim is being drafted, and a corpus-subject emitter defaulting to HEAD re-bases its own measurement between the draft and the emission (CH-0246, met within one task rather than across iterations). The reading is UNCHANGED at 23e2c58 and 5c0229a, and neither commit touches build.gradle.kts or tools/"
+  },
+  "atBaselineRef": {
+    "state": "d9a3522",
+    "ref": "d9a3522d7ad2f2c98866fb012927a69cab7864c9",
+    "routeA": {
+      "predicate": "a command word of a comment-stripped line of tools/verify.sh",
+      "count": 18,
+      "names": [
+        "T-272-emit-result-inputs.py",
+        "T-272-header-census.py",
+        "T-278-emitter-rounding-census.py",
+        "T-295-mutation-input-census.py",
+        "check-challenge-index.py",
+        "check-cold-start-note.py",
+        "check-corpus-identifiers.py",
+        "check-corpus-links.py",
+        "check-entry-points.py",
+        "check-kotlin-format-strings.py",
+        "check-markdown-tables.py",
+        "check-queue-vocabulary.py",
+        "check-result-file-hygiene.py",
+        "check-result-path-references.py",
+        "cli_guard.py",
+        "result-reader-census.py",
+        "test-result-reader-census.py",
+        "trace-answers.py"
+      ]
+    },
+    "routeB": {
+      "predicate": "named inside a balanced commandLine(...) span of an Exec task that :test depends on; BOTH the literal and the helper wiring",
+      "count": 34,
+      "names": [
+        "P-30-mutation-test.py",
+        "P-31-harness-census.py",
+        "T-225-mutation-test.py",
+        "T-234-census.py",
+        "T-234-emit-classification.py",
+        "T-234-mutation-test.py",
+        "T-249-mutation-test.py",
+        "T-250-mutation-test.py",
+        "T-278-emitter-rounding-census.py",
+        "T-278-mutation-test.py",
+        "T-278-rounding-simulation.py",
+        "T-278-solver-provenance.py",
+        "T-280-mutation-test.py",
+        "T-281-mutation-test.py",
+        "T-283-mutation-test.py",
+        "T-289-mutation-test.py",
+        "T-292-column-repair.py",
+        "T-292-mutation-test.py",
+        "T-295-mutation-test.py",
+        "T-298-mutation-test.py",
+        "T-306-mutation-test.py",
+        "T-313-mutation-test.py",
+        "T-321-mutation-test.py",
+        "check-challenge-index.py",
+        "check-cold-start-note.py",
+        "check-corpus-links.py",
+        "check-kotlin-format-strings.py",
+        "check-queue-vocabulary.py",
+        "check-result-file-hygiene.py",
+        "cli_guard.py",
+        "test-check-markdown-tables.py",
+        "test-check-queue-vocabulary.py",
+        "test-snapshot.sh",
+        "test-trace-answers.py"
+      ]
+    },
+    "overlap": {
+      "count": 8,
+      "names": [
+        "T-278-emitter-rounding-census.py",
+        "check-challenge-index.py",
+        "check-cold-start-note.py",
+        "check-corpus-links.py",
+        "check-kotlin-format-strings.py",
+        "check-queue-vocabulary.py",
+        "check-result-file-hygiene.py",
+        "cli_guard.py"
+      ],
+      "why": "C-0210 asserted the two invocation sets are DISJOINT, which is true only under its --self-test filter; without that filter they are not, so the sum is not a sum"
+    },
+    "distinctToolsThatCanFailADefaultVerifyShRun": 44,
+    "union": [
+      "P-30-mutation-test.py",
+      "P-31-harness-census.py",
+      "T-225-mutation-test.py",
+      "T-234-census.py",
+      "T-234-emit-classification.py",
+      "T-234-mutation-test.py",
+      "T-249-mutation-test.py",
+      "T-250-mutation-test.py",
+      "T-272-emit-result-inputs.py",
+      "T-272-header-census.py",
+      "T-278-emitter-rounding-census.py",
+      "T-278-mutation-test.py",
+      "T-278-rounding-simulation.py",
+      "T-278-solver-provenance.py",
+      "T-280-mutation-test.py",
+      "T-281-mutation-test.py",
+      "T-283-mutation-test.py",
+      "T-289-mutation-test.py",
+      "T-292-column-repair.py",
+      "T-292-mutation-test.py",
+      "T-295-mutation-input-census.py",
+      "T-295-mutation-test.py",
+      "T-298-mutation-test.py",
+      "T-306-mutation-test.py",
+      "T-313-mutation-test.py",
+      "T-321-mutation-test.py",
+      "check-challenge-index.py",
+      "check-cold-start-note.py",
+      "check-corpus-identifiers.py",
+      "check-corpus-links.py",
+      "check-entry-points.py",
+      "check-kotlin-format-strings.py",
+      "check-markdown-tables.py",
+      "check-queue-vocabulary.py",
+      "check-result-file-hygiene.py",
+      "check-result-path-references.py",
+      "cli_guard.py",
+      "result-reader-census.py",
+      "test-check-markdown-tables.py",
+      "test-check-queue-vocabulary.py",
+      "test-result-reader-census.py",
+      "test-snapshot.sh",
+      "test-trace-answers.py",
+      "trace-answers.py"
+    ],
+    "notCounted": {
+      "execTasksUnreachableFromTest": {
+        "count": 12,
+        "names": [
+          "T-294-mutation-test.py",
+          "T-297-mutation-test.py",
+          "T-299-mutation-test.py",
+          "T-303-mutation-test.py",
+          "T-304-mutation-test.py",
+          "T-307-mutation-test.py",
+          "T-310-mutation-test.py",
+          "T-315-mutation-test.py",
+          "T-316-mutation-test.py",
+          "T-322-mutation-test.py",
+          "T-323-mutation-test.py",
+          "T-330-mutation-test.py"
+        ],
+        "why": "Gradle never executes them; build.gradle.kts's own comment says they are runnable by name and NOT reachable from :test"
+      },
+      "reachedOnlyByImport": {
+        "count": 3,
+        "names": [
+          "census_discharges.py",
+          "emission_header.py",
+          "queue_verdicts.py"
+        ],
+        "why": "a defect in one fails the run and no invocation names it"
+      },
+      "sourcedByVerifySh": {
+        "count": 1,
+        "names": [
+          "snapshot.sh"
+        ],
+        "why": "the command word is `source`"
+      },
+      "theKotlinSuite": "not a tools/ script, and it is most of what can fail the run",
+      "nonDefaultInvocations": "--no-checks and any --drop set checks=no and delete route A entirely; the trailing \"$@\" reaches ./gradlew test, so -x <task> can delete a route-B member"
+    },
+    "theFourPredicatesThisReplaces": {
+      "namingPrefix": {
+        "command": "ls tools/check-*.py tools/trace-answers.py",
+        "count": 11,
+        "datedBy": "CH-0222, CH-0243"
+      },
+      "verifyShOwnInvocations": {
+        "count": 18,
+        "datedBy": "C-0210"
+      },
+      "gradleLiteralNoSelfTest": {
+        "count": 21,
+        "datedBy": "CH-0286"
+      },
+      "gradleHelper": {
+        "count": 12,
+        "datedBy": "this task"
+      }
+    },
+    "armOne": {
+      "invariant": "the Exec tasks unreachable from :test EQUAL the harnesses P-31-harness-census.py declares BY-HAND, in both directions",
+      "unreachable": 12,
+      "declaredByHand": 12,
+      "equal": true
+    },
+    "missing": [],
+    "notExecutable": []
+  },
+  "atThisPassesTree": {
+    "state": "working tree",
+    "ref": null,
+    "routeA": {
+      "predicate": "a command word of a comment-stripped line of tools/verify.sh",
+      "count": 18,
+      "names": [
+        "T-272-emit-result-inputs.py",
+        "T-272-header-census.py",
+        "T-278-emitter-rounding-census.py",
+        "T-295-mutation-input-census.py",
+        "check-challenge-index.py",
+        "check-cold-start-note.py",
+        "check-corpus-identifiers.py",
+        "check-corpus-links.py",
+        "check-entry-points.py",
+        "check-kotlin-format-strings.py",
+        "check-markdown-tables.py",
+        "check-queue-vocabulary.py",
+        "check-result-file-hygiene.py",
+        "check-result-path-references.py",
+        "cli_guard.py",
+        "result-reader-census.py",
+        "test-result-reader-census.py",
+        "trace-answers.py"
+      ]
+    },
+    "routeB": {
+      "predicate": "named inside a balanced commandLine(...) span of an Exec task that :test depends on; BOTH the literal and the helper wiring",
+      "count": 36,
+      "names": [
+        "P-30-mutation-test.py",
+        "P-31-harness-census.py",
+        "T-225-mutation-test.py",
+        "T-234-census.py",
+        "T-234-emit-classification.py",
+        "T-234-mutation-test.py",
+        "T-249-mutation-test.py",
+        "T-250-mutation-test.py",
+        "T-278-emitter-rounding-census.py",
+        "T-278-mutation-test.py",
+        "T-278-rounding-simulation.py",
+        "T-278-solver-provenance.py",
+        "T-280-mutation-test.py",
+        "T-281-mutation-test.py",
+        "T-283-mutation-test.py",
+        "T-289-mutation-test.py",
+        "T-292-column-repair.py",
+        "T-292-mutation-test.py",
+        "T-295-mutation-test.py",
+        "T-298-mutation-test.py",
+        "T-306-mutation-test.py",
+        "T-313-mutation-test.py",
+        "T-321-mutation-test.py",
+        "T-334-gate-census.py",
+        "T-334-mutation-test.py",
+        "check-challenge-index.py",
+        "check-cold-start-note.py",
+        "check-corpus-links.py",
+        "check-kotlin-format-strings.py",
+        "check-queue-vocabulary.py",
+        "check-result-file-hygiene.py",
+        "cli_guard.py",
+        "test-check-markdown-tables.py",
+        "test-check-queue-vocabulary.py",
+        "test-snapshot.sh",
+        "test-trace-answers.py"
+      ]
+    },
+    "overlap": {
+      "count": 8,
+      "names": [
+        "T-278-emitter-rounding-census.py",
+        "check-challenge-index.py",
+        "check-cold-start-note.py",
+        "check-corpus-links.py",
+        "check-kotlin-format-strings.py",
+        "check-queue-vocabulary.py",
+        "check-result-file-hygiene.py",
+        "cli_guard.py"
+      ],
+      "why": "C-0210 asserted the two invocation sets are DISJOINT, which is true only under its --self-test filter; without that filter they are not, so the sum is not a sum"
+    },
+    "distinctToolsThatCanFailADefaultVerifyShRun": 46,
+    "union": [
+      "P-30-mutation-test.py",
+      "P-31-harness-census.py",
+      "T-225-mutation-test.py",
+      "T-234-census.py",
+      "T-234-emit-classification.py",
+      "T-234-mutation-test.py",
+      "T-249-mutation-test.py",
+      "T-250-mutation-test.py",
+      "T-272-emit-result-inputs.py",
+      "T-272-header-census.py",
+      "T-278-emitter-rounding-census.py",
+      "T-278-mutation-test.py",
+      "T-278-rounding-simulation.py",
+      "T-278-solver-provenance.py",
+      "T-280-mutation-test.py",
+      "T-281-mutation-test.py",
+      "T-283-mutation-test.py",
+      "T-289-mutation-test.py",
+      "T-292-column-repair.py",
+      "T-292-mutation-test.py",
+      "T-295-mutation-input-census.py",
+      "T-295-mutation-test.py",
+      "T-298-mutation-test.py",
+      "T-306-mutation-test.py",
+      "T-313-mutation-test.py",
+      "T-321-mutation-test.py",
+      "T-334-gate-census.py",
+      "T-334-mutation-test.py",
+      "check-challenge-index.py",
+      "check-cold-start-note.py",
+      "check-corpus-identifiers.py",
+      "check-corpus-links.py",
+      "check-entry-points.py",
+      "check-kotlin-format-strings.py",
+      "check-markdown-tables.py",
+      "check-queue-vocabulary.py",
+      "check-result-file-hygiene.py",
+      "check-result-path-references.py",
+      "cli_guard.py",
+      "result-reader-census.py",
+      "test-check-markdown-tables.py",
+      "test-check-queue-vocabulary.py",
+      "test-result-reader-census.py",
+      "test-snapshot.sh",
+      "test-trace-answers.py",
+      "trace-answers.py"
+    ],
+    "notCounted": {
+      "execTasksUnreachableFromTest": {
+        "count": 12,
+        "names": [
+          "T-294-mutation-test.py",
+          "T-297-mutation-test.py",
+          "T-299-mutation-test.py",
+          "T-303-mutation-test.py",
+          "T-304-mutation-test.py",
+          "T-307-mutation-test.py",
+          "T-310-mutation-test.py",
+          "T-315-mutation-test.py",
+          "T-316-mutation-test.py",
+          "T-322-mutation-test.py",
+          "T-323-mutation-test.py",
+          "T-330-mutation-test.py"
+        ],
+        "why": "Gradle never executes them; build.gradle.kts's own comment says they are runnable by name and NOT reachable from :test"
+      },
+      "reachedOnlyByImport": {
+        "count": 3,
+        "names": [
+          "census_discharges.py",
+          "emission_header.py",
+          "queue_verdicts.py"
+        ],
+        "why": "a defect in one fails the run and no invocation names it"
+      },
+      "sourcedByVerifySh": {
+        "count": 1,
+        "names": [
+          "snapshot.sh"
+        ],
+        "why": "the command word is `source`"
+      },
+      "theKotlinSuite": "not a tools/ script, and it is most of what can fail the run",
+      "nonDefaultInvocations": "--no-checks and any --drop set checks=no and delete route A entirely; the trailing \"$@\" reaches ./gradlew test, so -x <task> can delete a route-B member"
+    },
+    "theFourPredicatesThisReplaces": {
+      "namingPrefix": {
+        "command": "ls tools/check-*.py tools/trace-answers.py",
+        "count": 11,
+        "datedBy": "CH-0222, CH-0243"
+      },
+      "verifyShOwnInvocations": {
+        "count": 18,
+        "datedBy": "C-0210"
+      },
+      "gradleLiteralNoSelfTest": {
+        "count": 23,
+        "datedBy": "CH-0286"
+      },
+      "gradleHelper": {
+        "count": 12,
+        "datedBy": "this task"
+      }
+    },
+    "armOne": {
+      "invariant": "the Exec tasks unreachable from :test EQUAL the harnesses P-31-harness-census.py declares BY-HAND, in both directions",
+      "unreachable": 12,
+      "declaredByHand": 12,
+      "equal": true
+    },
+    "missing": [],
+    "notExecutable": []
+  },
+  "theCensusMovesItsOwnAnswer": {
+    "atBaselineRef": 44,
+    "atThisPassesTree": 46,
+    "why": "wiring this census into build.gradle.kts adds tools/T-334-gate-census.py and tools/T-334-mutation-test.py to the set it counts (CH-0182); the task file predicted +1 from the TASK count and the answer is a TOOL count"
+  },
+  "againstWhatIsInPrint": [
+    {
+      "ref": "71d126e6dfd7fa874ccd83b76f756c1e7b58da33",
+      "refRequested": "71d126e",
+      "publishedBy": "C-0210",
+      "published": 37,
+      "howItWasBuilt": "16 + 1 + 20 -- verify.sh's own gates plus its fixture plus the LITERAL Gradle invocations carrying no --self-test flag; the helper shape is not counted at all",
+      "countedTheHelperShape": false,
+      "reachabilityUnion": 42,
+      "difference": 5,
+      "reconstructsPublished": true,
+      "terms": {
+        "unreachableCounted": 0,
+        "gradleToolsTheShapePredicateMisses": 12,
+        "overlapAssertedAway": -7
+      }
+    },
+    {
+      "ref": "71d126e6dfd7fa874ccd83b76f756c1e7b58da33",
+      "refRequested": "71d126e",
+      "publishedBy": "CH-0286",
+      "published": 43,
+      "howItWasBuilt": "17 + 20 + 6 -- the same, re-derived, plus the HELPER-wired harnesses the literal pattern cannot see",
+      "countedTheHelperShape": true,
+      "reachabilityUnion": 42,
+      "difference": -1,
+      "reconstructsPublished": true,
+      "terms": {
+        "unreachableCounted": -6,
+        "gradleToolsTheShapePredicateMisses": 12,
+        "overlapAssertedAway": -7
+      }
+    },
+    {
+      "ref": "d7b7074a2be0367429bd63762fd2c8082bbd498d",
+      "refRequested": "d7b7074",
+      "publishedBy": "C-0220",
+      "published": 50,
+      "howItWasBuilt": "18 + 21 + 11, at its own ref",
+      "countedTheHelperShape": true,
+      "reachabilityUnion": 44,
+      "difference": -6,
+      "reconstructsPublished": true,
+      "terms": {
+        "unreachableCounted": -11,
+        "gradleToolsTheShapePredicateMisses": 13,
+        "overlapAssertedAway": -8
+      }
+    },
+    {
+      "ref": "d9a3522d7ad2f2c98866fb012927a69cab7864c9",
+      "refRequested": "d9a3522",
+      "publishedBy": "C-0220 / CH-0286",
+      "published": 51,
+      "howItWasBuilt": "18 + 21 + 12 -- the figure in print in DECISIONS-FOR-NDI.md, reconstructed at the committed state its 'this pass's tree' corresponds to",
+      "countedTheHelperShape": true,
+      "reachabilityUnion": 44,
+      "difference": -7,
+      "reconstructsPublished": true,
+      "terms": {
+        "unreachableCounted": -12,
+        "gradleToolsTheShapePredicateMisses": 13,
+        "overlapAssertedAway": -8
+      }
+    }
+  ],
+  "armOneAtThreeRefs": [
+    {
+      "state": "C-0210 baseline",
+      "ref": "71d126e6dfd7fa874ccd83b76f756c1e7b58da33",
+      "unreachable": 6,
+      "declaredByHand": 6,
+      "equal": true
+    },
+    {
+      "state": "C-0220 baseline",
+      "ref": "d7b7074a2be0367429bd63762fd2c8082bbd498d",
+      "unreachable": 11,
+      "declaredByHand": 11,
+      "equal": true
+    },
+    {
+      "state": "this pass's tree",
+      "ref": null,
+      "unreachable": 12,
+      "declaredByHand": 12,
+      "equal": true
+    }
+  ]
+}

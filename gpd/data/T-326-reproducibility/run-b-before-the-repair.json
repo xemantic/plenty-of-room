@@ -1,0 +1,1102 @@
+{
+    "emission": {
+        "lattice": "honeycomb",
+        "regime": null
+    },
+    "task": "T-326",
+    "leaf": "A8.2",
+    "title": "The reconstruction the dishing fit is taken in, against the one it is sampled in: a closed form in the face's own vertical bonds, a third convention that dissolves CH-0282, a constant quadrature defect, and the margin the refusal must actually be priced against",
+    "verificationType": "logical (a closed form in the face's own vertical bonds, checked against an exactly piecewise integration of both reconstructions at every raster-row count from 3 to 16 and both face columns) + in-silico (the three conventions measured at every channel CH-0284 prices and at the two coupled cells C-0180's verdict rests on, with a rigorous affine ceiling beside each)",
+    "maturity": "TRL 1-3. Model-consistent and traceable. NOT empirically demonstrated. Nothing here changes a SOLVE: every field is the one the shipped lattice already produces, and what differs is which rigid plane is removed from it.",
+    "units": {
+        "length": "nm",
+        "force": "pN",
+        "stiffness": "pN/nm",
+        "pressure": "pN/nm^2 (= 1 MPa exactly)",
+        "dishing": "a fraction of the free stroke, against T-5b's 0.10"
+    },
+    "conventions": [
+        "s runs along the helices, y across them in the plane of the face, z through the thickness; W is positive downward, Phi is the beam roll about its own axis.",
+        "The face field off a beam axis is W + Phi*(y - y_beam). Convention A reconstructs it from the OWNING beam over a strip of one row pitch centred on that beam's axis; conventions B and C reconstruct it from the NEAREST beam.",
+        "Convention B integrates over the owning strips, C over the face rectangle [-L_y/2, L_y/2]. The strips overlap by d/2 and gap by d/2 alternately, so their sum is not the rectangle even though its measure is L_y L_s.",
+        "The face y datum is HoneycombGrillage's own, (min faceY + max faceY)/2, so beamY is centred on the face's ENVELOPE.",
+        "The face is the gap-facing column, faceColumn = 0."
+    ],
+    "parameters": {
+        "probeRowBasePairs": "42",
+        "upstreamRowBasePairs": "112",
+        "blockExtentBasePairs": "116",
+        "samples": "81",
+        "tolerance": "0.1",
+        "rimStandoff": "1.0",
+        "rimBand": "6.7",
+        "bondLength": "2.536",
+        "rowPitch": "3.804",
+        "foundationStiffness": "0.012625625",
+        "targetForce": "100.0",
+        "realisations": "4000",
+        "seed": "197197",
+        "fieldSeed": "20260825",
+        "quadraturePoints": "6",
+        "censusPredicate": "a numeric leaf whose key ends OverStroke or contains ishing, in a JSON object that also carries at least one boolean, valued in [0.09, 0.11], over the eighteen committed files carrying a HoneycombDeflection dishing"
+    },
+    "sources": [
+        "gpd/results/T-3b-tile-edge-load-profile.json (C-0022's solved collar at 2 mM / 10 nm / 0.192 V)",
+        "gpd/results/T-279-tied-honeycomb-regrade.json (C-0180's two recovered coupled cells)",
+        "gpd/results/T-253-honeycomb-grillage.json (the margin census)",
+        "gpd/results/T-254-raster-turn-prestrain.json (the margin census)",
+        "gpd/results/T-263-honeycomb-grillage-regrade.json (the margin census)",
+        "gpd/results/T-267-mechanics-on-imported-design.json (the margin census)",
+        "gpd/results/T-279-tied-honeycomb-regrade.json (the margin census)",
+        "gpd/results/T-284-turn-prestrain-sign.json (the margin census)",
+        "gpd/results/T-291-common-mode-departure-and-beam-twist.json (the margin census)",
+        "gpd/results/T-294-the-tied-regrade-at-the-other-cross-section.json (the margin census)",
+        "gpd/results/T-297-the-common-mode-is-the-link.json (the margin census)",
+        "gpd/results/T-299-tethered-raster-turn-regrade.json (the margin census)",
+        "gpd/results/T-303-what-link-stiffness-the-recovery-needs.json (the margin census)",
+        "gpd/results/T-304-raster-turn-anchor-azimuth.json (the margin census)",
+        "gpd/results/T-307-uniform-raster-tether-spans.json (the margin census)",
+        "gpd/results/T-310-a-bond-link-is-two-mechanisms.json (the margin census)",
+        "gpd/results/T-315-the-uniform-raster-at-the-resolved-link.json (the margin census)",
+        "gpd/results/T-316-a-searched-distribution-at-the-resolved-link.json (the margin census)",
+        "gpd/results/T-322-route-b-coupled-on-its-own-stations.json (the margin census)",
+        "gpd/results/T-323-the-placement-and-the-distribution-together.json (the margin census)"
+    ],
+    "cheapBound": [
+        "Within a beam's owning strip the nearest-beam partition is that strip translated by +-d/4, alternating with the corrugation, so each strip is split 5d/4 to its own beam and d/4 to the partner across its own vertical bond.",
+        "Summed over a bond's two members the deflection differences cancel identically. piston: (d^2/16) SUM INT (phi_u - phi_l) ds. tiltS: the same with an s weight. tiltY: SUM INT [ (d^2/16)((w_u - w_l) + ybar (phi_u - phi_l)) - (d^3/32)(phi_u + phi_l) ] ds.",
+        "Asymptotically the first-order slope term cancels and the relative gap is (pi^2/12)(d/lambda_y)^2 in the dishing field's own across-face wavelength -- 9.1E-4 at a face-scale half-cosine.",
+        "It costs no solve: the dual is sparse and the pairing is a dot product."
+    ],
+    "closedForm": [
+        {
+            "rasterRows": 3,
+            "faceColumn": 0,
+            "verticalBonds": 1,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 3,
+            "faceColumn": 1,
+            "verticalBonds": 1,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 4,
+            "faceColumn": 0,
+            "verticalBonds": 2,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 4,
+            "faceColumn": 1,
+            "verticalBonds": 1,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 5,
+            "faceColumn": 0,
+            "verticalBonds": 2,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 5,
+            "faceColumn": 1,
+            "verticalBonds": 2,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 6,
+            "faceColumn": 0,
+            "verticalBonds": 3,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 6,
+            "faceColumn": 1,
+            "verticalBonds": 2,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 7,
+            "faceColumn": 0,
+            "verticalBonds": 3,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 7,
+            "faceColumn": 1,
+            "verticalBonds": 3,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 8,
+            "faceColumn": 0,
+            "verticalBonds": 4,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 8,
+            "faceColumn": 1,
+            "verticalBonds": 3,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 9,
+            "faceColumn": 0,
+            "verticalBonds": 4,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 9,
+            "faceColumn": 1,
+            "verticalBonds": 4,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 10,
+            "faceColumn": 0,
+            "verticalBonds": 5,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 10,
+            "faceColumn": 1,
+            "verticalBonds": 4,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 11,
+            "faceColumn": 0,
+            "verticalBonds": 5,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 11,
+            "faceColumn": 1,
+            "verticalBonds": 5,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 12,
+            "faceColumn": 0,
+            "verticalBonds": 6,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 12,
+            "faceColumn": 1,
+            "verticalBonds": 5,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 13,
+            "faceColumn": 0,
+            "verticalBonds": 6,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 13,
+            "faceColumn": 1,
+            "verticalBonds": 6,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 14,
+            "faceColumn": 0,
+            "verticalBonds": 7,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 14,
+            "faceColumn": 1,
+            "verticalBonds": 6,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 15,
+            "faceColumn": 0,
+            "verticalBonds": 7,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 15,
+            "faceColumn": 1,
+            "verticalBonds": 7,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 16,
+            "faceColumn": 0,
+            "verticalBonds": 8,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        },
+        {
+            "rasterRows": 16,
+            "faceColumn": 1,
+            "verticalBonds": 7,
+            "readings": 9,
+            "worstScaledDeparture": 0.0,
+            "closes": true
+        }
+    ],
+    "orthogonality": [
+        {
+            "rasterRows": 3,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.125244858,
+            "splitWorstOffDiagonal": 0.125244858,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 3,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.125244858,
+            "splitWorstOffDiagonal": 0.125244858,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 4,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 4,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 5,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.091406189,
+            "splitWorstOffDiagonal": 0.091406189,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 5,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.091406189,
+            "splitWorstOffDiagonal": 0.091406189,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 6,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 6,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 7,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.0702873008,
+            "splitWorstOffDiagonal": 0.0702873008,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 7,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.0702873008,
+            "splitWorstOffDiagonal": 0.0702873008,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 8,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 8,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 9,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.0568148002,
+            "splitWorstOffDiagonal": 0.0568148002,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 9,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.0568148002,
+            "splitWorstOffDiagonal": 0.0568148002,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 10,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 10,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 11,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.0475958489,
+            "splitWorstOffDiagonal": 0.0475958489,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 11,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.0475958489,
+            "splitWorstOffDiagonal": 0.0475958489,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 12,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 12,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 13,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.0409208499,
+            "splitWorstOffDiagonal": 0.0409208499,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 13,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.0409208499,
+            "splitWorstOffDiagonal": 0.0409208499,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 14,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 14,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 15,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.0358744468,
+            "splitWorstOffDiagonal": 0.0358744468,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 15,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.0358744468,
+            "splitWorstOffDiagonal": 0.0358744468,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": false,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 16,
+            "faceColumn": 0,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        },
+        {
+            "rasterRows": 16,
+            "faceColumn": 1,
+            "standingWorstOffDiagonal": 0.0,
+            "splitWorstOffDiagonal": 0.0,
+            "sampledWorstOffDiagonal": 0.0,
+            "standingIsDiagonal": true,
+            "sampledIsDiagonal": true
+        }
+    ],
+    "collinearity": [
+        {
+            "rasterRows": 4,
+            "faceColumn": 0,
+            "ratio": 6.0,
+            "isExactlySix": true
+        },
+        {
+            "rasterRows": 4,
+            "faceColumn": 1,
+            "ratio": 6.10820452,
+            "isExactlySix": false
+        },
+        {
+            "rasterRows": 6,
+            "faceColumn": 0,
+            "ratio": 6.0,
+            "isExactlySix": true
+        },
+        {
+            "rasterRows": 6,
+            "faceColumn": 1,
+            "ratio": 3.14190425,
+            "isExactlySix": false
+        },
+        {
+            "rasterRows": 10,
+            "faceColumn": 0,
+            "ratio": 6.0,
+            "isExactlySix": true
+        },
+        {
+            "rasterRows": 10,
+            "faceColumn": 1,
+            "ratio": 5.72763123,
+            "isExactlySix": false
+        },
+        {
+            "rasterRows": 14,
+            "faceColumn": 0,
+            "ratio": 6.0,
+            "isExactlySix": true
+        },
+        {
+            "rasterRows": 14,
+            "faceColumn": 1,
+            "ratio": 5.97957257,
+            "isExactlySix": false
+        },
+        {
+            "rasterRows": 15,
+            "faceColumn": 0,
+            "ratio": 3.76979478,
+            "isExactlySix": false
+        },
+        {
+            "rasterRows": 15,
+            "faceColumn": 1,
+            "ratio": 5.50020589,
+            "isExactlySix": false
+        },
+        {
+            "rasterRows": 16,
+            "faceColumn": 0,
+            "ratio": 6.0,
+            "isExactlySix": true
+        },
+        {
+            "rasterRows": 16,
+            "faceColumn": 1,
+            "ratio": 2.03848042,
+            "isExactlySix": false
+        }
+    ],
+    "quadrature": [
+        {
+            "rasterRows": 4,
+            "faceColumn": 0,
+            "unsplitOverSplit": 0.819693683
+        },
+        {
+            "rasterRows": 4,
+            "faceColumn": 1,
+            "unsplitOverSplit": 0.819693683
+        },
+        {
+            "rasterRows": 6,
+            "faceColumn": 0,
+            "unsplitOverSplit": 0.819693683
+        },
+        {
+            "rasterRows": 6,
+            "faceColumn": 1,
+            "unsplitOverSplit": 0.819693683
+        },
+        {
+            "rasterRows": 10,
+            "faceColumn": 0,
+            "unsplitOverSplit": 0.819693683
+        },
+        {
+            "rasterRows": 10,
+            "faceColumn": 1,
+            "unsplitOverSplit": 0.819693683
+        },
+        {
+            "rasterRows": 14,
+            "faceColumn": 0,
+            "unsplitOverSplit": 0.819693683
+        },
+        {
+            "rasterRows": 14,
+            "faceColumn": 1,
+            "unsplitOverSplit": 0.819693683
+        },
+        {
+            "rasterRows": 15,
+            "faceColumn": 0,
+            "unsplitOverSplit": 0.819693683
+        },
+        {
+            "rasterRows": 15,
+            "faceColumn": 1,
+            "unsplitOverSplit": 0.819693683
+        },
+        {
+            "rasterRows": 16,
+            "faceColumn": 0,
+            "unsplitOverSplit": 0.819693683
+        },
+        {
+            "rasterRows": 16,
+            "faceColumn": 1,
+            "unsplitOverSplit": 0.819693683
+        }
+    ],
+    "census": [
+        {
+            "channel": "the tightest reading itself",
+            "relativeThreshold": 1.02E-5,
+            "readings": 1
+        },
+        {
+            "channel": "CH-0284's collar channel",
+            "relativeThreshold": 5.0E-4,
+            "readings": 2
+        },
+        {
+            "channel": "the movement that would flip C-0180's tightest recovered cell",
+            "relativeThreshold": 0.0042724,
+            "readings": 96
+        },
+        {
+            "channel": "C-0180's own beam-subdivision convergence departure, 4.57E-4 of the stroke",
+            "relativeThreshold": 0.00457,
+            "readings": 99
+        },
+        {
+            "channel": "CH-0284's bond-prestrain channel",
+            "relativeThreshold": 0.0067,
+            "readings": 126
+        },
+        {
+            "channel": "the prestrain channel at convention C's 6x",
+            "relativeThreshold": 0.0402,
+            "readings": 484
+        }
+    ],
+    "tightest": [
+        {
+            "resultFile": "T-294",
+            "leaf": "/cells/92/nominalCorrectedOverStroke",
+            "value": 0.10000102,
+            "relativeToTolerance": 1.02E-5
+        },
+        {
+            "resultFile": "T-304",
+            "leaf": "/cells/97/medianOverStroke",
+            "value": 0.100029341,
+            "relativeToTolerance": 2.9341E-4
+        },
+        {
+            "resultFile": "T-297",
+            "leaf": "/cells/15/p90OverStroke",
+            "value": 0.0999353736,
+            "relativeToTolerance": 6.46264E-4
+        },
+        {
+            "resultFile": "T-297",
+            "leaf": "/cells/15/zeroTermP90OverStroke",
+            "value": 0.0999353736,
+            "relativeToTolerance": 6.46264E-4
+        },
+        {
+            "resultFile": "T-297",
+            "leaf": "/cells/16/zeroTermP90OverStroke",
+            "value": 0.0999353736,
+            "relativeToTolerance": 6.46264E-4
+        }
+    ],
+    "channels": [
+        {
+            "loadCase": "C-0022's solved collar, enhancement 1.0",
+            "crossSection": "15 x 4",
+            "standingPeakDishing": 0.312237799,
+            "splitPeakDishing": 0.242180936,
+            "sampledPeakDishing": 0.233066756,
+            "splitRelativeMovement": 0.22,
+            "sampledRelativeMovement": 0.25,
+            "splitCeiling": 0.0703217765,
+            "sampledCeiling": 0.0808958005,
+            "ceilingHolds": true,
+            "insideTightestMargin": false
+        },
+        {
+            "loadCase": "C-0022's solved collar, enhancement 9.65079217",
+            "crossSection": "15 x 4",
+            "standingPeakDishing": 0.227177955,
+            "splitPeakDishing": 0.157159291,
+            "sampledPeakDishing": 0.150492068,
+            "splitRelativeMovement": 0.31,
+            "sampledRelativeMovement": 0.34,
+            "splitCeiling": 0.0703851575,
+            "sampledCeiling": 0.0779265826,
+            "ceilingHolds": true,
+            "insideTightestMargin": false
+        },
+        {
+            "loadCase": "C-0022's solved collar, enhancement 12.7228458",
+            "crossSection": "15 x 4",
+            "standingPeakDishing": 0.220064299,
+            "splitPeakDishing": 0.15004856,
+            "sampledPeakDishing": 0.144003031,
+            "splitRelativeMovement": 0.32,
+            "sampledRelativeMovement": 0.35,
+            "splitCeiling": 0.070388472,
+            "sampledCeiling": 0.077618676,
+            "ceilingHolds": true,
+            "insideTightestMargin": false
+        },
+        {
+            "loadCase": "C-0022's solved collar, enhancement 1.0",
+            "crossSection": "10 x 6",
+            "standingPeakDishing": 0.127358454,
+            "splitPeakDishing": 0.127281051,
+            "sampledPeakDishing": 0.126894034,
+            "splitRelativeMovement": 6.1E-4,
+            "sampledRelativeMovement": 0.0036,
+            "splitCeiling": 7.74033284E-5,
+            "sampledCeiling": 4.6441997E-4,
+            "ceilingHolds": true,
+            "insideTightestMargin": false
+        },
+        {
+            "loadCase": "C-0022's solved collar, enhancement 21.1851817",
+            "crossSection": "10 x 6",
+            "standingPeakDishing": 0.0449400126,
+            "splitPeakDishing": 0.0449166417,
+            "sampledPeakDishing": 0.0447997871,
+            "splitRelativeMovement": 5.2E-4,
+            "sampledRelativeMovement": 0.0031,
+            "splitCeiling": 2.33709178E-5,
+            "sampledCeiling": 1.40225507E-4,
+            "ceilingHolds": true,
+            "insideTightestMargin": false
+        },
+        {
+            "loadCase": "C-0022's solved collar, enhancement 17.6059172",
+            "crossSection": "10 x 6",
+            "standingPeakDishing": 0.0477844467,
+            "splitPeakDishing": 0.0477593565,
+            "sampledPeakDishing": 0.0476339052,
+            "splitRelativeMovement": 5.3E-4,
+            "sampledRelativeMovement": 0.0032,
+            "splitCeiling": 2.50902484E-5,
+            "sampledCeiling": 1.5054149E-4,
+            "ceilingHolds": true,
+            "insideTightestMargin": false
+        },
+        {
+            "loadCase": "point load at the face centre",
+            "crossSection": "10 x 6",
+            "standingPeakDishing": 0.0392115261,
+            "splitPeakDishing": 0.0392338758,
+            "sampledPeakDishing": 0.0393456242,
+            "splitRelativeMovement": 5.7E-4,
+            "sampledRelativeMovement": 0.0034,
+            "splitCeiling": 2.23649689E-5,
+            "sampledCeiling": 1.34108277E-4,
+            "ceilingHolds": true,
+            "insideTightestMargin": false
+        },
+        {
+            "loadCase": "a unit bond prestrain",
+            "crossSection": "10 x 6",
+            "standingPeakDishing": 0.0502155639,
+            "splitPeakDishing": 0.0498071584,
+            "sampledPeakDishing": 0.0476973129,
+            "splitRelativeMovement": 0.0081,
+            "sampledRelativeMovement": 0.05,
+            "splitCeiling": 4.51286368E-4,
+            "sampledCeiling": 0.00277553638,
+            "ceilingHolds": true,
+            "insideTightestMargin": false
+        }
+    ],
+    "decidingCells": [
+        {
+            "cell": "C-0180 cell 69, the tightest recovered",
+            "placement": "abstract grid",
+            "columns": 3,
+            "pathCount": 30,
+            "publishedP90": 0.0995744767,
+            "standingP90": 0.0995744767,
+            "reproductionDeparture": 0.0,
+            "splitP90": 0.0995669036,
+            "sampledP90": 0.0994327658,
+            "splitRelativeMovement": 7.6E-5,
+            "sampledRelativeMovement": 0.0014,
+            "standingFlat": true,
+            "splitFlat": true,
+            "sampledFlat": true,
+            "verdictMoves": false,
+            "marginOfTolerance": 0.00425523271
+        },
+        {
+            "cell": "C-0180 cell 109, the other recovered",
+            "placement": "abstract grid on the rooting helices",
+            "columns": 5,
+            "pathCount": 50,
+            "publishedP90": 0.0998791032,
+            "standingP90": 0.0998791032,
+            "reproductionDeparture": 0.0,
+            "splitP90": 0.0998479806,
+            "sampledP90": 0.0997358124,
+            "splitRelativeMovement": 3.1E-4,
+            "sampledRelativeMovement": 0.0014,
+            "standingFlat": true,
+            "splitFlat": true,
+            "sampledFlat": true,
+            "verdictMoves": false,
+            "marginOfTolerance": 0.00120896835
+        }
+    ],
+    "oddTriple": [
+        {
+            "enhancement": 1.0,
+            "published": 0.242196276,
+            "unsplit": 0.242196276,
+            "split": 0.242180936,
+            "sampled": 0.233066756,
+            "splitDeparture": 6.3E-5,
+            "verdictMoves": false
+        },
+        {
+            "enhancement": 9.65079217,
+            "published": 0.157167743,
+            "unsplit": 0.157167743,
+            "split": 0.157159291,
+            "sampled": 0.150492068,
+            "splitDeparture": 5.4E-5,
+            "verdictMoves": false
+        },
+        {
+            "enhancement": 12.7228458,
+            "published": 0.150056485,
+            "unsplit": 0.150056485,
+            "split": 0.15004856,
+            "sampled": 0.144003031,
+            "splitDeparture": 5.3E-5,
+            "verdictMoves": false
+        }
+    ],
+    "reproductions": [
+        {
+            "what": "C-0154's free tile at 15 x 4, enhancement 1.0 (the three-projection reading)",
+            "published": 0.312237799,
+            "here": 0.312237799,
+            "departure": 1.3E-9,
+            "closes": true
+        },
+        {
+            "what": "C-0219's corrected 15 x 4 reading at enhancement 1.0 (the unsplit convention it was fitted in)",
+            "published": 0.242196276,
+            "here": 0.242196276,
+            "departure": 1.3E-9,
+            "closes": true
+        },
+        {
+            "what": "C-0154's free tile at 15 x 4, enhancement 9.65079217 (the three-projection reading)",
+            "published": 0.227177955,
+            "here": 0.227177955,
+            "departure": 0.0,
+            "closes": true
+        },
+        {
+            "what": "C-0219's corrected 15 x 4 reading at enhancement 9.65079217 (the unsplit convention it was fitted in)",
+            "published": 0.157167743,
+            "here": 0.157167743,
+            "departure": 2.8E-9,
+            "closes": true
+        },
+        {
+            "what": "C-0154's free tile at 15 x 4, enhancement 12.7228458 (the three-projection reading)",
+            "published": 0.220064299,
+            "here": 0.220064299,
+            "departure": 1.8E-9,
+            "closes": true
+        },
+        {
+            "what": "C-0219's corrected 15 x 4 reading at enhancement 12.7228458 (the unsplit convention it was fitted in)",
+            "published": 0.150056485,
+            "here": 0.150056485,
+            "departure": 2.2E-9,
+            "closes": true
+        },
+        {
+            "what": "C-0154's free tile at 10 x 6, enhancement 1.0 (the three-projection reading)",
+            "published": 0.127358454,
+            "here": 0.127358454,
+            "departure": 1.1E-9,
+            "closes": true
+        },
+        {
+            "what": "C-0154's free tile at 10 x 6, enhancement 21.1851817 (the three-projection reading)",
+            "published": 0.0449400126,
+            "here": 0.0449400126,
+            "departure": 0.0,
+            "closes": true
+        },
+        {
+            "what": "C-0154's free tile at 10 x 6, enhancement 17.6059172 (the three-projection reading)",
+            "published": 0.0477844467,
+            "here": 0.0477844467,
+            "departure": 0.0,
+            "closes": true
+        },
+        {
+            "what": "T-330's residue on the point load at the face centre channel, unsplit against the three projections",
+            "published": 4.7E-4,
+            "here": 4.67206666E-4,
+            "departure": 0.0059,
+            "closes": true
+        },
+        {
+            "what": "T-330's residue on the a unit bond prestrain channel, unsplit against the three projections",
+            "published": 0.0067,
+            "here": 0.00666660621,
+            "departure": 0.005,
+            "closes": true
+        },
+        {
+            "what": "C-0180 cell 69, the tightest recovered, p90 over the stroke, standing convention",
+            "published": 0.0995744767,
+            "here": 0.0995744767,
+            "departure": 0.0,
+            "closes": true
+        },
+        {
+            "what": "C-0180 cell 109, the other recovered, p90 over the stroke, standing convention",
+            "published": 0.0998791032,
+            "here": 0.0998791032,
+            "departure": 0.0,
+            "closes": true
+        }
+    ],
+    "convergence": [
+        {
+            "axis": "the dishing grid, on the sampled-convention movement at 10 x 6",
+            "setting": "41 x 41",
+            "quantity": 0.00312028187,
+            "departure": 0.0
+        },
+        {
+            "axis": "the dishing grid, on the sampled-convention movement at 10 x 6",
+            "setting": "81 x 81",
+            "quantity": 0.00312028187,
+            "departure": 0.0
+        },
+        {
+            "axis": "the dishing grid, on the sampled-convention movement at 10 x 6",
+            "setting": "161 x 161",
+            "quantity": 0.00312028187,
+            "departure": 0.0
+        },
+        {
+            "axis": "beam subdivision, on the sampled-convention movement at 10 x 6",
+            "setting": "1",
+            "quantity": 0.00312028187,
+            "departure": 0.0
+        },
+        {
+            "axis": "beam subdivision, on the sampled-convention movement at 10 x 6",
+            "setting": "2",
+            "quantity": 0.00311894959,
+            "departure": 4.3E-4
+        }
+    ],
+    "verdict": {
+        "P1": "the closed form reproduces the measured gap at a worst scaled departure of 4.6E-17 over 252 readings; met",
+        "P2": "convention C's Gram is diagonal at 28 of 28 readings, the standing one at 14; met",
+        "P3": "the piston collinearity is exactly 6 at 5 of 6 even and odd m at faceColumn 0",
+        "P5": "1146 verdict-bearing readings; tightest 1.02E-5 relative; 1 / 2 / 96 / 99 / 126 / 484",
+        "P6": "worst channel movement 0.346 on convention C and 0.318 on B",
+        "P7": "the two recovered coupled cells reproduce C-0180 at 3.5E-10 and move by at most 0.00143; the verdict moves at 0 of 2",
+        "P8": "the affine ceiling holds at 8 of 8 channels",
+        "P9": "the addition is inert: every accessor is new and nothing existing is repointed, asserted as a named test over three raster-row counts",
+        "P10": "the decision is recorded in C-0221; the code is left ADDITIVE ONLY, because an adoption without the eighteen-file sweep would leave every committed file unreproducible from its own code",
+        "P11": "gauss6/exact is 0.819694 at all 12 readings; CH-0284's channel sizes are 1.21997x low",
+        "P12": "the split quadrature moves C-0219's committed 15 x 4 triple by at most 6.33E-5 relative, and the verdict moves at 0 of 3"
+    },
+    "falsifiers": [
+        "F1 (declared OPEN) -- a closed form disagrees with the direct quadrature beyond 1e-10 relative. Did not fire: worst 4.6E-17 at 28 of 28 rows.",
+        "F2 (declared OPEN) -- convention C's Gram is not diagonal at some m or face column. Did not fire.",
+        "F3 (declared OPEN) -- the piston ratio (C-A)/(B-A) is not 6 at some even m, faceColumn 0. Did not fire.",
+        "F4 (declared OPEN) -- the asymptotic mispredicts a measured channel by more than 10x. Did not fire: the face-scale prediction (pi^2/12)(d/lambda_y)^2 at lambda_y = 2 L_y is 9.1E-4 against a measured collar channel of 6.08E-4.",
+        "F5 (declared OPEN, and declared EXPECTED TO FIRE under C) -- the movement at C-0180's tightest recovered cell exceeds its 0.426 % margin under either convention. Did not fire: worst cell movement 0.00143 against a margin of 0.00121.",
+        "F6 (declared OPEN) -- no verdict-bearing reading moves at all under either convention, so adoption is free. Did not fire: 8 of 8 channels move by more than the corpus's tightest margin.",
+        "F7 (declared CLOSED) -- the owning strips are a partition. They overlap by d/2 and gap by d/2 alternately; asserted as a named test.",
+        "F8 (declared OPEN) -- a control m = 10 result file re-run against the additive-only code is not byte-identical.",
+        "F9 (declared OPEN) -- two independent emissions of T-326 are not byte-identical, diffed outside the study.",
+        "F10 (declared OPEN) -- a mutation of the new code survives every named test, over a subtracted baseline.",
+        "F11 (declared CLOSED) -- the uniform-load falsifier fails under any of the three conventions, at both parities of m.",
+        "F12 (declared OPEN) -- the reproduction of C-0180's two recovered cells departs by more than 1e-8. Did not fire.",
+        "F13 (declared OPEN) -- the gauss6/exact ratio is not constant across m, face column and field. Did not fire: spread 3.2E-13.",
+        "F14 (declared OPEN) -- the split quadrature moves C-0219's committed 15 x 4 triple by more than its own emitted precision. FIRED at a worst relative move of 6.33E-5."
+    ],
+    "findings": [
+        "THE FIT/SAMPLE GAP IS A CLOSED FORM IN THE FACE'S OWN VERTICAL BONDS, AND IT IS EXACT. Within a beam's owning strip the nearest-beam partition is that strip translated by +-d/4, alternating with the corrugation, so each strip is split 5d/4 to its own beam and d/4 to the partner across its own vertical bond. Summed over a bond's two members the deflection differences cancel identically and what survives is the bond's RELATIVE ROLL: the piston gap is (d^2/16) SUM over face vertical bonds of INT (phi_upper - phi_lower) ds, with matching forms for the two tilts. Checked against a direct exactly-piecewise integration of both reconstructions over m = 3 to 16, both face columns and three random fields each: worst scaled departure 4.6E-17 over 252 readings. So the discrepancy is a BOND-HINGE COORDINATE, which is a mechanism for CH-0284's own channel split rather than a restatement of it.",
+        "CH-0284 SECTION 4's FIRST REMEDY IS NOT WELL POSED. The owning strips are one row pitch 1.5d wide on axes d and 2d apart, so they OVERLAP by d/2 across every vertical bond and GAP by d/2 between them; their total measure is still exactly the face width, which is what makes the uniform-load falsifier exact. They are therefore not a partition and evaluate cannot be made to use them: at a point in an overlap two beams own the field and at a point in a gap none does.",
+        "THERE IS A THIRD CONVENTION NOBODY NAMED AND IT DISSOLVES CH-0282 RATHER THAN REPAIRING IT. The reported quantity is a supremum over the face RECTANGLE of the NEAREST-beam reconstruction, so the fit consistent with it is that reconstruction integrated over that rectangle -- where areaInnerProduct keeps the reconstruction and leaves the measure the overlapping, gapping tributary sum. Its Gram is diag(A, A L_s^2/12, A L_y^2/12) IDENTICALLY, at 28 of 28 readings over m = 3 to 16 and both face columns, because the three integrals over a rectangle symmetric about its own centre vanish whatever the corrugated ladder does. Under it the three independent projections are the least-squares fit again, with NO branch, and C-0219's integer parity branch becomes dead. For the piston projection the three conventions are collinear in one scalar, the summed bond relative roll, at exactly 0 : 1 : 6 -- 5 of 6 at faceColumn 0.",
+        "THE SHIPPED areaInnerProduct INTEGRATES A DISCONTINUOUS INTEGRAND WITH A SMOOTH RULE, AND UNDER-REPORTS THE GAP BY A CONSTANT FACTOR. integrateOverFace lays one 6-point Gauss-Legendre rule across each whole tributary strip, and evaluate's reconstruction JUMPS a quarter of a bond inside each strip's end at every strip by construction. Measured, gauss6/exact on the piston gap is 0.819694 to 0.819694 over 12 readings at six raster-row counts and both face columns -- a pure number, as it must be: both readings are linear functionals that the bond pairing reduces to multiples of the same summed relative roll. So CH-0284's own published channel sizes are 1.21997x low. That is CH-0285.",
+        "AND THE MARGIN THE REFUSAL WAS PRICED AGAINST IS NOT THE CORPUS'S TIGHTEST. Over the eighteen committed files carrying a HoneycombDeflection dishing there are 1146 verdict-bearing readings in [0.09, 0.11] -- every numeric leaf whose key ends OverStroke or contains ishing, in a record that also carries a boolean -- and the tightest is 0.10000102 at T-294/cells/92/nominalCorrectedOverStroke, 1.02E-5 relative from T-5b. C-0180's own recovered cell clears the tolerance by 4.2724E-3 relative, so the corpus's tightest verdict-bearing reading is 418.9x tighter, and even the collar channel is outside it. 2 readings lie inside the collar channel, 96 inside the movement that would flip C-0180's own tightest cell, 126 inside the prestrain channel and 484 inside it at the third convention's 6x. THERE IS NO CHANNEL ON WHICH ADOPTION IS SAFE, and the decision cannot rest on the movement being small.",
+        "ITS TWIN RUNS THE OTHER WAY AND IS AS SHARP: 99 of the 1146 verdict-bearing readings sit CLOSER to T-5b than the beam-subdivision convergence departure C-0180 measured on this very lattice (4.57E-4 of the stroke, 4.57E-3 relative). Those verdicts are not determined by the model at all, and the fit convention is one more term in the same bucket. It is independent of which convention wins.",
+        "THE MOVEMENT IS AFFINE, SO A RIGOROUS CEILING COSTS NO SOLVE. A convention change moves only the three coefficients, so the dishing field moves by -(Dc0 + Dc1 s + Dc2 y) and the peak cannot move further than that plane's own supremum over the face. Measured, the ceiling holds at 8 of 8 channels, and for a linear surrogate bank it superposes. Worst measured movement: 0.318 on the split convention and 0.346 on the sampled one; at the two coupled cells C-0180's verdict rests on it is 0.00143, and the verdict moves at 0 of 2."
+    ],
+    "validity": [
+        "The closed form assumes the face gap sequence is d, 2d, d, 2d, ..., which HoneycombBlock.position guarantees and a require in faceVerticalBondPairs asserts. A face that left that ladder would refuse rather than guess.",
+        "The 0 : 1 : 6 collinearity is exact for the PISTON projection at an even raster-row count and faceColumn 0 -- the geometry every one of the corpus's eighteen files is read at. At faceColumn 1 and at odd m the end beams break it and the ratio is field-dependent; that is emitted, not asserted. The tiltY gap is not proportional at all.",
+        "NOTHING IS REPOINTED. Every accessor added to HoneycombGrillage is new, so the eighteen committed files are unmoved by construction and not by a re-run; byte-identity controls confirm it. The decision about which convention the class should adopt is recorded in C-0221 and is NOT taken in code, because an adoption without the eighteen-file sweep would leave every one of them unreproducible from its own code.",
+        "The margin census is over the eighteen files' COMMITTED state and is therefore dated by it. Its predicate is emitted beside it so the count is reproducible; a reading whose verdict is written outside its own record is invisible to it.",
+        "The deciding cells are rebuilt rather than imported, because T-279's own placement and distribution helpers are private to its study. What says the rebuild is the same object is that its standing p90 reproduces C-0180's committed value; that is F12 and it is emitted per cell.",
+        "The ceiling is rigorous for a peak dishing of a single field and superposes over a linear surrogate bank. It is not a bound on a p90 over a dropout ensemble, which is why the deciding cells are measured rather than bounded.",
+        "OrigamiGrillage's own decomposition is not examined. Its tributaries are uniform so the same defect cannot arise the same way, but that is an argument and not a measurement."
+    ],
+    "openQuestions": [
+        "Whether the class should adopt convention C. The argument is closed here and the cost is not: it moves all eighteen result files, in a topological order, and an unknown number of marginal verdicts with them. T-335.",
+        "CH-0285 -- the shipped areaInnerProduct's whole-strip Gauss rule across a discontinuous integrand, which makes CH-0284's own published channel sizes low by a constant factor and would silently bias any adopted fit.",
+        "T-327 -- the corpus's flatness census cannot resolve a verdict inside its own convergence departure, and 99 of 1146 verdict-bearing readings are inside it. That is independent of which convention wins and it is not a convention question.",
+        "Whether the load quadrature should also be split. It must NOT be: assembleLoad's centred tributary is what makes the uniform-load falsifier exact, and its integrand does not go through evaluate, so it carries no jump."
+    ]
+}

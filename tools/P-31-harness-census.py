@@ -205,6 +205,14 @@ HARNESSES = (
     # of 18 result files provably unmoved.
     ("T-330-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
      "src/main/kotlin/tile/HoneycombGrillage.kt", (BY_HAND,)),
+    # `T-326`.  The same Kotlin subject as `T-330`'s and therefore also BY HAND: it mutates
+    # `tile/HoneycombGrillage.kt` and must be handed a snapshot, never the checkout.  Its rows
+    # hold open the closed form of the fit/sample gap term by term, the bond census it is
+    # written on, the split quadrature in BOTH directions, and -- `P9` -- the INERTNESS of the
+    # whole addition: a mutation that repoints the shipped decomposition at the new fit must
+    # fail, because the eighteen committed result files rest on it not happening.
+    ("T-326-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
+     "src/main/kotlin/tile/HoneycombGrillage.kt", (BY_HAND,)),
     # `T-321`.  A Python subject with an INLINE `--self-test`, like `T-313`'s, so the harness runs
     # the subject itself rather than a sibling test file.  Its fixture is a `tools/`-only copy and
     # that is a DECLARATION rather than a convenience: the probe's self-tests read `tools/` and
@@ -212,6 +220,15 @@ HARNESSES = (
     # `T-295`'s emptied arm.
     ("T-321-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
      "T-321-dynamic-guard-probe.py", ("killed-by", "survives")),
+    # `T-334`.  A Python subject with an inline `--self-test`, as `T-313`'s and `T-321`'s are, so
+    # the harness runs the subject itself rather than a sibling test file, and its fixture is a
+    # `tools/`-only copy -- a DECLARATION and not a convenience: the census's self-tests read
+    # in-memory fixtures and a `_StubTree` and nothing else, which is why they stay green in
+    # `T-295`'s emptied arm.  Six of its rows RESTORE a predecessor's defect (the literal-only
+    # tool pattern, the missing reachability filter, the `--self-test` exclusion, the
+    # disjointness assumption) and five over-widen a rule, which is `C-0176`'s both directions.
+    ("T-334-mutation-test.py", "TEXT-ANCHOR", "name_file_old_new",
+     "T-334-gate-census.py", ("killed-by", "survives")),
 )
 
 # Which module file each ATTRIBUTE receiver in a harness stands for.  A receiver not named here is

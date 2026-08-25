@@ -1331,6 +1331,230 @@ class HoneycombGrillage(
             faceRigidModes.map { areaInnerProduct(it, field) * area }
         )
 
+    // ---------------------------- T-326: the reconstruction the fit is taken in, and two others
+
+    /**
+     * The `y` boundaries of the **nearest-beam** partition — the midpoints of consecutive face
+     * axes, which is where [evaluate]'s reconstruction JUMPS.
+     */
+    private val faceNearestBoundaries: List<Double> by lazy {
+        faceBeams.zipWithNext { lower, upper -> (beamY[lower] + beamY[upper]) / 2.0 }
+    }
+
+    /**
+     * The face's own **vertical bonds**, as index pairs into [faceBeams] ascending in `y`.
+     *
+     * A honeycomb face's gap sequence is `d, 2d, d, 2d, …` — [HoneycombBlock.position] puts a
+     * face helix at `r·p + ½d·[(r + faceColumn) even]` — and the `d`-gaps are exactly the pairs
+     * a vertical bond joins. They are what the two reconstructions of the face field differ
+     * over, and [reconstructionGapDual] is written on them.
+     */
+    val faceVerticalBondPairs: List<Pair<Int, Int>> by lazy {
+        val d = block.bondLength
+        faceBeams.indices.zipWithNext().filter { (lower, upper) ->
+            val gap = beamY[faceBeams[upper]] - beamY[faceBeams[lower]]
+            require(abs(gap - d) < 1e-9 || abs(gap - 2.0 * d) < 1e-9) {
+                "a honeycomb face gap must be d or 2d, was: $gap"
+            }
+            abs(gap - d) < 1e-9
+        }
+    }
+
+    private fun yPieces(low: Double, high: Double): List<Pair<Double, Double>> {
+        val cuts = ArrayList<Double>()
+        cuts += low
+        faceNearestBoundaries.forEach { if (it > low && it < high) cuts += it }
+        cuts += high
+        return (0 until cuts.size - 1).map { cuts[it] to cuts[it + 1] }
+    }
+
+    private fun integrateBand(
+        low: Double,
+        high: Double,
+        field: (Double, Double) -> Double
+    ): Double {
+        val pieces = yPieces(low, high)
+        var total = 0.0
+        for (element in 0 until nodeS.size - 1) {
+            val length = nodeS[element + 1] - nodeS[element]
+            for (q in 0 until honeycombQuadrature.points) {
+                val s = nodeS[element] + length * (honeycombQuadrature.nodes[q] + 1.0) / 2.0
+                val weightS = honeycombQuadrature.weights[q] * length / 2.0
+                pieces.forEach { (a, b) ->
+                    for (r in 0 until honeycombQuadrature.points) {
+                        val y = (a + b) / 2.0 + (b - a) / 2.0 * honeycombQuadrature.nodes[r]
+                        total += weightS * honeycombQuadrature.weights[r] *
+                                (b - a) / 2.0 * field(s, y)
+                    }
+                }
+            }
+        }
+        return total
+    }
+
+    /**
+     * [integrateOverFace], but with the `y` quadrature **split at every nearest-beam boundary**.
+     *
+     * `integrateOverFace` lays one 6-point Gauss rule across each whole tributary strip, and a
+     * boundary of [evaluate]'s reconstruction falls `d/4` inside each strip's end **at every
+     * strip, by construction** — so an integrand that goes through [evaluate] is discontinuous
+     * inside the rule's own interval and the smooth rule is first order there. Measured on the
+     * piston gap the unsplit rule returns a constant `0.819694` of the split one (`T-326`
+     * `P11`, `CH-0285`). On a field that does not go through [evaluate] the two agree exactly.
+     */
+    fun integrateOverFaceSplit(field: (Double, Double) -> Double): Double {
+        var total = 0.0
+        faceBeams.indices.forEach { index ->
+            val (low, high) = tributary(index)
+            total += integrateBand(low, high, field)
+        }
+        return total
+    }
+
+    /**
+     * [field] integrated over the face **rectangle** `[−L_y/2, L_y/2]`, split at every
+     * nearest-beam boundary — the measure the reported peak dishing is a supremum over.
+     *
+     * The tributary strips overlap by `d/2` across every vertical bond and gap by `d/2` between
+     * them, so their sum is not the rectangle even though its total measure is `L_y·L_s`.
+     */
+    fun integrateOverFaceRectangle(field: (Double, Double) -> Double): Double =
+        integrateBand(-lengthY / 2.0, lengthY / 2.0, field)
+
+    /** [areaInnerProduct] with the split quadrature — convention **B**, integrated exactly. */
+    fun splitFaceInnerProduct(a: F64Array, b: F64Array): Double =
+        integrateOverFaceSplit { s, y -> evaluate(a, s, y) * evaluate(b, s, y) } / area
+
+    /**
+     * `(1/A) ∫ w_a w_b dA` over the face **rectangle** — convention **C**.
+     *
+     * This is the only one of the class's three inner products whose reconstruction and whose
+     * measure are both the ones the reported quantity is read in: [dishing] samples through
+     * [evaluate] and [HoneycombDeflection.peakDishing] takes its supremum over the rectangle.
+     */
+    fun faceSampledInnerProduct(a: F64Array, b: F64Array): Double =
+        integrateOverFaceRectangle { s, y -> evaluate(a, s, y) * evaluate(b, s, y) } / area
+
+    private fun gramOf(product: (F64Array, F64Array) -> Double): List<List<Double>> =
+        faceRigidModes.map { a -> faceRigidModes.map { b -> product(a, b) * area } }
+
+    private fun worstOffDiagonal(gram: List<List<Double>>): Double =
+        (0..2).flatMap { i ->
+            (0..2).mapNotNull { j ->
+                if (i == j) null else abs(gram[i][j]) / sqrt(gram[i][i] * gram[j][j])
+            }
+        }.max()
+
+    /** [faceRigidGram] under [splitFaceInnerProduct] — convention **B**, exactly integrated. */
+    val splitFaceRigidGram: List<List<Double>> by lazy { gramOf(::splitFaceInnerProduct) }
+
+    /**
+     * [faceRigidGram] under [faceSampledInnerProduct] — convention **C**.
+     *
+     * It is `diag(A, A·L_s²/12, A·L_y²/12)` **identically, at every raster-row count, every face
+     * column and every row length**, because `∫s dA`, `∫y dA` and `∫sy dA` over a rectangle
+     * symmetric about its own centre are zero whatever the corrugated ladder does. So convention
+     * C **dissolves** `CH-0282`'s parity rather than repairing it: under it the three
+     * independent projections are the least-squares fit again, with no branch.
+     */
+    val faceSampledGram: List<List<Double>> by lazy { gramOf(::faceSampledInnerProduct) }
+
+    /** [worstFaceNonOrthogonality] under the split quadrature. */
+    val worstSplitFaceNonOrthogonality: Double by lazy { worstOffDiagonal(splitFaceRigidGram) }
+
+    /** [worstFaceNonOrthogonality] under convention **C** — zero at every `m`. */
+    val worstSampledFaceNonOrthogonality: Double by lazy { worstOffDiagonal(faceSampledGram) }
+
+    /** The least-squares rigid plane of [field] in convention **B**, exactly integrated. */
+    fun splitFaceRigidCoefficients(field: F64Array): List<Double> =
+        solveSymmetricThreeByThree(
+            splitFaceRigidGram, faceRigidModes.map { splitFaceInnerProduct(it, field) * area }
+        )
+
+    /** The least-squares rigid plane of [field] in convention **C**. */
+    fun sampledFaceRigidCoefficients(field: F64Array): List<Double> =
+        solveSymmetricThreeByThree(
+            faceSampledGram, faceRigidModes.map { faceSampledInnerProduct(it, field) * area }
+        )
+
+    /**
+     * The sparse dual of the **closed form** of the fit/sample gap on rigid mode [mode], so that
+     * `reconstructionGapDual(i).dot(u)` is `⟨mode_i, evaluate(u)⟩ − ⟨mode_i, owningRecon(u)⟩`.
+     *
+     * Within the owning strip of a face beam, the nearest-beam partition is that strip
+     * translated by `±d/4`, the sign alternating with the corrugation, so each strip is split
+     * `5d/4` to its own beam and `d/4` to the partner across its own **vertical bond**. Summed
+     * over the two members of one bond the deflection differences cancel identically and what
+     * survives is the bond's **relative roll**:
+     *
+     * ```
+     * piston  (d^2/16) * SUM_bonds INT (phi_upper - phi_lower) ds
+     * tiltS   (d^2/16) * SUM_bonds INT s * (phi_upper - phi_lower) ds
+     * tiltY   SUM_bonds INT [ (d^2/16)((w_u - w_l) + ybar*(phi_u - phi_l))
+     *                         - (d^3/32)(phi_u + phi_l) ] ds
+     * ```
+     *
+     * So the discrepancy between the two reconstructions is a **bond-hinge coordinate**: small
+     * under any load the bonds resist and large under a load applied to a bond, which is the
+     * mechanism behind `CH-0284`'s own channel split. Asymptotically the first-order slope term
+     * cancels and the relative gap is `(pi^2/12)(d/lambda_y)^2` in the dishing field's own
+     * across-face wavelength.
+     *
+     * The `y` integration is exact; the `s` integration is 6-point Gauss on integrands of degree
+     * at most four, where that rule is exact to degree eleven.
+     */
+    fun reconstructionGapDual(mode: Int): F64Array {
+        require(mode in 0..2) { "mode must be 0 (piston), 1 (tiltS) or 2 (tiltY), was: $mode" }
+        val d = block.bondLength
+        val rollScale = d * d / 16.0
+        val meanRollScale = d * d * d / 32.0
+        val dual = F64Array(degreesOfFreedom)
+        faceVerticalBondPairs.forEach { (lowerIndex, upperIndex) ->
+            val lower = faceBeams[lowerIndex]
+            val upper = faceBeams[upperIndex]
+            val midY = (beamY[lower] + beamY[upper]) / 2.0
+            for (element in 0 until nodeS.size - 1) {
+                val length = nodeS[element + 1] - nodeS[element]
+                for (q in 0 until honeycombQuadrature.points) {
+                    val t = (honeycombQuadrature.nodes[q] + 1.0) / 2.0
+                    val s = nodeS[element] + t * length
+                    val weightS = honeycombQuadrature.weights[q] * length / 2.0
+                    val hermite = honeycombHermiteShape(t, length)
+
+                    fun addRoll(beam: Int, coefficient: Double) {
+                        dual[dof(element, beam, PHI)] += coefficient * (1.0 - t)
+                        dual[dof(element + 1, beam, PHI)] += coefficient * t
+                    }
+
+                    fun addDeflection(beam: Int, coefficient: Double) {
+                        dual[dof(element, beam, W)] += coefficient * hermite[0]
+                        dual[dof(element, beam, THETA)] += coefficient * hermite[1]
+                        dual[dof(element + 1, beam, W)] += coefficient * hermite[2]
+                        dual[dof(element + 1, beam, THETA)] += coefficient * hermite[3]
+                    }
+
+                    when (mode) {
+                        0 -> {
+                            addRoll(upper, weightS * rollScale)
+                            addRoll(lower, -weightS * rollScale)
+                        }
+                        1 -> {
+                            addRoll(upper, weightS * rollScale * s)
+                            addRoll(lower, -weightS * rollScale * s)
+                        }
+                        else -> {
+                            addDeflection(upper, weightS * rollScale)
+                            addDeflection(lower, -weightS * rollScale)
+                            addRoll(upper, weightS * (rollScale * midY - meanRollScale))
+                            addRoll(lower, weightS * (-rollScale * midY - meanRollScale))
+                        }
+                    }
+                }
+            }
+        }
+        return dual
+    }
+
     // ------------------------------------------------------------------ load and solve
 
     internal fun assembleLoad(pressure: PressureField): F64Array {

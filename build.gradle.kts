@@ -464,6 +464,45 @@ tasks.register<Exec>("testDynamicGuardProbeMutations") {
 }
 
 /*
+ * `T-334` -- the census of tools that can fail a `tools/verify.sh` run, taken by REACHABILITY.
+ *
+ * `CH-0243` found that census keyed on a filename prefix; `C-0210` replaced it with invocations
+ * in one file and named that a predicate about a FILE where the question is about a RUN;
+ * `CH-0286` found that its Gradle half is a regular expression over a LITERAL, so the twelve
+ * Kotlin-subject harnesses wired through `mutationSnapshotArguments` are invisible to it.  All
+ * three read a SHAPE.  What decides whether an invocation can fail the run is whether `:test`
+ * depends on the task that carries it, which is the `dependsOn` block at the foot of this file
+ * and nothing else -- and the twelve above are deliberately absent from it.
+ *
+ * The gated arm is not the number.  It is that the set of `Exec` tasks unreachable from `:test`
+ * must EQUAL the set of harnesses `tools/P-31-harness-census.py` declares `BY-HAND`, in both
+ * directions, so a helper-wired harness cannot be added and leave the build green without being
+ * declared -- after which the census subtracts it by construction.  The two sides share nothing:
+ * one is the Kotlin list below, the other a hand-written Python table.
+ *
+ * Both tasks read only `build.gradle.kts`, `tools/verify.sh` and `tools/`, so a `--drop` or
+ * `--drop-file` on a verification snapshot cannot make either fail.
+ */
+tasks.register<Exec>("testGateCensus") {
+    group = "verification"
+    description = "Runs tools/T-334-gate-census.py --self-test, the tests for the gate census"
+    commandLine("$projectDir/tools/T-334-gate-census.py", "--self-test")
+}
+
+tasks.register<Exec>("testGateCensusReachability") {
+    group = "verification"
+    description = "Runs tools/T-334-gate-census.py --check: every Exec task unreachable from " +
+        "`:test` is declared BY-HAND in P-31's table, and conversely"
+    commandLine("$projectDir/tools/T-334-gate-census.py", "--check")
+}
+
+tasks.register<Exec>("testGateCensusMutations") {
+    group = "verification"
+    description = "Runs tools/T-334-mutation-test.py, the mutation test for the gate census"
+    commandLine("$projectDir/tools/T-334-mutation-test.py")
+}
+
+/*
  * THE FOUR KOTLIN HARNESSES, WHICH TAKE A SNAPSHOT DIRECTORY AND ARE DELIBERATELY OUT OF `:test`.
  *
  * The Kotlin-subject harnesses mutate Kotlin sources, so one mutation is one Gradle `test` run --
@@ -559,6 +598,29 @@ tasks.register<Exec>("testFaceRigidBasisMutations") {
     commandLine(mutationSnapshotArguments("T-330-mutation-test.py"))
 }
 
+/*
+ * `T-326` -- the two reconstructions of the face field, and the third nobody named.
+ *
+ * `HoneycombDeflection` FITS its rigid plane in `faceFunctional`'s owning-beam reconstruction and
+ * SAMPLES the residual in `evaluate`'s nearest-beam one (`CH-0284`).  These rows hold open the
+ * closed form of that gap in the face's own vertical bonds, the bond census it is written on, the
+ * split quadrature in BOTH directions (`CH-0285`), and -- `C-0221`'s `P9` -- the INERTNESS of the
+ * whole addition: a mutation that repoints the shipped decomposition at the new fit must fail,
+ * because the eighteen committed result files rest on it not happening.
+ *
+ * The same Kotlin subject as `T-330`'s, so it takes a snapshot directory and is deliberately
+ * **not** in `:test`, and `P-31`'s census carries it as `BY HAND`.  `T-334`'s reachability gate
+ * requires the two to agree in BOTH directions, so this registration is what makes the BY-HAND
+ * declaration honest rather than a harness nothing can run.
+ */
+tasks.register<Exec>("testFaceReconstructionMutations") {
+    group = "verification"
+    description = "Runs tools/T-326-mutation-test.py <snapshot>, the Kotlin mutation test for " +
+        "the closed form of the fit/sample gap, the split quadrature and the inertness of the " +
+        "addition. Needs -PmutationSnapshot=<dir>; not in :test"
+    commandLine(mutationSnapshotArguments("T-326-mutation-test.py"))
+}
+
 tasks.register<Exec>("testSearchedDistributionMutations") {
     group = "verification"
     description = "Runs tools/T-316-mutation-test.py <snapshot>, the Kotlin mutation test for a " +
@@ -614,7 +676,9 @@ tasks.named("test") {
         // `CH-0268` -- an emitter that ignores its arguments emits.
         "testCliGuard",
         // `T-321` -- the dynamic arm of that guard, which OBSERVES rather than compares.
-        "testDynamicGuardProbeMutations"
+        "testDynamicGuardProbeMutations",
+        // `T-334` -- the gate census by REACHABILITY, and the mutation table over its own rules.
+        "testGateCensus", "testGateCensusReachability", "testGateCensusMutations"
     )
 }
 

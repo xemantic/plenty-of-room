@@ -96,10 +96,10 @@ tool and emit them at a recorded `baselineRef`.
 | `P7` | the shipped gate's defect count at `HEAD` | **0** |
 
 **Acceptance.** `P1`–`P6` are reproduced by
-`tools/T-334-gate-census.py` — written in Execute, and named here as a code span rather than as a
-link, because this file is committed **before** the artifact it names and
-`tools/check-corpus-links.py` is right to refuse a link to something that does not exist yet —
-from the tree and from a `git archive` of each ref, agreeing with the Formulate-stage derivation **exactly** (these are
+[`tools/T-334-gate-census.py`](../../tools/T-334-gate-census.py) — at Formulate this was a code
+span and not a link, because a task file is committed **before** the artifact it names and
+`tools/check-corpus-links.py` is right to refuse a link to something that does not exist yet; the
+link was added in Execute, once it did — from the tree and from a `git archive` of each ref, agreeing with the Formulate-stage derivation **exactly** (these are
 integers; there is no tolerance). `P7` is `--check` exiting 0 at `HEAD`. Every count is emitted
 beside the **predicate that produced it** and the **state it was read at**, which is `C-0210`'s own
 discipline and the only form in which a self-describing number can be checked.
@@ -252,3 +252,42 @@ Declared **before** the tool is written, and before this file is committed.
   should carry the reachability fact is a question about `P-31`'s own subject, and it is filed
   rather than answered.
 - **It does not run `./gradlew` or `tools/verify.sh`.** Every gate is run directly as Python.
+
+---
+
+## Execute and Verify — the run
+
+Filed as [`C-0222`](../claims/C-0222-the-gate-census-by-reachability.md).
+
+### What was built
+
+| | |
+|---|---|
+| [`tools/T-334-gate-census.py`](../../tools/T-334-gate-census.py) | the predicate, the four historical predicates kept beside it, the residue, the decomposition, the three-arm `--check`; **42** named self-tests over in-memory fixtures and a `_StubTree`, reading no repository state |
+| [`tools/T-334-mutation-test.py`](../../tools/T-334-mutation-test.py) | **23** mutations, **0** survivors, over a measured and subtracted green baseline |
+| [`tools/T-334-emit-result.py`](../../tools/T-334-emit-result.py) | **10** self-tests; emits [`gpd/results/T-334-the-gate-census-by-reachability.json`](../results/T-334-the-gate-census-by-reachability.json) with `baselineRef` `d9a3522`, byte-identical across two runs |
+| [`tools/P-31-harness-census.py`](../../tools/P-31-harness-census.py) | one row added to `HARNESSES`, declaring the harness and its `killed-by` / `survives` shape |
+| [`build.gradle.kts`](../../build.gradle.kts) | three `Exec` tasks and three `dependsOn` entries |
+
+### The targets, all reproduced
+
+| | target | derived | reproduced by the tool |
+|---|---|---|---|
+| `P1` | union at `d9a3522` | **44** | yes |
+| `P2` | union at `71d126e` | **42** | yes |
+| `P3` | union at `d7b7074` | **44** | yes |
+| `P4` | decomposition of `51 − 44` | `−12 / +13 / −8` | yes |
+| `P5` | `Exec` tasks unreachable from `:test` | **12** | yes |
+| `P6` | import-only residue | **3** | yes |
+| `P7` | `--check` defects at `d9a3522` | **0** | yes |
+
+### The falsifiers
+
+`F8` **fired, as declared, and by more than declared** — `44 → 46`, where the task file predicted
+45, because the prediction counted the `Exec` **tasks** the wiring adds and the answer counts
+**tools**. `F5` is a **hand-off** to the coordinator's `tools/verify.sh --committed`. Every other
+falsifier did not fire, and `F2` is **tested at all three refs** rather than asserted at one:
+`6 = 6`, `11 = 11`, `12 = 12`. `F3` did not fire and needed a parameter it was not declared with —
+`37` counted the literal shape only where `43 / 50 / 51` counted both — so the tool now takes it
+and asserts that each published figure **reconstructs** from its own two parts. The full table is
+`C-0222` §7.

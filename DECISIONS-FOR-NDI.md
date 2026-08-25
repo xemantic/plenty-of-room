@@ -1803,14 +1803,47 @@ previous pass), and `build.gradle.kts` invokes **twenty-one** through a literal
 mutation harnesses are wired through a HELPER** — `commandLine(mutationSnapshotArguments("T-294-mutation-test.py"))`
 — because a harness that mutates Kotlin sources must be handed a snapshot directory and cannot be run bare.
 There are **twelve** of them at this tree, disjoint from both other sets, every one build-failing, and **not one
-of them is visible to the predicate that produced the number above**. The honest count of distinct tools that can
+of them is visible to the predicate that produced the number above**. ~~The honest count of distinct tools that can
 fail `tools/verify.sh` is therefore **`18 + 21 + 12` = FIFTY-ONE**; and the **`37` in print was an undercount at
 its own ref too** — re-derived at `71d126e`, the previous pass's baseline, the three sets are `17 / 20 / 6` and
-the union is **forty-three**. `CH-0243` found a predicate that was a **filename prefix**; the previous pass
+the union is **forty-three**.~~ **BOTH FIGURES WITHDRAWN, iteration 53 — the twelve can fail nothing, and the
+block below carries the derivation.** `CH-0243` found a predicate that was a **filename prefix**; the previous pass
 replaced it with *invocations in one file* and named that a predicate about a **file** where the question is
 about a **run**; this one is a predicate about a **literal** where the question is about an **invocation**, and
-it is the same defect a third time. **The count is not the deliverable here — the derivation is, and it now has
-to name the two shapes a Gradle wiring can take.**
+it is the same defect a third time. ~~**The count is not the deliverable here — the derivation is, and it now has
+to name the two shapes a Gradle wiring can take.**~~ **The count is not the deliverable and neither is a
+derivation over SHAPES — see the block below.**
+
+**RE-DERIVED AGAIN, iteration 53 — AND THE ANSWER IS NOT A NUMBER TO BE RE-TYPED, IT IS A COMMAND**
+([`C-0222`](gpd/claims/C-0222-the-gate-census-by-reachability.md), `T-334`;
+[`CH-0286`](gpd/challenges/CH-0286-a-gate-wired-through-a-helper-is-invisible-to-the-census.md) **upheld in its
+diagnosis and refuted in its number**).
+
+    tools/T-334-gate-census.py              # over the working tree
+    tools/T-334-gate-census.py --ref <sha>  # at any named state
+
+**All four predicates above read a SHAPE, and the question is REACHABILITY.** An `Exec` task that `:test` does
+not depend on is never executed by `./gradlew test`, so an invocation inside one cannot fail a `tools/verify.sh`
+run at all — and [`build.gradle.kts`](build.gradle.kts) says so in its own comment above
+`mutationSnapshotArguments`: the twelve are *"runnable by name and **NOT reachable from `:test`**"*. So **`51`
+OVERCOUNTS by seven where `37` undercounts by five.** The answer is **forty-four** at `d9a3522`, **forty-two**
+at `71d126e` and **forty-four** at `d7b7074` — route A's **18** command words plus the **34** reachable from
+`:test`, **minus an overlap of 8** that no published figure has subtracted. The difference decomposes into
+three signed terms — `−12` unreachable, `+13` Gradle tools the `--self-test` filter and the de-duplication
+remove, `−8` overlap — and **at `71d126e` those three are `−6 / +12 / −7` and sum to `−1`**, so the `forty-three`
+above sat within one of the true forty-two by **coincidence**, and six iterations later the coincidence is
+worth seven. **The previous passes are right about the disjointness they asserted**: route A and the
+literal-no-self-test Gradle set intersect in **zero** at all three refs, and the overlap appears only once the
+filter that produced the disjointness is dropped.
+**What is gated is not the count.** `tools/T-334-gate-census.py --check` asserts that the `Exec` tasks
+unreachable from `:test` **equal** the harnesses [`tools/P-31-harness-census.py`](tools/P-31-harness-census.py)
+declares `BY-HAND`, in **both** directions — `6 = 6`, `11 = 11`, `12 = 12` at the three states — so a
+helper-wired harness cannot be added and leave the build green without being declared, after which the census
+subtracts it by construction. **And the census moves its own answer**: wiring it adds two `tools/` scripts to
+the set it counts, so the same command reads **forty-six** at the tree that carries this block and forty-four
+at `d9a3522`. That is exactly why what is quoted here is a **command** and every figure beside it names the
+state it was read at: a self-describing count typed into this paragraph has gone stale at five of the six
+passes that touched it, and a command cannot.
 **A self-describing count can be right in its NUMBER and wrong in its PREDICATE**, and this sentence bundled three
 different counts under one of them. What follows is the enumeration, which is correct as a list: numbers, task
 statuses, challenge statuses and self-consistency ([`tools/trace-answers.py`](tools/trace-answers.py), which

@@ -13131,3 +13131,153 @@ has now gone `0 → 7 → 6` and `SUPERSEDED_RATIO` `5 → 0 → 0`; neither ser
 prosecuted and reported every pass. Six of the six stale prices are cells of the two decision tables NDI reads,
 five of them pricing deferral on a coupled count that `C-0212` and `C-0215` show is a reading on **two
 transferred distributions** and, at decision 9, on a tile the programme does not recommend.
+
+## Iteration 53 — 2026-08-25: two cheap bounds that answered their rows before any code, and a fourth census collision
+
+Both task files committed before either agent changed a line. Both cheap bounds settled the substance of their
+row with no solve — one by four commands over two files, the other by a closed form checked to `8.4e−14` — and
+in both cases the published number the row existed to correct turned out to be wrong in the direction nobody
+had guessed.
+
+### `T-334` — the checker census is a **reachability** question, and the fourth predicate was still a shape
+
+`CH-0286` found that the census's third derivation is a regular expression over a
+`commandLine("$projectDir/tools/…")` **literal**, so the twelve Kotlin-subject mutation harnesses wired through
+`mutationSnapshotArguments` are invisible to it, and published **`51`** against `C-0210`'s **`37`**.
+The diagnosis is right and it stops one level short: an `Exec` task that `:test` does not depend on is never
+executed by `./gradlew test`, so an invocation inside one **cannot fail a `tools/verify.sh` run at all**.
+`build.gradle.kts` says so in its own comment — *"runnable by name and **NOT reachable from `:test`**"* — and the
+twelve are exactly the twelve [`tools/P-31-harness-census.py`](tools/P-31-harness-census.py) already declares
+`BY-HAND`. **`51` overcounts by seven where `37` undercounts by five, and the answer is `44`.**
+
+Derived at four named states by [`tools/T-334-gate-census.py`](tools/T-334-gate-census.py): **`44`** at
+`d9a3522`, **`42`** at `71d126e` (`C-0210`'s own baseline) and **`44`** at `d7b7074` (`C-0220`'s) — route A's
+`18` command words plus the `34` reachable from `:test`, **minus an overlap of `8`** that no published figure
+has subtracted. Three signed corrections separate `51` from `44`: `−12` for the unreachable, `+13` for the
+Gradle tools the `--self-test` filter and the de-duplication remove, `−8` for the overlap. **At `C-0210`'s own
+ref the same three are `−6 / +12 / −7` and sum to `−1`**, so `CH-0286`'s `43` sat within one of the true `42`
+by coincidence, and six iterations later the coincidence is worth seven. `C-0210` is *right* about the
+disjointness it asserted — route A and the literal-no-self-test set intersect in **0** at all three refs — and
+the overlap appears only when the filter that produced the disjointness is dropped.
+
+**What shipped is the equality, not the number.** `--check` gates that the `Exec` tasks unreachable from
+`:test` **equal** `P-31`'s `BY-HAND` set in both directions: two objects sharing no code, a Kotlin `dependsOn`
+list and a hand-written Python table, agreeing at `6 = 6`, `11 = 11` and `12 = 12`. A helper-wired harness can
+no longer be added and leave the build green without being declared, after which the census subtracts it by
+construction. Measured beside it and worth recording: **the literal-wired set is exactly the reachable set at
+all three refs** (`32 = 32`, `34 = 34`, `34 = 34`), so the shape and the reachability coincide *today* — a
+shape predicate would land on the right union by accident, and nothing but arm 1 keeps the accident true.
+
+**What surprised us, three times.** `F8` was declared as an expected fire and fired **by more than declared**:
+wiring the census adds two `tools/` scripts to the set it counts, `44 → 46`, where the task file predicted 45 —
+the forecast counted the `Exec` **tasks** the wiring adds and the answer counts **tools**. `CH-0182` for the
+ninth consecutive pass touching a self-describing count, and the first where the pass's own forecast of the
+self-destruction was on the wrong axis. Second, the mutation table's first run read **3 survivors and all three
+were about the fixture, not the tests** (`C-0161`): one mutation was a no-op because the row it mutated carried
+no arguments — repaired in the *subject*, so the `--self-test` choice is now derivable from the same pass
+rather than merely stated — one fixture put its description-less task last, and one spelled the `BY-HAND`
+sentinel only as a name. Third, and smallest: `HEAD` moved twice while the claim was being drafted, so an
+emitter defaulting to `HEAD` re-based its own `baselineRef` between the draft and the emission. `CH-0246`'s
+trap **within one task** rather than across iterations; the ref is now pinned, and the reading is `44` at all
+three of `d9a3522`, `23e2c58` and `5c0229a`.
+
+Filed as [`C-0222`](gpd/claims/C-0222-the-gate-census-by-reachability.md).
+[`CH-0286`](gpd/challenges/CH-0286-a-gate-wired-through-a-helper-is-invisible-to-the-census.md) is **upheld in
+its diagnosis and refuted in its number**; [`CH-0289`](gpd/challenges/CH-0289-p31-wired-in-is-a-file-fact-not-a-run-fact.md)
+is raised, because `P-31`'s own `wired: 30 of 30` is true of the **file** and false of the **run** for twelve of
+the thirty — the same confusion one column across, in the very census `CH-0286` names as the right instrument.
+`CH-0290` is reserved and **RELEASED UNUSED**. `T-336` is opened: nothing yet checks that what
+`DECISIONS-FOR-NDI.md` **prints** agrees with what the tool **derives**, so the recurrence is prevented for the
+*wiring* half of the defect and not yet for the *quoting* half.
+
+### `T-326` — the fit and the sample in one reconstruction: a closed form in the face's own vertical bonds, a third convention nobody named, and a refusal that measures itself
+
+[`CH-0284`](gpd/challenges/CH-0284-a-fit-and-a-sample-in-two-reconstructions.md) records that `HoneycombDeflection` **fits** its rigid plane with `faceFunctional`'s owning-beam reconstruction and **samples** the residual with `evaluate`'s nearest-beam one, prices the gap at `4.3E-4`–`5.0E-4` on the collar and `0.0067` on a bond prestrain against `C-0180`'s `0.426 %` margin, and files the question rather than taking it — because an unconditional adoption moves all eighteen result files and `C-0219`'s partition proof does not transfer.
+Filed as [`C-0221`](gpd/claims/C-0221-the-fit-and-the-sample-in-one-reconstruction.md) (`T-326`), which **answers `CH-0284`**, raises [`CH-0285`](gpd/challenges/CH-0285-a-smooth-rule-across-a-discontinuous-reconstruction.md), opens `T-327` and `T-335`, and **moves no committed number**.
+
+**The cheap bound was the whole first half, as it was in `T-330`, and it ran before any Kotlin existed.**
+Within a beam's owning strip the nearest-beam partition is that strip translated by `±d/4`, alternating with the corrugation, so each strip is split `5d/4` to its own beam and `d/4` to the partner across its own **vertical bond**; summed over a bond's two members the deflection differences cancel identically and what survives is the bond's **relative roll**, `(d²/16)·Σ∫(Φ_upper − Φ_lower) ds` on the piston, with matching forms for the two tilts.
+Derived and verified in Python (retained, runnable with no JVM, [`gpd/data/T-326-cheap-bound/`](gpd/data/T-326-cheap-bound/README.md)), then reproduced independently in Kotlin below a declared `1e-12` at **28 of 28** rows and **252** readings.
+So the discrepancy is a **bond-hinge coordinate** — small under any load the bonds resist, large under a load applied *to* a bond — and that is a mechanism for `CH-0284`'s own channel split rather than a restatement of it.
+Asymptotically the first-order slope term cancels and the relative gap is `(π²/12)(d/λ_y)²`, `9.1E-4` at a face-scale half-cosine against a measured `6.1E-4`.
+
+**Neither remedy `CH-0284` offers is the consistent one.**
+Its first is **not well posed**: the owning strips are `1.5d` wide on axes `d` and `2d` apart, so they overlap by `d/2` and gap by `d/2` alternately and are not a partition — at a point in an overlap two beams own the field and at a point in a gap none does.
+Its second fixes the *reconstruction* and leaves the *measure* the overlapping, gapping tributary sum.
+The reported quantity is a supremum over the face **rectangle** of the **nearest**-beam reconstruction, so the consistent fit is that reconstruction over that rectangle — a **third convention nobody named**, whose Gram is diagonal at **28 of 28** readings against the standing convention's **14**, because `∫s dA`, `∫y dA` and `∫sy dA` over a rectangle symmetric about its centre vanish whatever the corrugated ladder does.
+**So it dissolves `CH-0282`'s parity rather than repairing it**, and `C-0219`'s integer branch would become dead.
+On the piston projection the three conventions are collinear in one scalar at exactly `0 : 1 : 6`, `5 of 5` at even `m` and `faceColumn 0`.
+
+**`F5` was declared OPEN *and declared expected to fire*, and it did not — that is the finding.**
+At the two coupled cells `C-0180`'s verdict actually rests on, reproduced at **`3.5E-10`**, the movement under the consistent convention is **`0.00143`** and the verdict moves at **0 of 2**; a bare bond prestrain moves **`0.0501`**, a factor of **`35.0`**.
+An influence function is a **basis element** and a coupled cell is a **state**: the smooth free field dominates the weighted sum and the bonds sit near their unstrained relative roll, which is exactly what the closed form predicts.
+`CLAUDE.md`'s *an energy ceiling is not a field*, met on a basis element against a state.
+One honest qualification, and it is the sharper reading: at the second cell the movement `0.0014` **exceeds** that cell's own margin `0.00121` by `1.16×`, and it fails to move the verdict only because it is one-signed **downward** — both cells get flatter.
+
+**And the margin the refusal was priced against is not the corpus's tightest.**
+Over the eighteen files there are **1 146** verdict-bearing readings and the tightest is `0.10000102` at `T-294/cells/92`, **`417×`** tighter in stroke units than `C-0180`'s `0.426 %`.
+`2` sit inside the collar channel, `96` inside the movement that would flip `C-0180`'s own tightest cell, `126` inside the prestrain channel, `484` inside it at `6×`.
+So **no channel is safe** and the decision could never have rested on the movement being small.
+Its twin is independent of which convention wins and is filed as `T-327`: **`99` of the `1 146` sit closer to `T-5b` than the beam-subdivision convergence departure `C-0180` measured on this very lattice**, so those verdicts are not determined by the model at all.
+
+**`CH-0285`**: `integrateOverFace` lays one 6-point Gauss rule across each whole strip and `evaluate` jumps `d/4` inside each strip's end at every strip, so the shipped `areaInnerProduct` under-reports the gap by a constant `0.819693683` at all 12 readings — `CH-0284`'s own published channel sizes are `1.21997×` low.
+`F14` fired: the split moves `C-0219`'s committed `15 × 4` triple by `6.33E-5`, moving no verdict.
+
+**The decision is a recommendation and not an adoption, and the gate was declared in the Plan before the run.**
+Convention C is the right fit; the code is left **additive only** — `224` insertions, `0` deletions in `HoneycombGrillage.kt`, `3 of 3` byte-identity controls — because an adoption without the eighteen-file sweep would leave every committed file unreproducible from its own code.
+The sweep is `T-335`, and it is far better specified than `T-326` was: it now carries the convention, the closed form, a rigorous affine ceiling that is tight to `1.3 %`, the measured deciding cells, and a census of what could move.
+
+**What surprised us, twice, and it refines a standing rule.**
+`F9` fired on two independent emissions, both times at exactly one field — the worst departure between two readings that are *exactly equal by construction*, i.e. pure ulp noise.
+The first repair obeyed the letter of `CLAUDE.md`'s *emit a threshold, never a value* by emitting an integer **order**, `floor(log10(worst))` — exact, diffable, floor-proof, and **still not stable**, because noise at `4e-17` crosses a decade between runs.
+So the rule needs one clause: **an order is not a threshold either**; only a *declared* constant and a boolean are.
+Both fired pairs are retained in [`gpd/data/T-326-reproducibility/`](gpd/data/T-326-reproducibility/README.md).
+The mutation harness found the same shape from the other side: its `M06` was a **syntax error**, and a harness reading only the exit code and the failure set recorded a build that ran **no test at all** as a *survivor*.
+`CLAUDE.md` already records the inverse — a crashed suite reading as a kill — and the cure is the same: `tools/T-326-mutation-test.py` now counts executed tests and reports such a row as `BROKEN` rather than as a measurement.
+Repaired, it is **12 mutations, 0 survivors** over a subtracted baseline.
+
+### Iteration 53's close-out — a refusal that measured itself, and a falsifier that was right to be declared
+
+**Both rows were answered by their cheap bounds, and both corrections ran opposite to the expectation.**
+`T-334` was opened because a census read `51` where an earlier one read `37`; four commands over two files show
+the honest figure is **`44`**, so `51` is an **overcount** by seven where `37` undercounts by five — and the
+twelve harnesses the challenge called build-failing can fail nothing, because an `Exec` task `:test` does not
+depend on is never executed. `build.gradle.kts` says so in its own comment, and `P-31`'s `BY-HAND` column
+already declared exactly those twelve. The challenge that named `P-31` as the right instrument had not read the
+column that answers it.
+
+**And the fix is the equality, not the number.** A corrected numeral has gone stale at five of the six passes
+that touched it, so what shipped gates *unreachable ≡ `BY-HAND`* in both directions — two objects that share no
+code — and the deliverable substitution quotes a **command** rather than a figure. `F8` fired as declared and by
+more than declared: `44 → 46` where the task predicted `45`, because the forecast counted `Exec` **tasks** and
+the answer counts **tools**. A census that destroys itself is the honest kind, provided both readings are
+emitted.
+
+**`T-326` produced a closed form and then declined to adopt what it recommends.** The fit/sample gap is
+`(d²/16)·Σ(Φ_upper − Φ_lower)` over the face's own vertical bonds — the two reconstructions displace by `±d/4`
+and the displacement pairs across those bonds, so the deflection differences cancel identically and what
+survives is a **relative roll**. Verified below `1e-12` at 28 of 28 rows. Neither of the challenge's two
+remedies is the consistent one: the first is **not well posed** (the strips overlap by `d/2` and gap by `d/2`),
+the second leaves the measure alone, and the consistent one is a **third convention nobody named** whose Gram is
+diagonal at every `m` — which would **dissolve** `CH-0282` rather than repair it, and make last iteration's
+integer branch dead code.
+
+**`F5` was declared expected to fire and did not, and the qualification is the sharper result.** A bare bond
+prestrain moves `0.0501`; the two coupled cells the verdict rests on move `0.00143`, a factor of `35`. An
+influence function is a **basis element** and a coupled cell is a **state**, so a channel measured on the first
+over-prices the second — which is what `CH-0284`'s alarm did. At the second cell the movement still exceeds that
+cell's own margin by `1.16×` and fails to move the verdict only because it is one-signed **downward**, and the
+claim says so rather than banking the pass.
+
+**The census `T-327` now carries is the one I would not lose.** `1 146` verdict-bearing flatness readings sit in
+`[0.09, 0.11]`; the tightest is `0.10000102`, **`417×`** tighter in stroke units than the margin the refusal was
+priced against; and **`99`** of them sit closer to `T-5b` than the convergence departure measured on the same
+lattice — so those verdicts are not determined by the model at all. That is independent of which convention
+wins, and it is a statement about what this corpus's flatness census can resolve.
+
+**Fourth harness/census collision in three iterations, and the first where both agents' work was individually
+complete.** Agent R's mutation harness was declared `BY-HAND` with no `Exec` task, which agent S's brand-new
+reachability gate — correctly — called a defect; leaving it undeclared would have made `P-31` report
+`UNDECLARED` instead. There was no green option that touched neither file. Both censuses read clean now, and the
+lesson is not about either agent: **a gate that reads a declaration and a declaration that describes a wiring
+will collide whenever both are edited in one iteration, and only the assembled tree shows it.**

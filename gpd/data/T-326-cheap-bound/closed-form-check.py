@@ -114,15 +114,20 @@ def gauss6_over_strips(y, wv, ph, mode):
     return total
 
 
+def _rng(m, col, k=0):
+    """A per-configuration stream, so this file's output does not depend on draw ORDER."""
+    return np.random.default_rng(20260825 + 1000 * m + 10 * col + k)
+
+
 def main():
-    rng = np.random.default_rng(20260825)
     worst = 0.0
     print("closed form against the direct quadrature difference B - A")
     for m in (3, 4, 5, 6, 10, 11, 14, 15, 16):
         for col in (0, 1):
             y = face_ladder(m, col)
-            for _ in range(3):
-                wv, ph = rng.normal(size=m), rng.normal(size=m)
+            for draw in range(3):
+                r = _rng(m, col, draw)
+                wv, ph = r.normal(size=m), r.normal(size=m)
                 # The two sides can both be near zero on a cancelling draw, so the
                 # departure is taken ABSOLUTELY against the one scale in the problem
                 # (CLAUDE.md: comparing two quantities meant to be zero relatively
@@ -150,8 +155,9 @@ def main():
     for m in (4, 6, 10, 14, 15):
         for col in (0, 1):
             y = face_ladder(m, col)
-            for _ in range(2):
-                wv, ph = rng.normal(size=m), rng.normal(size=m)
+            for draw in range(2):
+                r = _rng(m, col, 100 + draw)
+                wv, ph = r.normal(size=m), r.normal(size=m)
                 a = owning(y, wv, ph, "1")
                 exact = nearest_over_strips(y, wv, ph, "1") - a
                 gauss = gauss6_over_strips(y, wv, ph, "1") - a
@@ -163,7 +169,8 @@ def main():
     for m in (4, 6, 10, 14, 16):
         for col in (0, 1):
             y = face_ladder(m, col)
-            wv, ph = rng.normal(size=m), rng.normal(size=m)
+            r = _rng(m, col, 200)
+            wv, ph = r.normal(size=m), r.normal(size=m)
             a = owning(y, wv, ph, "1")
             b = nearest_over_strips(y, wv, ph, "1")
             c = nearest_over_face(y, wv, ph, "1", m)

@@ -54,7 +54,8 @@ tiltY    <y, B(u)> - <y, A(u)>  =  SUM over face vertical bonds of INT_s [ (d^2/
 ```
 
 with `ybar = (y_u + y_l)/2` the bond's own midpoint.
-**Verified in Python before this file was written**, against a direct quadrature of both reconstructions, at `m = 4, 6, 10, 14` and both face columns: 8 of 8 configurations agree to 9–10 digits on random `(W, Φ)`, the residual being the trapezoid grid.
+**Verified in Python before this file was written**, against a direct quadrature of both reconstructions, at `m = 4, 6, 10, 14` and both face columns: 8 of 8 configurations agree on random `(W, Φ)`.
+*(Amended at Execute: that first pass used a uniform trapezoid grid and agreed only to 9–10 digits, because the nearest-beam reconstruction is **discontinuous** at every cell boundary and a smooth rule is first order there. Integrating each linear piece in closed form takes the same check below `1e-12` — and the same fact, turned on the shipped `areaInnerProduct`, is `CH-0285`.)*
 Both forms annihilate a pure piston and a pure `y` exactly, which is the limiting-case check.
 
 **Three consequences, all free:**
@@ -95,7 +96,7 @@ Censused over all eighteen files — every numeric leaf whose key ends `OverStro
 | | |
 |---|---|
 | verdict-bearing readings in the window | **1 146** |
-| tightest | **`0.100001020`**, `T-294/cells/92/nominalCorrectedOverStroke`, **`1.02E-5`** relative from `T-5b` |
+| tightest | **`0.10000102`**, `T-294/cells/92/nominalCorrectedOverStroke`, **`1.02E-5`** relative from `T-5b` |
 | within `5.0E-4` — the **collar** channel | **2** |
 | within `4.2724E-3` — the movement that would flip `C-0180`'s tightest cell | **96** |
 | within `4.57E-3` — `C-0180`'s own measured beam-subdivision convergence departure, `4.57E-4` of the stroke | **99** |
@@ -137,7 +138,7 @@ Two consequences:
 | **P2** | convention C's Gram is diagonal to `< 1e-12` relative worst off-diagonal at every `m` in `3…16` and both face columns, and equals the closed form `diag(A, A·L_s²/12, A·L_y²/12)` to `< 1e-9`; `worstFaceNonOrthogonality` under C is `0` where under B it is `0.0358744468` at `m = 15` and `0.0475958489` at `m = 11` |
 | **P3** | the piston collinearity `A : B : C = 0 : 1 : 6` holds to `< 1e-6` at every **even** `m` in `4…16` at `faceColumn = 0`; the ratio at `faceColumn = 1` and at odd `m` is **reported** with its spread rather than asserted |
 | **P4** | the asymptotic `(π²/12)(d/λ_y)²` reproduces `CH-0284`'s four measured channels within a factor of **3**, and the prestrain/collar **ratio** within a factor of **2** |
-| **P5** | the margin census of §2c reproduces exactly — `1 146 / 0.100001020 / 2 / 96 / 99 / 126 / 484` — emitted from the committed files with the predicate stated in the file |
+| **P5** | the margin census of §2c reproduces exactly — `1 146 / 0.10000102 / 2 / 96 / 99 / 126 / 484` — emitted from the committed files with the predicate stated in the file |
 | **P6** | the relative movement of **peak dishing** under B and under C, measured at: `C-0022`'s solved collar at all three `10 × 6` enhancements, a face point load, a unit bond prestrain, and the `15 × 4` free tiles. B's readings reproduce `C-0219`'s `4.3E-4`–`5.0E-4`, `4.7E-4`, `0.0067` |
 | **P7** | the movement at **`C-0180`'s two recovered coupled cells** — `p90OverStroke` `0.0995744767` and `0.0998791032`, the tied `abstract grid`, 3 columns, 30 paths, `rim-graded 5:1`, enhancement `21.1851817`, seed `197197`, 4 000 realisations — under B and under C, read **per realisation** on the one common stream, with the untied and tied `p90` reproducing `C-0180` to `< 1e-8` before anything moves |
 | **P8** | a **rigorous ceiling** on the movement of any peak dishing of a given field, `\|Δc₀\| + \|Δc₁\|·L_s/2 + \|Δc₂\|·L_y/2`, emitted beside the measured movement at every cell of `P6` and `P7`, with the ceiling never below the measurement |
@@ -226,4 +227,35 @@ Any passage that moves is reported to the coordinator as an exact substitution, 
 
 ## 7. Execute
 
-Not yet run.
+Filed as [`C-0221`](../claims/C-0221-the-fit-and-the-sample-in-one-reconstruction.md), which **ANSWERS** [`CH-0284`](../challenges/CH-0284-a-fit-and-a-sample-in-two-reconstructions.md) and raises [`CH-0285`](../challenges/CH-0285-a-smooth-rule-across-a-discontinuous-reconstruction.md).
+Result: [`gpd/results/T-326-the-fit-and-the-sample-in-one-reconstruction.json`](../results/T-326-the-fit-and-the-sample-in-one-reconstruction.json), written by `tile/FaceReconstructionStudy.kt` on `tile/HoneycombGrillage.kt`.
+
+**16 gate-named tests written first and watched fail** (`src/test/kotlin/tile/FaceReconstructionTest.kt`), all sixteen passing on their first real run — which is unusual here and is explained by the retained Python prototype having predicted every one of their constants before a line of Kotlin existed.
+
+### The twelve targets
+
+| | result |
+|---|---|
+| **P1** | met — the closed form holds below the declared `1e-12` at **28 of 28** rows and **252** readings, and exactly zero on both limiting cases |
+| **P2** | met — convention C's Gram is diagonal at **28 of 28** readings against the standing convention's **14** |
+| **P3** | met — the piston collinearity is exactly **`6.0`** at **5 of 5** even `m` at `faceColumn 0`; `2.04`–`6.11` elsewhere, emitted rather than asserted |
+| **P4** | met — the asymptotic `9.1E-4` against a measured collar of `6.1E-4`, well inside the declared factor of 3 |
+| **P5** | met — **`1 146`** verdict-bearing readings; tightest **`0.10000102`**; **`1 / 2 / 96 / 99 / 126 / 484`** |
+| **P6** | met — on the `10 × 6` face the worst movement is **`0.0501`** on C and **`0.00813`** on B, and over the smooth load cases alone **`0.00365`** on C |
+| **P7** | met — both cells reproduce `C-0180` at **`3.5E-10`** and move by at most **`0.00143`**; the verdict moves at **0 of 2** |
+| **P8** | met — the affine ceiling holds at **8 of 8** channels and is **tight**, `0.00365` against a measured `0.0036` |
+| **P9** | met — **224 insertions, 0 deletions** in `HoneycombGrillage.kt`; **3 of 3** byte-identity controls (`T-253`, `T-267`, `T-263`) |
+| **P10** | met — the decision is recorded and the code is left additive only; the adoption is `T-335` |
+| **P11** | met — `gauss6/exact` is **`0.819693683`** at all **12** readings; `CH-0284`'s channel sizes are **`1.21997×`** low |
+| **P12** | met — the split moves `C-0219`'s triple by at most **`6.33E-5`** relative, and the verdict moves at **0 of 3** |
+
+### The fourteen falsifiers
+
+`F1`, `F2`, `F3`, `F4`, `F6`, `F8`, `F12`, `F13` did not fire; `F7` and `F11` were declared closed and hold.
+**`F5` was declared OPEN *and declared expected to fire under C*, and it did not** — that is the finding of `C-0221` §4: an influence function is a **basis element** and a coupled cell is a **state**, and the two differ by `35.0349650×`.
+**`F9` FIRED TWICE** (`C-0221` §7, `gpd/data/T-326-reproducibility/`), the second firing refining `CLAUDE.md`'s own rule: an **order** is not a threshold either.
+**`F14` FIRED**, at `6.33E-5`, moving no verdict.
+
+### What was cut
+
+Nothing. The whole study runs in **78 seconds**, because all four conventions share every solve — the fields are identical and only the fit differs.
