@@ -544,6 +544,22 @@ tasks.register<Exec>("testSearchedDistributionMutations") {
     commandLine(mutationSnapshotArguments("T-316-mutation-test.py"))
 }
 
+tasks.register<Exec>("testRouteBCoupledMutations") {
+    group = "verification"
+    description = "Runs tools/T-322-mutation-test.py <snapshot>, the Kotlin mutation test for " +
+        "route B's own widths graded coupled on stations derived at each row length. Needs " +
+        "-PmutationSnapshot=<dir>; not in :test"
+    commandLine(mutationSnapshotArguments("T-322-mutation-test.py"))
+}
+
+tasks.register<Exec>("testJointPlacementDistributionMutations") {
+    group = "verification"
+    description = "Runs tools/T-323-mutation-test.py <snapshot>, the Kotlin mutation test for " +
+        "the placement and the distribution searched TOGETHER at the resolved per-bond link. " +
+        "Needs -PmutationSnapshot=<dir>; not in :test"
+    commandLine(mutationSnapshotArguments("T-323-mutation-test.py"))
+}
+
 tasks.named("test") {
     dependsOn(
         "testHarness", "testDeliverableTracer", "testMarkdownTables", "testCorpusLinks",

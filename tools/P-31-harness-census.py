@@ -170,6 +170,22 @@ HARNESSES = (
     # precision, and that the record's fields report the quantities they are named for.
     ("T-316-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
      "src/main/kotlin/tile/SearchedDistribution.kt", (BY_HAND,)),
+    # `T-322`.  One subject and no shared source, like `T-316`'s.  What these rows hold open is
+    # the three things a coupled census read on the WRONG tile silently inherits -- the station
+    # ladder and the phase rule that picks a placement on it, the transferred ratio band that is
+    # the cheap bound, and the reader that takes the uncoupled reference out of `C-0211`'s
+    # committed cells at the WORST of its twelve chain corners -- plus `CH-0272`'s conjunction.
+    ("T-322-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
+     "src/main/kotlin/tile/RouteBCoupled.kt", (BY_HAND,)),
+    # `T-323`.  One subject and no shared source, like `T-316`'s -- and `countPhaseSplit` is
+    # REUSED rather than copied, so its arithmetic is `T-178`'s subject and only the one line
+    # that maps this task's two factors onto it is mutated here.  What these rows hold open is
+    # that the placement family is the PRODUCT of its row option sets and enumerates in the order
+    # its tie-break is written on, that the bank SLICE is the placement it names, that every
+    # search decision is taken at six significant digits with a key tie-break, and that the
+    # 2 x 2's two orderings are the two orderings they are labelled as.
+    ("T-323-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
+     "src/main/kotlin/tile/JointPlacementDistribution.kt", (BY_HAND,)),
     # `T-321`.  A Python subject with an INLINE `--self-test`, like `T-313`'s, so the harness runs
     # the subject itself rather than a sibling test file.  Its fixture is a `tools/`-only copy and
     # that is a DECLARATION rather than a convenience: the probe's self-tests read `tools/` and

@@ -12561,3 +12561,215 @@ baseline that *in this tree no mutation harness is run from `tools/verify.sh`* �
 state. The harness is wired in `build.gradle.kts` instead, where every other Python-subject harness lives, and
 `P-31 --check` reads **25 of 25**. Third instance in three iterations of two correct pieces of work meeting only at
 the assembled tree.
+
+## Iteration 50 — 2026-08-25: a flat and admissible coupled cell, and an ordering that reverses
+
+Two agents in parallel on the two rows iteration 49's science left open, with **both task files and all
+forty-three falsifiers committed BEFORE either study ran** — the discipline iteration 49 could not meet for
+one falsifier and had to say so in three places.
+
+### `T-322` / `C-0215` — route B's own widths graded coupled, and the first flat, admissible cell this corpus has had
+
+Every coupled number in this repository is read at the **`116 bp` block extent** of route A's drawable `102 / 109` raster —
+`C-0167`'s 64 cells, `C-0180`'s, `C-0205`'s, `C-0208`'s `0 of 64`, `C-0212`'s `22 of 32`.
+The tile the programme recommends is **route B's**, whose turn topology is the only one anybody has folded (`C-0193`, `C-0200`),
+and whose buildable paired rows are `92 / 98 / 106 bp`.
+`C-0207` named the residue, `C-0211` named it again after re-grading those three widths **free** at the resolved link and finding them flat at `756 of 756`.
+
+**The cheap bound was one page of integer arithmetic and it decided two things before a lattice was assembled.**
+`honeycombStationsOnHelix(L, p) = (L − p)/21 + 1`, minimised over the two staggered row parities:
+route B's rows carry **five** station columns where the block extent carries **six**, at every one of the 21 phases —
+a shorter row is not merely a smaller tile, it is a tile with one fewer place to stand.
+And `T-316`'s inherited ladder phase `16` **refuses** a 5-column placement at `92` and `98 bp`, because `honeycombSnappedGrid` will not put a placement wider than a row's own ladder —
+that is a change of the path **count** wearing a change of position.
+The phase is free on route B precisely because `C-0141`'s `±5 bp` rule fixes it only where the raster **closes**, and route B's uniform rows close at no phase; `16` is a route-A number.
+The fifth column is not decoration: **12 of the 27 flat cells are 5-column placements**.
+
+**Graded, `0 of 48` cells are flat on either transferred rule and `27 of 48` on a searched one** — tightest `0.0687939715` of the stroke against a transferred `0.100227515`, with the search winning out of sample at `48 of 48` cells.
+**Seven of the 27 are also inside `C-0023`'s per-path unzip allowable**, which is the conjunction `CH-0272` says a verdict block must state and the **first non-empty one this corpus has had**: `C-0212` read `3 of 32` on the block and `0` on its own two-flag pair.
+
+**And the count that must travel with it: `0 of 48` beat the UNCOUPLED tile.**
+`C-0212` read `0 of 32` on the block and the direction transfers; what is different here is that `C-0211` has already shown route B's uncoupled tile flat at `756 of 756`.
+**That is not an argument for removing the coupling** — `C-0017`'s `33.3333333 pN/nm` is a **placement and stability** requirement and a tile with no coupling delivers no output at all, so the uncoupled reading is the *reference* `CLAUDE.md` requires beside every coupled one and never a rival design.
+What it says, narrowly and exactly, is that **on route B flatness is not what the coupling buys**; the coupled question is whether the flatness *survives* the mandate, and it does at 27 cells and admissibly at 7.
+
+**Three things this task could not inherit, and all three are functions of the row length**: the bond census (`358 / 385 / 410`, `CH-0270`), the station ladder, and `C-0087`'s dropout field, whose `edgeX` is `31.28 / 33.32 / 36.04 nm` and not `39.44`.
+Measured, the tile substitution moves the flat verdict at **10 of 48** paired cells and is worth `0.839625798`–`1.34239093×` on the deciding statistic — in **both** directions (`CH-0276`).
+
+**The cheap bound's transferred ratio band got the verdict right and the level wrong, and its misses are one-signed.**
+`C-0212`'s own `searchedP90 / uncoupled` runs `1.4438156`–`2.7106587×`; applied to `C-0211`'s committed uncoupled readings it predicted *excludes flat* on a transferred rule (measured `0 of 48`) and *straddles* on a searched one (measured `27 of 48`) — both right.
+But `8 of 48` searched readings fall **below** the band and `0` above, and `14 of 48` transferred below against `1` above: **the `116 bp` block is conservative about route B's own tile**, at every miss and at none of the reverse (`CH-0277`).
+It was declared a **prediction and not a theorem** in the task file, with `F20` attached to it, which is what turned a miss into a measurement.
+
+**A free-tile ranking does not predict a coupled one.**
+`C-0211`'s uncoupled widths order `92 < 106 < 98`; coupled they order `92 < 98 < 106` — `98` and `106` exchange, with all three widths flat at `9 of 16` cells each, so the *count* is identical and only the *level* moves (`F19`).
+
+**Six of twenty falsifiers fired and every one had been declared OPEN** (`F11`, `F12`, `F14`, `F18`, `F19`, `F20`); `F13`, `F15`, `F16` and `F17` were open and did not, and `F13` not firing **is** the positive result.
+The ten closed ones are clean: the uniform-load falsifier taken **per width**, because two of the three rows carry a `nodeS` overhang and one does not; the null-radial lattice bit-identical to the standing object on `assembleLoad` and on the crossover site set at all three widths; the surrogate against the assembled solve; the two surrogates against each other; the tethered and untied free strokes.
+Fourteen reproductions, worst departure `1.9e−9`, including `C-0211`'s own three uncoupled cells at `1.4e−10`, `2.3e−10` and `8.1e−10`.
+Nine convergence axes at the deciding cell, worst departure `0.088` (the training ensemble, 120 against 60), and **`0 of 9` move the verdict**.
+
+**The mutation harness found one real gap, and it is the third instance of a defect this file already records.**
+Twenty mutations of `tile/RouteBCoupled.kt`; the first run killed 18 and **two survived** — both constructor `require`s of `RouteBStationLadder`, and both for one reason: `honeycombStationLattice` carries the same two requirements **verbatim** and `derivedPhase`'s own initialiser reaches it, so a widened guard here still throws, from downstream, with the **same message**.
+`C-0207` §8's *a guard whose only observable behaviour is duplicated downstream is a guard no mutation of it can reach*, met on a third object after `C-0211` §9's second.
+The repair is the guard's **wording** and the fixture: the messages now name this class and the test asserts the message rather than the type. After it, **20 mutations, 0 survivors over a subtracted baseline of 0**.
+
+**And the run that discharged `F4` is the run at the committed source.**
+The guard-message repair landed after the first emission, so run B — a second full `tools/study.sh` snapshot, 70 minutes later, on a box carrying a concurrent agent's own study — discharges two things at once: byte-identity (`cmp` exit 0, SHA-256 `051afbd8e7fc00dd97670687a578ff70d1fec929671ab7e333609d5ecc904e4a`, 169 573 bytes both) and the proof that changing a string inside a `require` lambda that never fires cannot move an emitted number.
+The verdict is taken from the artifact-level `cmp` and the hash, **not** from `study.sh`'s *"no result file changed"*, which is a statement about the snapshot's own baseline.
+Run B also cost a lesson already in `CLAUDE.md` and learned again: its **first** attempt failed at 32 s on a **third** sibling source that had appeared since the first drop set was written — *the set of files needing `--drop-file` GROWS during a long iteration.*
+
+### `T-323` — the placement and the distribution searched together, and the ordering the corpus carried reverses
+
+`C-0063` searched the **placement** with the distribution fixed; `C-0212` searched the
+**distribution** with the placement fixed.
+Neither moved the other,
+so the corpus carried a claim about their **ordering** and no measurement of their **interaction**.
+
+**The cheap bound decided the whole method and needed no solve.**
+The determined station ladder carries **55** stations on the ten rooting helices,
+`5, 6, 5, 6, 5, 6, 5, 6, 5, 6` by row —
+the `7 bp` row stagger showing up as a station —
+so at five columns the five-station rows are **forced** and the placement family is `6⁵ = 7 776`.
+That is the cell `C-0208`'s and `C-0212`'s tightest readings both live at,
+and it is **exhaustible**,
+which removes `C-0102`'s *a descent compared against an exhaustive enumeration is not a comparison*
+at exactly the place it would otherwise bite.
+The second bound is the one that surprised:
+the family admits **no centro-symmetric member at any of its five row pairs**,
+and over all 42 phase/offset readings only two admit even a single symmetric station pair.
+`C-0063`'s entire search strategy was a centro-symmetry congruence;
+the honeycomb's forced row stagger destroys it outright.
+
+**The answer.**
+The four corners read `0.106508519` / `0.105528854` / `0.078544978` / **`0.0677344328`** of the
+free-tile stroke, all out of sample on the `197197` stream neither search ever sees.
+The joint corner beats **both** singles, the total is `−0.452630313` log units — a factor of
+`1.57244277` — and the **interaction is `−0.1388`, `−12.96 %`: NEGATIVE, so the two freedoms are
+SYNERGISTIC**, each worth *more* when the other is free.
+`T-323` declared the expectation as **substitutive** before the run, precisely so it could be
+wrong, and it was.
+
+**And `C-0063`'s ordering reverses on this lattice.**
+The placement main effect is `0.00924055963` and the distribution main effect `0.304553543` in log
+units — a factor of `32.9583` the other way from the square lattice's 5.9× against 13.9 %.
+The reason is visible in the cheap bound: the honeycomb's placement family is `1.46×` wide where
+the square lattice's was 5.9×, because the determined ladder gives each row five or six stations
+and forces half of them.
+Over the `5 × 3` grid the distribution main effect carries `0.9596` of the variation, the
+interaction `0.02575` and the placement `0.0146` — so **the interaction carries more than the
+smaller main effect**, which is `C-0108`'s own finding reproduced on a new pair of factors.
+
+**What surprised us, three times.**
+
+*The smoke pass changed the design.*
+`(P₁, D₀)` came out **worse** than `(P₀, D₀)` out of sample, because the placement freedom was
+being selected over 7 776 candidates on a 40-realisation stream while the distribution freedom
+carried no selection at all — a difference of **noise** wearing a difference of **freedom**.
+Both corners now select over the same candidate set on the same training stream, and the same
+2 × 2 is additionally taken **in sample**, where no corner carries a selection: `−7.845 %` against
+`−12.96 %`, so the selection accounts for about two fifths of the interaction and the freedoms for
+the rest. At `f = 0.26` the two readings **exchange places**, which is published rather than
+resolved.
+
+*The inherited warning is sharper than it was stated.*
+`CLAUDE.md` carries *"selecting a placement on the EQUAL-SPRING objective is selecting on the
+wrong quantity once a distribution is free"* with no number on this lattice. Measured, the
+equal-spring ranking is **anti-correlated** with what a searched distribution wants — Spearman
+`−0.09354` and `−0.4451` — while the **rim-graded** ranking is the informative one (`+0.4924`,
+`+0.626`). The corpus grades on both rules and treats them as interchangeable comparands; they are
+not.
+
+*A mutation harness restores the source and cannot restore the compiled class.*
+Handed the snapshot it had already mutated, the harness's baseline bound to the previous
+invocation's **last mutant** — `M25`, an inverted ratio, returning exactly the value the assertion
+printed — and `CH-0237`'s subtracted baseline then turned that mutation's own killer into
+**evidence of a test gap**. Runs 2 and 3 differ in one line of the harness and nothing else and
+read `2 survivors` against `0`. `C-0190`'s stray-copy trap has an incremental-build twin, and the
+failure direction is the flattering one. Filed as `CH-0278`; repaired by forcing the baseline to
+recompile.
+
+**What the answer costs, and the challenge that follows.**
+Of **17** graded corners, **7** are flat and exactly **one** is flat *and* inside `C-0023`'s
+per-path allowable — and it is the corner with **fewer** freedoms. The joint corner is flatter and
+its peak is `3.3594977` against `3.33333333`, i.e. `3.3594977 / 3.33333333 − 1` = `0.78 %`. That is not the search
+failing; it is a search given one objective and no constraint, while
+`optimiseStiffnessDistribution` has carried a `ceiling` parameter since `C-0058` and `C-0063` has
+used it. Filed as `CH-0279`.
+
+**`CH-0272` is reproduced with both variables free**, which is the strongest form of it this
+corpus has: `0 of 17` corners beat the uncoupled tile at the 90th percentile, while the joint
+corner beats it by `1.63×` at zero defects. On this lattice, under `C-0087`'s measured dropout,
+flatness is not what the coupling buys — and that survives freeing the placement as well as the
+distribution.
+
+**And `F23` fired, which was declared closed.**
+Two independent runs through `tools/study.sh`, each in its own snapshot, are **not** byte-identical:
+**26 of 1 252 leaves move**, and the classification is what makes it readable —
+**0 verdicts, 0 booleans, 0 added, 0 removed, 0 unclassified.**
+One leaf is an **argmin** (the `(P₁, D₀)` corner at `f = 0.26` picked a different placement, one
+station different in one row of ten); nineteen are functionals of that argmin or of a selected
+set; two are departures already emitted at two significant digits; four are sentences carrying a
+moved number.
+The `f = 0.30` arm — every number the claim leads with — is bit-identical.
+
+The cause is three channels, two of them ours.
+`C-0135`'s `searchDecision` is applied faithfully inside `jointPlacementBetter` and
+`percentileObjective` and reached **2 of this study's 14** selection sites — the two that
+consume `T-316`'s own `percentileObjective` — and **none of the twelve we wrote ourselves**,
+every one a `sortedWith(compareBy(…))` or `minByOrNull` on a raw `Double` — *grep for the call sites, not for
+the fix*, committed by the author who had just quoted it.
+Two identity residuals whose true value is **zero** were emitted as **values** (`F9`'s `3.8E-16`,
+`F10`'s `3.9E-14`) where `CLAUDE.md` says a threshold and a boolean.
+The residue is the descent manifold `C-0135` documents as intrinsic, for which no rounding
+supplies an answer.
+
+**Nothing was repaired after the run**, deliberately: changing the emitter would leave it unable
+to reproduce the committed artifact, which is the invariant `gpd/README.md` rests on. Both repairs
+are filed with their call sites named, and the claim states that its `f = 0.26` `(P₁, D₀)` corner
+and its three Spearman readings are determined to about three significant digits and not nine.
+
+### Iteration 50's close-out — the pre-registration held, and the one falsifier that fired was handled the way the corpus says
+
+Two rows, two agents, two studies, in parallel on an eight-core box, and the thing that most changed how this
+iteration reads is procedural rather than physical: **both task files went in one commit before any study source
+existed**, so forty-three falsifiers are a **diff** and not an assertion. Iteration 49 could not do that for
+`F14` and had to strike its own provenance sentence in three places; this one reserved the discipline in advance
+and it cost nothing.
+
+**The science moved the programme's standing answer twice.** `C-0215` put a **flat and admissible** coupled cell
+into this corpus for the first time — `7 of 48`, where `C-0212` had `3 of 32` on one threshold and `0` on the
+conjunction — and it did so by refusing to inherit a station set, which one page of integer arithmetic said was
+inheritable only for a different tile. `C-0216` reversed `C-0063`'s ordering on this lattice and measured the
+**interaction** the corpus had a claim about and no number for: `−12.96 %`, **negative**, against a
+pre-registered expectation of *substitutive* that was written down precisely so it could be wrong.
+
+**Both cheap bounds decided something before a solve, and one of them decided the method.** Route B's rows carry
+five station columns against the block's six at every one of 21 phases; the joint placement family at the
+deciding cell is `6⁵ = 7 776` and therefore **exhaustible**, so the cell that decides the answer needed no
+descent at all and the two traps a descent would have brought — `C-0102`'s and `CH-0119`'s — were sidestepped
+rather than guarded against.
+
+**`F23` fired, and that is the process result worth keeping.** Two runs of `T-323` differ at 26 of 1 252 leaves.
+What made it harmless was the order of operations: **diff first**, classify **by kind** (`0` verdicts, `0`
+booleans of 250, `0` unclassified), correct the seven quoted tokens — two of them in the claim's headline,
+because the claim had been written against run A and the committed artifact is run B — **retain run A in the
+repository** rather than in a scratchpad, and **change no source afterwards**, since a repair at that moment
+would leave the committed emitter unable to reproduce the committed artifact. The cause is named with its call
+sites and queued as `T-328` and `T-329`, and the sharpest part of it is that `C-0135`'s cure reached **2 of 14**
+selection sites in a study whose own plan **quotes** *grep for the call sites, not for the fix*.
+
+**Three defect classes surfaced in the harnesses, all of them measurements rather than annoyances.** Agent L's
+first mutation run had **9 of 25** survive and every one was a fixture gap — a three-clause predicate whose
+fixtures satisfied or violated all three clauses together, `C-0207`'s duplicated-guard shape twice, and a
+rounding rule held open only in the direction a raw comparison also refuses. Agent K's had **2 of 20** survive
+on the duplicated-guard shape again, which is now at three instances and whose repair is the **guard's message**
+rather than a better test. And a harness run against an already-mutated snapshot bound its **baseline** to the
+previous run's last mutant, reading `2 survivors` where the truth is `0` — an incremental-build twin of
+`C-0190`'s stray-copy trap, loud only because `CH-0237`'s subtracted baseline exists.
+
+**And the coordinator hit the immortal-loop trap in a sixth form.** A watch on
+`pgrep -f "plenty-of-room-study.<pid>/gradle"` self-matched, because the waiting shell's own command line
+carries the path — and the bracket trick cannot help when the pattern is a path you must spell rather than one
+you invent. It reported a finished study as running for twenty minutes after its snapshot had been deleted.
+Wait on the artifact: the snapshot's absence, the result file's mtime, or `kill -0` on the launcher.
