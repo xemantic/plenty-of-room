@@ -1,0 +1,60 @@
+=== 2a  the transferred threshold, on the axis it is entered on ===
+`C-0221` section 5's rel axis is |v - 0.10| / 0.10; the corpus's `departure` is
+|fine - coarse| / coarse.  For v near 0.10 the two are commensurate, so `C-0180`'s
+4.57e-4 belongs on that axis as 4.57e-4 and NOT as 4.57e-3.
+  within 0.00457    as published in C-0221 section 5      99
+  within 0.000457   commensurate                           2
+  C-0180 cell 69: departure 4.570659e-04, margin/value 4.273417e-03, ratio 9.3497  (its own '9.3')
+  read as published the census puts the flip margin 4.2724e-3 at only 0.93 of the
+  departure, where C-0180's own sentence puts it at 9.3 --- a factor of ten, visible
+  in the channel ORDERING with no code run at all.
+
+=== 2b  1 146 counts LEAVES, not verdicts ===
+  total 1146 over 25 distinct leaf keys
+    medianOverStroke                     139   no boolean is written on it
+    worstSingleRemovalOverStroke         139   no boolean is written on it
+    uncoupledDishingOverStroke            66   no boolean is written on it
+    p95OverStroke                         11   no boolean is written on it
+    worstSinglePathRemovalOverStroke      11   no boolean is written on it
+    (those five)                         366
+  tightest two:
+    rel=1.0200e-05  0.100001020  T-294/cells/92/nominalCorrectedOverStroke
+      booleans in that record: flatAtNominal, flatAtP90Standing, flatAtP90Corrected, beatsUncoupledAtP90
+    rel=2.9341e-04  0.100029341  T-304/cells/97/medianOverStroke
+      booleans in that record: flatAtNominal, flatAtP90, beatsUncoupledAtP90
+
+=== 2c  what `flatAtP90` is a function of, and that quantity's resolution ===
+  records carrying both: 1184, booleans: 1440
+  `flatAt*P90` <=> exceedance <= 0.10 disagrees at 0 of 1440
+  realisation counts backed out of the emitted standard error: {4000: 518}
+  at n = 4000 the binomial sigma at p0 = 0.10 is 4.743416e-03, i.e. 18.97 realisations of 4000;
+  a two-sided 95% interval is 400 +/- 37.2 counts
+  booleans reading TRUE    19, of which UNDETERMINED at 95% Clopper-Pearson: 7
+  booleans reading FALSE 1421, of which UNDETERMINED: 1
+  the undetermined records:
+    T-263   /cells/135               X= 394/400  CP=[0.08944, 0.10816]  two-sided p=0.777  flat=True
+    T-263   /cells/137               X= 411/400  CP=[0.09351, 0.11258]  two-sided p=0.577  flat=False
+    T-263   /cells/155               X= 372/400  CP=[0.08417, 0.10243]  two-sided p=0.145  flat=True
+    T-263   /cells/157               X= 385/400  CP=[0.08728, 0.10581]  two-sided p=0.446  flat=True
+    T-279   /cells/109               X= 398/400  CP=[0.09039, 0.10920]  two-sided p=0.943  flat=True
+    T-279   /cells/69                X= 392/400  CP=[0.08896, 0.10763]  two-sided p=0.697  flat=True
+    T-299   /cells/205               X= 392/400  CP=[0.08896, 0.10763]  two-sided p=0.697  flat=True
+    T-299   /cells/325               X= 398/400  CP=[0.09039, 0.10920]  two-sided p=0.943  flat=True
+  the declared sweep, undetermined booleans by confidence level:
+    90%  8
+    95%  8
+    99%  10
+
+  C-0180's two recovered cells, density-free:
+    cell 69,  30 paths: margin/discretisation departure = 9.3497 ; margin/binomial sigma = 0.422 ;
+      X = 392 of 4000 against 400, one-sided binomial p = 0.349, two-sided 0.697
+    cell 109, 50 paths: margin/discretisation departure = 11.9677 ; margin/binomial sigma = 0.105 ;
+      X = 398 of 4000 against 400, one-sided binomial p = 0.471, two-sided 0.943
+
+=== 2d  the ORDERING, from the corpus's own paired block ===
+    30 paths, rim-graded 5:1: the tie is flatter at 3854 of 4000 paired realisations
+      sign-test two-sided p = 0.000e+00 ; tied p90 0.099574477, untied 0.106041029
+    50 paths, rim-graded 5:1: the tie is flatter at 3478 of 4000 paired realisations
+      sign-test two-sided p = 0.000e+00 ; tied p90 0.099879103, untied 0.101931622
+
+  ORDERING resolved; LEVEL not.  That is the whole of the answer's shape.
