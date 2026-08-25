@@ -1,0 +1,54 @@
+== 2a  population C over C-0223's eighteen files
+   flatAt*P90 booleans corpus-wide over the eighteen : 2678
+   ... in a record carrying NO exceedance            : 1238
+   positive verdicts                                 : 106
+   ... carrying no exceedance (population C)         : 87
+   per file: T-279 2, T-284 2, T-297 8, T-303 8, T-316 27, T-322 33, T-323 7
+
+== 2b  the blocks, and the records with no exceedance
+   T-279     128 records, positive: /prestrained/* 2
+   T-284     128 records, positive: /cells/* 2
+   T-291     128 records, positive: none
+   T-297      36 records, positive: /cells/* 8
+   T-299      16 records, positive: none
+   T-303     348 records, positive: /cells/* 4, /ladder/* 4
+   T-310     346 records, positive: none
+   T-316      37 records, positive: /cells/* 22, /rungs/* 5
+   T-322      54 records, positive: /cells/* 27, /rungs/* 6
+   T-323      17 records, positive: /corners/* 7
+
+== 2c  recoverable with NO re-emission
+   donor records carrying an exceedance and a p90 : 1934 over 1362 distinct p90
+   positives whose own p90 field was identified   : 87 of 87
+   RECOVERED by a whole-corpus p90 join           : 5
+     T-297    /cells/21        p90=0.099879103 x=398 of 4000 -> UNDETERMINED donors=['T-279/cells/109', 'T-299/cells/325', 'T-327/decidingCells/1'] nominal agrees=True (2 of 3 donors state one)
+     T-303    /ladder/5        p90=0.099574477 x=392 of 4000 -> UNDETERMINED donors=['T-279/cells/69', 'T-299/cells/205', 'T-327/decidingCells/0'] nominal agrees=True (2 of 3 donors state one)
+     T-303    /ladder/11       p90=0.099879103 x=398 of 4000 -> UNDETERMINED donors=['T-279/cells/109', 'T-299/cells/325', 'T-327/decidingCells/1'] nominal agrees=True (2 of 3 donors state one)
+     T-303    /cells/177       p90=0.099574477 x=392 of 4000 -> UNDETERMINED donors=['T-279/cells/69', 'T-299/cells/205', 'T-327/decidingCells/0'] nominal agrees=True (2 of 3 donors state one)
+     T-303    /cells/277       p90=0.099879103 x=398 of 4000 -> UNDETERMINED donors=['T-279/cells/109', 'T-299/cells/325', 'T-327/decidingCells/1'] nominal agrees=True (2 of 3 donors state one)
+   NEEDING a re-emission                          : 82
+
+== 2d  expected yield: the p90 band each positive sits in
+   p90-field identification failures: 0
+   >= 0.0975           25   T-279 2, T-284 2, T-297 8, T-303 8, T-316 3, T-322 2
+   [0.0950, 0.0975)     6   T-316 2, T-322 4
+   [0.0900, 0.0950)     8   T-316 4, T-322 3, T-323 1
+   < 0.0900            48   T-316 18, T-322 24, T-323 6
+
+== 2d  the donor calibration, on the 928 records carrying both
+   pairs: 928 ; undetermined band at n=4000, 95%: [363, 438] realisations
+   p90 in [0.0975, 0.10)        7 donors,   7 inside the band, max exceedance 0.0995
+   p90 in [0.0900, 0.0975)      7 donors,   0 inside the band, max exceedance 0.0853
+   p90 < 0.0900                 5 donors,   0 inside the band, max exceedance 0.0535
+
+== 0  the seven studies' own constants, read out of the sources
+   T-279    tolerance=0.10   realisations=4000   summariseDropoutDishing call sites=4
+   T-284    tolerance=0.10   realisations=4000   summariseDropoutDishing call sites=4
+   T-291    tolerance=0.10   realisations=4000   summariseDropoutDishing call sites=5
+   T-297    tolerance=0.10   realisations=4000   summariseDropoutDishing call sites=2
+   T-299    tolerance=0.10   realisations=4000   summariseDropoutDishing call sites=5
+   T-303    tolerance=0.10   realisations=4000   summariseDropoutDishing call sites=2
+   T-310    tolerance=0.10   realisations=4000   summariseDropoutDishing call sites=2
+   T-316    tolerance=0.10   realisations=4000   summariseDropoutDishing call sites=2
+   T-322    tolerance=0.10   realisations=4000   summariseDropoutDishing call sites=2
+   T-323    tolerance=0.10   realisations=4000   summariseDropoutDishing call sites=2
