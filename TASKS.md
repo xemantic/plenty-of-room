@@ -1082,6 +1082,28 @@ are **unused and unreserved**, and the next iteration takes them in order: `C-02
 wrote from its claim because agent V may not edit this file. At the close of this iteration the following are
 **unused and unreserved**, and the next iteration takes them in order: `C-0225`, `CH-0291`, `T-341`.
 
+### Iteration 55 — numbers reserved before the agents start
+
+| agent | row | claim | challenges | new rows |
+|---|---|---|---|---|
+| W | `T-337` carry the exceedance into every cell record that writes a verdict, and re-read the `87` | `C-0225` | `CH-0291`, `CH-0294` | `T-341`, `T-342` |
+| X | `T-339` + `T-340` the two unpinned readings repaired at their emitters, and arm C promoted | `C-0226` | `CH-0295`, `CH-0296` | `T-343`, `T-344` |
+
+**Reserved and not yet taken**: `C-0225`, `C-0226`, `CH-0291`, `CH-0294`, `CH-0295`, `CH-0296`.
+
+**Agent W owns the coupled-cell studies and any result file they emit; agent X owns
+`tools/T-332-emit-result.py`, `tools/T-334-emit-result.py` and `tools/T-336-pinned-count-census.py`, and writes
+no Kotlin.** The two sets are disjoint by inspection and each agent must say so before it starts.
+
+**`T-338` is deliberately NOT scheduled**: it re-reads the marginal verdicts *at* `C-0223`'s resolution, and
+`T-337` is what makes `87` of them readable at all. A deliverable pass over a population that is about to
+change is the mistake iterations 51 and 52 each avoided by sequencing, and this one is avoided the same way.
+
+**`T-337` is a re-emission and is scoped as such.** `C-0219`'s partition proof does not transfer to it: the
+change is to what every cell record *carries*, so the honest first move is the census of which studies write a
+`flatAt*P90` boolean, and the honest deliverable may be *the sweep, priced, with the `87` re-read at whatever
+subset the budget reaches* — logged, per **no silent caps**.
+
 
 **Agent U may read every result file and must re-emit none of them**, and agent V writes no Kotlin. `T-335` — the
 eighteen-file adoption sweep — is deliberately **not** scheduled beside `T-327`, because both would move the
