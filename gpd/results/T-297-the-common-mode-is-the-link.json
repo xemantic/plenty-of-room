@@ -343,9 +343,9 @@
       "hingeStiffnessEnhancement": 1.0,
       "linkStiffness": 41.4338953,
       "linkStiffnessOverSpanDerived": 1.0,
-      "freeDishingWithoutTies": 0.31764797,
-      "freeDishingWithTies": 0.311607643,
-      "tieRatio": 0.980984212,
+      "freeDishingWithoutTies": 0.247758716,
+      "freeDishingWithTies": 0.241734997,
+      "tieRatio": 0.975687156,
       "insideTolerance": false
     },
     {
@@ -353,9 +353,9 @@
       "hingeStiffnessEnhancement": 1.0,
       "linkStiffness": 100.0,
       "linkStiffnessOverSpanDerived": 2.41348295,
-      "freeDishingWithoutTies": 0.316956159,
-      "freeDishingWithTies": 0.311395226,
-      "tieRatio": 0.9824552,
+      "freeDishingWithoutTies": 0.247066881,
+      "freeDishingWithTies": 0.241522771,
+      "tieRatio": 0.977560286,
       "insideTolerance": false
     },
     {
@@ -363,9 +363,9 @@
       "hingeStiffnessEnhancement": 1.0,
       "linkStiffness": 1000.0,
       "linkStiffnessOverSpanDerived": 24.1348295,
-      "freeDishingWithoutTies": 0.316461156,
-      "freeDishingWithTies": 0.311190905,
-      "tieRatio": 0.983346296,
+      "freeDishingWithoutTies": 0.246571896,
+      "freeDishingWithTies": 0.241318302,
+      "tieRatio": 0.978693461,
       "insideTolerance": false
     },
     {
@@ -373,9 +373,9 @@
       "hingeStiffnessEnhancement": 1.0,
       "linkStiffness": 10000.0,
       "linkStiffnessOverSpanDerived": 241.348295,
-      "freeDishingWithoutTies": 0.316408058,
-      "freeDishingWithTies": 0.31116115,
-      "tieRatio": 0.983417274,
+      "freeDishingWithoutTies": 0.246518801,
+      "freeDishingWithTies": 0.241288532,
+      "tieRatio": 0.978783485,
       "insideTolerance": false
     },
     {
@@ -383,9 +383,9 @@
       "hingeStiffnessEnhancement": 1.0,
       "linkStiffness": 100000.0,
       "linkStiffnessOverSpanDerived": 2413.48295,
-      "freeDishingWithoutTies": 0.316402703,
-      "freeDishingWithTies": 0.311158008,
-      "tieRatio": 0.983423988,
+      "freeDishingWithoutTies": 0.246513447,
+      "freeDishingWithTies": 0.241285389,
+      "tieRatio": 0.978791994,
       "insideTolerance": false
     },
     {
@@ -393,9 +393,9 @@
       "hingeStiffnessEnhancement": 1.0,
       "linkStiffness": 1000000.0,
       "linkStiffnessOverSpanDerived": 24134.8295,
-      "freeDishingWithoutTies": 0.316402166,
-      "freeDishingWithTies": 0.311157692,
-      "tieRatio": 0.983424658,
+      "freeDishingWithoutTies": 0.24651291,
+      "freeDishingWithTies": 0.241285072,
+      "tieRatio": 0.978792843,
       "insideTolerance": false
     },
     {
@@ -403,9 +403,9 @@
       "hingeStiffnessEnhancement": 9.65079217,
       "linkStiffness": 41.4338953,
       "linkStiffnessOverSpanDerived": 1.0,
-      "freeDishingWithoutTies": 0.232956571,
-      "freeDishingWithTies": 0.227923841,
-      "tieRatio": 0.978396272,
+      "freeDishingWithoutTies": 0.163098453,
+      "freeDishingWithTies": 0.158057141,
+      "tieRatio": 0.969090372,
       "insideTolerance": false
     },
     {
@@ -413,9 +413,9 @@
       "hingeStiffnessEnhancement": 9.65079217,
       "linkStiffness": 100.0,
       "linkStiffnessOverSpanDerived": 2.41348295,
-      "freeDishingWithoutTies": 0.231835908,
-      "freeDishingWithTies": 0.227371792,
-      "tieRatio": 0.980744502,
+      "freeDishingWithoutTies": 0.161977595,
+      "freeDishingWithTies": 0.157504971,
+      "tieRatio": 0.97238739,
       "insideTolerance": false
     },
     {
@@ -423,9 +423,9 @@
       "hingeStiffnessEnhancement": 9.65079217,
       "linkStiffness": 1000.0,
       "linkStiffnessOverSpanDerived": 24.1348295,
-      "freeDishingWithoutTies": 0.231059891,
-      "freeDishingWithTies": 0.227110189,
-      "tieRatio": 0.982906155,
+      "freeDishingWithoutTies": 0.161201498,
+      "freeDishingWithTies": 0.157243422,
+      "tieRatio": 0.975446404,
       "insideTolerance": false
     },
     {
@@ -433,9 +433,9 @@
       "hingeStiffnessEnhancement": 9.65079217,
       "linkStiffness": 10000.0,
       "linkStiffnessOverSpanDerived": 241.348295,
-      "freeDishingWithoutTies": 0.23097815,
-      "freeDishingWithTies": 0.227094793,
-      "tieRatio": 0.983187342,
+      "freeDishingWithoutTies": 0.161119752,
+      "freeDishingWithTies": 0.157228044,
+      "tieRatio": 0.975845868,
       "insideTolerance": false
     },
     {
@@ -443,9 +443,9 @@
       "hingeStiffnessEnhancement": 9.65079217,
       "linkStiffness": 100000.0,
       "linkStiffnessOverSpanDerived": 2413.48295,
-      "freeDishingWithoutTies": 0.230969924,
-      "freeDishingWithTies": 0.227093441,
-      "tieRatio": 0.983216503,
+      "freeDishingWithoutTies": 0.161111526,
+      "freeDishingWithTies": 0.157226694,
+      "tieRatio": 0.975887314,
       "insideTolerance": false
     },
     {
@@ -453,9 +453,9 @@
       "hingeStiffnessEnhancement": 9.65079217,
       "linkStiffness": 1000000.0,
       "linkStiffnessOverSpanDerived": 24134.8295,
-      "freeDishingWithoutTies": 0.230969101,
-      "freeDishingWithTies": 0.227093308,
-      "tieRatio": 0.983219432,
+      "freeDishingWithoutTies": 0.161110703,
+      "freeDishingWithTies": 0.157226562,
+      "tieRatio": 0.975891477,
       "insideTolerance": false
     },
     {
@@ -463,9 +463,9 @@
       "hingeStiffnessEnhancement": 12.7228458,
       "linkStiffness": 41.4338953,
       "linkStiffnessOverSpanDerived": 1.0,
-      "freeDishingWithoutTies": 0.225938164,
-      "freeDishingWithTies": 0.220950854,
-      "tieRatio": 0.977926216,
+      "freeDishingWithoutTies": 0.156082401,
+      "freeDishingWithTies": 0.151087311,
+      "tieRatio": 0.967997098,
       "insideTolerance": false
     },
     {
@@ -473,9 +473,9 @@
       "hingeStiffnessEnhancement": 12.7228458,
       "linkStiffness": 100.0,
       "linkStiffnessOverSpanDerived": 2.41348295,
-      "freeDishingWithoutTies": 0.224781574,
-      "freeDishingWithTies": 0.220377816,
-      "tieRatio": 0.98040872,
+      "freeDishingWithoutTies": 0.15492559,
+      "freeDishingWithTies": 0.150514122,
+      "tieRatio": 0.971525244,
       "insideTolerance": false
     },
     {
@@ -483,9 +483,9 @@
       "hingeStiffnessEnhancement": 12.7228458,
       "linkStiffness": 1000.0,
       "linkStiffnessOverSpanDerived": 24.1348295,
-      "freeDishingWithoutTies": 0.223982754,
-      "freeDishingWithTies": 0.220103469,
-      "tieRatio": 0.98268043,
+      "freeDishingWithoutTies": 0.154126672,
+      "freeDishingWithTies": 0.150239807,
+      "tieRatio": 0.974781359,
       "insideTolerance": false
     },
     {
@@ -493,9 +493,9 @@
       "hingeStiffnessEnhancement": 12.7228458,
       "linkStiffness": 10000.0,
       "linkStiffnessOverSpanDerived": 241.348295,
-      "freeDishingWithoutTies": 0.22389874,
-      "freeDishingWithTies": 0.220086801,
-      "tieRatio": 0.982974723,
+      "freeDishingWithoutTies": 0.154042651,
+      "freeDishingWithTies": 0.150223156,
+      "tieRatio": 0.975204949,
       "insideTolerance": false
     },
     {
@@ -503,9 +503,9 @@
       "hingeStiffnessEnhancement": 12.7228458,
       "linkStiffness": 100000.0,
       "linkStiffnessOverSpanDerived": 2413.48295,
-      "freeDishingWithoutTies": 0.223890287,
-      "freeDishingWithTies": 0.220085322,
-      "tieRatio": 0.983005226,
+      "freeDishingWithoutTies": 0.154034197,
+      "freeDishingWithTies": 0.150221678,
+      "tieRatio": 0.975248875,
       "insideTolerance": false
     },
     {
@@ -513,9 +513,9 @@
       "hingeStiffnessEnhancement": 12.7228458,
       "linkStiffness": 1000000.0,
       "linkStiffnessOverSpanDerived": 24134.8295,
-      "freeDishingWithoutTies": 0.223889441,
-      "freeDishingWithTies": 0.220085176,
-      "tieRatio": 0.983008289,
+      "freeDishingWithoutTies": 0.154033351,
+      "freeDishingWithTies": 0.150221532,
+      "tieRatio": 0.975253286,
       "insideTolerance": false
     }
   ],
@@ -1296,44 +1296,44 @@
     },
     {
       "quantity": "C-0175 section 9, 15 x 4 at enhancement 1.0: freeDishingWithoutTies",
-      "published": 0.316408058,
-      "derived": 0.316408058,
-      "departure": 2.8E-10,
+      "published": 0.246518801,
+      "derived": 0.246518801,
+      "departure": 1.3E-9,
       "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
     },
     {
       "quantity": "C-0175 section 9, 15 x 4 at enhancement 1.0: freeDishingWithTies",
-      "published": 0.31116115,
-      "derived": 0.31116115,
-      "departure": 5.9E-10,
+      "published": 0.241288532,
+      "derived": 0.241288532,
+      "departure": 1.8E-9,
       "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
     },
     {
       "quantity": "C-0175 section 9, 15 x 4 at enhancement 9.65079217: freeDishingWithoutTies",
-      "published": 0.23097815,
-      "derived": 0.23097815,
-      "departure": 2.0E-9,
+      "published": 0.161119752,
+      "derived": 0.161119752,
+      "departure": 9.8E-10,
       "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
     },
     {
       "quantity": "C-0175 section 9, 15 x 4 at enhancement 9.65079217: freeDishingWithTies",
-      "published": 0.227094793,
-      "derived": 0.227094793,
-      "departure": 2.4E-10,
+      "published": 0.157228044,
+      "derived": 0.157228044,
+      "departure": 2.9E-9,
       "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
     },
     {
       "quantity": "C-0175 section 9, 15 x 4 at enhancement 12.7228458: freeDishingWithoutTies",
-      "published": 0.22389874,
-      "derived": 0.22389874,
-      "departure": 2.2E-9,
+      "published": 0.154042651,
+      "derived": 0.154042651,
+      "departure": 3.9E-10,
       "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
     },
     {
       "quantity": "C-0175 section 9, 15 x 4 at enhancement 12.7228458: freeDishingWithTies",
-      "published": 0.220086801,
-      "derived": 0.220086801,
-      "departure": 2.1E-9,
+      "published": 0.150223156,
+      "derived": 0.150223156,
+      "departure": 2.8E-9,
       "source": "gpd/results/T-254-raster-turn-prestrain.json, stiffness record"
     },
     {
@@ -1398,7 +1398,7 @@
       "id": "F8",
       "statement": "C-0175 section 9's six free-tile readings are not reproduced at the standing link stiffness",
       "fired": false,
-      "outcome": "14 reproductions, worst departure 2.5E-9"
+      "outcome": "14 reproductions, worst departure 2.9E-9"
     },
     {
       "id": "F9",
@@ -1421,7 +1421,7 @@
     "The error that carries is measured rather than bracketed, because linkStiffness is an EXISTING constructor argument. Over the whole ladder 0 of 6 (cross-section, coupling) pairs move a flatness verdict and the worst relative spread in the tied free tile is 0.0380542. At the recommended 10 x 6 and f = 0.30 the tied free tile reads 0.0463364958 at k_R against 0.0446459684 at the penalty.",
     "And the departure's MAGNITUDE stops being a threshold. Because the common mode is the link, the departure is an OFFSET in the link's own residual, R0 = d unitY rho -- a load, so no entry of the stiffness matrix moves and C-0104's trap does not arise. Its projection on the relative roll is 0.0 pN*nm at every one of the 59 ties, which is the exact mirror of C-0190's F2. The free tile at 10 x 6, f = 0.30 reads 0.0813628214 at k_R and 0.0931890716 at the penalty, against C-0190's per-beam twist reading of the same tile.",
     "But the FREE tile's insensitivity to the penalty does not transfer to the COUPLED cells, and F10 fired. The two cells C-0180 recovered are flat at the standing penalty and NOT flat at the span law's own k_R: 3 col at k_link 41.4339 -> 0.107701645 NOT flat; 3 col at k_link 100.0 -> 0.10306316 NOT flat; 3 col at k_link 1000.0 -> 0.0999026162 flat; 3 col at k_link 10000.0 -> 0.0995744768 flat; 3 col at k_link 100000.0 -> 0.0995426168 flat; 3 col at k_link 1000000.0 -> 0.0995369555 flat; 5 col at k_link 41.4339 -> 0.103971919 NOT flat; 5 col at k_link 100.0 -> 0.101678429 NOT flat; 5 col at k_link 1000.0 -> 0.0999353736 flat; 5 col at k_link 10000.0 -> 0.0998791032 flat; 5 col at k_link 100000.0 -> 0.0998756402 flat; 5 col at k_link 1000000.0 -> 0.0998752932 flat. So the corpus's coupled recovery rests on a link stiffness the span law alone does not supply, and k_R is a pure-tension LOWER bound on it -- the connector's own bending and the junction's stacking are not in it.",
-    "Graded on the two cells C-0190 quoted its threshold on, 0 of 24 loaded readings are flat at the 90th percentile. Convergence: 3 of 3 axes leave the verdict standing, worst departure 4.1E-4. Reproductions: 14, worst departure 2.5E-9.",
+    "Graded on the two cells C-0190 quoted its threshold on, 0 of 24 loaded readings are flat at the 90th percentile. Convergence: 3 of 3 axes leave the verdict standing, worst departure 4.1E-4. Reproductions: 14, worst departure 2.9E-9.",
     "One number in circulation is wrong and no verdict of any claim turns on it. 1 + 2 r_P/(d - 2 r_P) = d/(d - 2 r_P) = 3.52847408, where CH-0242's headline and section 1, C-0190's headline and section 6, the challenges index and two prose strings of T-291's own result file all carry 3.52810239 -- 0.0105 % low. T-291's openQuestions block emitted the right one from the same expression, so the artifact carried the correction the prose did not."
   ],
   "validity": [

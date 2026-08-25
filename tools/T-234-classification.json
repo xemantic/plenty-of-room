@@ -38,52 +38,52 @@
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "13": {
-   "class": "OUT_OF_SCOPE",
-   "family": "FORWARD_BUDGET",
-   "line": 433,
-   "token": "p8064",
-   "why": "the token matched and the statement is about something else"
+   "class": "MOVED",
+   "family": "FOOTPRINT",
+   "line": 408,
+   "token": "0.0577199433",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "14": {
    "class": "OUT_OF_SCOPE",
    "family": "FORWARD_BUDGET",
-   "line": 434,
+   "line": 441,
    "token": "p8064",
    "why": "the token matched and the statement is about something else"
   },
   "15": {
    "class": "OUT_OF_SCOPE",
    "family": "FORWARD_BUDGET",
-   "line": 435,
+   "line": 442,
    "token": "p8064",
    "why": "the token matched and the statement is about something else"
   },
   "16": {
    "class": "OUT_OF_SCOPE",
    "family": "FORWARD_BUDGET",
-   "line": 436,
+   "line": 443,
    "token": "p8064",
    "why": "the token matched and the statement is about something else"
   },
   "17": {
    "class": "OUT_OF_SCOPE",
    "family": "FORWARD_BUDGET",
-   "line": 567,
+   "line": 444,
    "token": "p8064",
    "why": "the token matched and the statement is about something else"
   },
   "18": {
-   "class": "MOVED",
-   "family": "FOOTPRINT",
-   "line": 856,
-   "token": "0.0577199433",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+   "class": "OUT_OF_SCOPE",
+   "family": "FORWARD_BUDGET",
+   "line": 689,
+   "token": "p8064",
+   "why": "the token matched and the statement is about something else"
   },
   "19": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 856,
-   "token": "0.0788618807",
+   "line": 978,
+   "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "2": {
@@ -96,72 +96,72 @@
   "20": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 856,
-   "token": "3.29690337",
+   "line": 978,
+   "token": "0.0788618807",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "21": {
-   "class": "SURVIVING",
-   "family": "GRILLAGE",
-   "line": 856,
-   "token": "single-layer square-lattice",
-   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
+   "class": "MOVED",
+   "family": "FOOTPRINT",
+   "line": 978,
+   "token": "3.29690337",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "22": {
-   "class": "MOVED",
-   "family": "WIDTH",
-   "line": 1198,
-   "token": "112 bp",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+   "class": "SURVIVING",
+   "family": "GRILLAGE",
+   "line": 978,
+   "token": "single-layer square-lattice",
+   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
   },
   "23": {
    "class": "MOVED",
    "family": "WIDTH",
-   "line": 1198,
-   "token": "drawable",
+   "line": 1320,
+   "token": "112 bp",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "24": {
    "class": "MOVED",
    "family": "WIDTH",
-   "line": 1198,
-   "token": "112 bp",
+   "line": 1320,
+   "token": "drawable",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "25": {
    "class": "MOVED",
-   "family": "AZIMUTH",
-   "line": 1198,
-   "token": "perpendicular root",
+   "family": "WIDTH",
+   "line": 1320,
+   "token": "112 bp",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "26": {
-   "class": "RESTATED",
-   "family": "ROW_SPAN",
-   "line": 1198,
-   "token": "drawable",
-   "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
+   "class": "MOVED",
+   "family": "AZIMUTH",
+   "line": 1320,
+   "token": "perpendicular root",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "27": {
    "class": "RESTATED",
    "family": "ROW_SPAN",
-   "line": 1198,
+   "line": 1320,
    "token": "drawable",
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "28": {
    "class": "RESTATED",
    "family": "ROW_SPAN",
-   "line": 1198,
-   "token": "112 bp",
+   "line": 1320,
+   "token": "drawable",
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "29": {
-   "class": "SURVIVING",
-   "family": "GRILLAGE",
-   "line": 1215,
-   "token": "single-layer\nsquare-lattice",
-   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
+   "class": "RESTATED",
+   "family": "ROW_SPAN",
+   "line": 1320,
+   "token": "112 bp",
+   "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "3": {
    "class": "SURVIVING",
@@ -171,74 +171,74 @@
    "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
   },
   "30": {
-   "class": "MOVED",
-   "family": "FOOTPRINT",
-   "line": 1238,
-   "token": "0.0577199433",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+   "class": "SURVIVING",
+   "family": "GRILLAGE",
+   "line": 1337,
+   "token": "single-layer\nsquare-lattice",
+   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
   },
   "31": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1238,
-   "token": "3.29690337",
+   "line": 1360,
+   "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "32": {
    "class": "MOVED",
-   "family": "AZIMUTH",
-   "line": 1238,
-   "token": "132",
+   "family": "FOOTPRINT",
+   "line": 1360,
+   "token": "3.29690337",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "33": {
    "class": "MOVED",
-   "family": "FOOTPRINT",
-   "line": 1253,
-   "token": "0.0577199433",
+   "family": "AZIMUTH",
+   "line": 1360,
+   "token": "132",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "34": {
    "class": "MOVED",
-   "family": "WIDTH",
-   "line": 1253,
-   "token": "112 bp",
+   "family": "FOOTPRINT",
+   "line": 1375,
+   "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "35": {
    "class": "MOVED",
-   "family": "FOOTPRINT",
-   "line": 1253,
-   "token": "0.0788618807",
+   "family": "WIDTH",
+   "line": 1375,
+   "token": "112 bp",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "36": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1253,
-   "token": "3.29690337",
+   "line": 1375,
+   "token": "0.0788618807",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "37": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1253,
-   "token": "0.0577199433",
+   "line": 1375,
+   "token": "3.29690337",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "38": {
-   "class": "DISCHARGED",
-   "family": "PLACEMENT",
-   "line": 1253,
-   "token": "single-layer square-lattice",
-   "why": "asserts the ABSENCE of a honeycomb station lattice, plan ceiling or placement family, which C-0141 supplies"
+   "class": "MOVED",
+   "family": "FOOTPRINT",
+   "line": 1375,
+   "token": "0.0577199433",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "39": {
-   "class": "MOVED",
-   "family": "SCAFFOLD",
-   "line": 1253,
-   "token": "p8064",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+   "class": "DISCHARGED",
+   "family": "PLACEMENT",
+   "line": 1375,
+   "token": "single-layer square-lattice",
+   "why": "asserts the ABSENCE of a honeycomb station lattice, plan ceiling or placement family, which C-0141 supplies"
   },
   "4": {
    "class": "SURVIVING",
@@ -249,73 +249,73 @@
   },
   "40": {
    "class": "MOVED",
-   "family": "FOOTPRINT",
-   "line": 1253,
-   "token": "0.00874363524",
+   "family": "SCAFFOLD",
+   "line": 1375,
+   "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "41": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1253,
-   "token": "0.0577199433",
+   "line": 1375,
+   "token": "0.00874363524",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "42": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1253,
-   "token": "38.08 × 25.36",
+   "line": 1375,
+   "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "43": {
-   "class": "OUT_OF_SCOPE",
-   "family": "SQUARE",
-   "line": 1394,
-   "token": "single-layer square-lattice",
-   "why": "the token matched and the statement is about something else"
+   "class": "MOVED",
+   "family": "FOOTPRINT",
+   "line": 1375,
+   "token": "38.08 × 25.36",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "44": {
-   "class": "MOVED",
-   "family": "AZIMUTH",
-   "line": 1403,
-   "token": "132",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+   "class": "OUT_OF_SCOPE",
+   "family": "SQUARE",
+   "line": 1516,
+   "token": "single-layer square-lattice",
+   "why": "the token matched and the statement is about something else"
   },
   "45": {
    "class": "MOVED",
    "family": "AZIMUTH",
-   "line": 1413,
-   "token": "perpendicular root",
+   "line": 1525,
+   "token": "132",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "46": {
    "class": "MOVED",
-   "family": "WIDTH",
-   "line": 1429,
-   "token": "drawable",
+   "family": "AZIMUTH",
+   "line": 1535,
+   "token": "perpendicular root",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "47": {
+   "class": "MOVED",
+   "family": "WIDTH",
+   "line": 1551,
+   "token": "drawable",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+  },
+  "48": {
    "class": "DISCHARGED",
    "family": "PLACEMENT",
-   "line": 1432,
+   "line": 1554,
    "token": "single-layer square-lattice",
    "why": "asserts the ABSENCE of a honeycomb station lattice, plan ceiling or placement family, which C-0141 supplies"
   },
-  "48": {
+  "49": {
    "class": "OUT_OF_SCOPE",
    "family": "FORWARD_BUDGET",
-   "line": 1448,
+   "line": 1570,
    "token": "p8064",
    "why": "the token matched and the statement is about something else"
-  },
-  "49": {
-   "class": "MOVED",
-   "family": "WIDTH",
-   "line": 1634,
-   "token": "112 bp",
-   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "5": {
    "class": "MOVED",
@@ -327,71 +327,71 @@
   "50": {
    "class": "MOVED",
    "family": "WIDTH",
-   "line": 1634,
+   "line": 1770,
    "token": "112 bp",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "51": {
    "class": "MOVED",
-   "family": "SCAFFOLD",
-   "line": 1636,
-   "token": "p8064",
+   "family": "WIDTH",
+   "line": 1770,
+   "token": "112 bp",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "52": {
    "class": "MOVED",
-   "family": "FOOTPRINT",
-   "line": 1670,
-   "token": "0.0577199433",
+   "family": "SCAFFOLD",
+   "line": 1772,
+   "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "53": {
-   "class": "SURVIVING",
-   "family": "GRILLAGE",
-   "line": 1683,
-   "token": "single-layer square-lattice",
-   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
-  },
-  "54": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1715,
+   "line": 1806,
    "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
-  "55": {
-   "class": "RESTATED",
-   "family": "ROW_SPAN",
-   "line": 1715,
-   "token": "112 bp",
-   "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
+  "54": {
+   "class": "SURVIVING",
+   "family": "GRILLAGE",
+   "line": 1819,
+   "token": "single-layer square-lattice",
+   "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
   },
-  "56": {
+  "55": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1716,
-   "token": "38 × 25 nm",
+   "line": 1851,
+   "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
+  },
+  "56": {
+   "class": "RESTATED",
+   "family": "ROW_SPAN",
+   "line": 1851,
+   "token": "112 bp",
+   "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "57": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1716,
-   "token": "38.08 × 38.04",
+   "line": 1852,
+   "token": "38 × 25 nm",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "58": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1716,
-   "token": "38.08 × 25.36",
+   "line": 1852,
+   "token": "38.08 × 38.04",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "59": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1716,
-   "token": "third of the footprint",
+   "line": 1852,
+   "token": "38.08 × 25.36",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "6": {
@@ -403,37 +403,44 @@
   },
   "60": {
    "class": "MOVED",
-   "family": "SCAFFOLD",
-   "line": 1716,
-   "token": "p8064",
+   "family": "FOOTPRINT",
+   "line": 1852,
+   "token": "third of the footprint",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "61": {
-   "class": "RESTATED",
-   "family": "ROW_SPAN",
-   "line": 1717,
-   "token": "112 bp",
-   "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
+   "class": "MOVED",
+   "family": "SCAFFOLD",
+   "line": 1852,
+   "token": "p8064",
+   "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "62": {
    "class": "RESTATED",
    "family": "ROW_SPAN",
-   "line": 1717,
-   "token": "drawable",
+   "line": 1853,
+   "token": "112 bp",
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "63": {
    "class": "RESTATED",
    "family": "ROW_SPAN",
-   "line": 1717,
+   "line": 1853,
    "token": "drawable",
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "64": {
+   "class": "RESTATED",
+   "family": "ROW_SPAN",
+   "line": 1853,
+   "token": "drawable",
+   "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
+  },
+  "65": {
    "byHand": true,
    "class": "OUT_OF_SCOPE",
    "family": "WIDTH",
-   "line": 1739,
+   "line": 1875,
    "snippet": "d `10 × 6` block and this corpus's 15 × 112 bp sheet as scadnano `.sc` files, each of",
    "token": "112 bp",
    "why": "T-260/T-262, by hand: `15 × 112 bp` and `15 duplexes, 112 bp` are this corpus's SQUARE-lattice sheet (C-0086/C-0157/C-0160), not a honeycomb row length. The line-scoped honeycomb context admits them because the same sentence discusses the honeycomb block beside them, and the token's own neighbourhood says square lattice. The refinement's governing-noun rule cannot reach this: it is a LATTICE question, not a width/row one."
@@ -506,42 +513,42 @@
   "14": {
    "class": "OUT_OF_SCOPE",
    "family": "FORWARD_BUDGET",
-   "line": 991,
+   "line": 997,
    "token": "p8064",
    "why": "the token matched and the statement is about something else"
   },
   "15": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1066,
+   "line": 1151,
    "token": "38 × 25 nm",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "16": {
    "class": "RESTATED",
    "family": "ROW_SPAN",
-   "line": 1088,
+   "line": 1173,
    "token": "drawable",
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "17": {
    "class": "MOVED",
    "family": "WIDTH",
-   "line": 1091,
+   "line": 1176,
    "token": "112 bp",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "18": {
    "class": "SURVIVING",
    "family": "GRILLAGE",
-   "line": 1093,
+   "line": 1178,
    "token": "single-layer square-lattice",
    "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
   },
   "19": {
    "class": "MOVED",
    "family": "SCAFFOLD",
-   "line": 1122,
+   "line": 1207,
    "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
@@ -555,70 +562,70 @@
   "20": {
    "class": "MOVED",
    "family": "SCAFFOLD",
-   "line": 1123,
+   "line": 1208,
    "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "21": {
    "class": "MOVED",
    "family": "SCAFFOLD",
-   "line": 1130,
+   "line": 1215,
    "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "22": {
    "class": "OUT_OF_SCOPE",
    "family": "FORWARD_BUDGET",
-   "line": 1153,
+   "line": 1238,
    "token": "p8064",
    "why": "the token matched and the statement is about something else"
   },
   "23": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1281,
+   "line": 1366,
    "token": "38.08 × 38.04",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "24": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1284,
+   "line": 1369,
    "token": "38.08 × 25.36",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "25": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1290,
+   "line": 1375,
    "token": "38.08 × 38.04",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "26": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1290,
+   "line": 1375,
    "token": "38.08 × 25.36",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "27": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1292,
+   "line": 1377,
    "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "28": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1292,
+   "line": 1377,
    "token": "0.00874363524",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "29": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1293,
+   "line": 1378,
    "token": "0.0788618807",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
@@ -632,56 +639,56 @@
   "30": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1293,
+   "line": 1378,
    "token": "3.29690337",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "31": {
    "class": "SURVIVING",
    "family": "GRILLAGE",
-   "line": 1418,
+   "line": 1503,
    "token": "single-layer square-lattice",
    "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
   },
   "32": {
    "class": "OUT_OF_SCOPE",
    "family": "FORWARD_BUDGET",
-   "line": 1445,
+   "line": 1530,
    "token": "p8064",
    "why": "the token matched and the statement is about something else"
   },
   "33": {
    "class": "MOVED",
    "family": "SCAFFOLD",
-   "line": 1509,
+   "line": 1594,
    "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "34": {
    "class": "MOVED",
    "family": "SCAFFOLD",
-   "line": 1521,
+   "line": 1608,
    "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "35": {
    "class": "MOVED",
    "family": "SCAFFOLD",
-   "line": 1526,
+   "line": 1613,
    "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "36": {
    "class": "OUT_OF_SCOPE",
    "family": "FORWARD_BUDGET",
-   "line": 1530,
+   "line": 1617,
    "token": "p8064",
    "why": "the token matched and the statement is about something else"
   },
   "37": {
    "class": "MOVED",
    "family": "SCAFFOLD",
-   "line": 1540,
+   "line": 1627,
    "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
@@ -739,7 +746,7 @@
   "1": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 294,
+   "line": 418,
    "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
@@ -747,7 +754,7 @@
    "byHand": true,
    "class": "OUT_OF_SCOPE",
    "family": "WIDTH",
-   "line": 791,
+   "line": 1029,
    "snippet": "N MEASUREMENT.** oxDNA2, 15 duplexes at 112 bp and phase 8 generated from this reposit",
    "token": "112 bp",
    "why": "T-260/T-262, by hand: the T-9 row's `112 bp` is the SQUARE-lattice oxDNA design C-0157 simulated -- 15 duplexes, 49 crossovers, the 4/3 parity split (C-0160) -- and not a honeycomb row length at all. The line's nearest honeycomb word is 3 425 characters away, in a different sentence of the same queue row, so the line-scoped context admitted it on evidence that says nothing about it. Reported as REMOTE-CONTEXT; the tool refuses to guess and this is the call."
@@ -755,378 +762,378 @@
   "11": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 791,
+   "line": 1029,
    "token": "0.0788618807",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "12": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 880,
+   "line": 1118,
    "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "13": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 884,
+   "line": 1122,
    "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "14": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 885,
+   "line": 1123,
    "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "15": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 890,
+   "line": 1128,
    "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "16": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 891,
+   "line": 1129,
    "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "17": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 894,
+   "line": 1132,
    "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "18": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 904,
+   "line": 1142,
    "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "19": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 905,
+   "line": 1143,
    "token": "0.0577199433",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "2": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 295,
+   "line": 419,
    "token": "0.0788618807",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "20": {
    "class": "RECORD",
    "family": "FOOTPRINT",
-   "line": 945,
+   "line": 1183,
    "token": "0.0577199433",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "21": {
    "class": "RECORD",
    "family": "WIDTH",
-   "line": 945,
+   "line": 1183,
    "token": "112 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "22": {
    "class": "RECORD",
    "family": "SCAFFOLD",
-   "line": 951,
+   "line": 1189,
    "token": "p8064",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "23": {
    "class": "RECORD",
    "family": "SCAFFOLD",
-   "line": 951,
+   "line": 1189,
    "token": "p8064",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "24": {
    "class": "RECORD",
    "family": "FOOTPRINT",
-   "line": 952,
+   "line": 1190,
    "token": "0.0788618807",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "25": {
    "class": "RECORD",
    "family": "FOOTPRINT",
-   "line": 952,
+   "line": 1190,
    "token": "3.29690337",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "26": {
    "class": "RECORD",
    "family": "SCAFFOLD",
-   "line": 954,
+   "line": 1192,
    "token": "p8064",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "27": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 954,
+   "line": 1192,
    "token": "112 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "28": {
    "class": "RECORD",
    "family": "SCAFFOLD",
-   "line": 954,
+   "line": 1192,
    "token": "p8064",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "29": {
    "class": "RECORD",
    "family": "FOOTPRINT",
-   "line": 955,
+   "line": 1193,
    "token": "0.00874363524",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "3": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 296,
+   "line": 420,
    "token": "3.29690337",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "30": {
    "class": "RECORD",
    "family": "FOOTPRINT",
-   "line": 955,
+   "line": 1193,
    "token": "0.0577199433",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "31": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 955,
+   "line": 1193,
    "token": "112 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "32": {
    "class": "RECORD",
    "family": "FOOTPRINT",
-   "line": 955,
+   "line": 1193,
    "token": "38.08 × 38.04",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "33": {
    "class": "RECORD",
    "family": "FOOTPRINT",
-   "line": 955,
+   "line": 1193,
    "token": "38.08 × 25.36",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "34": {
    "class": "RECORD",
    "family": "FOOTPRINT",
-   "line": 955,
+   "line": 1193,
    "token": "0.666666667",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "35": {
    "class": "RECORD",
    "family": "PLACEMENT",
-   "line": 957,
+   "line": 1195,
    "token": "never priced an oblique",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "36": {
    "class": "RECORD",
    "family": "AZIMUTH",
-   "line": 957,
+   "line": 1195,
    "token": "perpendicular one",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "37": {
    "class": "RECORD",
    "family": "FOOTPRINT",
-   "line": 958,
+   "line": 1196,
    "token": "38.08 × 25.36",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "38": {
    "class": "RECORD",
    "family": "AZIMUTH",
-   "line": 960,
+   "line": 1198,
    "token": "perpendicular one",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "39": {
    "class": "RECORD",
    "family": "AZIMUTH",
-   "line": 960,
+   "line": 1198,
    "token": "perpendicular azimuth",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "4": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 309,
+   "line": 433,
    "token": "38.08 × 25.36",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "40": {
    "class": "RECORD",
    "family": "AZIMUTH",
-   "line": 960,
+   "line": 1198,
    "token": "perpendicular root",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "41": {
    "class": "RECORD",
    "family": "AZIMUTH",
-   "line": 960,
+   "line": 1198,
    "token": "perpendicular root",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "42": {
    "class": "RECORD",
    "family": "AZIMUTH",
-   "line": 960,
+   "line": 1198,
    "token": "132",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "43": {
    "class": "RECORD",
    "family": "WIDTH",
-   "line": 971,
+   "line": 1209,
    "token": "119 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "44": {
    "class": "RECORD",
    "family": "WIDTH",
-   "line": 971,
+   "line": 1209,
    "token": "40.46",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "45": {
    "class": "RECORD",
    "family": "WIDTH",
-   "line": 971,
+   "line": 1209,
    "token": "112 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "46": {
    "class": "RECORD",
    "family": "GRILLAGE",
-   "line": 971,
+   "line": 1209,
    "token": "single-layer square-lattice",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "47": {
    "class": "RECORD",
    "family": "WIDTH",
-   "line": 972,
+   "line": 1210,
    "token": "112 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "48": {
    "class": "RECORD",
    "family": "WIDTH",
-   "line": 972,
+   "line": 1210,
    "token": "119 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "49": {
    "class": "RECORD",
    "family": "WIDTH",
-   "line": 972,
+   "line": 1210,
    "token": "112 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "5": {
    "class": "MOVED",
    "family": "AZIMUTH",
-   "line": 335,
+   "line": 459,
    "token": "oblique versus perpendicular",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "50": {
    "class": "RECORD",
    "family": "WIDTH",
-   "line": 972,
+   "line": 1210,
    "token": "40.46",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "51": {
    "class": "RECORD",
    "family": "PLACEMENT",
-   "line": 973,
+   "line": 1211,
    "token": "single-layer square-lattice",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "52": {
    "class": "RECORD",
    "family": "AZIMUTH",
-   "line": 973,
+   "line": 1211,
    "token": "perpendicular root",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "53": {
    "class": "RECORD",
    "family": "AZIMUTH",
-   "line": 973,
+   "line": 1211,
    "token": "132",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "54": {
    "class": "RECORD",
    "family": "FOOTPRINT",
-   "line": 973,
+   "line": 1211,
    "token": "0.0577199433",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "55": {
    "class": "RECORD",
    "family": "FOOTPRINT",
-   "line": 973,
+   "line": 1211,
    "token": "0.00874363524",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "56": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 987,
+   "line": 1225,
    "token": "drawable",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "57": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 988,
+   "line": 1226,
    "token": "drawable",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "58": {
    "class": "RECORD",
    "family": "PLACEMENT",
-   "line": 990,
+   "line": 1228,
    "token": "single-layer square-lattice",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "59": {
    "class": "RECORD",
    "family": "GRILLAGE",
-   "line": 994,
+   "line": 1232,
    "token": "single-layer square-lattice",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "6": {
    "class": "MOVED",
    "family": "SCAFFOLD",
-   "line": 340,
+   "line": 464,
    "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
@@ -1134,7 +1141,7 @@
    "byHand": true,
    "class": "OUT_OF_SCOPE",
    "family": "WIDTH",
-   "line": 997,
+   "line": 1235,
    "snippet": "`.sc` `C-0157` simulated — 15 duplexes, 112 bp, phase 8, seven columns, 49 crossovers,",
    "token": "112 bp",
    "why": "T-260/T-262, by hand: `15 × 112 bp` and `15 duplexes, 112 bp` are this corpus's SQUARE-lattice sheet (C-0086/C-0157/C-0160), not a honeycomb row length. The line-scoped honeycomb context admits them because the same sentence discusses the honeycomb block beside them, and the token's own neighbourhood says square lattice. The refinement's governing-noun rule cannot reach this: it is a LATTICE question, not a width/row one."
@@ -1142,84 +1149,84 @@
   "61": {
    "class": "RESTATED",
    "family": "ROW_SPAN",
-   "line": 1011,
+   "line": 1249,
    "token": "drawable",
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "62": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 1022,
+   "line": 1260,
    "token": "drawable",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "63": {
    "class": "RECORD",
    "family": "FORWARD_BUDGET",
-   "line": 1022,
+   "line": 1260,
    "token": "p8064",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "64": {
    "class": "RECORD",
    "family": "FORWARD_BUDGET",
-   "line": 1022,
+   "line": 1260,
    "token": "p8064",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "65": {
    "class": "RECORD",
    "family": "FORWARD_BUDGET",
-   "line": 1023,
+   "line": 1261,
    "token": "p8064",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "66": {
    "class": "RECORD",
    "family": "SCAFFOLD",
-   "line": 1023,
+   "line": 1261,
    "token": "p8064",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "67": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 1023,
+   "line": 1261,
    "token": "drawable",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "68": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 1024,
+   "line": 1262,
    "token": "drawable",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "69": {
    "class": "RECORD",
    "family": "SCAFFOLD",
-   "line": 1024,
+   "line": 1262,
    "token": "p8064",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "7": {
    "class": "MOVED",
    "family": "SCAFFOLD",
-   "line": 342,
+   "line": 466,
    "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "70": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 1029,
+   "line": 1267,
    "token": "drawable",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "71": {
    "class": "RECORD",
    "family": "SCAFFOLD",
-   "line": 1035,
+   "line": 1273,
    "token": "p8064",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
@@ -1227,7 +1234,7 @@
    "byHand": true,
    "class": "OUT_OF_SCOPE",
    "family": "SCAFFOLD",
-   "line": 1039,
+   "line": 1277,
    "snippet": "NS-FOR-NDI.md): is a `36.04 nm` tile on p8064 — or `31.28 nm` on the M13mp18 default",
    "token": "p8064",
    "why": "T-319, by hand: a FORWARD BUDGET, not the withdrawn provenance -- these state what a route-B UNIFORM raster costs on p8064 at the built 28 nt turn allowance (C-0193, C-0201), which is decision 9's own table, and say nothing about which scaffold design (i) is folded from. Same reading as TASKS.md#0, which the rule already classifies OUT_OF_SCOPE"
@@ -1236,7 +1243,7 @@
    "byHand": true,
    "class": "OUT_OF_SCOPE",
    "family": "SCAFFOLD",
-   "line": 1039,
+   "line": 1277,
    "snippet": "nm` on p7560 and `106 bp = 36.04 nm` on p8064 (`−9.9 %`), and **all three are flat**",
    "token": "p8064",
    "why": "T-319, by hand: a FORWARD BUDGET, not the withdrawn provenance -- these state what a route-B UNIFORM raster costs on p8064 at the built 28 nt turn allowance (C-0193, C-0201), which is decision 9's own table, and say nothing about which scaffold design (i) is folded from. Same reading as TASKS.md#0, which the rule already classifies OUT_OF_SCOPE"
@@ -1244,133 +1251,133 @@
   "74": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 1048,
+   "line": 1293,
    "token": "112 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "75": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 1050,
+   "line": 1295,
    "token": "112 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "76": {
    "class": "RECORD",
    "family": "FOOTPRINT",
-   "line": 1051,
+   "line": 1296,
    "token": "third of the footprint",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "77": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 1051,
+   "line": 1296,
    "token": "112 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "78": {
    "class": "RECORD",
    "family": "WIDTH",
-   "line": 1051,
+   "line": 1296,
    "token": "drawable",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "79": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 1053,
+   "line": 1298,
    "token": "112 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "8": {
    "class": "MOVED",
    "family": "AZIMUTH",
-   "line": 428,
+   "line": 552,
    "token": "oblique versus perpendicular",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "80": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 1053,
+   "line": 1298,
    "token": "112 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "81": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 1054,
+   "line": 1299,
    "token": "112 bp",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "82": {
    "class": "RESTATED",
    "family": "ROW_SPAN",
-   "line": 1056,
+   "line": 1301,
    "token": "112 bp",
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "83": {
    "class": "RESTATED",
    "family": "ROW_SPAN",
-   "line": 1056,
+   "line": 1301,
    "token": "drawable",
    "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
   },
   "84": {
    "class": "RECORD",
    "family": "ROW_SPAN",
-   "line": 1059,
+   "line": 1304,
    "token": "drawable",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "85": {
    "class": "RECORD",
    "family": "GRILLAGE",
-   "line": 1060,
+   "line": 1305,
    "token": "single-layer square-lattice",
    "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   },
   "86": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1687,
+   "line": 1938,
    "token": "38 × 25 nm",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "87": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1697,
+   "line": 1948,
    "token": "38.08 × 25.36",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "88": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1702,
+   "line": 1953,
    "token": "third of the footprint",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "89": {
    "class": "MOVED",
    "family": "FOOTPRINT",
-   "line": 1712,
+   "line": 1963,
    "token": "0.0788618807",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "9": {
    "class": "MOVED",
    "family": "AZIMUTH",
-   "line": 428,
+   "line": 552,
    "token": "perpendicular root",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   },
   "90": {
    "class": "MOVED",
    "family": "SCAFFOLD",
-   "line": 1720,
+   "line": 1971,
    "token": "p8064",
    "why": "asserts a premise C-0140/C-0141 withdrew -- struck, pointed, or listed for T-233"
   }
@@ -2728,7 +2735,7 @@
   "1": {
    "class": "SURVIVING",
    "family": "GRILLAGE",
-   "line": 203,
+   "line": 208,
    "token": "single-layer square-lattice",
    "why": "the half of a PARTIALLY discharged premise C-0141 did NOT supply -- the smeared single-layer square-lattice structural model, which OrigamiGrillage's inability to read `layers` kept true until C-0154/C-0167 (T-253). Live when written, and the subject of a different census"
   }
@@ -3198,6 +3205,85 @@
    "snippet": "hat a route-B *uniform* raster costs on p8064 at the built `28 nt` allowance — and no",
    "token": "p8064",
    "why": "T-319, by hand: a FORWARD BUDGET, not the withdrawn provenance -- these state what a route-B UNIFORM raster costs on p8064 at the built 28 nt turn allowance (C-0193, C-0201), which is decision 9's own table, and say nothing about which scaffold design (i) is folded from. Same reading as TASKS.md#0, which the rule already classifies OUT_OF_SCOPE"
+  }
+ },
+ "gpd/claims/C-0212-a-searched-distribution-at-the-resolved-link.md": {
+  "0": {
+   "class": "RECORD",
+   "family": "ROW_SPAN",
+   "line": 11,
+   "token": "drawable",
+   "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
+  },
+  "1": {
+   "byHand": true,
+   "class": "OUT_OF_SCOPE",
+   "family": "FOOTPRINT",
+   "line": 296,
+   "snippet": "22203964`** against a uniform share of `0.666666667` | ## 10. The mutation test, and its t",
+   "token": "0.666666667",
+   "why": "T-332, by hand: a TOKEN COLLISION. `0.666666667` here is the UNIFORM PER-PATH SHARE of `C-0017`'s mandate in pN/nm (`33.3333333 / 50`), read against `C-0023`'s allowable in `F14`'s verdict cell; it is not the withdrawn `0.667 of it` footprint ratio the FOOTPRINT family is about, and the line names no cross-section at all."
+  }
+ },
+ "gpd/claims/C-0215-route-b-coupled-on-its-own-stations.md": {
+  "0": {
+   "class": "RECORD",
+   "family": "SCAFFOLD",
+   "line": 11,
+   "token": "p8064",
+   "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
+  }
+ },
+ "gpd/claims/C-0216-the-placement-and-the-distribution-together.md": {
+  "0": {
+   "class": "RECORD",
+   "family": "ROW_SPAN",
+   "line": 12,
+   "token": "drawable",
+   "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
+  }
+ },
+ "gpd/claims/C-0217-the-cure-at-every-call-site.md": {
+  "0": {
+   "class": "RECORD",
+   "family": "ROW_SPAN",
+   "line": 12,
+   "token": "drawable",
+   "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
+  }
+ },
+ "gpd/claims/C-0218-the-tied-regrade-at-the-other-cross-section.md": {
+  "0": {
+   "class": "RECORD",
+   "family": "ROW_SPAN",
+   "line": 11,
+   "token": "drawable",
+   "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
+  },
+  "1": {
+   "byHand": true,
+   "class": "RECORD",
+   "family": "FOOTPRINT",
+   "line": 146,
+   "snippet": "|---| | `C-0109`, four-layer standing | 0.0577199433 | yes | all | | `C-0142`, `10 × 6` smea",
+   "token": "0.0577199433",
+   "why": "T-332, by hand: `0.0577199433` is `C-0109`'s OWN four-layer standing free tile, quoted in CH-0283's regularity table as what THAT claim measured, on the row that names it. It is a verbatim historical reading correctly attributed to its owner -- the table's whole purpose is to show which tile each reproduction was taken on -- and not a restatement of the footprint premise C-0140/C-0141 discharged."
+  },
+  "2": {
+   "class": "RESTATED",
+   "family": "ROW_SPAN",
+   "line": 278,
+   "token": "112 bp",
+   "why": "the token in its RESTORED reading -- C-0146's row span, or C-0151's drawable raster -- which is the correcting statement itself and not the debt"
+  }
+ },
+ "gpd/claims/C-0219-a-dishing-fit-and-the-parity-of-its-basis.md": {
+  "0": {
+   "class": "RECORD",
+   "family": "ROW_SPAN",
+   "line": 11,
+   "token": "112 bp",
+   "why": "a historical record -- a closed queue row, a synthesis pass's account, a Conditions row, or a verbatim source quotation. True when written; the correction belongs in the claim it points to"
   }
  }
 }

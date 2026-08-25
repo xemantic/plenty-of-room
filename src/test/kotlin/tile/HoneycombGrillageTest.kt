@@ -164,6 +164,20 @@ class HoneycombGrillageTest {
     }
 
     @Test
+    fun `gate 3 - symmetry - F1 at BOTH raster-row parities, which is what CH-0282 needed`() {
+        // `T-330`. The row count above is EVEN, and so is this fixture's default, and so was
+        // every other grillage dishing test in this repository -- which is why a correct
+        // falsifier slept for eleven iterations while `HoneycombDeflection` removed its rigid
+        // plane by three projections that are the least-squares fit only at an even `m`.
+        // A falsifier written on a SOLVE tests the lattice you hand it.
+        for (rows in listOf(3, 4, 5, 6, 7)) {
+            val lattice = grillage(rows = rows, columns = 2, rowBasePairs = 42)
+            val solution = lattice.solve(uniformPressure(0.05))
+            assert(solution.peakDishing(41) < 1e-9 * solution.meanDeflection)
+        }
+    }
+
+    @Test
     fun `gate 3 - conservation - the foundation carries the whole applied load`() {
         val lattice = grillage(rows = 6, columns = 4, rowBasePairs = 42)
         val solution = lattice.solve(uniformPressure(0.05))
@@ -184,7 +198,15 @@ class HoneycombGrillageTest {
             axialPinBeam = 7
         )
         val load = uniformPressure(0.05)
-        assert(a.solve(load).peakDishing(41).isCloseTo(b.solve(load).peakDishing(41)))
+        // `rows = 5` is ODD, so before `T-330` both readings carried the same large spurious
+        // tilt residue and a RELATIVE comparison of them passed. Corrected they are both the
+        // solver's own noise, and `CLAUDE.md`'s own rule applies: comparing two quantities that
+        // are both meant to be zero relatively compares their noise. Compare ABSOLUTELY, against
+        // the one scale in the problem.
+        val mean = a.solve(load).meanDeflection
+        assert(
+            abs(a.solve(load).peakDishing(41) - b.solve(load).peakDishing(41)) < 1e-9 * mean
+        )
         assert(a.solve(load).meanDeflection.isCloseTo(b.solve(load).meanDeflection))
     }
 

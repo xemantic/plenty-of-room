@@ -116,9 +116,14 @@ the whole placement question **without reconstructing the raster path** — whic
 | `10 × 6` | 1.0 (none carried) | 0.127358454 | 0.279799381 | 0.407157835 | 0.370361485 | **no** |
 | **`10 × 6`** | **21.1851817** (calibrated) | **0.0449400126** | **0.0347706369** | **0.0797106495** | 0.0737723859 | **YES** |
 | **`10 × 6`** | **17.6059172** (this lattice's own `f`) | **0.0477844467** | **0.0403449599** | **0.0881294066** | 0.0815816716 | **YES** |
-| `15 × 4` | 1.0 | 0.312237799 | 0.48567377 | 0.797911569 | 0.747863554 | no |
-| `15 × 4` | 9.65079217 | 0.227177955 | 0.105713956 | 0.332891911 | 0.318106129 | no |
-| `15 × 4` | 12.7228458 | 0.220064299 | 0.0855856842 | 0.305649983 | 0.292462133 | no |
+| `15 × 4` | 1.0 | ~~0.312237799~~ **0.242196276** | ~~0.48567377~~ **0.485371312** | ~~0.797911569~~ **0.727567589** | ~~0.747863554~~ **0.677215662** | no |
+| `15 × 4` | 9.65079217 | ~~0.227177955~~ **0.157167743** | ~~0.105713956~~ **0.105639845** | ~~0.332891911~~ **0.262807589** | ~~0.318106129~~ **0.248027504** | no |
+| `15 × 4` | 12.7228458 | ~~0.220064299~~ **0.150056485** | ~~0.0855856842~~ **0.0855289544** | ~~0.305649983~~ **0.23558544** | ~~0.292462133~~ **0.222402553** | no |
+
+**CORRECTED, iteration 52** ([`C-0219`](C-0219-a-dishing-fit-and-the-parity-of-its-basis.md), closing [`CH-0282`](../challenges/CH-0282-a-dishing-fit-assumes-an-even-raster-row-count.md)): every `15 × 4` cell of the table above is re-emitted.
+`HoneycombDeflection` removed its rigid plane by three **independent** projections, which is the least-squares fit only where the three face modes are orthogonal — and on a corrugated honeycomb face `⟨piston, tiltY⟩ = ∫y dA` vanishes **iff the raster-row count `m` is EVEN**, `Σ beamY` being exactly `0` at even `m` and `∓(m − 1)d/4` at odd.
+**Every `10 × 6` reading above is untouched, bit for bit**, and the `15 × 4` readings are **smaller**, so this claim's verdict, its `F5` and the cross-section ordering are **strengthened rather than disturbed**: all three remain outside `T-5b`.
+The struck values are what the three-projection convention gives and they remain reproducible from the shipped class through `HoneycombDeflection.independentProjectionPeakDishing` (`C-0092`).
 
 **At every state in which the free tile is flat, the ceiling is also inside the tolerance**, and at
 every state in which the ceiling is outside it the **free tile alone** already is. So `F5` — *"the

@@ -12961,3 +12961,173 @@ an over-claim it had found in the study's **own emitted prose**. For about twent
 file and an entry-point row named a result that existed nowhere. Two gates caught it independently, from
 opposite ends, and the agent diagnosed it against itself without being told the answer. The rule that follows is
 one line: **populate the retained-runs directory before you read numbers out of a run, not after.**
+
+## Iteration 52 — 2026-08-25: a fit that was only a fit at even parity, and the synthesis that caught its hand-off
+
+One agent on a shared source and one on the two deliverables — a pairing chosen so that the second could not
+be reading result files the first was moving. The synthesis was deliberately held until the re-emissions
+landed, because a census is dated by the corpus it was taken over.
+
+### `T-330` — a dishing fit, and the parity of its basis
+
+`C-0218` found the standing falsifier firing on the first honeycomb block this corpus had ever graded with an **odd** raster-row count: a solved field uniform to `1e−10` reported as `0.0620506254` of the stroke of dishing.
+`CH-0282` diagnosed it — `HoneycombDeflection` removed its rigid plane by three **independent** projections, which is the least-squares fit only where the three modes are orthogonal — and left the repair to whoever owned the next change to the shared class.
+
+**The cheap bound turned out to be the whole first half of the answer, and it needs no solve.**
+Each face beam's tributary is one row pitch centred on its own axis, so `⟨piston, tiltY⟩ = L_s·(3d/2)·Σ beamY`, and a honeycomb face's rooting helices lie on an **integer ladder in units of `d/2`**.
+`Σ beamY` is exactly `0` at even `m` and `∓(m − 1)d/4` at odd — `28 of 28` readings over `m = 3…16` and both face columns — which gives `CH-0282`'s own `0.0358744468` at `m = 15` in four lines of arithmetic.
+And the **magnitude** of the defect is a pure geometric ratio, `(∫y dA/∫y² dA)(L_y/2)`, carrying no element, no row length, no thickness and no tie: it reproduces `C-0218`'s `0.0620506254` on a `15 × 2` probe at 42 bp with no ties, where `C-0218` measured it on a tied `15 × 4` block at 116 bp.
+
+The repair **branches** on that exact integer statement, so an even-`m` reading is returned bit for bit and **15 of the 18** result files carrying a grillage dishing are unmoved *by construction* rather than by a re-run.
+Three (`T-253`, `T-254`, `T-297`) were re-emitted in `tools/reemission-order.py`'s order and their diffs are `27 of 514`, `51 of 1058` and `74 of 1151` leaves, every one a `15 × 4` record; no fourth-level consumer moves, because every downstream reader selects the `10 × 6` half explicitly.
+Four byte-identity controls came back **4 of 4 identical**.
+
+**What surprised us, in the order it surprised us.**
+
+`F2` fired, and its firing is what makes the branch load-bearing rather than cosmetic: the quadrature Gram is *not* reliably the exact `0.0` that `T-294`'s own `10 × 6` happens to return, and the first draft of the predicate — comparing the `Double` face positions for antisymmetry — failed at `m = 4`, because `1.268 − 6.34` and `11.412 − 6.34` are not exact negatives.
+Only the integer ladder is inert.
+
+The repair then found **three degenerate comparisons of its own**, all of them `CLAUDE.md`'s *comparing two quantities that are both meant to be zero relatively compares their noise* — `F9` fired on two of them — and, in an **existing** test, a fourth: `HoneycombGrillageTest`'s axial-pin test runs at `rows = 5`, and once the spurious tilt residue is removed both of its readings are the solver's noise, so its relative `isCloseTo` had been passing for the wrong reason.
+
+`P-31` caught **six of `T-294`'s mutation anchors** orphaned by this refactor, and one of its mutations had silently become a **no-op** because the class default had changed under the row — the second half of `C-0185`'s lesson, met from the side of the copy that was deleted.
+Both were repaired; the harness reads `19 mutations, 0 survivors`.
+`T-330`'s own harness read `13, 2 survivors` on its first run and both were the finding: one fixture could not discriminate a singularity guard that throws one column later, and one mutation of the ladder's **datum** is a genuine no-op, because the datum itself lies on the ladder.
+
+**The half we refused, and its price.**
+The class *fits* with `faceFunctional`'s owning-beam reconstruction and *samples* with `evaluate`'s nearest-beam one.
+Measured, that gap is `4.3E-4`–`5.0E-4` on the collar load every free-tile reading is taken under, and **`0.0067`** on a bond prestrain influence function — against `C-0180`'s tightest recovered cell, which clears `T-5b` by `0.426 %`.
+So an unconditional adoption is inside the margin by `8.5×` on one channel and **outside it** on the channel a coupled surrogate's bank is built from, and it moves all eighteen files at once.
+That is a **convention** and not the defect `CH-0282` raises, so it is filed as `CH-0284` with a number rather than a caution.
+
+**And the standing falsifier is strengthened where it costs nothing.**
+It slept for eleven iterations because it is written on a *solve*, and every lattice it was handed had the favourable parity: `HoneycombGrillageTest`'s own `F1` uses `rows = 6` and the fixture default is `rows = 4`.
+Written on the **decomposition** instead — *the projector must annihilate each of its own three basis modes* — it needs no load, no foundation and no factorisation, and it fires at an odd `m` instantly.
+Both that and a both-parity sweep of the solve falsifier are now named tests.
+The general form, offered for `CLAUDE.md`: **a falsifier written on a SOLVE tests the lattice you hand it; the same statement written on the DECOMPOSITION tests the geometry, costs no solve, and cannot be handed a favourable case by accident.**
+
+### `T-332` — the fifteenth `ANSWERS.md` synthesis: an answer that moved twice more, and a predicate dated a third time
+
+Four iterations and ten claims stood between this pass and the fourteenth.
+Both deliverables carried iteration **49** — `C-0211`'s and `C-0212`'s authors had put one passage each into
+`ANSWERS.md` §1 and `DECISIONS-FOR-NDI.md` §6 — and **nothing after it**.
+A `grep` of each new identifier against the two documents, run before anything else, said so in seconds,
+and it is the whole reason the pass could be spent on the six places that mattered rather than on the two that
+were already right.
+
+**Twenty-eight passages moved, over six of the seven declared kinds.**
+`SCOPE` 11, `STALE_PRICE` 6, `SUPERSEDED_VALUE` 4, `STALE_STATUS` 3, `SELF_DESCRIBING_COUNT` 3, `OTHER` 1,
+and `SUPERSEDED_RATIO` **0 — prosecuted and reported empty for the second pass running**.
+`STALE_PRICE` has now gone `0 → 7 → 6` across three passes and `SUPERSEDED_RATIO` `5 → 0 → 0`;
+neither series is readable by a partition that drops a kind because it came back empty,
+which is why both are prosecuted at every pass and reported at every pass.
+
+**The headline is that §3 row (g)'s answer moved twice more and neither deliverable knew it.**
+`C-0212` showed that every coupled census in this corpus grades on two rules *transferred onto* the lattice;
+searched, the same 32 cells read `22 of 32` flat.
+`C-0215` showed that those readings are also on a tile the programme does not recommend:
+graded on route B's own tile, at stations **derived at each row length**, a searched coupling is flat at
+**`27 of 48`** and **flat AND inside `C-0023`'s per-path allowable at `7`** — the first non-empty conjunction
+this corpus has had.
+What was carried into six further decision cells was the *old* count, and what could most easily have been
+written wrongly is the sentence beside the new one: **`0 of 48` beat the uncoupled tile**, which is already
+flat, so on route B the coupling is **not a flatness remedy — it is a mandate the flatness survives**,
+at 27 cells and admissibly at 7. `C-0017`'s mandate is a placement and stability requirement, and an
+uncoupled tile delivers no output at all.
+
+**`C-0186`'s deliberate leave is discharged and a convention travels with it.**
+`C-0180` re-graded `10 × 6` only, and one comparison passage was left un-annotated on purpose because giving
+one cross-section its tied numbers while the other could be given none would read as a measured ordering
+across two lattice states. `C-0218` runs it — `0 of 64` at the penalty link, `0 of 128` at the resolved one,
+tightest `0.160538609` = `0.565012343 nm` — and the row's own acceptance clause turns out to ask for a state
+the lattice refuses: `edgeY = m·3d/2`, so the free stroke goes as `1/m` and `15 × 4`'s is **exactly `2/3`** of
+`10 × 6`'s. `T-5b`'s dimensionless `0.10` is therefore `1.5×` tighter in nm at `15 × 4`, the ordering
+reverses at `10 of 128` matched rows — every one of them a row where both blocks are far outside the
+tolerance and none of them flat — and **both columns now travel together wherever the ordering is quoted**.
+
+**`T-330`'s hand-off was applied and counted independently, and it was exactly four.**
+A hand-off is a claim like any other; `F7` was declared open against it. Swept over the whole corpus, the
+corrected triple appears in exactly the four passages it named, and **none of the other eight values `C-0219`
+moved appears in either deliverable**. What the sweep did find is one occurrence the hand-off had also named
+and could not repair, and it is this pass's second challenge.
+
+**Two challenges, and both are about a scope rather than a number.**
+
+`CH-0286` — the checker census's third derivation is a regular expression over a
+`commandLine("$projectDir/tools/…")` **literal**, and since iteration 46 a harness that mutates Kotlin sources
+is handed a snapshot directory and is therefore wired through a **helper**.
+Twelve such build-failing tools exist at this tree, disjoint from both other sets and invisible to the
+predicate that produced the number in print. So `C-0210`'s `37` was an undercount of its own sentence's
+quantity by **six at its own ref** (`43`), and the honest figure is **`51`**.
+`CH-0243` found a predicate that was a **filename prefix**; `C-0210` replaced it with one about a **file**
+where the question is about a **run**; this is one about a **literal** where the question is about an
+**invocation**. The same defect at a third level, and the count is still rising — six at iteration 48,
+twelve now.
+
+`CH-0287` — of the **27** corpus line-occurrences of the triple `C-0219` moved, **exactly one non-owner still
+states it live**: `C-0191` §2(b), the thirteenth synthesis's own *"what moved"* table, which quotes `C-0154`
+as reading what `C-0154` no longer reads. **No gate in this repository can see it.** Pointed at that file
+`tools/trace-answers.py` reports `111 tokens, 0 ABSENT, 0 self-contradictions`, because the withdrawn value is
+still `CITED` — by the very claims that withdrew it. That is `C-0080`'s third drift class, which this corpus
+has recorded as unmechanisable, met on the one document class that **generates** it: a synthesis claim's
+correction table exists in order to copy other claims' values into a second file, and *strike, never delete*
+guarantees the copy survives. Fifteen passes have reconciled the two deliverables and none has reconciled the
+claim corpus against itself. `T-332` was forbidden by its own brief from editing `C-0191`, so the instance is
+**reported and left** — which is the challenge's own evidence.
+
+**Three self-describing counts, all derived.**
+The challenge-and-claim census is stale for the **eighth time in nine passes**: `231 / 204` as written against
+`247 / 214`, cross-checked by two gates that print the numbers on every run without being asked.
+The checker census's *naming* predicate held for a third consecutive pass at `11`, and the other two moved.
+And the *"what we cannot answer"* list contains **no** entry the programme has answered, for a third pass —
+but one bullet gains a **measured price** for the first time: with the distribution searched, `16 of 32` cells
+beat the uncoupled tile at zero defects and `0 of 32` at `C-0087`'s dropout, so a per-site staple-incorporation
+map on a coupling-bearing tile is not a residual uncertainty on a flat answer — **it is the term that decides
+the sign**, and it is still a bench measurement and not a solve.
+
+**What surprised us.**
+That `T-234-census.py --check` went `8 → 22 → 0` in one pass, and that the middle number is not a defect:
+a correcting sentence has to **name** the withdrawn premise in order to withdraw it, so a synthesis grows that
+census by construction, which is `CH-0230` verbatim. Two hand overrides settled the residue, both built from
+`census(root)`'s own record rather than typed, and both survived a second regeneration — 23 of 23.
+And that the one live instance of the class `CH-0287` names was **already known and already assigned**, and
+still stood, because nothing in this repository can say whether an assignment in a hand-off was honoured.
+
+**What was left alone deliberately.** `C-0213`, `C-0214` and `C-0217` are process claims — a link gate's file
+set, the dynamic arm of the argument guard refused on measurement, and a rounding cure at every call site —
+and neither deliverable makes a claim they move, beyond the checker census this pass re-derives anyway.
+`C-0214`'s refusal is recorded in `C-0220` §8 because a refusal is a result and a synthesis is where a reader
+looks for one.
+Two gates are red at `HEAD` and neither is this pass's: `tools/T-272-emit-result-inputs.py --check` reads
+*stale* because iteration 52's result files are not yet committed and that generator reads the git **index**,
+so its regeneration belongs to the coordinator's close-out; and `tools/T-278-emitter-rounding-census.py`
+prints an advisory line about `T-330`'s re-emitted files.
+
+### Iteration 52's close-out — the value of a second reader, measured
+
+`T-330` repaired the decomposition and handed the synthesis a list of the passages that move, marked **FINAL**,
+stating that `C-0191`:70 was *"mine, annotated"*. It was not. `T-332` verified the hand-off over the whole
+corpus rather than trusting its four line numbers, found the fifth passage un-annotated, was forbidden to edit
+it, and **reported it rather than fixing it silently** — which is exactly the right call and became `CH-0287`.
+The coordinator annotated it. That is the second time in two iterations that a hand-off between two agents was
+wrong in the direction of *claiming more done than was done*, and both times the catch came from the receiving
+agent re-deriving rather than inheriting.
+
+**The repair itself is a closed-form integer statement, and that is what made its blast radius provable rather
+than estimated.** `Σ beamY` is exactly `0` at even `m` and `∓(m − 1)d/4` at odd, so the branch is on an exact
+test and **15 of the 18** result files are unmoved *by construction* — with **4 of 4** byte-identity controls
+confirming it, because a proof about the code and a byte-identical control are different evidence and the
+corpus has had two byte-identity falsifiers fire in as many iterations. Three files were re-emitted, zero
+fourth-level consumers moved, and the defect's own magnitude fell out of a pure geometric ratio carrying no
+element, no row length, no thickness and no tie.
+
+**And the scope refusal was priced rather than taken.** Adopting the least-squares fit *unconditionally* also
+moves every `m = 10` reading by the fit-versus-sample residue — `4.3e−4` on the collar load but **`0.0067` on a
+bond prestrain influence function**, against `C-0180`'s tightest recovered cell, which clears `T-5b` by
+`0.426 %`. Inside the margin by `8.5×` on one channel and **outside it** on the channel a coupled surrogate's
+bank is built from. That is a number, not a caution, and it is why the branch stays.
+
+**The synthesis's own contribution is a class that only exists because empties are declared.** `STALE_PRICE`
+has now gone `0 → 7 → 6` and `SUPERSEDED_RATIO` `5 → 0 → 0`; neither series is readable unless both are
+prosecuted and reported every pass. Six of the six stale prices are cells of the two decision tables NDI reads,
+five of them pricing deferral on a coupled count that `C-0212` and `C-0215` show is a reading on **two
+transferred distributions** and, at decision 9, on a tile the programme does not recommend.

@@ -386,7 +386,7 @@ private class T294Tile(
     }
 
     val uncoupledStanding: Double by lazy {
-        uncoupledField.peakDishing(T294_SAMPLES) / freeStroke
+        uncoupledField.independentProjectionPeakDishing(T294_SAMPLES) / freeStroke
     }
 
     val uncoupledCorrected: Double by lazy {
@@ -883,7 +883,7 @@ fun main() {
             )
             val field = lattice.solve(load)
             val stroke = lattice.solve(uniformPressure(norm.interiorPressure)).meanDeflection
-            val standing = field.peakDishing(T294_SAMPLES) / stroke
+            val standing = field.independentProjectionPeakDishing(T294_SAMPLES) / stroke
             val corrected =
                 FaceRigidBasis(lattice).dishingOf(field).peakDishing(T294_SAMPLES) / stroke
             val departure = abs(standing - published) / published
@@ -1172,7 +1172,8 @@ fun main() {
     // ============================================ the falsifiers
     val uniformTied = tiles.getValue(Triple(penaltyLabel, 0.30, true))
     val uniformField = uniformTied.lattice.solve(uniformPressure(tall.interiorPressure))
-    val uniformStanding = uniformField.peakDishing(T294_SAMPLES) / uniformField.meanDeflection
+    val uniformStanding = uniformField.independentProjectionPeakDishing(T294_SAMPLES) /
+            uniformField.meanDeflection
     val uniformCorrected = uniformTied.basis.dishingOf(uniformField)
         .peakDishing(T294_SAMPLES) / uniformField.meanDeflection
     val tieCensusTall = honeycombTieCensus(tall.block)

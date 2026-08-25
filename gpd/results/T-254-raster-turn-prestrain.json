@@ -863,14 +863,14 @@
             "crossSection": "15 x 4",
             "hingeStiffnessEnhancement": 1.0,
             "compositeFraction": "the lattice's own lower bound",
-            "freeDishingOverStroke": 0.31116115,
-            "largestUnitPerRadian": 0.170467125,
-            "medianUnitPerRadian": 0.0445615131,
-            "allTurnsUnitSum": 3.76536474,
-            "tenLargestUnitSum": 1.26802807,
+            "freeDishingOverStroke": 0.241288532,
+            "largestUnitPerRadian": 0.170458425,
+            "medianUnitPerRadian": 0.0445456053,
+            "allTurnsUnitSum": 3.76482428,
+            "tenLargestUnitSum": 1.26614606,
             "allowedDepartureDegrees": 8.57142857,
-            "allTurnsCeilingOverStroke": 0.874458398,
-            "forcedExcessCeilingOverStroke": 1.06415495,
+            "allTurnsCeilingOverStroke": 0.804504926,
+            "forcedExcessCeilingOverStroke": 0.993919933,
             "insideTolerance": false,
             "departureThatWouldReachTheTolerance": null
         },
@@ -878,14 +878,14 @@
             "crossSection": "15 x 4",
             "hingeStiffnessEnhancement": 9.65079217,
             "compositeFraction": "f = 0.26",
-            "freeDishingOverStroke": 0.227094793,
-            "largestUnitPerRadian": 0.0300725633,
-            "medianUnitPerRadian": 0.00999067725,
-            "allTurnsUnitSum": 0.747795142,
-            "tenLargestUnitSum": 0.253470346,
+            "freeDishingOverStroke": 0.157228044,
+            "largestUnitPerRadian": 0.0300732415,
+            "medianUnitPerRadian": 0.00998569546,
+            "allTurnsUnitSum": 0.747646393,
+            "tenLargestUnitSum": 0.253326645,
             "allowedDepartureDegrees": 8.57142857,
-            "allTurnsCeilingOverStroke": 0.338964685,
-            "forcedExcessCeilingOverStroke": 0.37688376,
+            "allTurnsCeilingOverStroke": 0.269075683,
+            "forcedExcessCeilingOverStroke": 0.30697326,
             "insideTolerance": false,
             "departureThatWouldReachTheTolerance": null
         },
@@ -893,14 +893,14 @@
             "crossSection": "15 x 4",
             "hingeStiffnessEnhancement": 12.7228458,
             "compositeFraction": "f = 0.30",
-            "freeDishingOverStroke": 0.220086801,
-            "largestUnitPerRadian": 0.0240985023,
-            "medianUnitPerRadian": 0.00910010495,
-            "allTurnsUnitSum": 0.618565219,
-            "tenLargestUnitSum": 0.20311687,
+            "freeDishingOverStroke": 0.150223156,
+            "largestUnitPerRadian": 0.0240989161,
+            "medianUnitPerRadian": 0.0090964927,
+            "allTurnsUnitSum": 0.618260586,
+            "tenLargestUnitSum": 0.203007991,
             "allowedDepartureDegrees": 8.57142857,
-            "allTurnsCeilingOverStroke": 0.312623942,
-            "forcedExcessCeilingOverStroke": 0.343010154,
+            "allTurnsCeilingOverStroke": 0.242714723,
+            "forcedExcessCeilingOverStroke": 0.273084647,
             "insideTolerance": false,
             "departureThatWouldReachTheTolerance": null
         }
@@ -992,8 +992,8 @@
             "hingeStiffnessEnhancement": 1.0,
             "signAssignment": "every turn the same way",
             "departureDegrees": 8.57142857,
-            "peakDishingOverStroke": 0.316008197,
-            "overTheCeiling": 0.361375907,
+            "peakDishingOverStroke": 0.245798061,
+            "overTheCeiling": 0.305527105,
             "insideTolerance": false
         },
         {
@@ -1001,8 +1001,8 @@
             "hingeStiffnessEnhancement": 1.0,
             "signAssignment": "alternating along the raster path",
             "departureDegrees": 8.57142857,
-            "peakDishingOverStroke": 0.300809154,
-            "overTheCeiling": 0.343994814,
+            "peakDishingOverStroke": 0.2313111,
+            "overTheCeiling": 0.287519805,
             "insideTolerance": false
         },
         {
@@ -1010,8 +1010,8 @@
             "hingeStiffnessEnhancement": 1.0,
             "signAssignment": "by the rim the turn sits at",
             "departureDegrees": 8.57142857,
-            "peakDishingOverStroke": 0.300809154,
-            "overTheCeiling": 0.343994814,
+            "peakDishingOverStroke": 0.2313111,
+            "overTheCeiling": 0.287519805,
             "insideTolerance": false
         },
         {
@@ -1019,8 +1019,8 @@
             "hingeStiffnessEnhancement": 9.65079217,
             "signAssignment": "every turn the same way",
             "departureDegrees": 8.57142857,
-            "peakDishingOverStroke": 0.227591761,
-            "overTheCeiling": 0.671432074,
+            "peakDishingOverStroke": 0.15771223,
+            "overTheCeiling": 0.58612591,
             "insideTolerance": false
         },
         {
@@ -1028,8 +1028,8 @@
             "hingeStiffnessEnhancement": 9.65079217,
             "signAssignment": "alternating along the raster path",
             "departureDegrees": 8.57142857,
-            "peakDishingOverStroke": 0.222521659,
-            "overTheCeiling": 0.656474461,
+            "peakDishingOverStroke": 0.152714832,
+            "overTheCeiling": 0.567553448,
             "insideTolerance": false
         },
         {
@@ -1037,8 +1037,8 @@
             "hingeStiffnessEnhancement": 9.65079217,
             "signAssignment": "by the rim the turn sits at",
             "departureDegrees": 8.57142857,
-            "peakDishingOverStroke": 0.222521659,
-            "overTheCeiling": 0.656474461,
+            "peakDishingOverStroke": 0.152714832,
+            "overTheCeiling": 0.567553448,
             "insideTolerance": false
         },
         {
@@ -1046,8 +1046,8 @@
             "hingeStiffnessEnhancement": 12.7228458,
             "signAssignment": "every turn the same way",
             "departureDegrees": 8.57142857,
-            "peakDishingOverStroke": 0.219772029,
-            "overTheCeiling": 0.702991676,
+            "peakDishingOverStroke": 0.14990257,
+            "overTheCeiling": 0.617608062,
             "insideTolerance": false
         },
         {
@@ -1055,8 +1055,8 @@
             "hingeStiffnessEnhancement": 12.7228458,
             "signAssignment": "alternating along the raster path",
             "departureDegrees": 8.57142857,
-            "peakDishingOverStroke": 0.216013224,
-            "overTheCeiling": 0.690968269,
+            "peakDishingOverStroke": 0.14613264,
+            "overTheCeiling": 0.602075712,
             "insideTolerance": false
         },
         {
@@ -1064,8 +1064,8 @@
             "hingeStiffnessEnhancement": 12.7228458,
             "signAssignment": "by the rim the turn sits at",
             "departureDegrees": 8.57142857,
-            "peakDishingOverStroke": 0.216013224,
-            "overTheCeiling": 0.690968269,
+            "peakDishingOverStroke": 0.14613264,
+            "overTheCeiling": 0.602075712,
             "insideTolerance": false
         }
     ],
@@ -1097,25 +1097,25 @@
         {
             "crossSection": "15 x 4",
             "hingeStiffnessEnhancement": 1.0,
-            "freeDishingWithoutTies": 0.316408058,
-            "freeDishingWithTies": 0.31116115,
-            "ratio": 0.983417274,
+            "freeDishingWithoutTies": 0.246518801,
+            "freeDishingWithTies": 0.241288532,
+            "ratio": 0.978783485,
             "tiesSoftenTheBlock": false
         },
         {
             "crossSection": "15 x 4",
             "hingeStiffnessEnhancement": 9.65079217,
-            "freeDishingWithoutTies": 0.23097815,
-            "freeDishingWithTies": 0.227094793,
-            "ratio": 0.983187342,
+            "freeDishingWithoutTies": 0.161119752,
+            "freeDishingWithTies": 0.157228044,
+            "ratio": 0.975845868,
             "tiesSoftenTheBlock": false
         },
         {
             "crossSection": "15 x 4",
             "hingeStiffnessEnhancement": 12.7228458,
-            "freeDishingWithoutTies": 0.22389874,
-            "freeDishingWithTies": 0.220086801,
-            "ratio": 0.982974723,
+            "freeDishingWithoutTies": 0.154042651,
+            "freeDishingWithTies": 0.150223156,
+            "ratio": 0.975204949,
             "tiesSoftenTheBlock": false
         }
     ],
@@ -1279,7 +1279,7 @@
             "statement": "adding 59 covalent ties moves the free-tile dishing by more than the convergence departure",
             "declaredOpen": true,
             "fired": true,
-            "evidence": "the ratio runs 0.890395 to 0.983417 against a worst convergence departure of 3.14308E-8"
+            "evidence": "the ratio runs 0.890395 to 0.978783 against a worst convergence departure of 3.14308E-8"
         },
         {
             "id": "F7",
@@ -1301,8 +1301,8 @@
         "AND THE LOAD IS NOT THE ONE THE QUESTION WAS RAISED ABOUT. C-0151's drawable raster 102 / 109 carries ZERO forced crossovers, so C-0152's ten-crossover forcing does not exist on the recommended design at all. What does exist at EVERY raster turn of EVERY honeycomb origami is C-0152's own calibration: caDNAno's +-5 bp is an integer approximation to a 5.25 bp half turn, so an ALLOWED scaffold crossover already sits 8.57142857 deg off the line of centres. That is a prestrain on all 59 turns, on either raster, and no claim in this corpus has ever applied it as a load.",
         "THE COEFFICIENT, AND IT IS A DISTRIBUTION. At 10 x 6 and the calibrated coupling the largest single turn is 0.012534868 of the free stroke per radian and the median 0.00242282813; at the allowed departure the largest single turn is worth 0.00187521186 of the stroke. The triangle-inequality ceiling over ALL 59 turns and EVERY sign is 0.0764244991 against a free tile of 0.0446459684, and the departure that would reach T-5b's 0.10 is 14.9303 deg.",
         "THE CENSUS IS THE OTHER HALF, AND IT SAYS WHICH INTERFACES THE SCAFFOLD LOADS. On a 10 x 6 block the 59 turns are 50 through-thickness ties - which is EVERY one of the 50 interlayer interfaces C-0154 counts - and 9 in-plane ones, 9 of its 27; on 15 x 4 the split is 45 and 14. They alternate axial ends, 30 at one rim and 29 at the other, and only 5 of them join two gap-facing helices.",
-        "THE 59 TURN TIES ARE COVALENT ELEMENTS THE CORPUS'S HONEYCOMB LATTICE DOES NOT CARRY, and putting them in is worth 0.890395 to 0.983417x of the free-tile dishing. C-0154's bonds are the STAPLE ladder at 7 bp planes; a raster turn sits at s = +-L/2, past the last of them, and it is a covalent crossover like any other. This is C-0099's square-lattice 56 = 42 + 14 read on the honeycomb, where the split is 435 + 59.",
-        "THE SIGN IS UNDETERMINED AND IT IS WORTH A FACTOR. Swept over three assignments the realised field runs 0.0457993778 to 0.227591761 of the stroke, the worst being every turn the same way at 15 x 4 - all of them under the ceiling, which is what a ceiling is for."
+        "THE 59 TURN TIES ARE COVALENT ELEMENTS THE CORPUS'S HONEYCOMB LATTICE DOES NOT CARRY, and putting them in is worth 0.890395 to 0.978783x of the free-tile dishing. C-0154's bonds are the STAPLE ladder at 7 bp planes; a raster turn sits at s = +-L/2, past the last of them, and it is a covalent crossover like any other. This is C-0099's square-lattice 56 = 42 + 14 read on the honeycomb, where the split is 435 + 59.",
+        "THE SIGN IS UNDETERMINED AND IT IS WORTH A FACTOR. Swept over three assignments the realised field runs 0.0457993778 to 0.15771223 of the stroke, the worst being every turn the same way at 15 x 4 - all of them under the ceiling, which is what a ceiling is for."
     ],
     "validity": [
         "TRL 1-3, model-consistent and traceable, not empirically demonstrated.",

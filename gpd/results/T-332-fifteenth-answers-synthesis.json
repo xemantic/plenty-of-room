@@ -1,0 +1,426 @@
+{
+  "task": "T-332",
+  "title": "the fifteenth ANSWERS.md synthesis - a coupled cell flat AND admissible, and a checker predicate dated a third time",
+  "baselineRef": "d7b7074a2be0367429bd63762fd2c8082bbd498d",
+  "baselineRefRequested": "d7b7074",
+  "parameters": {
+    "documents": [
+      "ANSWERS.md",
+      "DECISIONS-FOR-NDI.md"
+    ],
+    "kindsDeclared": [
+      "SUPERSEDED_VALUE",
+      "SUPERSEDED_RATIO",
+      "STALE_STATUS",
+      "SCOPE",
+      "SELF_DESCRIBING_COUNT",
+      "STALE_PRICE",
+      "OTHER"
+    ],
+    "whatIsDerived": "every count in this file is derived at baselineRef or from the working tree; only the passage CLASSIFICATION is declared, and each declared row's two anchors are asserted against both trees before the file is written",
+    "noTiming": "no wall-clock field and no step counter, per CLAUDE.md: a timing is less reproducible than a step count and one such field makes a file un-diffable",
+    "reRunHazard": "CH-0246: this file's subject is the corpus, so re-running it as a control on a later change re-bases the measurement and OVERWRITES the record rather than checking it; re-emit only deliberately, at a named ref",
+    "workingTreeCaveat": "the ref carries iteration 52's T-330 work as UNCOMMITTED, so the working-tree counts include C-0219 and CH-0284 and the ref counts do not; both are emitted"
+  },
+  "selfDescribingCounts": {
+    "claims": {
+      "atRef": 213,
+      "command": "ls gpd/claims/C-*.md | wc -l"
+    },
+    "challenges": {
+      "atRef": 246,
+      "command": "ls gpd/challenges/CH-*.md | wc -l"
+    },
+    "claimsAndChallenges": {
+      "atRef": 459,
+      "command": "tools/check-corpus-identifiers.py prints the sum on every run"
+    },
+    "workingTreeBeforeThisClaimsOwnFiles": {
+      "challenges": 247,
+      "claims": 214,
+      "sum": 461
+    },
+    "asWrittenBeforeThisPass": {
+      "challenges": 231,
+      "claims": 204
+    },
+    "staleAgain": true,
+    "stalePassesOfTotal": {
+      "stale": 8,
+      "passes": 9
+    }
+  },
+  "checkerCensus": {
+    "namingPredicate": {
+      "command": "ls tools/check-*.py tools/trace-answers.py",
+      "count": 11,
+      "names": [
+        "tools/check-challenge-index.py",
+        "tools/check-cold-start-note.py",
+        "tools/check-corpus-identifiers.py",
+        "tools/check-corpus-links.py",
+        "tools/check-entry-points.py",
+        "tools/check-kotlin-format-strings.py",
+        "tools/check-markdown-tables.py",
+        "tools/check-queue-vocabulary.py",
+        "tools/check-result-file-hygiene.py",
+        "tools/check-result-path-references.py",
+        "tools/trace-answers.py"
+      ],
+      "movedThisPass": false,
+      "consecutivePassesUnchanged": 3
+    },
+    "verifyShOwnInvocations": {
+      "predicate": "tools/*.{py,sh} tools/verify.sh invokes with no --self-test flag",
+      "count": 18,
+      "gates": 17,
+      "fixtures": 1,
+      "names": [
+        "tools/T-272-emit-result-inputs.py",
+        "tools/T-272-header-census.py",
+        "tools/T-278-emitter-rounding-census.py",
+        "tools/T-295-mutation-input-census.py",
+        "tools/check-challenge-index.py",
+        "tools/check-cold-start-note.py",
+        "tools/check-corpus-identifiers.py",
+        "tools/check-corpus-links.py",
+        "tools/check-entry-points.py",
+        "tools/check-kotlin-format-strings.py",
+        "tools/check-markdown-tables.py",
+        "tools/check-queue-vocabulary.py",
+        "tools/check-result-file-hygiene.py",
+        "tools/check-result-path-references.py",
+        "tools/cli_guard.py",
+        "tools/result-reader-census.py",
+        "tools/test-result-reader-census.py",
+        "tools/trace-answers.py"
+      ]
+    },
+    "gradleLiteralInvocations": {
+      "predicate": "commandLine(\"$projectDir/tools/...\") with no --self-test flag",
+      "count": 21,
+      "names": [
+        "tools/P-30-mutation-test.py",
+        "tools/P-31-harness-census.py",
+        "tools/T-225-mutation-test.py",
+        "tools/T-234-mutation-test.py",
+        "tools/T-249-mutation-test.py",
+        "tools/T-250-mutation-test.py",
+        "tools/T-278-mutation-test.py",
+        "tools/T-280-mutation-test.py",
+        "tools/T-281-mutation-test.py",
+        "tools/T-283-mutation-test.py",
+        "tools/T-289-mutation-test.py",
+        "tools/T-292-mutation-test.py",
+        "tools/T-295-mutation-test.py",
+        "tools/T-298-mutation-test.py",
+        "tools/T-306-mutation-test.py",
+        "tools/T-313-mutation-test.py",
+        "tools/T-321-mutation-test.py",
+        "tools/test-check-markdown-tables.py",
+        "tools/test-check-queue-vocabulary.py",
+        "tools/test-snapshot.sh",
+        "tools/test-trace-answers.py"
+      ]
+    },
+    "gradleHelperInvocations": {
+      "predicate": "commandLine(mutationSnapshotArguments(\"...\")) -- INVISIBLE to the predicate above, and the subject of CH-0286",
+      "count": 11,
+      "names": [
+        "tools/T-294-mutation-test.py",
+        "tools/T-297-mutation-test.py",
+        "tools/T-299-mutation-test.py",
+        "tools/T-303-mutation-test.py",
+        "tools/T-304-mutation-test.py",
+        "tools/T-307-mutation-test.py",
+        "tools/T-310-mutation-test.py",
+        "tools/T-315-mutation-test.py",
+        "tools/T-316-mutation-test.py",
+        "tools/T-322-mutation-test.py",
+        "tools/T-323-mutation-test.py"
+      ],
+      "whyAHelper": "a harness that mutates Kotlin sources must be handed a snapshot directory and cannot be run bare, so it cannot be wired as a literal path"
+    },
+    "distinctToolsThatCanFailVerifySh": 50,
+    "atThisPassesWorkingTree": {
+      "verifyShOwn": 18,
+      "gradleLiteral": 21,
+      "gradleHelper": 12,
+      "distinct": 51,
+      "why": "the ref carries iteration 52's T-330 work uncommitted, so its twelfth helper-wired harness is in the tree and not in the ref; the deliverable quotes the tree and names it"
+    },
+    "asPublishedByC0210": 37,
+    "sameQuantityAtC0210sOwnRef": 43,
+    "atC0210sOwnRef": {
+      "verifyShOwn": 17,
+      "gradleLiteral": 20,
+      "gradleHelper": 6
+    },
+    "setsAreDisjoint": true,
+    "theFinding": "the naming predicate's NUMBER held for a third consecutive pass; the other two moved; and the third derivation is a regular expression over a string LITERAL where the question is about an INVOCATION, so twelve build-failing tools are invisible to it and 37 was an undercount of its own sentence's quantity at its own ref. CH-0243 -> C-0210 -> CH-0286 is one defect at three levels"
+  },
+  "supersededTripleCensus": {
+    "values": [
+      "0.312237799",
+      "0.227177955",
+      "0.220064299"
+    ],
+    "movedBy": "C-0219 (T-330), CH-0282",
+    "carriersUnderGpd": {
+      "ANSWERS.md": {
+        "occurrences": 2,
+        "ownsTheCorrection": false,
+        "isThisPassesOwn": false,
+        "isADeliverable": true
+      },
+      "DECISIONS-FOR-NDI.md": {
+        "occurrences": 2,
+        "ownsTheCorrection": false,
+        "isThisPassesOwn": false,
+        "isADeliverable": true
+      },
+      "gpd/claims/C-0154-honeycomb-grillage.md": {
+        "occurrences": 3,
+        "ownsTheCorrection": false,
+        "isThisPassesOwn": false,
+        "isADeliverable": false
+      },
+      "gpd/claims/C-0191-thirteenth-answers-synthesis.md": {
+        "occurrences": 1,
+        "ownsTheCorrection": false,
+        "isThisPassesOwn": false,
+        "isADeliverable": false
+      },
+      "gpd/claims/C-0218-the-tied-regrade-at-the-other-cross-section.md": {
+        "occurrences": 4,
+        "ownsTheCorrection": true,
+        "isThisPassesOwn": false,
+        "isADeliverable": false
+      },
+      "gpd/claims/C-0219-a-dishing-fit-and-the-parity-of-its-basis.md": {
+        "occurrences": 3,
+        "ownsTheCorrection": true,
+        "isThisPassesOwn": false,
+        "isADeliverable": false
+      },
+      "gpd/tasks/T-294-the-tied-regrade-at-the-other-cross-section.md": {
+        "occurrences": 2,
+        "ownsTheCorrection": true,
+        "isThisPassesOwn": false,
+        "isADeliverable": false
+      },
+      "gpd/tasks/T-330-a-dishing-fit-and-the-parity-of-its-basis.md": {
+        "occurrences": 7,
+        "ownsTheCorrection": true,
+        "isThisPassesOwn": false,
+        "isADeliverable": false
+      },
+      "gpd/challenges/CH-0282-a-dishing-fit-assumes-an-even-raster-row-count.md": {
+        "occurrences": 3,
+        "ownsTheCorrection": true,
+        "isThisPassesOwn": false,
+        "isADeliverable": false
+      },
+      "gpd/challenges/CH-0287-a-synthesis-claims-correction-table-is-outside-every-pass.md": {
+        "occurrences": 3,
+        "ownsTheCorrection": false,
+        "isThisPassesOwn": true,
+        "isADeliverable": false
+      }
+    },
+    "occurrencesCorpusWide": 30,
+    "occurrencesExcludingThisPassesOwn": 27,
+    "byRole": {
+      "owners": 19,
+      "theClaimCorrected": 3,
+      "theDeliverables": 4,
+      "liveAndUnannotated": 1,
+      "thisPassesOwn": 3
+    },
+    "CH0182": "this claim's own challenge quotes the triple in order to report it, so the census grows by writing it down; both readings are emitted and the deliverable quotes the one excluding this pass's own artifacts",
+    "nonOwnerCarriersStillLive": [
+      "gpd/claims/C-0191-thirteenth-answers-synthesis.md"
+    ],
+    "note": "C-0191 section 2(b) quotes C-0154 as reading the withdrawn triple; C-0154 now reads the corrected one. This claim is forbidden by its brief from editing C-0191, so the instance is reported and left, which is CH-0287's evidence"
+  },
+  "cannotAnswerList": {
+    "topLevelBulletsAtRef": 25,
+    "entriesTheProgrammeHasSinceAnswered": 0,
+    "entriesGainingAMeasuredPRICE": 1,
+    "taskIdentifiersNamedInTheSection": 25,
+    "openInTheQueue": [
+      "T-9",
+      "T-31"
+    ],
+    "note": "no entry names something the programme has answered, so the sign-carrying drift class is empty for the third pass running; ONE entry -- the per-site staple incorporation map on a coupling-bearing tile -- gains a measured price from C-0212 and C-0215, which is what the dropout costs a searched coupling"
+  },
+  "decisions": {
+    "count": 9,
+    "prosecutedForAStalePrice": 9,
+    "stalePricesFound": 6,
+    "stalePriceNote": "the at-a-glance decision 7 cost cell, the 10x6 and 15x4 coupled cells of both of decision 7's comparison tables (four cells), and decision 9's cost cell. Five of the six price on a coupled count that C-0212 and C-0215 show is a reading on a TRANSFERRED distribution and, at decision 9, on the wrong tile; the sixth prices on 756 of 756, which C-0211 re-grades at the resolved link and upholds",
+    "distinctChallengeIdentifiersCitedAtRef": 42
+  },
+  "passages": {
+    "moved": 28,
+    "byKind": {
+      "SUPERSEDED_VALUE": 4,
+      "SUPERSEDED_RATIO": 0,
+      "STALE_STATUS": 3,
+      "SCOPE": 11,
+      "SELF_DESCRIBING_COUNT": 3,
+      "STALE_PRICE": 6,
+      "OTHER": 1
+    },
+    "rows": [
+      {
+        "kind": "SUPERSEDED_VALUE",
+        "document": "ANSWERS.md",
+        "passage": "section 1 item 1: C-0154's three 15x4 free tiles, corrected by C-0219/CH-0282"
+      },
+      {
+        "kind": "SUPERSEDED_VALUE",
+        "document": "ANSWERS.md",
+        "passage": "the questions-for-NDI table, row 7: the same triple"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "ANSWERS.md",
+        "passage": "section 1: C-0215's 27 of 48 searched and 7 flat AND admissible on route B's own tile"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "ANSWERS.md",
+        "passage": "section 1: C-0216's -12.96 % interaction and the reversed ordering"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "ANSWERS.md",
+        "passage": "section 1: C-0218's tied 15x4 re-grade, the 2/3 stroke convention and CH-0282's broken falsifier"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "ANSWERS.md",
+        "passage": "section 1: CH-0283's dropped scope clause, of the same tile"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "ANSWERS.md",
+        "passage": "section 1: the width finding gains its coupled reading"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "ANSWERS.md",
+        "passage": "section 3 row (g): items 4c, 4d and 4e, carrying iterations 49-51"
+      },
+      {
+        "kind": "SELF_DESCRIBING_COUNT",
+        "document": "ANSWERS.md",
+        "passage": "section 4: the challenge-and-claim census, derived"
+      },
+      {
+        "kind": "SELF_DESCRIBING_COUNT",
+        "document": "ANSWERS.md",
+        "passage": "section 4: the same row's own staleness count"
+      },
+      {
+        "kind": "OTHER",
+        "document": "ANSWERS.md",
+        "passage": "the cannot-answer list: the per-site incorporation bullet, priced for the first time"
+      },
+      {
+        "kind": "STALE_STATUS",
+        "document": "ANSWERS.md",
+        "passage": "the questions-for-NDI table, row 7: 15x4 HAS been re-graded coupled since iteration 51"
+      },
+      {
+        "kind": "SUPERSEDED_VALUE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "at-a-glance decision 7: the corrected triple"
+      },
+      {
+        "kind": "SUPERSEDED_VALUE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "decision 7's what-each-buys table: the corrected triple"
+      },
+      {
+        "kind": "STALE_PRICE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "at-a-glance decision 7: the count it prices deferral on is a transferred rule on the wrong tile"
+      },
+      {
+        "kind": "STALE_STATUS",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "at-a-glance decision 7: C-0186's deliberate leave, DISCHARGED by C-0218"
+      },
+      {
+        "kind": "STALE_STATUS",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "at-a-glance decision 7: the same assertion, in the document NDI reads"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "section 6: C-0215, the first flat-and-admissible coupled cell"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "section 6: C-0216's interaction"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "section 6: the pointer to decision 7's discharged comparison row"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "section 6: CH-0283's dropped scope clause"
+      },
+      {
+        "kind": "STALE_PRICE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "the 15x4 coupled cell of BOTH of decision 7's comparison tables, filled by C-0218"
+      },
+      {
+        "kind": "STALE_PRICE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "the 15x4 coupled cell of BOTH of decision 7's comparison tables, filled by C-0218"
+      },
+      {
+        "kind": "STALE_PRICE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "the 10x6 coupled cell of BOTH of decision 7's comparison tables, re-priced by C-0212/C-0215"
+      },
+      {
+        "kind": "STALE_PRICE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "the 10x6 coupled cell of BOTH of decision 7's comparison tables, re-priced by C-0212/C-0215"
+      },
+      {
+        "kind": "STALE_PRICE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "decision 9's cost-of-deferring cell: the 756 of 756 it prices on, at the resolved link and coupled"
+      },
+      {
+        "kind": "SCOPE",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "decision 9's finding: the three widths are flat COUPLED too"
+      },
+      {
+        "kind": "SELF_DESCRIBING_COUNT",
+        "document": "DECISIONS-FOR-NDI.md",
+        "passage": "the checker census: 51 rather than 37, and the predicate dated by a wiring idiom (CH-0286)"
+      }
+    ]
+  },
+  "findings": [
+    "28 passages moved over 6 of the seven declared kinds, 16 of them in the document NDI reads.",
+    "The answer to section 3 row (g) moved twice more and neither deliverable knew it: a coupled cell is now flat AND inside C-0023's per-path allowable, at 7 of 48 cells on route B's own tile, which no previous synthesis could say.",
+    "SUPERSEDED_RATIO is prosecuted and EMPTY for the second consecutive pass, and STALE_PRICE is 6 after being 7 and then 0 -- the two classes have now swapped places twice, which is only visible because both are declared.",
+    "The challenge-and-claim census is stale for the EIGHTH time in NINE passes: 231/204 as written against 246/213 derived at the ref and 247/214 at the working tree.",
+    "The checker census's NUMBER held at one predicate and its PREDICATE is dated at another: 12 Kotlin-subject mutation harnesses are wired through a helper and are invisible to the literal-path regex, so the honest count is 51 at this pass's working tree (50 at the ref) and not 37, and 37 was an undercount of 43 at its own ref (CH-0286).",
+    "Of the 27 occurrences of the triple C-0219 moved (excluding this pass's own), exactly ONE non-owner still states it live -- C-0191 section 2(b), a synthesis claim's own correction table -- and no gate in this repository can see it, because the withdrawn value is still CITED by the claims that withdrew it (CH-0287)."
+  ]
+}

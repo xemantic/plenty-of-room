@@ -104,6 +104,6 @@ the next change to it, and the queue row is `T-330`.
 
 | | |
 |---|---|
-| **Status** | **RAISED**, iteration 51 |
+| **Status** | ~~**RAISED**, iteration 51~~ **RESOLVED**, iteration 52, by [`C-0219`](../claims/C-0219-a-dishing-fit-and-the-parity-of-its-basis.md) ([`T-330`](../tasks/T-330-a-dishing-fit-and-the-parity-of-its-basis.md)). The decomposition is a genuine least-squares fit, branching on an **exact integer** statement about the face's own half-bond ladder so that an even-`m` reading is returned bit for bit; `C-0154`'s three `15 × 4` readings are corrected in place to `0.242196276 / 0.157167743 / 0.150056485` and **no verdict moves**. §5's separate inconsistency is measured and carried on as [`CH-0284`](CH-0284-a-fit-and-a-sample-in-two-reconstructions.md) |
 | **Raised by** | [`C-0218`](../claims/C-0218-the-tied-regrade-at-the-other-cross-section.md) (`T-294`) |
 | **Severity** | **numbers, not verdicts** — three published readings move by up to `1.44×`, and none of them crosses `T-5b` in either convention |

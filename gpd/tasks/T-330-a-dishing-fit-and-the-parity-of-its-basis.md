@@ -224,6 +224,53 @@ Whether to add a **generic** parity sweep to every geometric falsifier in the tr
 
 ---
 
-## 9. Execute / Verify / File — to be completed after the repair
+## 9. Execute
 
-*(Left deliberately empty at Formulate + Plan, per `SESSION-PROMPT.md`. The five gates will be discharged as named tests written first and watched fail; the discriminating fixture is an **odd** `m`, and a test that only exercises `m = 10` cannot see this defect.)*
+Filed as [`C-0219`](../claims/C-0219-a-dishing-fit-and-the-parity-of-its-basis.md), which **RESOLVES** [`CH-0282`](../challenges/CH-0282-a-dishing-fit-assumes-an-even-raster-row-count.md) and raises [`CH-0284`](../challenges/CH-0284-a-fit-and-a-sample-in-two-reconstructions.md).
+Result: [`gpd/results/T-330-a-dishing-fit-and-the-parity-of-its-basis.json`](../results/T-330-a-dishing-fit-and-the-parity-of-its-basis.json), written by `tile/FaceRigidBasisStudy.kt` on `tile/HoneycombGrillage.kt`.
+
+**19 gate-named tests written first and watched fail** (`src/test/kotlin/tile/FaceRigidBasisTest.kt`), plus two in `HoneycombGrillageTest` and one in `CrossSectionTiedRegradeTest`.
+**Six failed on their first real run and every one was informative** — see §10.
+
+## 10. Verify — the ten targets and the eleven falsifiers
+
+| | result |
+|---|---|
+| **P1** | met, **28 of 28** — and the sweep **generalised the closed form**: the sign is set by the **face column's own parity**, `−(m−1)d/4` at an even column and `+` at an odd one. A first pass carried the `faceColumn = 0` sign only and the two-column sweep found it |
+| **P2** | met — `0.0358744468` at `m = 15` and `0.0475958489` at `m = 11`, reproducing `CH-0282`; below `1.0E-9` at every even `m` |
+| **P3** | met — corrected uniform-load dishing below `1.0E-9` at all 28 readings; the retained convention reads `0.211764706` at its worst (`m = 3`) and `0.0620506254` at `m = 15` |
+| **P4** | met — bit-identical over four load cases at `m = 4`, `6`, `10` |
+| **P5** | met — `0.242196276 / 0.157167743 / 0.150056485`, reproducing `C-0218` §7 to `< 1e−8` |
+| **P6** | met — `0.312237799 / 0.227177955 / 0.220064299` reproduced from the shipped class through the retained accessor |
+| **P7** | met — all three outside `T-5b`; `anyVerdictMoves = false` |
+| **P8** | met — **18 / 15 / 3 / 0** |
+| **P9** | met — `4.3E-4`–`5.0E-4` on the collar, `4.7E-4` on a point load, **`0.0067`** on a bond prestrain |
+| **P10** | met — and it is `P9`'s largest well-posed reading, `0.0067`, which is **outside** `C-0180`'s `0.426 %` margin |
+
+| | falsifier | outcome |
+|---|---|---|
+| **F1** | corrected ≠ retained at an orthogonal basis | did not fire |
+| **F2** | the quadrature Gram is not exactly diagonal at even `m` | **FIRED**, and its firing is the finding: the branch is taken on the **integer ladder** and is load-bearing |
+| **F3** | the two right-hand-side conventions differ by more than `1e−2` at `15 × 4` | did not fire — at a non-orthogonal basis they are the same call |
+| **F4** | a corrected `15 × 4` reading crosses `T-5b` | did not fire |
+| **F5** | disagreement with `T-294`'s `FaceRigidBasis` | did not fire |
+| **F6** | an `m = 10` control is not byte-identical | did not fire — **4 of 4** identical; `T-294` differs at 5 of 10 649, all of them `C-0218` §9's own declared-irreproducible field |
+| **F7** | the orthogonality flag is not exactly `m` even | did not fire, **28 of 28** |
+| **F8** | the projector fails to annihilate its own basis | did not fire |
+| **F9** | two emissions not byte-identical | **FIRED on the first run**, at three fields, every one a comparison of two quantities meant to be zero; repaired and now byte-identical |
+| **F10** | a mutation survives | did not fire — **13 mutations, 0 survivors** after two first-run survivors that were both findings |
+| **F11** | the retained accessor is unreachable | did not fire — five call sites |
+
+**The six first-run test failures, and what each was.**
+Two were the author's assertion that a quadrature returns an exact zero (`F2`);
+one was the `Double` antisymmetry predicate failing at `m = 4`, which forced the integer ladder;
+one was a one-column probe being a mechanism under the banded solve;
+and two were the branch not yet existing.
+A seventh and an eighth appeared in **existing** tests: `T-294`'s uniform-field test had to be repointed at the retained accessor (`C-0092`), and `HoneycombGrillageTest`'s axial-pin test — at `rows = 5`, **odd** — turned out to have been comparing two noises relatively and passing for the wrong reason.
+
+## 11. File — what this leaves for others
+
+- **Four passages of the two deliverables** carry the corrected triple (§7); they are reported to the coordinator and handed to the synthesis, not edited here.
+- `C-0154` is annotated in place, strike-never-delete, and its `10 × 6` readings are untouched.
+- `CH-0284` and the `T-294` departure-key repair are filed as queue rows.
+- **`P-31` caught six of `T-294`'s mutation anchors orphaned by this refactor**, and one of its mutations had become a **no-op** because the class default changed under the row; both repaired, and that harness re-runs at **19 mutations, 0 survivors**.

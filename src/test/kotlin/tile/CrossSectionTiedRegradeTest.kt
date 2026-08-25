@@ -266,8 +266,10 @@ class CrossSectionTiedRegradeTest {
         armed.faceBeams.forEach {
             assert(abs(field.deflection(0.0, armed.beamY[it]) - stroke) < 1e-10 * stroke)
         }
-        // and the STANDING decomposition calls that curvature -- the defect, measured
-        assert(field.peakDishing(41) / stroke > 0.05)
+        // and the STANDING decomposition calls that curvature -- the defect, measured.
+        // `T-330` made the least-squares fit the class default, so the standing reading is now
+        // reached through the retained accessor; the defect is unchanged and still measurable.
+        assert(field.independentProjectionPeakDishing(41) / stroke > 0.05)
     }
 
     /** `F1` repaired: the least-squares fit annihilates a uniform field at BOTH cross-sections. */
@@ -319,7 +321,7 @@ class CrossSectionTiedRegradeTest {
         )
         val field = armed.solve(load)
         val corrected = FaceRigidBasis(armed).dishingOf(field)
-        val standing = field.peakDishing(41)
+        val standing = field.independentProjectionPeakDishing(41)
         assert(standing > 1e-6)
         assert(abs(corrected.peakDishing(41) - standing) < 1e-3 * standing)
         assert(abs(corrected.peakDishing(41) - standing) > 1e-9 * standing)
@@ -412,6 +414,20 @@ class CrossSectionTiedRegradeTest {
         val (loaded, freeLoaded) = complianceAndFree(0.05)
         assert(abs(loaded - bare) < 1e-9 * abs(bare))
         assert(abs(freeLoaded - freeBare) > 1e-9 * abs(freeBare))
+    }
+
+    /**
+     * `T-330`. The Gram this class publishes is the lattice's own, **normalised by the face
+     * area** — `⟨piston, piston⟩/A = 1` identically — where `HoneycombGrillage.faceRigidGram` is
+     * in nm⁴. The delegation must carry that division, and nothing asserted it: the mutation
+     * dropping it survived this harness's run of iteration 52.
+     */
+    @Test
+    fun `gate 1 - the published Gram is normalised by the face area`() {
+        val basis = FaceRigidBasis(lattice(flat, enhancement = 21.1851817, tied = true))
+        assert(abs(basis.gram[0][0] - 1.0) < 1e-9)
+        assert(abs(basis.gram[0][1]) < 1e-9)
+        assert(abs(basis.gram[0][2]) < 1e-9)
     }
 
     /** A basis is a property of ONE lattice's geometry and may not be lent to another. */

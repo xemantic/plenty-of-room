@@ -123,39 +123,43 @@ MUTATIONS = [
      "    require(fractionalTolerance > 0.0 && fractionalTolerance < 1.0) {",
      "    require(fractionalTolerance > 0.0) {",
      "the tolerance guard is opened at its UPPER end only -- C-0204 section 8's two-sided range"),
+    # `T-330` moved the face's rigid basis into the shared class `HoneycombGrillage`, where the
+    # Gram, the non-orthogonality diagnostic, the orthogonality flag and the `3 x 3` solve now
+    # live and where `tools/T-330-mutation-test.py` holds them open (its `M05`/`M06` for the
+    # Gram, `M01`-`M04` for the flag, `M11`/`M12` for the solve).  `M14`'s rule no longer exists
+    # at all: the flag is an EXACT integer statement about the face's half-bond ladder and not a
+    # `1e-12` tolerance, so a mutation widening the tolerance has nothing to widen.  What is left
+    # in THIS subject is the DELEGATION, and that is what the two rows below hold open --
+    # `CLAUDE.md`'s own *a duplicated rule is invisible to a mutation test of either copy*, met
+    # from the side of the copy that was deleted.
     ("M12", SUBJECT,
-     "    val gram: List<List<Double>> =\n"
-     "        modes.map { a -> modes.map { b -> lattice.areaInnerProduct(a, b) } }",
-     "    val gram: List<List<Double>> =\n"
-     "        modes.mapIndexed { i, a -> modes.mapIndexed { j, b ->\n"
-     "            if (i == j) lattice.areaInnerProduct(a, b) else 0.0 } }",
-     "the Gram is forced diagonal, so the least-squares fit degenerates to the three "
-     "INDEPENDENT projections the standing decomposition already takes and the odd-m defect "
-     "comes back"),
+     "    val modesAreOrthogonal: Boolean get() = lattice.faceRigidModesAreOrthogonal",
+     "    val modesAreOrthogonal: Boolean get() = true",
+     "the delegated orthogonality flag is forced true, so 15 x 4 reads orthogonal and the odd-m "
+     "defect comes back through this class rather than through the lattice"),
     ("M13", SUBJECT,
-     "            if (i == j) null else abs(gram[i][j]) / sqrt(gram[i][i] * gram[j][j])",
-     "            if (i == j) null else gram[i][j] / sqrt(gram[i][i] * gram[j][j])",
-     "the non-orthogonality is reported SIGNED, so a negative off-diagonal reads as orthogonal"),
+     "    val worstNonOrthogonality: Double get() = lattice.worstFaceNonOrthogonality",
+     "    val worstNonOrthogonality: Double get() = 0.0",
+     "the delegated diagnostic reports a perfect basis at every lattice, so CH-0282's own "
+     "0.0358744468 is not reproduced through this class"),
     ("M14", SUBJECT,
-     "    val modesAreOrthogonal: Boolean = worstNonOrthogonality < 1e-12",
-     "    val modesAreOrthogonal: Boolean = worstNonOrthogonality < 1e-1",
-     "the orthogonality flag is widened past the defect it exists to detect, so 15 x 4 reads "
-     "orthogonal"),
+     "    val gram: List<List<Double>>\n"
+     "        get() = lattice.faceRigidGram.map { row -> row.map { it / lattice.area } }",
+     "    val gram: List<List<Double>>\n"
+     "        get() = lattice.faceRigidGram",
+     "the delegated Gram keeps the lattice's nm^4 scaling where this class publishes it "
+     "normalised by the face area"),
     ("M15", SUBJECT,
-     "        for (i in 0..2) residual -= modes[i] * c[i]",
-     "        residual -= modes[0] * c[0]",
+     "        lattice.faceRigidModes.forEachIndexed { index, mode -> residual -= mode * c[index] }",
+     "        residual -= lattice.faceRigidModes[0] * c[0]",
      "only the piston is removed, so the two tilts stay in the residual and a rigid plane reads "
      "as dishing"),
     ("M16", SUBJECT,
-     "        var pivot = column\n"
-     "        for (row in column + 1..2) if (abs(a[row][column]) > abs(a[pivot][column])) pivot = row",
-     "        val pivot = column",
-     "the 3 x 3 solve loses its partial pivoting, so a zero leading entry divides by zero "
-     "instead of being refused"),
-    ("M17", SUBJECT,
-     "        require(abs(a[pivot][column]) > 0.0) { \"the matrix is singular at column $column\" }",
-     "        require(true) { \"the matrix is singular at column $column\" }",
-     "a singular Gram is admitted and returns NaN rather than refusing"),
+     "        val c = lattice.unconditionalFaceRigidCoefficients(field.coefficients)",
+     "        val c = lattice.faceRigidCoefficients(field.coefficients)",
+     "the corrected object stops being the UNCONDITIONAL fit, so at an orthogonal basis it "
+     "returns the three independent projections and CH-0282 section 5's residue -- the whole of "
+     "CH-0284's price -- becomes unmeasurable"),
     ("M18", SUBJECT,
      "    val structure = lattice.withoutPrestrain\n"
      "    val free = lattice.solve(pressure)",
@@ -163,12 +167,18 @@ MUTATIONS = [
      "    val free = lattice.solve(pressure)",
      "C-0104's trap: the influence bank is taken on the PRESTRAINED lattice, so the Woodbury "
      "matrix stops being a compliance -- silent at exactly the departures that matter"),
+    # RE-ANCHORED by `T-330`: `field.dishing` is now the LEAST-SQUARES reading, so the original
+    # mutation -- pointing `corrected` at it -- became a no-op at exactly the cross-section it
+    # exists to protect.  A mutation that fails nothing is the finding (`C-0161`), and here the
+    # finding was that the class's default had changed under the row.  The standing convention is
+    # now reached through the retained accessor, so that is what the mutation must point at.
     ("M19", SUBJECT,
      "        corrected = build { basis.dishingOf(it) }",
      "        corrected = build { field ->\n"
      "            object : DishingSolution {\n"
      "                override fun deflectionAt(x: Double, y: Double) = field.deflection(x, y)\n"
-     "                override fun dishingAt(x: Double, y: Double) = field.dishing(x, y)\n"
+     "                override fun dishingAt(x: Double, y: Double) =\n"
+     "                    field.independentProjectionDishing(x, y)\n"
      "            }\n"
      "        }",
      "the corrected surrogate is the standing one, so every 15 x 4 cell silently carries the "

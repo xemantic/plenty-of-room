@@ -27,6 +27,7 @@ import com.xemantic.nano.plentyofroom.structure.uniformPressure
 import org.jetbrains.bio.viktor.F64Array
 import kotlin.math.abs
 import kotlin.math.max
+import kotlin.math.roundToLong
 import kotlin.math.sqrt
 
 /** One bond of a honeycomb block: the two beams it joins, and the crossover plane it sits in. */
@@ -230,8 +231,38 @@ class HoneycombDeflection internal constructor(
         lattice.tiltYDual.dot(coefficients) / lattice.tiltYNorm
     }
 
-    /** The face field with its area-averaged best-fit rigid plane removed. */
+    /**
+     * The fitted rigid plane as `(piston, tiltS, tiltY)` — the **least-squares** plane in the
+     * face inner product, which is [HoneycombGrillage.faceRigidCoefficients].
+     *
+     * Where the face basis is orthogonal this is exactly `(meanDeflection, tiltAlong,
+     * tiltAcross)`, bit for bit; where it is not, the three independent projections are not the
+     * fit at all and this is (`T-330`, `CH-0282`).
+     */
+    val rigidPlaneCoefficients: List<Double> by lazy {
+        lattice.faceRigidCoefficients(coefficients)
+    }
+
+    /** The face field with its **least-squares** best-fit rigid plane removed. */
     val dishingCoefficients: F64Array by lazy {
+        val residual = coefficients.copy()
+        lattice.faceRigidModes.forEachIndexed { index, mode ->
+            residual -= mode * rigidPlaneCoefficients[index]
+        }
+        residual
+    }
+
+    /**
+     * The face field with its rigid plane removed by **three independent projections** — the
+     * reading `C-0154`, `C-0167`, `C-0180`, `C-0208` and `C-0218`'s *standing* column publish.
+     *
+     * It is [dishingCoefficients] **bit for bit** wherever
+     * [HoneycombGrillage.faceRigidModesAreOrthogonal], which is every block this corpus graded
+     * before `T-294`. It is retained rather than deleted because `C-0092`'s rule is that a repair
+     * must leave the defect measurable: at an odd raster-row count this reading reports curvature
+     * on a field that has none, and that is the quantity `CH-0282` is written on.
+     */
+    val independentProjectionDishingCoefficients: F64Array by lazy {
         val residual = coefficients.copy()
         residual -= lattice.pistonMode * meanDeflection
         residual -= lattice.tiltSMode * tiltAlong
@@ -242,10 +273,19 @@ class HoneycombDeflection internal constructor(
     /** The dishing in nm at ([s], [y]). */
     fun dishing(s: Double, y: Double): Double = lattice.evaluate(dishingCoefficients, s, y)
 
+    /** The dishing in nm at ([s], [y]) in the retained three-projection convention. */
+    fun independentProjectionDishing(s: Double, y: Double): Double =
+        lattice.evaluate(independentProjectionDishingCoefficients, s, y)
+
     /** The largest absolute dishing over a [samples] × [samples] grid on the face, in nm. */
     fun peakDishing(samples: Int = 81): Double = lattice.overFaceGrid(samples) { s, y ->
         abs(dishing(s, y))
     }
+
+    /** [peakDishing] in the retained three-projection convention — see
+     * [independentProjectionDishingCoefficients]. */
+    fun independentProjectionPeakDishing(samples: Int = 81): Double =
+        lattice.overFaceGrid(samples) { s, y -> abs(independentProjectionDishing(s, y)) }
 
     /** The total force in pN the polymer foundation carries. */
     val foundationForce: Double by lazy {
@@ -1183,6 +1223,114 @@ class HoneycombGrillage(
     fun areaInnerProduct(a: F64Array, b: F64Array): Double =
         integrateOverFace { s, y -> evaluate(a, s, y) * evaluate(b, s, y) } / area
 
+    // ------------------------------------------------------- the face's rigid basis (`T-330`)
+
+    /** `piston`, `tiltS`, `tiltY` — the face's three rigid modes, in that order. */
+    val faceRigidModes: List<F64Array> by lazy { listOf(pistonMode, tiltSMode, tiltYMode) }
+
+    /**
+     * Whether the face's three rigid modes are mutually **orthogonal**, which is what makes three
+     * independent projections the least-squares fit.
+     *
+     * `⟨piston, tiltS⟩ = ∫s dA` and `⟨tiltS, tiltY⟩ = ∫sy dA` vanish because the axial range is
+     * symmetric. `⟨piston, tiltY⟩ = ∫y dA` is `L_s · rowPitch · Σ beamY` over the face beams —
+     * each tributary being one row pitch centred on its own beam's axis — so it vanishes exactly
+     * when the face's beam positions are **antisymmetric about their own datum**.
+     *
+     * A honeycomb face is **corrugated**: its rooting helices sit at alternating `±d/4` about the
+     * `3d/2` ladder, so the gap sequence is `d, 2d, d, 2d, …`, which is palindromic **iff the
+     * raster-row count `m` is EVEN** — and then `Σ beamY = 0`, where at odd `m` it is exactly
+     * `−(m − 1)d/4`. Every block this corpus graded before `T-294` has `m = 10` (`CH-0282`).
+     *
+     * The test is an **exact** comparison of the geometry's own premise, not a tolerance on a
+     * quadrature — which is what makes the reading at an even `m` bit-identical to the standing
+     * one rather than merely close to it.
+     */
+    val faceRigidModesAreOrthogonal: Boolean by lazy {
+        // The face's rooting helices lie on an INTEGER ladder in units of `d/2`: the row pitch is
+        // `3d/2` and the corrugation is half a bond, so every face `y` is a whole number of half
+        // bonds. Antisymmetry about the datum is therefore an exact statement in integers and
+        // needs no tolerance — where the same test written on the `Double` positions fails at
+        // `m = 4`, because `1.268 - 6.34` and `11.412 - 6.34` are not exact negatives.
+        // The `require` is what keeps this honest if the geometry ever leaves that ladder.
+        val halfBond = bondLength / 2.0
+        val ladder = faceBeams.map {
+            val raw = rawPositions[it].second / halfBond
+            val rungs = raw.roundToLong()
+            require(abs(raw - rungs) < 1e-9) {
+                "face beam $it is not on the half-bond ladder: $raw rungs"
+            }
+            rungs
+        }
+        val span = ladder.first() + ladder.last()
+        ladder.indices.all { ladder[it] + ladder[ladder.size - 1 - it] == span }
+    }
+
+    /**
+     * `G[i][j] = ∫ w_i w_j dA` over the face, in nm⁴ — the Gram of [faceRigidModes].
+     *
+     * A property of the **geometry** and not of a load case, so it is built once per lattice and
+     * an influence bank of several hundred fields pays for it once. There is no solve in it.
+     */
+    val faceRigidGram: List<List<Double>> by lazy {
+        faceRigidModes.map { a -> faceRigidModes.map { b -> areaInnerProduct(a, b) * area } }
+    }
+
+    /**
+     * The largest off-diagonal of [faceRigidGram] relative to the geometric mean of its two
+     * diagonals — `0` for an orthogonal basis, and the size of the defect for one that is not.
+     *
+     * It carries neither the axial span nor the thickness: all three integrals are proportional
+     * to `L_s`, so it is a function of the raster-row count alone.
+     */
+    val worstFaceNonOrthogonality: Double by lazy {
+        (0..2).flatMap { i ->
+            (0..2).mapNotNull { j ->
+                if (i == j) null
+                else abs(faceRigidGram[i][j]) / sqrt(faceRigidGram[i][i] * faceRigidGram[j][j])
+            }
+        }.max()
+    }
+
+    /**
+     * The least-squares rigid plane of [field] as `(piston, tiltS, tiltY)`.
+     *
+     * Where [faceRigidModesAreOrthogonal] this is the three independent projections the class has
+     * always taken, **unchanged and bit for bit** — because a diagonal Gram makes the `3 × 3`
+     * elimination return exactly those three quotients, and the standing reading is then already
+     * the fit. Where it is not, the system is solved.
+     *
+     * **Which inner product the non-orthogonal right-hand side is taken in is a decision.** The
+     * three modes reconstruct identically under both of this class's conventions — [evaluate] and
+     * [faceFunctional]'s owning-beam reconstruction both return exactly `1`, `s` and `y` — so the
+     * Gram is the same object either way and only the right-hand side differs. [dishing] and
+     * [HoneycombDeflection.peakDishing] both sample through [evaluate], so the fit that minimises
+     * the quantity this class **reports** is [areaInnerProduct]'s, and that is the one taken. The
+     * gap to the [faceFunctional] pairing is `CH-0282` §5's separate and far smaller
+     * inconsistency, measured by `T-330` and deliberately not changed here.
+     */
+    fun faceRigidCoefficients(field: F64Array): List<Double> =
+        if (faceRigidModesAreOrthogonal) listOf(
+            pistonDual.dot(field) / area,
+            tiltSDual.dot(field) / tiltSNorm,
+            tiltYDual.dot(field) / tiltYNorm
+        ) else unconditionalFaceRigidCoefficients(field)
+
+    /**
+     * The least-squares rigid plane of [field], solved **whether or not** the basis is orthogonal.
+     *
+     * It is [faceRigidCoefficients] at every lattice whose face basis is not orthogonal, and it is
+     * the object the `CH-0282` §5 residue is measured with where the basis is: there the three
+     * independent projections fit [faceFunctional]'s owning-beam reconstruction of the field and
+     * this fits [evaluate]'s nearest-beam one, and the gap between them is the inconsistency
+     * `CH-0282` records and `T-330` deliberately does not change.
+     */
+    fun unconditionalFaceRigidCoefficients(field: F64Array): List<Double> =
+        solveSymmetricThreeByThree(
+            faceRigidGram,
+            faceRigidModes.map { areaInnerProduct(it, field) * area }
+        )
+
     // ------------------------------------------------------------------ load and solve
 
     internal fun assembleLoad(pressure: PressureField): F64Array {
@@ -1536,5 +1684,27 @@ private fun honeycombHermiteBending(rigidity: Double, length: Double): Array<Dou
 }
 
 /** The root-mean-square of the face dishing of [deflection], in nm. */
+/** A symmetric positive-definite `3 × 3` solve, by elimination with partial pivoting. */
+internal fun solveSymmetricThreeByThree(
+    matrix: List<List<Double>>,
+    rhs: List<Double>
+): List<Double> {
+    require(matrix.size == 3 && matrix.all { it.size == 3 }) { "the matrix must be 3 x 3" }
+    require(rhs.size == 3) { "the right-hand side must carry three entries" }
+    val a = Array(3) { i -> DoubleArray(4) { j -> if (j < 3) matrix[i][j] else rhs[i] } }
+    for (column in 0..2) {
+        var pivot = column
+        for (row in column + 1..2) if (abs(a[row][column]) > abs(a[pivot][column])) pivot = row
+        require(abs(a[pivot][column]) > 0.0) { "the matrix is singular at column $column" }
+        val swap = a[column]; a[column] = a[pivot]; a[pivot] = swap
+        for (row in 0..2) {
+            if (row == column) continue
+            val factor = a[row][column] / a[column][column]
+            for (j in column..3) a[row][j] -= factor * a[column][j]
+        }
+    }
+    return (0..2).map { a[it][3] / a[it][it] }
+}
+
 fun honeycombDishingRms(lattice: HoneycombGrillage, deflection: HoneycombDeflection): Double =
     sqrt(max(0.0, lattice.areaInnerProduct(deflection.dishingCoefficients, deflection.dishingCoefficients)))

@@ -544,6 +544,21 @@ tasks.register<Exec>("testCrossSectionTiedRegradeMutations") {
     commandLine(mutationSnapshotArguments("T-294-mutation-test.py"))
 }
 
+/**
+ * `T-330` — the face's rigid basis, and the parity that decides whether three independent
+ * projections are the least-squares fit at all.
+ *
+ * A Kotlin subject, so it takes a snapshot directory and is deliberately **not** in `:test`:
+ * one mutation is one Gradle `test` run. `P-31`'s census carries it as `BY HAND`.
+ */
+tasks.register<Exec>("testFaceRigidBasisMutations") {
+    group = "verification"
+    description = "Runs tools/T-330-mutation-test.py <snapshot>, the Kotlin mutation test for " +
+        "the face's rigid basis, its exact orthogonality parity and the retained " +
+        "three-projection reading. Needs -PmutationSnapshot=<dir>; not in :test"
+    commandLine(mutationSnapshotArguments("T-330-mutation-test.py"))
+}
+
 tasks.register<Exec>("testSearchedDistributionMutations") {
     group = "verification"
     description = "Runs tools/T-316-mutation-test.py <snapshot>, the Kotlin mutation test for a " +

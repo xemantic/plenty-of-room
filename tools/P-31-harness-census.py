@@ -197,6 +197,14 @@ HARNESSES = (
     # block with an ODD raster-row count made necessary, and `C-0104`'s trap in the surrogate.
     ("T-294-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
      "src/main/kotlin/tile/CrossSectionTiedRegrade.kt", (BY_HAND,)),
+    # `T-330`.  The shared class itself, which `T-294` deliberately did not edit: the face's
+    # rigid basis, the EXACT integer parity the branch is taken on, and the retained
+    # three-projection reading `C-0092` requires stay measurable.  Both constant collapses of the
+    # predicate are mutated, because they fail in opposite directions -- always-true reinstates
+    # `CH-0282` at an odd raster-row count, always-false destroys the bit-identity that makes 15
+    # of 18 result files provably unmoved.
+    ("T-330-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
+     "src/main/kotlin/tile/HoneycombGrillage.kt", (BY_HAND,)),
     # `T-321`.  A Python subject with an INLINE `--self-test`, like `T-313`'s, so the harness runs
     # the subject itself rather than a sibling test file.  Its fixture is a `tools/`-only copy and
     # that is a DECLARATION rather than a convenience: the probe's self-tests read `tools/` and

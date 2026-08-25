@@ -271,35 +271,48 @@ fun crossSectionNormalisation(
 class FaceRigidBasis(private val lattice: HoneycombGrillage) {
 
     /** `piston`, `tiltS`, `tiltY`, in that order. */
-    val modes: List<F64Array> =
-        listOf(lattice.pistonMode, lattice.tiltSMode, lattice.tiltYMode)
+    val modes: List<F64Array> get() = lattice.faceRigidModes
 
-    /** `G[i][j] = ⟨mode_i, mode_j⟩` over the face, in nm². */
-    val gram: List<List<Double>> =
-        modes.map { a -> modes.map { b -> lattice.areaInnerProduct(a, b) } }
+    /** `G[i][j] = ⟨mode_i, mode_j⟩` over the face, in nm² — [HoneycombGrillage.faceRigidGram]
+     * divided by the face area, which is the normalisation this class published. */
+    val gram: List<List<Double>>
+        get() = lattice.faceRigidGram.map { row -> row.map { it / lattice.area } }
 
     /**
      * The largest off-diagonal of [gram] relative to the geometric mean of its two diagonals —
      * `0` for an orthogonal basis, and the size of the defect for one that is not.
+     *
+     * Scale free, so it is [HoneycombGrillage.worstFaceNonOrthogonality] unchanged.
      */
-    val worstNonOrthogonality: Double = (0..2).flatMap { i ->
-        (0..2).mapNotNull { j ->
-            if (i == j) null else abs(gram[i][j]) / sqrt(gram[i][i] * gram[j][j])
-        }
-    }.max()
+    val worstNonOrthogonality: Double get() = lattice.worstFaceNonOrthogonality
 
-    /** Whether the three modes are mutually orthogonal to within `1e-12`. */
-    val modesAreOrthogonal: Boolean = worstNonOrthogonality < 1e-12
+    /**
+     * Whether the three modes are mutually orthogonal.
+     *
+     * `T-330` moved the rule into [HoneycombGrillage], where it is an **exact** statement about
+     * the face's beam positions rather than a `1e-12` tolerance on a quadrature — the two agree
+     * at every lattice this corpus builds, and only the exact one makes the even-`m` reading
+     * bit-identical to the standing one. `CLAUDE.md`: *a duplicated rule is invisible to a
+     * mutation test of either copy*.
+     */
+    val modesAreOrthogonal: Boolean get() = lattice.faceRigidModesAreOrthogonal
 
     /** Whether [other] is the lattice this basis was built on — an identity, not an equality. */
     fun belongsTo(other: HoneycombGrillage): Boolean = other === lattice
 
-    /** [field] with its **least-squares** rigid plane removed, in this inner product. */
+    /**
+     * [field] with its **least-squares** rigid plane removed, in this inner product.
+     *
+     * Deliberately the **unconditional** solve, not [HoneycombGrillage.faceRigidCoefficients]'s
+     * branch: where the basis is orthogonal the class returns the three independent projections
+     * bit for bit, and this object is what measures the gap between the two right-hand-side
+     * conventions there (`CH-0282` §5). At a non-orthogonal basis the two are the same call and
+     * therefore bit-identical, which is asserted rather than argued.
+     */
     fun dishingOf(field: HoneycombDeflection): CorrectedFaceDishing {
-        val rhs = modes.map { lattice.areaInnerProduct(it, field.coefficients) }
-        val c = solveSymmetricThreeByThree(gram, rhs)
+        val c = lattice.unconditionalFaceRigidCoefficients(field.coefficients)
         val residual = field.coefficients.copy()
-        for (i in 0..2) residual -= modes[i] * c[i]
+        lattice.faceRigidModes.forEachIndexed { index, mode -> residual -= mode * c[index] }
         return CorrectedFaceDishing(lattice, field, residual, c)
     }
 }
@@ -334,28 +347,6 @@ class CorrectedFaceDishing internal constructor(
         }
         return peak
     }
-}
-
-/** A symmetric positive-definite `3 × 3` solve, by elimination with partial pivoting. */
-internal fun solveSymmetricThreeByThree(
-    matrix: List<List<Double>>,
-    rhs: List<Double>
-): List<Double> {
-    require(matrix.size == 3 && matrix.all { it.size == 3 }) { "the matrix must be 3 x 3" }
-    require(rhs.size == 3) { "the right-hand side must carry three entries" }
-    val a = Array(3) { i -> DoubleArray(4) { j -> if (j < 3) matrix[i][j] else rhs[i] } }
-    for (column in 0..2) {
-        var pivot = column
-        for (row in column + 1..2) if (abs(a[row][column]) > abs(a[pivot][column])) pivot = row
-        require(abs(a[pivot][column]) > 0.0) { "the matrix is singular at column $column" }
-        val swap = a[column]; a[column] = a[pivot]; a[pivot] = swap
-        for (row in 0..2) {
-            if (row == column) continue
-            val factor = a[row][column] / a[column][column]
-            for (j in column..3) a[row][j] -= factor * a[column][j]
-        }
-    }
-    return (0..2).map { a[it][3] / a[it][it] }
 }
 
 /** The two dishing conventions over one lattice and one grid, out of **one** set of solves. */
@@ -402,7 +393,8 @@ fun crossSectionSurrogates(
         standing = build { field ->
             object : DishingSolution {
                 override fun deflectionAt(x: Double, y: Double) = field.deflection(x, y)
-                override fun dishingAt(x: Double, y: Double) = field.dishing(x, y)
+                override fun dishingAt(x: Double, y: Double) =
+                    field.independentProjectionDishing(x, y)
             }
         },
         corrected = build { basis.dishingOf(it) }
