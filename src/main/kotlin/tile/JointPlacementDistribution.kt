@@ -442,13 +442,91 @@ class HoneycombStationBank(
 // ------------------------------------------------------------------------------ the search
 
 /**
+ * [value] at the precision a **search decision** is taken at — six significant digits.
+ *
+ * `C-0135` and `C-0177` record that a descent takes `O(10³)` `Double` comparisons, that one ulp
+ * of jitter in a hot reduction flips one of them, and that the cure is to decide **coarser** than
+ * the number is emitted at. `CLAUDE.md` adds the half nobody applies: *a cure is a property of a
+ * CALL SITE, not of a repository — grep for the call sites, not for the fix.* `T-323` wrote
+ * fourteen selection sites and routed **five** of them through this rule, and `F23` duly fired
+ * (`C-0216` §14); `T-328` routes the rest, and every one of them goes through **this** function,
+ * [decidesBetter], [byDecisionThenLabel] or [decisionArgmin], so a mutation of the rule is
+ * visible from every site rather than from one copy of it.
+ *
+ * It is **idempotent**, which is what makes routing an objective that is already rounded — the
+ * two sites consuming `T-316`'s `percentileObjective` — provably inert rather than a second
+ * rounding.
+ */
+fun searchDecisionKey(value: Double): Double = searchDecision(value)
+
+/**
+ * Whether [candidate] is strictly better than [incumbent] **at the decision precision**.
+ *
+ * The discriminating case is a candidate better by *less* than six significant digits: rounded it
+ * ties and cannot move the incumbent. A rank is this same decision read as a **count**, which is
+ * why `determinedRankFromBest` and `jointWinnerRankInThisScreen` call it rather than writing
+ * a raw `<`.
+ */
+fun decidesBetter(candidate: Double, incumbent: Double): Boolean =
+    searchDecisionKey(candidate) < searchDecisionKey(incumbent)
+
+/**
+ * Orders candidates by [key] at the decision precision, breaking ties on [label].
+ *
+ * The tie-break is a property of the **family** and not of a traversal, so the answer does not
+ * depend on the order the candidates were visited in — which is strictly stronger than *the
+ * earlier candidate wins*, and agrees with it wherever the labels are in enumeration order, as
+ * every label in this study is.
+ */
+fun <T> byDecisionThenLabel(label: (T) -> String, key: (T) -> Double): Comparator<T> =
+    compareBy({ searchDecisionKey(key(it)) }, { label(it) })
+
+/**
+ * The best of [candidates] under [byDecisionThenLabel], evaluating [key] **exactly once** per
+ * candidate.
+ *
+ * The once-per-candidate contract is not a nicety: two of the sites this replaces have a whole
+ * dropout ensemble behind their key, so a `sortedWith` would pay `O(n log n)` solves where an
+ * argmin pays `n`.
+ */
+fun <T> decisionArgmin(candidates: List<T>, label: (T) -> String, key: (T) -> Double): T {
+    require(candidates.isNotEmpty()) { "an argmin needs at least one candidate" }
+    val keys = DoubleArray(candidates.size) { searchDecisionKey(key(candidates[it])) }
+    var best = 0
+    for (index in 1 until candidates.size) {
+        val better = keys[index] < keys[best] ||
+                (keys[index] == keys[best] &&
+                        label(candidates[index]) < label(candidates[best]))
+        if (better) best = index
+    }
+    return candidates[best]
+}
+
+/**
+ * Whether a numerical identity whose true value is **zero** holds to [tolerance].
+ *
+ * `CLAUDE.md`: *a quantity that is nothing but ulp noise must be emitted as a THRESHOLD, never as
+ * a value — rounding cannot save it*, because one such field makes a whole result file
+ * permanently un-diffable, which is the check the rounding layer exists to enable. `T-323`
+ * emitted two such residuals as numbers (`9.6E-16` against `3.8E-16`, `2.0E-14` against
+ * `3.9E-14` between two runs of identical code) and `C-0216` §14(b) queued this as `T-329`.
+ *
+ * A non-finite residual is **not** a residual that holds: `abs(NaN) < tolerance` is `false`, and
+ * that is the direction a report must fail in.
+ */
+fun identityHolds(residual: Double, tolerance: Double): Boolean {
+    require(tolerance > 0.0 && tolerance.isFinite()) {
+        "a tolerance must be positive and finite, was: $tolerance"
+    }
+    return abs(residual) < tolerance
+}
+
+/**
  * Whether a candidate beats an incumbent, at the **decision** precision and with a tie-break that
  * is a property of the family rather than of a traversal.
  *
- * `C-0135` and `C-0177` record that a descent takes `O(10³)` `Double` comparisons and that one
- * ulp of jitter in a hot reduction flips one of them, moving the iteration into a neighbouring
- * basin; [searchDecision] quantises at six significant digits, and at a tie the **smaller key**
- * wins, so the answer does not depend on the order the candidates were visited in.
+ * One rule, one implementation: the comparison is [decidesBetter] and the tie-break the label, so
+ * a mutation of either is invisible to neither.
  */
 fun jointPlacementBetter(
     candidateValue: Double,
@@ -456,10 +534,8 @@ fun jointPlacementBetter(
     bestValue: Double,
     bestLabel: String
 ): Boolean {
-    val candidate = searchDecision(candidateValue)
-    val best = searchDecision(bestValue)
-    if (candidate < best) return true
-    if (candidate > best) return false
+    if (decidesBetter(candidateValue, bestValue)) return true
+    if (decidesBetter(bestValue, candidateValue)) return false
     return candidateLabel < bestLabel
 }
 

@@ -183,9 +183,20 @@ HARNESSES = (
     # that the placement family is the PRODUCT of its row option sets and enumerates in the order
     # its tie-break is written on, that the bank SLICE is the placement it names, that every
     # search decision is taken at six significant digits with a key tie-break, and that the
-    # 2 x 2's two orderings are the two orderings they are labelled as.
+    # 2 x 2's two orderings are the two orderings they are labelled as.  `T-328`/`T-329`
+    # (`C-0217`) re-anchored two rows onto the ONE function the decision rule now lives in and
+    # added nine, six for the comparator and the argmin every selection site now calls and three
+    # for the identity report that replaced two printable ulp residuals.
     ("T-323-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
      "src/main/kotlin/tile/JointPlacementDistribution.kt", (BY_HAND,)),
+    # `T-294`.  One subject and no shared source: the task edits none, and the per-bond link its
+    # resolved arm is graded at is `T-310`'s subject and is mutation-tested there.  What these
+    # rows hold open is the FOUR censuses that do not transfer between the two 60-helix
+    # cross-sections -- the bond split, the tie split, the enhancement's two silent argument
+    # mistakes and the normalising stroke -- plus the least-squares face basis that the first
+    # block with an ODD raster-row count made necessary, and `C-0104`'s trap in the surrogate.
+    ("T-294-mutation-test.py", "TEXT-ANCHOR", "id_file_old_new_what",
+     "src/main/kotlin/tile/CrossSectionTiedRegrade.kt", (BY_HAND,)),
     # `T-321`.  A Python subject with an INLINE `--self-test`, like `T-313`'s, so the harness runs
     # the subject itself rather than a sibling test file.  Its fixture is a `tools/`-only copy and
     # that is a DECLARATION rather than a convenience: the probe's self-tests read `tools/` and

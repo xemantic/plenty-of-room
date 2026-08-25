@@ -88,6 +88,15 @@ private const val T323_REFINEMENTS: Int = 6
 
 private const val T323_TOLERANCE: Double = 0.10
 
+/**
+ * `F9`'s declared tolerance: the relative departure at which the **bank slice** identity is
+ * asserted. `T-329` — the residual itself has true value zero and is not emitted.
+ */
+private const val T323_SLICE_TOLERANCE: Double = 1e-10
+
+/** `F10`'s declared tolerance, for the surrogate against the **assembled** solve. */
+private const val T323_ASSEMBLED_TOLERANCE: Double = 1e-9
+
 private const val T323_RIM_STANDOFF: Double = 1.0
 
 private const val T323_RIM_BAND: Double = 6.7
@@ -344,6 +353,25 @@ private class T323Reproduction(
     val source: String
 )
 
+/**
+ * A numerical identity whose true value is **zero**, reported as `T-329` requires: the tolerance
+ * it is asserted at and whether it holds, and **not** its residual.
+ *
+ * `CLAUDE.md`: *a quantity that is nothing but ulp noise must be emitted as a THRESHOLD, never as
+ * a value — rounding cannot save it.* `T-323`'s first two emissions differed in exactly these two
+ * quantities (`9.6E-16` against `3.8E-16`, `2.0E-14` against `3.9E-14`) and in nothing else those
+ * two sentences carried, which is one field making a whole file un-diffable (`C-0216` §14(b)).
+ * The field names follow `T-267`'s own `identities` block rather than coining new ones.
+ */
+@Serializable
+private class T323Identity(
+    val what: String,
+    val quantity: String,
+    val tolerance: Double,
+    val holds: Boolean,
+    val note: String
+)
+
 @Serializable
 private class T323Falsifier(
     val id: String,
@@ -385,6 +413,7 @@ private class T323Result(
     val paired: List<T323PairedRow>,
     val verdict: Map<String, String>,
     val convergence: List<T323Convergence>,
+    val identities: List<T323Identity>,
     val reproductions: List<T323Reproduction>,
     val falsifiers: List<T323Falsifier>,
     val dropped: List<T323DroppedRow>,
@@ -709,6 +738,7 @@ fun main() {
     val fragilityRows = ArrayList<T323FragilityRow>()
     val pairedRows = ArrayList<T323PairedRow>()
     val convergence = ArrayList<T323Convergence>()
+    val identities = ArrayList<T323Identity>()
     val reproductions = ArrayList<T323Reproduction>()
     val dropped = ArrayList<T323DroppedRow>()
 
@@ -954,7 +984,8 @@ fun main() {
                 worstScreeningP90 = sorted.last(),
                 spread = sorted.last() / sorted.first(),
                 determinedScreeningP90 = determinedValue,
-                determinedRankFromBest = allValues[rule].count { it < determinedValue } + 1,
+                determinedRankFromBest =
+                    allValues[rule].count { decidesBetter(it, determinedValue) } + 1,
                 bestPlacementLabel = bestPerRule[rule]!!.label
             )
         }
@@ -962,7 +993,7 @@ fun main() {
         // ---- tier 2: the coarse joint search on the union of the screens' top K
         val topPerScreen = ruleNames.indices.map { rule ->
             allValues[rule].indices.sortedWith(
-                compareBy({ allValues[rule][it] }, { labels[it] })
+                byDecisionThenLabel({ labels[it] }, { allValues[rule][it] })
             ).take(t323TopPerScreen)
         }
         val tierTwoIndices = (topPerScreen.flatten() + determinedIndex).distinct().sorted()
@@ -985,7 +1016,7 @@ fun main() {
 
         // ---- tier 3: the finalists, at the full composition, graded out of sample
         val finalistSlots = (coarse.indices.sortedWith(
-            compareBy({ coarse[it].trainingObjective }, { tierTwo[it].label })
+            byDecisionThenLabel({ tierTwo[it].label }, { coarse[it].trainingObjective })
         ).take(t323Finalists) + tierTwo.indexOfFirst { it.label == determinedMember.label })
             .distinct()
         println("T-323 - tier 3, " + finalistSlots.size + " finalists, " + elapsedSeconds() + " s")
@@ -1010,9 +1041,11 @@ fun main() {
             )
         }
         // The joint corner is selected on the TRAINING objective and graded on the OTHER stream.
-        val jointSlot = finalists.indices.sortedWith(
-            compareBy({ finalists[it].second.trainingObjective }, { finalists[it].first.label })
-        ).first()
+        val jointSlot = decisionArgmin(
+            finalists.indices.toList(),
+            { finalists[it].first.label },
+            { finalists[it].second.trainingObjective }
+        )
         val jointPlacement = finalists[jointSlot].first
         val jointSearched = finalists[jointSlot].second
         val fixedSearched = finalists.first { it.first.label == determinedMember.label }.second
@@ -1023,9 +1056,9 @@ fun main() {
         val determinedRules = t323Distributions(
             determinedMember.grid, shared.edgeX, shared.edgeY
         )
-        val determinedTransferred = determinedRules.minByOrNull {
+        val determinedTransferred = decisionArgmin(determinedRules, { it.first }) {
             t323P90(determinedSurrogate, it.second, stroke, determinedGrading)
-        }!!
+        }
         val jointSurrogate = banks.grading.surrogateFor(jointPlacement.bankIndices)
         val jointGrading = gradingFor(jointPlacement)
         // The SELECTION GAP: the finalists carry both their training and their grading objective,
@@ -1036,9 +1069,11 @@ fun main() {
                 stroke, gradingFor(placement)
             ).p90
         }
-        val gradingArgmin = finalistGrading.indices.sortedWith(
-            compareBy({ finalistGrading[it] }, { finalists[it].first.label })
-        ).first()
+        val gradingArgmin = decisionArgmin(
+            finalistGrading.indices.toList(),
+            { finalists[it].first.label },
+            { finalistGrading[it] }
+        )
         val rankInversion = gradingArgmin != jointSlot
 
         // (P1, D0): the placement searched with the distribution held at a transferred rule.
@@ -1062,11 +1097,14 @@ fun main() {
                 }
         }
         val bestPerRuleOnTraining = ruleNames.indices.map { rule ->
-            transferredOnTierTwo.filter { it.rule == rule }
-                .sortedWith(compareBy({ it.trainingP90 }, { it.placement.label })).first()
+            decisionArgmin(
+                transferredOnTierTwo.filter { it.rule == rule },
+                { it.placement.label }, { it.trainingP90 }
+            )
         }
-        val bestTransferredCandidate = transferredOnTierTwo
-            .sortedWith(compareBy({ it.trainingP90 }, { it.placement.label }, { it.rule })).first()
+        val bestTransferredCandidate = decisionArgmin(
+            transferredOnTierTwo, { it.placement.label + "|" + it.rule }, { it.trainingP90 }
+        )
         val bestSearchedPlacement = bestTransferredCandidate.placement
         val bestSearchedPlacementRule = bestTransferredCandidate.label
         // The determined member is IN the tier-2 set, so this is what the composition guarantees
@@ -1237,13 +1275,14 @@ fun main() {
         val tierTwoSearched = coarse.map { it.trainingObjective }
         val bestTierTwo = tierTwoSearched.min()
         val jointRankIn = ruleNames.indices.map { rule ->
-            allValues[rule].count { it < allValues[rule][labels.indexOf(jointPlacement.label)] } + 1
+            val jointValue = allValues[rule][labels.indexOf(jointPlacement.label)]
+            allValues[rule].count { decidesBetter(it, jointValue) } + 1
         }
         val armScreens = ruleNames.indices.map { rule ->
             val screenValues = tierTwoIndices.map { allValues[rule][it] }
-            val screenArgmin = tierTwo[screenValues.indices.sortedWith(
-                compareBy({ screenValues[it] }, { tierTwo[it].label })
-            ).first()]
+            val screenArgmin = tierTwo[decisionArgmin(
+                screenValues.indices.toList(), { tierTwo[it].label }, { screenValues[it] }
+            )]
             val screenArgminSearched = tierTwoSearched[tierTwo.indexOfFirst {
                 it.label == screenArgmin.label
             }]
@@ -1253,9 +1292,10 @@ fun main() {
                 searchedSetSize = tierTwo.size,
                 spearmanAgainstSearched = spearmanRankCorrelation(screenValues, tierTwoSearched),
                 screenArgminIsSearchedArgmin = screenArgmin.label == tierTwo[
-                    tierTwoSearched.indices.sortedWith(
-                        compareBy({ tierTwoSearched[it] }, { tierTwo[it].label })
-                    ).first()
+                    decisionArgmin(
+                        tierTwoSearched.indices.toList(),
+                        { tierTwo[it].label }, { tierTwoSearched[it] }
+                    )
                 ].label,
                 regretOfSelectingOnThisScreen = screenArgminSearched / bestTierTwo,
                 jointWinnerRankInThisScreen = jointRankIn[rule],
@@ -1292,18 +1332,19 @@ fun main() {
             floors.indices.forEach { floors[it] = floors[it] / stroke }
             orderStatistic(floors, 0.90)
         }
-        val floorArgmin = tierTwo[floorOnTierTwo.indices.sortedWith(
-            compareBy({ floorOnTierTwo[it] }, { tierTwo[it].label })
-        ).first()]
+        val floorArgmin = tierTwo[decisionArgmin(
+            floorOnTierTwo.indices.toList(), { tierTwo[it].label }, { floorOnTierTwo[it] }
+        )]
         val armScreensWithFloor = armScreens + T323ScreenRow(
             screen = "the oracle floor (distribution-free)",
             placementsRanked = sampleIndices.size.toLong(),
             searchedSetSize = tierTwo.size,
             spearmanAgainstSearched = spearmanRankCorrelation(floorOnTierTwo, tierTwoSearched),
             screenArgminIsSearchedArgmin = floorArgmin.label == tierTwo[
-                tierTwoSearched.indices.sortedWith(
-                    compareBy({ tierTwoSearched[it] }, { tierTwo[it].label })
-                ).first()
+                decisionArgmin(
+                    tierTwoSearched.indices.toList(),
+                    { tierTwo[it].label }, { tierTwoSearched[it] }
+                )
             ].label,
             regretOfSelectingOnThisScreen =
                 tierTwoSearched[tierTwo.indexOfFirst { it.label == floorArgmin.label }] /
@@ -1514,9 +1555,9 @@ fun main() {
                 columnDetermined, t323PlacementDescentSweeps, starts, screenObjective(rule)
             ) to rule
         }
-        val chosen = bestByRule.minByOrNull { (placement, rule) ->
-            screenObjective(rule)(placement)
-        }!!
+        val chosen = decisionArgmin(
+            bestByRule, { (placement, rule) -> placement.label + "|" + rule }
+        ) { (placement, rule) -> screenObjective(rule)(placement) }
         censusRows += T323CensusRow(
             columns = columns,
             pathCount = columnFamily.pathCount,
@@ -1556,9 +1597,9 @@ fun main() {
                 smoothingIterations = T323_SMOOTHING_ITERATIONS, polishSweeps = T323_POLISH_SWEEPS
             )
             val surrogate = columnGradingBank.surrogateFor(placement.bankIndices)
-            val transferredBest = rules.minByOrNull {
+            val transferredBest = decisionArgmin(rules, { it.first }) {
                 t323P90(surrogate, it.second, stroke, grading)
-            }!!
+            }
             if (label.startsWith("P0 D1")) {
                 cornerRows += cornerOf(
                     "P0 D0 -- both fixed", "FIXED (C-0167's determined lattice on the rooting " +
@@ -1729,13 +1770,14 @@ fun main() {
             stroke, ensemble
         )
     }
-    val topAtEighty = coarseTopSet.sortedWith(compareBy({ it.second }, { it.first }))
+    val topAtEighty = coarseTopSet
+        .sortedWith(byDecisionThenLabel({ it.first }, { it.second }))
         .take(t323TopPerScreen).map { it.first }.toSet()
     // The 40-realisation ranking is the census tier 1a already took; it is not re-solved.
     val topAtForty = primary.screeningLabels.zip(primary.screeningEqualValues)
-        .sortedWith(compareBy({ it.second }, { it.first }))
+        .sortedWith(byDecisionThenLabel({ it.first }, { it.second }))
         .take(t323TopPerScreen).map { it.first }.toSet()
-    val bestAtEighty = coarseTopSet.minWithOrNull(compareBy({ it.second }, { it.first }))!!
+    val bestAtEighty = decisionArgmin(coarseTopSet, { it.first }, { it.second })
     convergence += T323Convergence(
         axis = "the SCREENING realisations the exhaustive census ranks on, " +
                 t323ScreeningRealisations + " against " + t323ScreeningConvergenceRealisations,
@@ -1810,17 +1852,36 @@ fun main() {
     val sliceDeparture = abs(
         aloneSurrogate.solve(primary.jointStiffnesses).peakDishing - jointResponse.peakDishing
     ) / abs(jointResponse.peakDishing)
+    // T-329: both residuals are quantities whose true value is ZERO, so every digit of them is
+    // machine noise and neither is printable. What is emitted is the tolerance each identity is
+    // asserted at and whether it holds -- which is what F9 and F10 are declared on anyway.
+    val sliceIdentityHolds = identityHolds(sliceDeparture, T323_SLICE_TOLERANCE)
+    val assembledIdentityHolds = identityHolds(assembledDeparture, T323_ASSEMBLED_TOLERANCE)
     // The searched p90 against the oracle floor, which is a pointwise theorem.
     val floorViolations = if (primary.corners[3].p90OverStroke < primary.oracleP90Floor) 1 else 0
 
-    convergence += T323Convergence(
-        axis = "the BANK SLICE against a surrogate built on the joint placement alone",
-        quantity = "the zero-defect peak dishing of the searched distribution",
-        cell = primary.split.cell,
-        coarse = jointResponse.peakDishing, fine = jointResponse.peakDishing * (1.0 + sliceDeparture),
-        departure = sliceDeparture, verdictMoves = false,
+    identities += T323Identity(
+        what = "the BANK SLICE against a surrogate built on the joint placement alone (F9)",
+        quantity = "the zero-defect peak dishing of the searched distribution at the joint " +
+                "placement, in nm",
+        tolerance = T323_SLICE_TOLERANCE,
+        holds = sliceIdentityHolds,
         note = "the identity the whole method rests on: a placement is a SLICE of the bank's " +
-                "index set, so 7 776 evaluations are evaluations of the placements they name"
+                "index set, so 7 776 evaluations are evaluations of the placements they name. " +
+                "This was a convergence row until T-329: coarse and fine are ONE number by " +
+                "construction and its `fine` was synthesised from the residual, so the row was " +
+                "an identity wearing an axis's clothes. The residual's true value is ZERO and " +
+                "it is therefore not emitted"
+    )
+    identities += T323Identity(
+        what = "the surrogate at full presence against the ASSEMBLED solve, with its own " +
+                "Woodbury support forces applied as point loads (F10)",
+        quantity = "the peak dishing of the searched distribution at the joint placement",
+        tolerance = T323_ASSEMBLED_TOLERANCE,
+        holds = assembledIdentityHolds,
+        note = "taken on the SEARCHED distribution rather than on a transferred rule, because " +
+                "that is the object every corner of the 2 x 2 is graded on. The residual's true " +
+                "value is ZERO and it is therefore not emitted (T-329)"
     )
 
     // ================ P8 -- the second composite fraction, if the measured rate admits it
@@ -1989,15 +2050,22 @@ fun main() {
         ),
         T323Falsifier(
             "F9", "the BANK SLICE differs from a surrogate built on that placement alone by " +
-                    "more than 1e-10 relative", false, sliceDeparture > 1e-10,
-            "departure " + sliceDeparture.emittedDimensionless(2)
+                    "more than " + T323_SLICE_TOLERANCE.emittedDimensionless(2) + " relative",
+            false, !sliceIdentityHolds,
+            "the identity HOLDS to " + T323_SLICE_TOLERANCE.emittedDimensionless(2) +
+                    "; its residual is a quantity whose true value is ZERO, so it is reported " +
+                    "as a threshold and a boolean and not as a value (T-329), and the record " +
+                    "is identities[0]"
         ),
         T323Falsifier(
             "F10", "the surrogate at full presence does not reproduce the ASSEMBLED solve with " +
-                    "its own Woodbury support forces, at 1e-9 relative", false,
-            assembledDeparture > 1e-9,
-            "departure " + assembledDeparture.emittedDimensionless(2) +
-                    ", taken on the SEARCHED distribution at the joint placement"
+                    "its own Woodbury support forces, at " +
+                    T323_ASSEMBLED_TOLERANCE.emittedDimensionless(2) + " relative", false,
+            !assembledIdentityHolds,
+            "the identity HOLDS to " + T323_ASSEMBLED_TOLERANCE.emittedDimensionless(2) +
+                    ", taken on the SEARCHED distribution at the joint placement; its residual " +
+                    "is a quantity whose true value is ZERO and is reported as a threshold and " +
+                    "a boolean (T-329), and the record is identities[1]"
         ),
         T323Falsifier(
             "F11", "the transferred rules and the searched distributions at C-0167's four " +
@@ -2108,9 +2176,15 @@ fun main() {
         T323Falsifier(
             "F23", "two independent runs of the study do not produce a byte-identical result file",
             false, false,
-            "discharged by a second emission in a separate snapshot, diffed against the " +
-                    "artifact; every search decision goes through searchDecision at six " +
-                    "significant digits and no field of this file counts a step or a second"
+            "a run cannot assert byte-identity about itself, so this is measured EXTERNALLY, by " +
+                    "two emissions in two snapshots diffed outside the study. It FIRED at the " +
+                    "first emission (C-0216 section 14, 26 of 1 252 leaves) because the " +
+                    "sentence beside it was an assertion and not a property: five of this " +
+                    "study's nineteen selection sites decided at searchDecision's six " +
+                    "significant digits and fourteen compared a raw Double. T-328 routes every " +
+                    "one of them through decidesBetter, byDecisionThenLabel or decisionArgmin, " +
+                    "and T-329 stops the two identity residuals being printable; C-0217 " +
+                    "reports the re-emission and its diff"
         )
     )
 
@@ -2278,7 +2352,13 @@ fun main() {
                 family.size + " of them. Quote the count as the result and the placement as an " +
                 "identification.",
         "One load case (C-0022's solved collar at 2 mM, 10 nm, 0.192 V), one cross-section, one " +
-                "raster, one dropout model, one composite fraction unless P8 ran."
+                "raster, one dropout model, one composite fraction unless P8 ran.",
+        "EVERY SEARCH DECISION IN THIS STUDY IS TAKEN AT SIX SIGNIFICANT DIGITS, ties broken on " +
+                "the candidate's own label (T-328, C-0217), and the two identities are reported " +
+                "as a tolerance and a boolean rather than as residuals whose true value is zero " +
+                "(T-329). What that does NOT stabilise is C-0135's descent MANIFOLD: where the " +
+                "active constraints are fewer than the free directions the optimal set is a " +
+                "manifold and rounding fixes which BRANCH is taken, not the POINT."
     )
 
     val openQuestions = listOf(
@@ -2424,6 +2504,7 @@ fun main() {
         paired = pairedRows,
         verdict = verdict,
         convergence = convergence,
+        identities = identities,
         reproductions = reproductions,
         falsifiers = falsifiers,
         dropped = dropped,

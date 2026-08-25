@@ -1,4 +1,4 @@
-# C-0216 — **THE PLACEMENT AND THE DISTRIBUTION SEARCHED TOGETHER REACH `0.0677344328` WHERE NEITHER SEARCH ALONE REACHES IT — AND `C-0063`'s ORDERING **REVERSES** ON THIS LATTICE, AT `0.009241` AGAINST `0.3046` IN LOG UNITS.** The corpus carried a claim about these two variables' ordering (*"which stations a coupling enters at is worth more than how its stiffness is distributed"*) and no measurement of their **interaction**. Measured, the 2 × 2 is `−0.452630313` log units in **total**, a factor of **`1.57244277`**, and the interaction is **`−0.1388`, `−12.96 %`, NEGATIVE — the two freedoms are SYNERGISTIC**, so each is worth *more* when the other is free and the declared expectation (substitutive) is **wrong**. The split is order-dependent exactly as `CLAUDE.md` says: placement first is `−0.009241` then `−0.4434`, distribution first is `−0.3046` then `−0.1481`, the totals agree identically and the gap **is** the interaction, at a path disagreement below `1e−12`. **The same 2 × 2 is also taken IN SAMPLE**, where no corner carries a selection — `−7.845 %` — so the selection is separable from the interaction by measurement rather than by caveat. **The cheap bound decided the whole method and needed no solve**: the determined ladder carries **55** stations, `5, 6, 5, 6, 5, 6, 5, 6, 5, 6` by row, so at five columns the five-station rows are **forced** and the family is `6⁵ = 7 776` — **exhaustible**, which removes `C-0102`'s *a descent compared against an exhaustive enumeration is not a comparison* at the deciding cell — and it admits **NO centro-symmetric member** at any of its five row pairs, so `C-0063`'s own search strategy has no analogue here. **`CLAUDE.md`'s inherited warning is now measured and it is sharper than it was stated**: the **equal-spring** ranking of placements is *anti*-correlated with what a searched distribution wants (Spearman **`−0.09354`** and **`−0.4451`**) while the **rim-graded** ranking is mildly informative (`+0.4924`, `+0.626`). **`F1`, `F4`, `F5`, `F6`, `F12`, `F15`, `F16`, `F20` and `F23` fired**; `F2`, `F3`, `F14`, `F17`, `F18`, `F19` and `F21` were declared open and did not. **`F23` was declared CLOSED and fired**: two runs move **26 of 1 252** leaves, all of them an argmin or a rendering of one, **0 verdicts and 0 unclassified** — and the cause is `C-0135`'s cure reaching **2 of this study's 14** selection sites, which is published rather than repaired away (§14)
+# C-0216 — **THE PLACEMENT AND THE DISTRIBUTION SEARCHED TOGETHER REACH `0.0677344328` WHERE NEITHER SEARCH ALONE REACHES IT — AND `C-0063`'s ORDERING **REVERSES** ON THIS LATTICE, AT `0.009241` AGAINST `0.3046` IN LOG UNITS.** The corpus carried a claim about these two variables' ordering (*"which stations a coupling enters at is worth more than how its stiffness is distributed"*) and no measurement of their **interaction**. Measured, the 2 × 2 is `−0.452630313` log units in **total**, a factor of **`1.57244277`**, and the interaction is **`−0.1388`, `−12.96 %`, NEGATIVE — the two freedoms are SYNERGISTIC**, so each is worth *more* when the other is free and the declared expectation (substitutive) is **wrong**. The split is order-dependent exactly as `CLAUDE.md` says: placement first is `−0.009241` then `−0.4434`, distribution first is `−0.3046` then `−0.1481`, the totals agree identically and the gap **is** the interaction, at a path disagreement below `1e−12`. **The same 2 × 2 is also taken IN SAMPLE**, where no corner carries a selection — `−7.845 %` — so the selection is separable from the interaction by measurement rather than by caveat. **The cheap bound decided the whole method and needed no solve**: the determined ladder carries **55** stations, `5, 6, 5, 6, 5, 6, 5, 6, 5, 6` by row, so at five columns the five-station rows are **forced** and the family is `6⁵ = 7 776` — **exhaustible**, which removes `C-0102`'s *a descent compared against an exhaustive enumeration is not a comparison* at the deciding cell — and it admits **NO centro-symmetric member** at any of its five row pairs, so `C-0063`'s own search strategy has no analogue here. **`CLAUDE.md`'s inherited warning is now measured and it is sharper than it was stated**: the **equal-spring** ranking of placements is *anti*-correlated with what a searched distribution wants (Spearman **`−0.09354`** and ~~**`−0.4451`**~~ **`−0.438018191`**) while the **rim-graded** ranking is mildly informative (`+0.4924`, `+0.626`) — and §4's amendment records that two of these six readings are a **manifold** rather than a value, with the verdict invariant across it. **`F1`, `F4`, `F5`, `F6`, `F12`, `F15`, `F16`, `F20` and `F23` fired**; `F2`, `F3`, `F14`, `F17`, `F18`, `F19` and `F21` were declared open and did not. **`F23` was declared CLOSED and fired**: two runs move **26 of 1 252** leaves, all of them an argmin or a rendering of one, **0 verdicts and 0 unclassified** — and the cause is `C-0135`'s cure reaching **2 of this study's 14** selection sites, which is published rather than repaired away (§14)
 
 | | |
 |---|---|
@@ -6,7 +6,7 @@
 | **Leaf** | **`A8.2`** |
 | **Verification type** | **in-silico** (the same honeycomb grillage, the same `C-0208` per-bond link, the same mandate, the same 4 000-realisation grading stream — the placement and the distribution both move) **+ logical** (the placement family's size is a product and its centro-symmetry a set intersection, both before any solve; the 2 × 2's two orderings share their endpoints, so their totals agree identically and their splits differ by exactly the interaction) |
 | **Maturity** | **TRL 1–3. Model-consistent and traceable. NOT empirically demonstrated.** One lattice, one raster, one load case, one dropout model, at a radial link constant `C-0208` records as unsourceable |
-| **Provenance** | [`gpd/results/T-323-the-placement-and-the-distribution-together.json`](../results/T-323-the-placement-and-the-distribution-together.json) — the **second** of two emissions, both retained ([`gpd/data/T-323-reproducibility/`](../data/T-323-reproducibility/README.md)), because `F23` **fired** and the measurement is external to either run (§14), written by [`tile/JointPlacementDistributionStudy.kt`](../../src/main/kotlin/tile/JointPlacementDistributionStudy.kt) (**new**) on [`tile/JointPlacementDistribution.kt`](../../src/main/kotlin/tile/JointPlacementDistribution.kt) (**new**). **29 named tests** written first and watched fail — [`tile/JointPlacementDistributionTest.kt`](../../src/test/kotlin/tile/JointPlacementDistributionTest.kt), which did not compile against a model that did not exist — and a **25-mutation** harness at [`tools/T-323-mutation-test.py`](../../tools/T-323-mutation-test.py), **0 survivors over a subtracted baseline of 0** (`CH-0237`), declared in `tools/P-31-harness-census.py` and wired as `testJointPlacementDistributionMutations` in the same commit. **No existing Kotlin main source was modified** except one hand-added line of `structure/ResultInputs.kt`. `tile/HoneycombGrillage.kt`, `tile/SearchedDistribution.kt` and `coupling/RobustDistribution.kt` were **not touched**, and `coupling/CountPhaseInteraction.kt`'s `countPhaseSplit` is **reused unchanged** |
+| **Provenance** | ~~[`gpd/results/T-323-the-placement-and-the-distribution-together.json`](../results/T-323-the-placement-and-the-distribution-together.json) — the **second** of two emissions, both retained ([`gpd/data/T-323-reproducibility/`](../data/T-323-reproducibility/README.md)), because `F23` **fired** and the measurement is external to either run (§14),~~ **AMENDED, iteration 51** ([`C-0217`](C-0217-the-cure-at-every-call-site.md)): this claim was filed against the **second** of two emissions and that file is retained verbatim as [`gpd/data/T-323-reproducibility/run-b.json`](../data/T-323-reproducibility/run-b.json); `gpd/results/T-323-the-placement-and-the-distribution-together.json` now carries the **fourth**, emitted after `T-328` and `T-329`. **Every number this claim states is unchanged between the two except where struck below**, and the four emissions are all retained. Written by written by [`tile/JointPlacementDistributionStudy.kt`](../../src/main/kotlin/tile/JointPlacementDistributionStudy.kt) (**new**) on [`tile/JointPlacementDistribution.kt`](../../src/main/kotlin/tile/JointPlacementDistribution.kt) (**new**). **29 named tests** written first and watched fail — [`tile/JointPlacementDistributionTest.kt`](../../src/test/kotlin/tile/JointPlacementDistributionTest.kt), which did not compile against a model that did not exist — and a **25-mutation** harness at [`tools/T-323-mutation-test.py`](../../tools/T-323-mutation-test.py), **0 survivors over a subtracted baseline of 0** (`CH-0237`), declared in `tools/P-31-harness-census.py` and wired as `testJointPlacementDistributionMutations` in the same commit. **No existing Kotlin main source was modified** except one hand-added line of `structure/ResultInputs.kt`. `tile/HoneycombGrillage.kt`, `tile/SearchedDistribution.kt` and `coupling/RobustDistribution.kt` were **not touched**, and `coupling/CountPhaseInteraction.kt`'s `countPhaseSplit` is **reused unchanged** |
 | **Consumes** | [`C-0212`](C-0212-a-searched-distribution-at-the-resolved-link.md)/`T-316` (the search composition, the two transferred rules, the training stream, and its published cells, reproduced), [`C-0208`](C-0208-a-bond-link-is-two-mechanisms.md)/`T-310` (the resolved per-bond link and its published cells, reproduced), [`C-0063`](C-0063-upward-root-placement.md) (the placement axis, the influence bank sliced to a placement, and the ordering claim this task measures), [`C-0167`](C-0167-coupled-cells-on-the-honeycomb-grillage.md) (the grillage port and the four placements), [`C-0141`](C-0141-honeycomb-station-lattice-and-placement.md) (the 21 bp station ladder and its forced 14 bp inter-row offset), [`C-0148`](C-0148-face-bond-class-residues-and-row-span-columns.md) (which DETERMINES the ladder phase), [`C-0108`](C-0108-count-phase-interaction.md) (`twoWayLogInteraction` and `countPhaseSplit`, reused rather than copied), [`C-0135`](C-0135-descent-manifold-width.md) (`searchDecision` and the smoothed minimax), [`C-0089`](C-0089-dropout-robust-placement.md) (the percentile objective, the oracle floor, the single-path removal, `spearmanRankCorrelation`), [`C-0087`](C-0087-position-dependent-staple-dropout.md) (the measured depth incorporation), [`C-0060`](C-0060-buildable-stiffness-ratio.md) (its **FLAT** ratio window, named as `CH-0273` requires), [`C-0023`](C-0023-two-sided-coupling.md) (the 10 pN unzip allowable), [`C-0017`](C-0017-output-coupling-stiffness.md) (the mandate, as a SUM), [`C-0104`](C-0104-row-end-prestrain.md) (a prestrain is a load, which is what makes the bank a compliance), [`C-0022`](C-0022-tile-edge-load-profile.md)/`T-3b` |
 | **Verdict** | **PASS on all eight predicates.** Of the twenty-three declared falsifiers **`F1`, `F4`, `F5`, `F6`, `F12`, `F15`, `F16`, `F20` and `F23` FIRED** — **seven** declared **OPEN**, so *"either answer is the result"*, and **two declared CLOSED**: `F12`, whose declaration is one word short (§9), and `F23`, which is a real result about this study and is published rather than repaired away (§14). `F16` carries a correction this claim states rather than glosses. **`C-0212`'s and `C-0208`'s published readings are NOT withdrawn**: all 13 reproduce at `3.8E-9`. Raises [`CH-0278`](../challenges/CH-0278-a-restored-source-is-not-a-restored-class.md) and [`CH-0279`](../challenges/CH-0279-the-search-has-a-ceiling-and-nobody-set-it.md) |
 | **Conditions** | T = 300 K, `k_BT = 4.141947 pN·nm`; aqueous **2 mM MgCl₂**, `C-0022`'s design state — 10 nm gap, `0.192 V`, its solved collar; cross-section **`10 × 6`**, block extent **`116 bp`** (`edgeX` 39.44 nm, `edgeY` 38.04 nm), the drawable **`102 / 109`** raster, 435 staple bonds and 59 raster turn ties present; `d` = 2.536 nm (SAXS); `k_θ` = 13.5294118 pN·nm/rad; transverse link pinned at `C-0205`'s ceiling **`254.808095 pN/nm`** and the radial rung at `C-0208`'s bracket floor **`754.005141`**, giving a through-thickness link of **`629.20588`**; composite fractions **0.30** (primary) and **0.26** (`P8`, which **ran**); the station ladder at `C-0148`'s determined phase **16** and `C-0141`'s forced **14 bp** inter-row offset; `C-0017`'s mandate **`33.3333333 pN/nm` on the SUM**; **grading** seed `197197` / **4 000** realisations, **training** seed `316316` / **120**, **screening** seed `323323` / **40**; dishing on an **81 × 81** grid and the searches' own on **41**; `subdivisions = 1`; rim band 6.7 nm; `T-5b` = 0.10 |
@@ -65,7 +65,10 @@ stream: a spread of **`1.46020601`**, against the distribution axis `C-0212` mea
 **And the bank is what made it affordable.** One `HoneycombStationBank` of **55** unit-point-load
 solves per `(fraction, rung)` serves **every** placement and **every** distribution at that cell,
 because a placement is a **slice of the bank's index set**. The slice is asserted against a
-surrogate built on that placement alone at a departure of **`3.8E-16`**, not argued.
+surrogate built on that placement alone at a departure of ~~**`3.8E-16`**~~ — **CORRECTED,
+iteration 51 ([`C-0217`](C-0217-the-cure-at-every-call-site.md), `T-329`): that residual's true
+value is ZERO, every digit of it is machine noise, and the artifact now reports what the identity
+was always declared on, **the identity HOLDS to `1e-10`** — not argued.
 
 ## 2. The answer, and the 2 × 2 in both orderings
 
@@ -140,9 +143,27 @@ actually minimises**:
 
 | screen | Spearman ρ at `f = 0.30` | at `f = 0.26` | regret |
 |---|---|---|---|
-| **equal springs** | **`−0.09354`** | **`−0.4451`** | `1.2208`, `1.19325` |
+| **equal springs** | **`−0.09354`** | ~~**`−0.4451`**~~ **`−0.438018191`** | `1.2208`, `1.19325` |
 | **rim-graded 5:1** | `+0.4924` | `+0.626` | `1.04061`, `1.0` |
 | the oracle floor (distribution-free) | `−0.115384615` | `+0.236263736` | `1.20415739`, `1.10954222` |
+
+**AMENDED, iteration 51** ([`C-0217`](C-0217-the-cure-at-every-call-site.md) §4). Four of these six
+readings are **determined** and two are not, and the two that are not are the whole of what
+`T-323`'s `F23` still moves. Over the four retained emissions:
+
+| screen | readings observed | determined after `T-328`? |
+|---|---|---|
+| equal springs, `f = 0.30` | `−0.0824175824` and `−0.0935351641` | **no** — two-valued |
+| rim-graded, `f = 0.30` | `0.489010989`, `0.492435129`, `0.494505495` | **no** — three-valued |
+| equal springs, `f = 0.26` | `−0.438018191` and `−0.445054945` | **yes**, at `−0.438018191` |
+| rim-graded, `f = 0.26`; both oracle-floor rows | one reading each | yes |
+
+`Spearman` is a **rank** correlation over thirteen outputs of `C-0135`'s descent, so it reads the
+**order** of near-equal manifold points; the minimum, the argmin, the regret and the binding flag
+built on the *same* thirteen numbers are bit-identical across all four runs. **The verdict is
+invariant at every reading** — the equal-spring screen is anti-correlated at `−0.082` and at
+`−0.094` alike, and the rim-graded one informative at all three — so `F6`'s firing does not depend
+on which member is quoted. What must not be quoted is a single value to nine digits.
 
 **`F6` fired.** The warning is confirmed and it is *specific*: the equal-spring ranking is
 **anti-correlated** with what a searched distribution wants, at both fractions, and costs
@@ -239,7 +260,7 @@ the instrument at the one cell where both exist.
 |---|---|---|
 | **1 — dimensional** | a per-path stiffness in pN/nm summing to a mandate in pN/nm; a family size as a dimensionless product of counts; a split term as a natural logarithm of a ratio of two dishings, therefore dimensionless, and an interaction as a difference of two such terms; a dishing as a fraction of the free stroke of the **same** lattice | **PASS** |
 | **2 — limiting cases** | a saturated family has exactly one member; a column count no row can supply is refused, and refused **by its own message** rather than by an understudy's; a key of the wrong shape, an unsorted key and a repeated station are refused; a zero-sweep descent, an empty start set and a foreign start are refused; a constant objective moves the descent nowhere | **PASS**, 29 named tests |
-| **3 — symmetry and the standing falsifiers** | a uniform pressure on the free tethered lattice at the resolved link dishes **`3.3E-13`** of the stroke (`F7`); the default lattice bit-identical to the standing object on `assembleLoad` over **4 320** degrees of freedom and on the **435**-bond site set (`F8`); the bank **slice** against a surrogate built on that placement alone, **`3.8E-16`** (`F9`); the surrogate at full presence against the **assembled** solve with its own Woodbury support forces, **`3.9E-14`**, taken on the **searched** distribution (`F10`); centro-symmetry measured in **both** directions on the same predicate; a prestrain moves the free field and **not** the bank's compliance, which is `C-0104`'s trap asserted rather than assumed | **PASS** |
+| **3 — symmetry and the standing falsifiers** | a uniform pressure on the free tethered lattice at the resolved link dishes **`3.3E-13`** of the stroke (`F7`); the default lattice bit-identical to the standing object on `assembleLoad` over **4 320** degrees of freedom and on the **435**-bond site set (`F8`); the bank **slice** against a surrogate built on that placement alone, ~~**`3.8E-16`**~~ **HOLDS to `1e-10`** (`F9`); the surrogate at full presence against the **assembled** solve with its own Woodbury support forces, ~~**`3.9E-14`**~~ **HOLDS to `1e-9`**, taken on the **searched** distribution (`F10`) — both re-reported as a threshold and a boolean by [`C-0217`](C-0217-the-cure-at-every-call-site.md)/`T-329`, the residuals' true value being zero; centro-symmetry measured in **both** directions on the same predicate; a prestrain moves the free field and **not** the bank's compliance, which is `C-0104`'s trap asserted rather than assumed | **PASS** |
 | **4 — numerical convergence** | **nine** axes at the deciding cell: the descent against the exhaustive optimum (**`0.0`**), the search grid 41 against 81 (`0.015`), the verdict grid 81 against 41 and 161 (**`0.0`** and **`0.0`**), the training realisations 120 against 240 (`0.015`) and against 60 (`0.26`), the descent's sweeps 2 against 3 (`0.0078`), beam subdivisions 1 against 2 (`0.0073`), and the screening realisations 40 against 80 (`0.1`). **`0 of 9` move the flatness verdict**; the screening axis moves the top-6 **set** (`F15`), which is a statement about the screen and not about the answer | **PASS** |
 | **5 — literature and upstream** | **13 reproductions, worst departure `3.8E-9`** — `C-0208`'s published `p90` at all four of `C-0167`'s placements on **both** transferred rules, `C-0212`'s published **searched** `p90` at all four, and `C-0212`'s uncoupled tile | **PASS** |
 
@@ -252,11 +273,11 @@ the instrument at the one cell where both exist.
 | `F3` | **OPEN** | no | the interaction is **negative**; the declared expectation was substitutive and is **wrong** |
 | `F4` | **OPEN** | **FIRED** | interaction share `0.02575` against a placement main effect of `0.0146` |
 | `F5` | **OPEN** | **FIRED** | `C-0063`'s ordering **reverses** — `0.009241` against `0.3046` |
-| `F6` | **OPEN** | **FIRED** | the equal-spring screen is **anti-correlated**, `−0.09354` and `−0.4451` |
+| `F6` | **OPEN** | **FIRED** | the equal-spring screen is **anti-correlated**, `−0.09354` and ~~`−0.4451`~~ `−0.438018191` — and see §4's amendment: the `f = 0.30` reading is **two-valued** across four emissions (`−0.0824175824` / `−0.0935351641`) and the verdict is invariant at both |
 | `F7` | closed | no | `3.3E-13` |
 | `F8` | closed | no | 4 320 degrees of freedom, 435 bond sites, identical |
-| `F9` | closed | no | `3.8E-16` |
-| `F10` | closed | no | `3.9E-14` |
+| `F9` | closed | no | ~~`3.8E-16`~~ **the identity HOLDS to `1e-10`** (`C-0217`/`T-329`) |
+| `F10` | closed | no | ~~`3.9E-14`~~ **the identity HOLDS to `1e-9`** (`C-0217`/`T-329`) |
 | `F11` | closed | no | worst of 13 is `3.8E-9` |
 | `F12` | closed | **FIRED** | **and the declaration is one word short** — see §9 |
 | `F13` | closed | no | path disagreement below `1e−12` at both arms |
@@ -328,10 +349,10 @@ and 3 differ in **one line of the harness and nothing else** and read `2 survivo
 | `P2` | `(P₁, D₀)` exhaustively at 50 paths, with the placement axis's whole distribution | §1 and §2 — all **7 776** enumerated, `0.0890058`–`0.129966804`, spread `1.46020601` |
 | `P3` | `(P₁, D₁)`, the joint corner, graded out of sample | §2 — **`0.0677344328`** on the `197197` stream |
 | `P4` | the 2 × 2 in **both** orderings and the interaction; the `5 × 3` two-way fit | §2 and §3 — `−0.1388` out of sample, `−0.0817` in sample, share `0.02575` |
-| `P5` | `C-0063`'s ordering measured here, and the inherited sentence measured | §3 and §4 — **reversed**, `0.304553543 / 0.00924055963` = `32.9583`; Spearman `−0.09354` / `−0.4451` |
+| `P5` | `C-0063`'s ordering measured here, and the inherited sentence measured | §3 and §4 — **reversed**, `0.304553543 / 0.00924055963` = `32.9583` (bit-identical across all four emissions); Spearman `−0.09354` / ~~`−0.4451`~~ `−0.438018191`, quoted with §4's amendment |
 | `P6` | every threshold, and the conjunction | §5 — 17 corners, **7** flat, **1** flat and admissible, **0** beating the uncoupled tile |
 | `P7` | the descent's slack where the truth is known | §7 — departure **`0.0`**, the same placement |
-| `P8` | the same 2 × 2 at `f = 0.26` | §2 — **it ran**; interaction `−7.8 %` out of sample and `−13.0 %` in sample |
+| `P8` | the same 2 × 2 at `f = 0.26` | §2 — **it ran**; interaction ~~`−7.8 %`~~ **`−8.0 %`** out of sample and `−13.0 %` in sample. **The struck number is run A's** and the artifact this claim is filed against is run B; §2 has it right and this row did not. It is the eighth of the eight tokens `F23` moved and the one the correction pass missed — [`CH-0280`](../challenges/CH-0280-a-retained-before-state-hides-a-stale-quotation.md). **And the re-emitted artifact reads `−7.8` again**, deterministically: the corner was a two-valued manifold and `T-328`'s decision rule fixed the branch on run A's side, so the struck number is right about run B and the corrected one is not the current artifact's ([`C-0217`](C-0217-the-cure-at-every-call-site.md) §4) |
 
 ## 12. What this does NOT establish
 
@@ -366,7 +387,12 @@ away, and this claim is filed against the artifact in the tree, which is **run B
 
 **Both runs are retained**, because a measurement nobody can repeat is not one: the first is
 [`gpd/data/T-323-reproducibility/run-a.json`](../data/T-323-reproducibility/run-a.json) and the
-second is the committed artifact, which is what this claim is filed against.
+second is ~~the committed artifact, which is what this claim is filed against~~ — **AMENDED,
+iteration 51**: run B is
+[`gpd/data/T-323-reproducibility/run-b.json`](../data/T-323-reproducibility/run-b.json), retained
+verbatim when [`C-0217`](C-0217-the-cure-at-every-call-site.md) re-emitted the study after the two
+repairs this section queues. This claim is still filed against **run B**; the committed artifact is
+run D.
 
 **The study's own `falsifiers[22].fired` reads `false`, and it has to**: a run cannot assert
 byte-identity about itself. The measurement is external, and it is two independent runs through
@@ -401,7 +427,17 @@ two runs.
 ### The cause is three channels and two of them are defects of this study
 
 **(a) `C-0135`'s cure reached `2` of this study's `14` selection sites, and the twelve it
-missed are mine.** Counted in the source, the study makes **fourteen** `argmin`-style selections.
+missed are mine.** ~~Counted in the source, the study makes **fourteen** `argmin`-style
+selections.~~ **RE-CENSUSED, iteration 51** ([`C-0217`](C-0217-the-cure-at-every-call-site.md) §1),
+under a **stated** predicate — *a place where the outcome of a `Double` comparison decides which
+candidate a search or a report carries forward, the compared values coming from one and the same
+objective over a candidate set* — the study has **`19`** selection sites, **`5`** of them already at
+the decision precision and **`14`** raw. The difference is the **predicate**, not the reading: the
+list below omits `bestPerRule` (rounded, through `jointPlacementBetter`), the two inner argmins on
+`tierTwoSearched` (rounded, through `percentileObjective`), and `jointRankIn` (raw). `CLAUDE.md`'s
+*a census is dated by its predicate*, met on this corpus's census of **itself**. The paragraph below
+stands as written and is a correct statement about the sites it names. Counted in the source, the
+study makes **fourteen** `argmin`-style selections.
 **Two** compare a `searchDecision`-rounded objective — `finalistSlots` and `jointSlot` — and both
 are the ones that consume `T-316`'s own `percentileObjective`. The other **twelve** compare a
 **raw** `Double`: `determinedTransferred`, `topPerScreen`'s sort, `bestPerRuleOnTraining`,
@@ -441,6 +477,40 @@ Spearman readings are **determined to about three significant digits, not nine**
 **And the headline is untouched by all of it.** The `f = 0.30` arm — every number this claim leads
 with — is bit-identical between the two runs.
 
+### REPAIRED, iteration 51 — [`C-0217`](C-0217-the-cure-at-every-call-site.md)
+
+`T-328` routed every one of the **19** selection sites through one rule and `T-329` stopped the two
+identity residuals being printable — three channels, not two, the third being a `convergence`
+departure that was stable only because a floor rounded it to `0.0`. The study was then re-emitted
+**twice more**, in two snapshots, and the two post-repair runs diffed outside the study exactly as
+`C-0216` §14's own table was taken.
+
+**`F23` still fires, and it now fires on ONE statistic.** The post-repair diff is **`4` of
+`1 255`** leaves — `0` booleans of 251, `0` added, `0` removed, `0` unclassified — and all four are
+`spearmanAgainstSearched` at `f = 0.30` or a sentence rendering it. Everything else this section
+tabulates is **determined**: the `(P₁, D₀)` corner at `f = 0.26`, its `split/2` terms, its
+`fragility/5` row, its `paired/4` row, `determinedRankFromBest`, one regret, and one of the four
+Spearman readings that used to move — **`22` of the `26`, and `0` of the 22 by deletion**, checked
+by key.
+
+**So this section's channel (c) is upheld and is sharper than it was written.** The surviving
+statistic is a **rank** correlation over the thirteen tier-2 `trainingObjective`s, and every other
+quantity built on those same thirteen numbers — their minimum, their argmin, the regret, the
+binding flag, the finalists and the joint corner — is now bit-identical. The manifold reaches the
+file through the one emitted statistic that reads the **order** of near-equal descent outputs rather
+than their value.
+
+**And this section's own caveat is measurable now.** It says the `(P₁, D₀)` corner at `f = 0.26` and
+the three Spearman readings are *"determined to about three significant digits, not nine"*. After
+the repair the **corner** is determined by the emitter — and it lands on **run A's** reading,
+`0.107990116`, not on this claim's `0.108225597` — while **two** of the Spearman readings are still
+not. Every number in this claim's headline is bit-identical across all **four** emissions.
+
+This section is **not** withdrawn. Its diagnosis was tested by acting on it, its classification by
+kind stands, and the two pre-repair runs are retained so that its table remains checkable
+(`C-0092`). What it did not know is the count, and what it could not know is whether the diagnosis
+was right — which is what a repair, and only a repair, can say.
+
 ## 13. Still open — named, not answered
 
 - **The capped search** ([`CH-0279`](../challenges/CH-0279-the-search-has-a-ceiling-and-nobody-set-it.md)) — one argument to a function that already takes it, and it is the only route to a corner that is flat, admissible and jointly searched.
@@ -450,5 +520,5 @@ with — is bit-identical between the two runs.
 - **The best design inside `C-0060`'s two-level family, searched rather than projected into.**
 - **The shared-body topology**, which is a change of topology and orthogonal to both factors measured here.
 - **What a joint search does on ROUTE B**, whose turns carry 28 unpaired nucleotides.
-- **`T-328` — route this study's twelve raw selections through `searchDecision`**, named in §14(a): all **twelve** of them, plus the raw `<` in `determinedRankFromBest`. The repair is provably scoped — `2 of 14` sites are already correct and they show the shape — and is **not** made here, because changing the emitter after the run would leave it unable to reproduce the committed artifact.
-- **`T-329` — emit `F9`'s and `F10`'s identity residuals as a THRESHOLD and a BOOLEAN**, per §14(b), rather than as values whose every digit is noise.
+- ~~**`T-328` — route this study's twelve raw selections through `searchDecision`**, named in §14(a): all **twelve** of them, plus the raw `<` in `determinedRankFromBest`. The repair is provably scoped — `2 of 14` sites are already correct and they show the shape — and is **not** made here, because changing the emitter after the run would leave it unable to reproduce the committed artifact.~~ **DONE, iteration 51** — [`C-0217`](C-0217-the-cure-at-every-call-site.md). Re-censused under a stated predicate the study has **19** selection sites, **5** of them already at the decision precision and **14** raw; see §14's correction below.
+- ~~**`T-329` — emit `F9`'s and `F10`'s identity residuals as a THRESHOLD and a BOOLEAN**, per §14(b), rather than as values whose every digit is noise.~~ **DONE, iteration 51** — [`C-0217`](C-0217-the-cure-at-every-call-site.md), and it turned out to be **three** channels rather than two: the bank slice's residual was also emitted as a `convergence` departure, stable only because the departure floor rounded it to `0.0`.

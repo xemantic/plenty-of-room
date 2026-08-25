@@ -509,6 +509,126 @@ class JointPlacementDistributionTest {
         assert(abs(objective(descended) - objective(best)) < 1e-12)
     }
 
+
+    // ------------------------------------- gate 4: the decision precision at EVERY call site
+
+    /**
+     * `T-328`. The discriminating case is a candidate better by **less** than the decision
+     * precision: rounded it ties and cannot move the incumbent, unrounded it wins. A test that
+     * perturbs the objective only *upward* holds nothing open, because a raw comparison refuses
+     * an upward perturbation too.
+     */
+    @Test
+    fun `gate 4 -- decidesBetter is the decision precision and nothing else`() {
+        assert(!decidesBetter(1.0 - 1e-12, 1.0))
+        assert(!decidesBetter(1.0, 1.0 - 1e-12))
+        assert(decidesBetter(1.0 - 1e-3, 1.0))
+        assert(!decidesBetter(1.0 + 1e-3, 1.0))
+        // It is a RELATIVE precision: the SAME absolute perturbation decides at magnitude one
+        // and ties at magnitude 1e6.
+        assert(!decidesBetter(1e6 - 1e-3, 1e6))
+    }
+
+    @Test
+    fun `gate 4 -- an argmin refuses a candidate better by less than the precision`() {
+        val tied = listOf("zz" to 1.0 - 1e-12, "aa" to 1.0)
+        // Unrounded, the larger-labelled candidate wins; at the decision precision it ties and
+        // the label refuses it.
+        assert(tied.minByOrNull { it.second }!!.first == "zz")
+        assert(decisionArgmin(tied, { it.first }, { it.second }).first == "aa")
+        val decided = listOf("zz" to 1.0 - 1e-3, "aa" to 1.0)
+        assert(decisionArgmin(decided, { it.first }, { it.second }).first == "zz")
+        assertFailsWith<IllegalArgumentException> {
+            decisionArgmin(emptyList<Pair<String, Double>>(), { it.first }, { it.second })
+        }
+    }
+
+    @Test
+    fun `gate 4 -- the decision comparator sorts on the ROUNDED key and then on the label`() {
+        val candidates = listOf("zz" to 1.0 - 1e-12, "aa" to 1.0, "mm" to 0.5)
+        assert(
+            candidates.sortedWith(byDecisionThenLabel({ it.first }, { it.second }))
+                .map { it.first } == listOf("mm", "aa", "zz")
+        )
+        assert(
+            candidates.sortedWith(compareBy({ it.second }, { it.first }))
+                .map { it.first } == listOf("mm", "zz", "aa")
+        )
+    }
+
+    /**
+     * The contract that makes the repair affordable at the two sites whose key is a whole
+     * dropout ensemble: `screenObjective` and `t323P90` are solves, not lookups.
+     */
+    @Test
+    fun `gate 4 -- an argmin evaluates its key EXACTLY once per candidate`() {
+        var calls = 0
+        val chosen = decisionArgmin((0 until 7).toList(), { "c" + it }) {
+            calls++
+            (it - 3.0) * (it - 3.0)
+        }
+        assert(chosen == 3)
+        assert(calls == 7)
+    }
+
+    /**
+     * Which is what makes routing the two sites that were ALREADY rounded — they consume
+     * `T-316`'s `percentileObjective`, which rounds — provably inert rather than a second
+     * rounding.
+     */
+    @Test
+    fun `gate 4 -- the decision key is idempotent, so an already-rounded objective is inert`() {
+        listOf(
+            1.0, 0.1, 9.999995, 9.9999949, 1e-9, 1.0 / 3.0, 0.107990116, 1e6 + 0.4999, -2.7182818
+        ).forEach {
+            val once = searchDecisionKey(it)
+            assert(searchDecisionKey(once) == once)
+        }
+        assert(searchDecisionKey(0.0) == 0.0)
+        assert(searchDecisionKey(-1.0000004) == -1.0)
+    }
+
+    @Test
+    fun `gate 4 -- jointPlacementBetter defers to decidesBetter and ties on the label`() {
+        assert(jointPlacementBetter(0.9, "zz", 1.0, "aa") == decidesBetter(0.9, 1.0))
+        assert(jointPlacementBetter(1.1, "aa", 1.0, "zz") == decidesBetter(1.1, 1.0))
+        assert(jointPlacementBetter(1.0 - 1e-12, "aa", 1.0, "zz"))
+        assert(!jointPlacementBetter(1.0 - 1e-12, "zz", 1.0, "aa"))
+    }
+
+    /**
+     * `determinedRankFromBest` and `jointWinnerRankInThisScreen` are the same decision read as a
+     * COUNT, and a raw `<` over 7 776 near-equal placements moves by an ulp.
+     */
+    @Test
+    fun `gate 4 -- a RANK is a decision too and counts betterment at the same precision`() {
+        val values = doubleArrayOf(1.0, 1.0 - 1e-12, 1.0 - 1e-3, 1.0 + 1e-3)
+        assert(values.count { decidesBetter(it, 1.0) } == 1)
+        assert(values.count { it < 1.0 } == 2)
+    }
+
+    // ------------------------------------- gate 3: an identity is a THRESHOLD and a BOOLEAN
+
+    /**
+     * `T-329`. `F9`'s and `F10`'s residuals are quantities whose true value is **zero**, so every
+     * digit of them is machine noise and one such field makes a whole result file permanently
+     * un-diffable. What is emitted is the tolerance the identity is asserted at and whether it
+     * holds; this is the rule, in one place, so a mutation of it is visible.
+     */
+    @Test
+    fun `gate 3 -- an identity reports a TOLERANCE and a boolean and never its residual`() {
+        assert(identityHolds(9.6e-16, 1e-10))
+        assert(identityHolds(3.8e-16, 1e-10))
+        assert(identityHolds(-9.6e-16, 1e-10))
+        assert(!identityHolds(2e-9, 1e-9))
+        assert(!identityHolds(-2e-9, 1e-9))
+        assert(!identityHolds(1e-9, 1e-9))
+        assert(!identityHolds(Double.NaN, 1e-9))
+        assert(!identityHolds(Double.POSITIVE_INFINITY, 1e-9))
+        assertFailsWith<IllegalArgumentException> { identityHolds(0.0, 0.0) }
+        assertFailsWith<IllegalArgumentException> { identityHolds(0.0, -1e-9) }
+    }
+
     // ------------------------------------- gate 5: the corpus's own lattice, reproduced
 
     @Test

@@ -536,6 +536,14 @@ tasks.register<Exec>("testResolvedLinkUniformRasterMutations") {
     commandLine(mutationSnapshotArguments("T-315-mutation-test.py"))
 }
 
+tasks.register<Exec>("testCrossSectionTiedRegradeMutations") {
+    group = "verification"
+    description = "Runs tools/T-294-mutation-test.py <snapshot>, the Kotlin mutation test for " +
+        "the 15 x 4 block graded coupled on the tied lattice and the least-squares face basis " +
+        "an ODD raster-row count made necessary. Needs -PmutationSnapshot=<dir>; not in :test"
+    commandLine(mutationSnapshotArguments("T-294-mutation-test.py"))
+}
+
 tasks.register<Exec>("testSearchedDistributionMutations") {
     group = "verification"
     description = "Runs tools/T-316-mutation-test.py <snapshot>, the Kotlin mutation test for a " +

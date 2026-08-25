@@ -12773,3 +12773,191 @@ previous run's last mutant, reading `2 survivors` where the truth is `0` — an 
 carries the path — and the bracket trick cannot help when the pattern is a path you must spell rather than one
 you invent. It reported a finished study as running for twenty minutes after its snapshot had been deleted.
 Wait on the artifact: the snapshot's absence, the result file's mtime, or `kill -0` on the launcher.
+
+## Iteration 51 — 2026-08-25: the cure at every call site, and a falsifier that fired on its first odd lattice
+
+Two agents in parallel, both task files committed before either study ran. Agent M took the two repairs
+`T-323`'s `F23` named; agent N took the completeness row that lets the two cross-sections be compared like
+for like. Both of their byte-identity falsifiers fired, and both were published rather than repaired away.
+
+### `T-328` / `T-329` / `C-0217` — the cure at every call site, and the census that was dated by its predicate
+
+`C-0216`'s `F23` was declared **CLOSED** and **fired**: two runs of `T-323` moved 26 of 1 252 leaves.
+Its §14 named three channels, two of them repairable, and deliberately did **not** repair them —
+changing the emitter after the run would have left it unable to reproduce the committed artifact.
+This iteration made the repair and then did the only thing that can settle it: emitted the study
+**twice more**, in two snapshots, and diffed the two outside the study.
+
+**The count was wrong and the reading was not, and the difference is the predicate.** `C-0216` §14
+says *"`2` of this study's `14`"*; re-censused under a predicate written down before it was run —
+*a place where the outcome of a `Double` comparison decides which candidate a search or a report
+carries forward, the compared values coming from one and the same objective over a candidate set* —
+the study has **19** selection sites, **5** already at the decision precision and **14** raw. §14's
+list omits `bestPerRule` (rounded, through `jointPlacementBetter`), the two inner argmins on
+`tierTwoSearched` (rounded), and `jointRankIn` (raw). Neither reading is wrong about any individual
+site. `CLAUDE.md`'s *a census is dated by its predicate*, met on a census this corpus took of itself
+one iteration earlier — and the reason `G6` was declared **OPEN** before the count was taken.
+
+**`F23` still fires, and that is the result rather than a disappointment.** Two fresh runs move
+**4 of 1 255** leaves against **26 of 1 252** — `0` booleans of 251, `0` added, `0` removed, `0`
+unclassified — and all four are `spearmanAgainstSearched` at `f = 0.30` or a sentence rendering it.
+**That is `C-0216` §14(c)'s residue by measurement rather than by assertion.** The Spearman is a
+**rank** correlation over the thirteen tier-2 `trainingObjective`s, and every other quantity built
+on those *same thirteen numbers* — their minimum, their argmin, the regret, the binding flag, the
+finalists and the joint corner — is now bit-identical. Only the statistic that reads their **order**
+moves, and the mechanism is a **tie**: at `n = 13` a tie-free Spearman is `1 − Σd²/364`, which
+returns an exact `394` for one reading and no integer at all for the other, so the two differ by
+whether two of the thirteen `searchDecision`-rounded objectives tie at six digits. The decision
+precision doing exactly what it is for, one level below the statistic that reports it.
+
+**`22` of the `26` are determined, and `0` of the 22 by deletion** — checked by key, because a
+repair that stabilised the file by *removing* the moving fields would read the same as one that
+stabilised them. Among them the `f = 0.26` `(P₁, D₀)` corner, which was a coin-flip between the two
+pre-repair runs and now lands on run A's `0.107990116` every time. And every number `C-0216`'s
+headline leads with is bit-identical across all **four** emissions: `G2` was declared **OPEN** and
+did not fire.
+
+**The repair is one rule and that is the substance rather than the tidiness.** Four public entry
+points in the model source — `searchDecisionKey`, `decidesBetter`, `byDecisionThenLabel`,
+`decisionArgmin` — with `jointPlacementBetter` rewritten on `decidesBetter`, because a duplicated
+rule is invisible to a mutation test of either copy. The mutation table shows what that buys:
+`M13` and `M15` used to mutate `jointPlacementBetter`'s own body and reached the five sites that
+routed through it; re-anchored onto the one function the rule now lives in, `M13` is killed by
+**7** named tests and reaches all nineteen. Nine rows were added and the harness reads
+**34 mutations, 0 survivors over a subtracted baseline of 0**.
+
+**`T-329` was three channels rather than two.** `F9`'s and `F10`'s residuals were printable, and so
+was a **third** copy of the first: the bank-slice identity was also emitted as a `convergence`
+record whose `departure` is the same noise and whose `fine` was *synthesised from it*. It survived
+`T-323`'s diff only because the departure floor rounded it to `0.0` — stability by accident of a
+floor — and it was never a convergence axis at all, having no coarse/fine pair. All three are now
+one `identities` record carrying a tolerance and a boolean, under a key name censused before it was
+coined (`identities` is already `T-267`'s and nowhere else's).
+
+**Two things fell out that nobody was looking for.** `C-0216` §11's `P8` row quotes run A's
+`−7.8 %` where its own §2 and the committed artifact say `−8.0` — the eighth of eight moved tokens,
+and the one the correction pass missed. Nothing in this repository could have caught it, and the
+reason is the retention that makes the defect measurable: `run-a.json` is committed, so a census
+asking *is this token in a committed artifact* answers **yes** (`CH-0280`). And every result file
+carrying the byte-identity falsifier emits `"fired": false` unconditionally — three of them, and
+`T-323`'s is the one that fired (`CH-0281`). `C-0177`'s *a gate that cannot fail*, on an emitted
+verdict rather than on an exit code, and latent rather than live because nothing reads the field
+across files today.
+
+**Run B had to be rescued before the re-emission.** `C-0216` is filed against the committed
+artifact; overwriting it would have silently re-pointed that claim at a different object. It is
+retained verbatim as `gpd/data/T-323-reproducibility/run-b.json`, so the corpus now holds all four
+emissions and `C-0216` §14's own table stays checkable.
+### Agent N — `T-294` / `C-0218`: the other cross-section, and the first block with an odd raster-row count
+
+`T-294` was a **completeness** row: `C-0180` re-graded `C-0167`'s 64 coupled cells on the tied
+honeycomb lattice at `10 × 6` only, `C-0186` §1 left one comparison passage of
+`DECISIONS-FOR-NDI.md` un-annotated for exactly that reason, and `C-0191` stated the leave in the
+document. It is now closed with a measurement instead of a caveat.
+
+**The cheap bound closed the fallback branch before any code was written.** The acceptance clause
+offered *"or, failing that, the statement of why a `15 × 4` raster's tie set cannot be built the
+way `10 × 6`'s was"*; `C-0151`'s closure sweep was run at **both** 60-helix cross-sections and
+returns the **same three residue pairs**, so `102 / 109` closes at `15 × 4` too — same `116 bp`
+extent, same `b₀ = 5`, same ladder phase `16`, same `14 bp` inter-row offset, `82 of 90` stations
+against `55 of 60`, sparsest row `5`. The whole comparison geometry transfers. It also decided the
+method three times: `C-0180` §4's prestrain deliverable is **not** mirrored because `CH-0240` is
+upheld and its coordinate withdrawn; `C-0190`'s replacement twist is not mirrored because it reads
+`0 of 64` at `10 × 6` and cannot separate two blocks that are both zero; and **two** of `C-0208`'s
+five radial rungs are graded rather than five, because its own census moves its tightest `p90` by
+`0.00383` over the whole ladder — a figure measured at the *other* cross-section and therefore
+re-measured here at `0.00437`.
+
+**Only the tie COUNT transfers.** `15 × 4` carries **410** staple bonds (`140` in plane, `270`
+through the thickness) against `435` (`135 / 300`), and its `59` turn ties split **`45 / 14`**
+against `50 / 9` — which is the row's own stated falsification target, met. The tie's **worth**
+does not transfer either: the per-realisation median ratio runs `0.930605361`–`0.995818215`
+against `C-0180`'s `0.902845544`–`0.988116016`, inside that band at only `48 of 64`.
+
+**The re-grade.** `0 of 64` tied cells clear `T-5b` at the penalty link and `0 of 128` at
+the resolved one, against `C-0180`'s `2 of 64` and `C-0208`'s `0 of 64`. The tightest `15 × 4`
+cell is `0.160538609` of the stroke — `1.60538609×` the tolerance, where the tightest `10 × 6` cell in
+the corpus clears it by `0.426 %`. The ordering was decided by the uncoupled tile and it stays
+decided coupled.
+
+**Two premises of the row's own acceptance clause turned out to be wrong, and both are results.**
+The first: *"same normalising stroke"*. `edgeX` is shared and `edgeY = m·3d/2`, so the free stroke
+goes as `1/m` and it is `3.5194795 nm` against `5.27921926` — **exactly `2/3`**. `T-5b`'s `0.10` is
+a fraction of a stroke, so in absolute nm it is **`1.5×` tighter** at `15 × 4`, and read in nm the
+ordering **reverses at `10` of `128`** matched rows — all of them rows where both
+blocks are far outside the tolerance, so decision 7 is untouched and both columns now travel
+together. `F10` was declared open and fired.
+
+**The second is the one nobody could have predicted, and it is `CH-0282`.** A uniform pressure on
+the `15 × 4` lattice gives an **exactly uniform** field — every face beam at `p/k_f` to `1e−10`,
+asserted as a named test — and `HoneycombDeflection` reports **`0.0620506254`** of the stroke as
+dishing. It removes its rigid plane by three **independent** projections, which is the
+least-squares fit **iff** the three modes are orthogonal; `⟨piston, tiltY⟩ = ∫y dA` over the face's
+tributaries vanishes iff the corrugated gap sequence `d, 2d, d, 2d, …` is palindromic, i.e. iff the
+raster-row count is **EVEN**. Every block this corpus has graded has `m = 10`. The least-squares
+fit reads `0.0`, both readings are emitted at every cell, and `C-0154`'s three `15 × 4`
+free tiles — quoted in **both** deliverables — are corrected in `T-294`'s `upstream` block with
+**no verdict moving** at either cross-section.
+
+**And `C-0109`'s regularity has a scope clause the quotations lost** (`CH-0283`). *"Every coupled
+cell is worse than the uncoupled tile"* reproduces at `64 of 64`, `16 of 16` and `0 of 32` — and
+every one of those is a tile whose uncoupled reading is **inside** `T-5b`. At `15 × 4`, which is
+`1.5`–`2.5×` outside it, `1` cells beat their own uncoupled tile. **Not one of them is
+flat**, so nothing moves except the sentence.
+
+**A sibling's challenge, honoured in the same iteration.** `CH-0281` (`C-0217`, `T-328`) was raised
+hours earlier against falsifiers whose verdict is measured **outside** the run emitting
+`"fired": false`. `T-294`'s `F2`, `F3` and `F14` emit **`null`** with a `measuredIn` field naming
+the artifact — the test file for two of them, `gpd/data/T-294-reproducibility/` for the third.
+
+**What it licenses and what it does not.** It is a **like-for-like ordering with a validity range**,
+not a recommendation. The cross-section comparison is **unpaired** (different path counts at the
+same column count, so the pairing is by column count, which is `C-0142`'s own), and both blocks are
+graded on `C-0058`'s two **transferred** distributions — `C-0212` shows that `C-0208`'s `0 of 64`
+reverses to `22 of 32` once a distribution is *searched*. The cheap half of that question is stated
+and not run: `C-0212` measures the search worth `1.45251772×` at its own tightest cell and reads
+`0 of 32` searched cells beating the uncoupled tile, and `15 × 4`'s uncoupled tile is itself outside
+`T-5b`, so a transfer does not close a gap of `1.60538609×`. `T-330` and `T-331` carry the two
+challenges.
+
+**And the standing reproducibility falsifier fired on this study too.** `F14` was declared CLOSED
+and two independent emissions differ at **3 leaves of 10 649** — every one a
+`reproductionDeparture` in the `upstream` record `T-294` coined, which is the field `CLAUDE.md`
+records a JIT recompilation moves and which escaped `DEPARTURE_DIGITS_BY_KEY` because that map is
+keyed on `reproductions` and `convergence`. `0` verdicts, `0` unclassified, and no token any
+document quotes moves. It is **published rather than repaired**: both emissions are retained in
+`gpd/data/T-294-reproducibility/` with a by-kind differ, and rounding the field now would make the
+artifact reproducible while leaving the committed emitter unable to reproduce the committed file.
+`CH-0193`, met by an author who had read it, on a record name he had invented four hours earlier.
+
+### Iteration 51's close-out — two byte-identity falsifiers, and a standing gate that had never met an odd lattice
+
+Both rows closed, both task files committed before either study ran, and **both** `F14`/`F23`-class falsifiers
+fired. That is now three instances in two iterations, which is enough to call the handling a settled discipline
+rather than a judgement call: **diff before anything else**, classify **by kind** — `0` verdicts and `0`
+unclassified is what makes an irreproducibility cosmetic, and no scalar can say it — **retain the earlier
+emissions in the repository** rather than a scratchpad, correct every quoted token, and **change no source
+afterwards**, because a repair at that moment leaves the committed emitter unable to reproduce the committed
+artifact.
+
+**The finding with the longest reach is `CH-0282`, and it was found by a gate rather than by a reader.**
+`HoneycombGrillage` subtracts a piston and two tilts projected **independently**, which is the least-squares
+affine fit only where the three modes are orthogonal — and `⟨piston, tiltY⟩ = ∫y dA` vanishes **iff the
+raster-row count is even**. Every block this corpus has graded has `m = 10`. The first odd one, `15 × 4`,
+reports `0.0620506254` of the stroke as dishing under an **exactly uniform** load, which is `CLAUDE.md`'s own
+best falsifier doing exactly what it is for, eleven iterations after it was wired. Three published readings are
+corrected and **no verdict moves**; the cross-section ordering is strengthened rather than disturbed. The repair
+touches a shared source and is therefore `T-330`, deliberately not taken beside anything else.
+
+**A self-census is dated by its predicate too.** `C-0216` §14 named its own defect as *"2 of this study's 14
+selection sites"*; re-censused under a **stated** predicate the same two sources carry **19**, of which `14`
+were raw. That is `CH-0182`'s class in the hardest place to notice it — the number arrives already attached to
+an explanation, written by the author who had just measured it.
+
+**And the coordinator's own contribution to the defect list is an honest one.** Agent N ran its study in a
+**persistent snapshot** — which `CLAUDE.md` recommends for an iterate-and-rerun loop, and which is also what
+skips `study.sh`'s copy-back — read its numbers out of that emission, and then deleted the emission when fixing
+an over-claim it had found in the study's **own emitted prose**. For about twenty minutes a filed claim, a task
+file and an entry-point row named a result that existed nowhere. Two gates caught it independently, from
+opposite ends, and the agent diagnosed it against itself without being told the answer. The rule that follows is
+one line: **populate the retained-runs directory before you read numbers out of a run, not after.**

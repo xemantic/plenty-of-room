@@ -287,7 +287,7 @@
             "screen": "equal springs",
             "placementsRanked": 7776,
             "searchedSetSize": 13,
-            "spearmanAgainstSearched": -0.0824175824,
+            "spearmanAgainstSearched": -0.0935351641,
             "screenArgminIsSearchedArgmin": false,
             "regretOfSelectingOnThisScreen": 1.22079548,
             "jointWinnerRankInThisScreen": 6,
@@ -298,7 +298,7 @@
             "screen": "rim-graded 5:1",
             "placementsRanked": 7776,
             "searchedSetSize": 13,
-            "spearmanAgainstSearched": 0.492435129,
+            "spearmanAgainstSearched": 0.494505495,
             "screenArgminIsSearchedArgmin": false,
             "regretOfSelectingOnThisScreen": 1.04060512,
             "jointWinnerRankInThisScreen": 2949,
@@ -1378,7 +1378,7 @@
             "statement": "the inherited sentence, measured -- a transferred-rule placement ranking is the WRONG quantity once the distribution is free (Spearman below 0.5, or a regret above 1.05x)",
             "declaredOpen": true,
             "fired": true,
-            "note": "equal springs: Spearman -0.08242, regret 1.2208; rim-graded 5:1: Spearman 0.4924, regret 1.04061; equal springs: Spearman -0.438, regret 1.19325; rim-graded 5:1: Spearman 0.6264, regret 1.0"
+            "note": "equal springs: Spearman -0.09354, regret 1.2208; rim-graded 5:1: Spearman 0.4945, regret 1.04061; equal springs: Spearman -0.438, regret 1.19325; rim-graded 5:1: Spearman 0.6264, regret 1.0"
         },
         {
             "id": "F7",
@@ -1523,7 +1523,7 @@
         "AND THE SAME 2 x 2 IS TAKEN IN SAMPLE, WHICH IS WHAT SEPARATES THE INTERACTION FROM THE SELECTION. Out of sample every corner but (P0, D0) carries a selection and the placement freedom carries a much larger one; in sample none of them does. The interaction is -12.96 % out of sample and -7.845 % in sample, and the joint corner does beat both singles in sample against does out of it.",
         "C-0063's ORDERING, MEASURED ON THIS LATTICE: REVERSED. The placement main effect is 0.009241 and the distribution main effect 0.3046 in log units.",
         "THE CHEAP BOUND DECIDED THE METHOD AND IT NEEDED NO SOLVE: the determined ladder carries 55 stations, 5, 6, 5, 6, 5, 6, 5, 6, 5, 6 by row, so at five columns the five-station rows are FORCED and the family is 6^5 = 7776 -- exhaustible. And it admits NO centro-symmetric member at any of its 5 row pairs, so C-0063's own search strategy has no analogue here.",
-        "THE INHERITED SENTENCE, MEASURED: equal springs ranks the placements at Spearman -0.08242 against the searched objective, with a regret of 1.2208; rim-graded 5:1 ranks the placements at Spearman 0.4924 against the searched objective, with a regret of 1.04061; equal springs ranks the placements at Spearman -0.438 against the searched objective, with a regret of 1.19325; rim-graded 5:1 ranks the placements at Spearman 0.6264 against the searched objective, with a regret of 1.0. CLAUDE.md's *selecting a placement on the EQUAL-SPRING objective is selecting on the wrong quantity once a distribution is free* is a warning this corpus asserts and had never measured on this lattice.",
+        "THE INHERITED SENTENCE, MEASURED: equal springs ranks the placements at Spearman -0.09354 against the searched objective, with a regret of 1.2208; rim-graded 5:1 ranks the placements at Spearman 0.4945 against the searched objective, with a regret of 1.04061; equal springs ranks the placements at Spearman -0.438 against the searched objective, with a regret of 1.19325; rim-graded 5:1 ranks the placements at Spearman 0.6264 against the searched objective, with a regret of 1.0. CLAUDE.md's *selecting a placement on the EQUAL-SPRING objective is selecting on the wrong quantity once a distribution is free* is a warning this corpus asserts and had never measured on this lattice.",
         "EVERY THRESHOLD THE MOVING QUANTITIES FEED, AND THEIR CONJUNCTION -- which CH-0272 records no verdict block here has ever stated: over 17 graded corners, 7 are flat at the 90th percentile, 1 are flat AND inside C-0023's per-path allowable, and 0 beat the uncoupled tile."
     ],
     "validity": [

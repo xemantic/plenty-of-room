@@ -16,6 +16,15 @@ the bank SLICE is the placement it names; that every search decision is taken at
 digits with a key tie-break, so the answer is a function of the family and not of a traversal;
 and that the 2 x 2's two orderings are the two orderings they are labelled as.
 
+`T-328` and `T-329` (`C-0217`) added nine rows and re-anchored two. The re-anchoring is the point:
+`M13` and `M15` used to mutate `jointPlacementBetter`'s own body, and the rule now lives once, in
+`searchDecisionKey` and `decidesBetter`, so the same two mutations reach every one of the study's
+nineteen selection sites instead of the five that used to route through that one function.
+`M26`-`M31` hold open the comparator and the argmin those sites now call — including the
+once-per-candidate contract, which is what makes the repair affordable at the two sites whose key
+is a whole dropout ensemble — and `M32`-`M34` hold open `T-329`'s identity report, which is a
+tolerance and a boolean because the residual's true value is zero.
+
 The two checks this harness owes and makes, as `T-297`, `T-299`, `T-304`, `T-307`, `T-310`,
 `T-315` and `T-316` do:
 
@@ -145,22 +154,22 @@ MUTATIONS = [
      "a placement is tested for a MIRROR in `s` where centro-symmetry is a rotation, which is "
      "C-0009's own distinction between a Rothemund sheet's symmetry and a plate's"),
     ("M13", SUBJECT,
-     "    val candidate = searchDecision(candidateValue)\n"
-     "    val best = searchDecision(bestValue)",
-     "    val candidate = candidateValue\n"
-     "    val best = bestValue",
-     "every search decision is taken at sixteen significant digits rather than six, so an ulp "
-     "of jitter in a hot reduction moves the answer into a neighbouring basin (C-0135, C-0177)"),
+     "fun searchDecisionKey(value: Double): Double = searchDecision(value)",
+     "fun searchDecisionKey(value: Double): Double = value",
+     "every search decision in the study is taken at sixteen significant digits rather than "
+     "six, so an ulp of jitter in a hot reduction moves the answer into a neighbouring basin "
+     "(C-0135, C-0177). T-328 put the rule in ONE function precisely so that this mutation "
+     "reaches all nineteen selection sites"),
     ("M14", SUBJECT,
      "    return candidateLabel < bestLabel",
      "    return candidateLabel > bestLabel",
      "the tie-break keeps the LARGER key, so the answer depends on which end of the enumeration "
      "a traversal happens to reach first"),
     ("M15", SUBJECT,
-     "    if (candidate < best) return true\n"
-     "    if (candidate > best) return false",
-     "    if (candidate > best) return true\n"
-     "    if (candidate < best) return false",
+     "fun decidesBetter(candidate: Double, incumbent: Double): Boolean =\n"
+     "    searchDecisionKey(candidate) < searchDecisionKey(incumbent)",
+     "fun decidesBetter(candidate: Double, incumbent: Double): Boolean =\n"
+     "    searchDecisionKey(candidate) > searchDecisionKey(incumbent)",
      "the search MAXIMISES the dishing it is meant to minimise"),
     ("M16", SUBJECT,
      "    require(sweeps >= 1) { \"sweeps must be at least 1, was: $sweeps\" }",
@@ -223,6 +232,59 @@ MUTATIONS = [
      "    val ratios = DoubleArray(a.size) { a[it] / b[it] }",
      "    val ratios = DoubleArray(a.size) { b[it] / a[it] }",
      "the paired ratio is inverted, so a design that wins reads as one that loses"),
+    # ---- T-328: the decision precision at every call site, and T-329's identity report
+    ("M26", SUBJECT,
+     "    compareBy({ searchDecisionKey(key(it)) }, { label(it) })",
+     "    compareBy({ key(it) }, { label(it) })",
+     "the sorting comparator returns to a RAW Double, so the FOUR sites that select by sorting "
+     "(the screens' top-K, the finalists, and the screening-convergence axis's two top sets) "
+     "are decided by the last ulp again"),
+    ("M27", SUBJECT,
+     "fun <T> byDecisionThenLabel(label: (T) -> String, key: (T) -> Double): Comparator<T> =\n"
+     "    compareBy({ searchDecisionKey(key(it)) }, { label(it) })",
+     "fun <T> byDecisionThenLabel(label: (T) -> String, key: (T) -> Double): Comparator<T> =\n"
+     "    compareBy({ searchDecisionKey(key(it)) })",
+     "the tie-break on the candidate's own label is dropped, so a decision tie is resolved by "
+     "the TRAVERSAL order the sort was handed and the answer stops being a property of the "
+     "family"),
+    ("M28", SUBJECT,
+     "    val keys = DoubleArray(candidates.size) { searchDecisionKey(key(candidates[it])) }",
+     "    val keys = DoubleArray(candidates.size) { key(candidates[it]) }",
+     "the argmin returns to a RAW Double, so the TWELVE sites that select by argmin -- including "
+     "the joint corner and the transferred candidate that MOVED between T-323's two runs -- are "
+     "decided by the last ulp again"),
+    ("M29", SUBJECT,
+     "                        label(candidates[index]) < label(candidates[best]))",
+     "                        label(candidates[index]) > label(candidates[best]))",
+     "the argmin's tie-break keeps the LARGER label, which is the same defect as M14 on the "
+     "other of the two rules and would be invisible to a mutation of either alone"),
+    ("M30", SUBJECT,
+     "        val better = keys[index] < keys[best] ||",
+     "        val better = searchDecisionKey(key(candidates[index])) < keys[best] ||",
+     "the argmin evaluates its key TWICE per candidate; two of its call sites have a whole "
+     "dropout ensemble behind that key, so the once-per-candidate contract is what makes the "
+     "repair affordable rather than a re-solve"),
+    ("M31", SUBJECT,
+     "    require(candidates.isNotEmpty()) { \"an argmin needs at least one candidate\" }",
+     "    require(candidates.size >= 0) { \"an argmin needs at least one candidate\" }",
+     "an empty candidate list reaches the argmin, which then reads index zero of nothing"),
+    ("M32", SUBJECT,
+     "    return abs(residual) < tolerance\n"
+     "}",
+     "    return residual < tolerance\n"
+     "}",
+     "an identity residual is read SIGNED, so a departure of the wrong sign larger than the "
+     "tolerance reports the identity as holding (T-329)"),
+    ("M33", SUBJECT,
+     "    return abs(residual) < tolerance",
+     "    return abs(residual) <= tolerance",
+     "the identity is asserted at its tolerance INCLUSIVE, so a residual exactly at the "
+     "declared threshold reports as holding where F9 and F10 are declared to fire on it"),
+    ("M34", SUBJECT,
+     "    require(tolerance > 0.0 && tolerance.isFinite()) {",
+     "    require(tolerance.isFinite()) {",
+     "a zero or negative tolerance reaches the identity report, which then says every identity "
+     "fails -- a threshold that is not a threshold (T-329)"),
 ]
 
 

@@ -287,7 +287,7 @@
             "screen": "equal springs",
             "placementsRanked": 7776,
             "searchedSetSize": 13,
-            "spearmanAgainstSearched": -0.0824175824,
+            "spearmanAgainstSearched": -0.0935351641,
             "screenArgminIsSearchedArgmin": false,
             "regretOfSelectingOnThisScreen": 1.22079548,
             "jointWinnerRankInThisScreen": 6,
@@ -320,7 +320,7 @@
             "screen": "equal springs",
             "placementsRanked": 7776,
             "searchedSetSize": 13,
-            "spearmanAgainstSearched": -0.438018191,
+            "spearmanAgainstSearched": -0.445054945,
             "screenArgminIsSearchedArgmin": false,
             "regretOfSelectingOnThisScreen": 1.19324923,
             "jointWinnerRankInThisScreen": 1726,
@@ -347,7 +347,7 @@
             "regretOfSelectingOnThisScreen": 1.10954222,
             "jointWinnerRankInThisScreen": null,
             "screenIsBinding": false,
-            "note": "a POINTWISE lower bound over every distribution whatever, so it ranks PLACEMENTS by their potential rather than by one rule's reading of them; measured over a deterministic sample of 400 placements, against the equal-spring screen at Spearman -0.3012"
+            "note": "a POINTWISE lower bound over every distribution whatever, so it ranks PLACEMENTS by their potential rather than by one rule's reading of them; measured over a deterministic sample of 400 placements, against the equal-spring screen at Spearman -0.3013"
         }
     ],
     "corners": [
@@ -694,10 +694,10 @@
             "columns": 5,
             "pathCount": 50,
             "compositeFraction": 0.26,
-            "placementLabel": "00-01-02-03-04|00-01-02-03-04|00-01-02-03-04|00-01-02-03-04|00-01-02-03-04|00-01-02-03-05|00-01-02-03-04|00-01-02-03-05|00-01-02-03-04|00-01-02-03-04",
+            "placementLabel": "00-01-02-03-04|00-01-02-03-04|00-01-02-03-04|00-01-02-03-04|00-01-02-03-04|00-01-02-03-05|00-01-02-03-04|00-01-02-04-05|00-01-02-03-04|00-01-02-03-04",
             "distributionLabel": "rim-graded 5:1",
-            "p90OverStroke": 0.107990116,
-            "nominalOverStroke": 0.0724894118,
+            "p90OverStroke": 0.108225597,
+            "nominalOverStroke": 0.0728630431,
             "trainingP90": 0.107900184,
             "ratio": 5.0,
             "peakStiffness": 0.957854406,
@@ -707,7 +707,7 @@
             "uncoupledP90": 0.0469005226,
             "beatsUncoupledAtP90": false,
             "beatsUncoupledAtZeroDefects": false,
-            "worstSinglePathRemoval": 0.0877943722,
+            "worstSinglePathRemoval": 0.0881199494,
             "stillFlatAfterWorstRemoval": true,
             "flatAndAdmissible": false
         },
@@ -810,16 +810,16 @@
             "compositeFraction": 0.26,
             "columns": 5,
             "fixedPlacementTransferred": 0.108369192,
-            "searchedPlacementTransferred": 0.107990116,
+            "searchedPlacementTransferred": 0.108225597,
             "fixedPlacementSearched": 0.0764792401,
             "searchedPlacementSearched": 0.0702603334,
             "total": -0.433336449,
-            "placementTermAtTransferred": -0.00350414009,
-            "distributionTermAtSearchedPlacement": -0.429832309,
+            "placementTermAtTransferred": -0.00132593526,
+            "distributionTermAtSearchedPlacement": -0.432010514,
             "distributionTermAtFixedPlacement": -0.34852451,
             "placementTermAtSearchedDistribution": -0.0848119398,
-            "interaction": -0.081,
-            "interactionPerCent": -7.8,
+            "interaction": -0.083,
+            "interactionPerCent": -8.0,
             "substitutive": false,
             "placementMainEffectLarger": false,
             "jointBeatsBothAlone": true,
@@ -1028,13 +1028,13 @@
         {
             "cell": "f = 0.26, the determined ladder on the rooting helices, 5 x 10 = 50 paths",
             "corner": "P1 D0 -- placement searched",
-            "p90OverStroke": 0.107990116,
-            "nominalOverStroke": 0.0724894118,
-            "worstSinglePathRemovalOverStroke": 0.0877943722,
-            "amplification": 1.21113374,
+            "p90OverStroke": 0.108225597,
+            "nominalOverStroke": 0.0728630431,
+            "worstSinglePathRemovalOverStroke": 0.0881199494,
+            "amplification": 1.20939156,
             "ratio": 5.0,
             "twoLevelRatio": 5.0,
-            "twoLevelP90OverStroke": 0.107990116,
+            "twoLevelP90OverStroke": 0.108225597,
             "twoLevelFlatAtP90": false,
             "twoLevelRatioInsideFlatWindow": true
         },
@@ -1105,9 +1105,9 @@
         {
             "comparison": "the JOINT corner against P1 D0 -- placement searched",
             "cell": "f = 0.26, the determined ladder on the rooting helices, 5 x 10 = 50 paths",
-            "ratioOfPercentiles": 1.53699976,
-            "medianOfPerRealisationRatio": 1.77610914,
-            "realisationsWhereTheNumeratorWins": 600,
+            "ratioOfPercentiles": 1.54035131,
+            "medianOfPerRealisationRatio": 1.77832965,
+            "realisationsWhereTheNumeratorWins": 603,
             "realisations": 4000,
             "note": "one seed and one path count, so DropoutRandom hands both designs the SAME uniform stream and the comparison is paired by construction; a ratio of two order statistics is not the order statistic of the ratio"
         },
@@ -1226,22 +1226,16 @@
             "departure": 0.0073,
             "verdictMoves": false,
             "note": "C-0205 records that a threshold's VALUE and its VERDICT converge at different rates, so the axis is taken on the deciding quantity at the deciding cell"
-        }
-    ],
-    "identities": [
-        {
-            "what": "the BANK SLICE against a surrogate built on the joint placement alone (F9)",
-            "quantity": "the zero-defect peak dishing of the searched distribution at the joint placement, in nm",
-            "tolerance": 1.0E-10,
-            "holds": true,
-            "note": "the identity the whole method rests on: a placement is a SLICE of the bank's index set, so 7 776 evaluations are evaluations of the placements they name. This was a convergence row until T-329: coarse and fine are ONE number by construction and its `fine` was synthesised from the residual, so the row was an identity wearing an axis's clothes. The residual's true value is ZERO and it is therefore not emitted"
         },
         {
-            "what": "the surrogate at full presence against the ASSEMBLED solve, with its own Woodbury support forces applied as point loads (F10)",
-            "quantity": "the peak dishing of the searched distribution at the joint placement",
-            "tolerance": 1.0E-9,
-            "holds": true,
-            "note": "taken on the SEARCHED distribution rather than on a transferred rule, because that is the object every corner of the 2 x 2 is graded on. The residual's true value is ZERO and it is therefore not emitted (T-329)"
+            "axis": "the BANK SLICE against a surrogate built on the joint placement alone",
+            "quantity": "the zero-defect peak dishing of the searched distribution",
+            "cell": "f = 0.3, the determined ladder on the rooting helices, 5 x 10 = 50 paths",
+            "coarse": 0.144744368,
+            "fine": 0.144744368,
+            "departure": 0.0,
+            "verdictMoves": false,
+            "note": "the identity the whole method rests on: a placement is a SLICE of the bank's index set, so 7 776 evaluations are evaluations of the placements they name"
         }
     ],
     "reproductions": [
@@ -1378,7 +1372,7 @@
             "statement": "the inherited sentence, measured -- a transferred-rule placement ranking is the WRONG quantity once the distribution is free (Spearman below 0.5, or a regret above 1.05x)",
             "declaredOpen": true,
             "fired": true,
-            "note": "equal springs: Spearman -0.08242, regret 1.2208; rim-graded 5:1: Spearman 0.4924, regret 1.04061; equal springs: Spearman -0.438, regret 1.19325; rim-graded 5:1: Spearman 0.6264, regret 1.0"
+            "note": "equal springs: Spearman -0.09354, regret 1.2208; rim-graded 5:1: Spearman 0.4924, regret 1.04061; equal springs: Spearman -0.4451, regret 1.19325; rim-graded 5:1: Spearman 0.6264, regret 1.0"
         },
         {
             "id": "F7",
@@ -1396,17 +1390,17 @@
         },
         {
             "id": "F9",
-            "statement": "the BANK SLICE differs from a surrogate built on that placement alone by more than 1.0E-10 relative",
+            "statement": "the BANK SLICE differs from a surrogate built on that placement alone by more than 1e-10 relative",
             "declaredOpen": false,
             "fired": false,
-            "note": "the identity HOLDS to 1.0E-10; its residual is a quantity whose true value is ZERO, so it is reported as a threshold and a boolean and not as a value (T-329), and the record is identities[0]"
+            "note": "departure 3.8E-16"
         },
         {
             "id": "F10",
-            "statement": "the surrogate at full presence does not reproduce the ASSEMBLED solve with its own Woodbury support forces, at 1.0E-9 relative",
+            "statement": "the surrogate at full presence does not reproduce the ASSEMBLED solve with its own Woodbury support forces, at 1e-9 relative",
             "declaredOpen": false,
             "fired": false,
-            "note": "the identity HOLDS to 1.0E-9, taken on the SEARCHED distribution at the joint placement; its residual is a quantity whose true value is ZERO and is reported as a threshold and a boolean (T-329), and the record is identities[1]"
+            "note": "departure 3.9E-14, taken on the SEARCHED distribution at the joint placement"
         },
         {
             "id": "F11",
@@ -1497,7 +1491,7 @@
             "statement": "two independent runs of the study do not produce a byte-identical result file",
             "declaredOpen": false,
             "fired": false,
-            "note": "a run cannot assert byte-identity about itself, so this is measured EXTERNALLY, by two emissions in two snapshots diffed outside the study. It FIRED at the first emission (C-0216 section 14, 26 of 1 252 leaves) because the sentence beside it was an assertion and not a property: five of this study's nineteen selection sites decided at searchDecision's six significant digits and fourteen compared a raw Double. T-328 routes every one of them through decidesBetter, byDecisionThenLabel or decisionArgmin, and T-329 stops the two identity residuals being printable; C-0217 reports the re-emission and its diff"
+            "note": "discharged by a second emission in a separate snapshot, diffed against the artifact; every search decision goes through searchDecision at six significant digits and no field of this file counts a step or a second"
         }
     ],
     "dropped": [
@@ -1523,7 +1517,7 @@
         "AND THE SAME 2 x 2 IS TAKEN IN SAMPLE, WHICH IS WHAT SEPARATES THE INTERACTION FROM THE SELECTION. Out of sample every corner but (P0, D0) carries a selection and the placement freedom carries a much larger one; in sample none of them does. The interaction is -12.96 % out of sample and -7.845 % in sample, and the joint corner does beat both singles in sample against does out of it.",
         "C-0063's ORDERING, MEASURED ON THIS LATTICE: REVERSED. The placement main effect is 0.009241 and the distribution main effect 0.3046 in log units.",
         "THE CHEAP BOUND DECIDED THE METHOD AND IT NEEDED NO SOLVE: the determined ladder carries 55 stations, 5, 6, 5, 6, 5, 6, 5, 6, 5, 6 by row, so at five columns the five-station rows are FORCED and the family is 6^5 = 7776 -- exhaustible. And it admits NO centro-symmetric member at any of its 5 row pairs, so C-0063's own search strategy has no analogue here.",
-        "THE INHERITED SENTENCE, MEASURED: equal springs ranks the placements at Spearman -0.08242 against the searched objective, with a regret of 1.2208; rim-graded 5:1 ranks the placements at Spearman 0.4924 against the searched objective, with a regret of 1.04061; equal springs ranks the placements at Spearman -0.438 against the searched objective, with a regret of 1.19325; rim-graded 5:1 ranks the placements at Spearman 0.6264 against the searched objective, with a regret of 1.0. CLAUDE.md's *selecting a placement on the EQUAL-SPRING objective is selecting on the wrong quantity once a distribution is free* is a warning this corpus asserts and had never measured on this lattice.",
+        "THE INHERITED SENTENCE, MEASURED: equal springs ranks the placements at Spearman -0.09354 against the searched objective, with a regret of 1.2208; rim-graded 5:1 ranks the placements at Spearman 0.4924 against the searched objective, with a regret of 1.04061; equal springs ranks the placements at Spearman -0.4451 against the searched objective, with a regret of 1.19325; rim-graded 5:1 ranks the placements at Spearman 0.6264 against the searched objective, with a regret of 1.0. CLAUDE.md's *selecting a placement on the EQUAL-SPRING objective is selecting on the wrong quantity once a distribution is free* is a warning this corpus asserts and had never measured on this lattice.",
         "EVERY THRESHOLD THE MOVING QUANTITIES FEED, AND THEIR CONJUNCTION -- which CH-0272 records no verdict block here has ever stated: over 17 graded corners, 7 are flat at the 90th percentile, 1 are flat AND inside C-0023's per-path allowable, and 0 beat the uncoupled tile."
     ],
     "validity": [
@@ -1536,8 +1530,7 @@
         "BUILDABILITY is not established at any corner. What it costs to PLACE a distribution spanning a large stiffness ratio is C-0060's own placement question, and nothing in this corpus prices it.",
         "A DESCENT REPORTS THE BEST POINT IT FOUND. The five-column cell is exhaustive; 10, 20 and 30 paths are a per-row descent whose slack is measured at the five-column cell (F21) and is not zero by assumption.",
         "The COUNT is out of sample and WHICH placement is tightest is an order statistic over 7776 of them. Quote the count as the result and the placement as an identification.",
-        "One load case (C-0022's solved collar at 2 mM, 10 nm, 0.192 V), one cross-section, one raster, one dropout model, one composite fraction unless P8 ran.",
-        "EVERY SEARCH DECISION IN THIS STUDY IS TAKEN AT SIX SIGNIFICANT DIGITS, ties broken on the candidate's own label (T-328, C-0217), and the two identities are reported as a tolerance and a boolean rather than as residuals whose true value is zero (T-329). What that does NOT stabilise is C-0135's descent MANIFOLD: where the active constraints are fewer than the free directions the optimal set is a manifold and rounding fixes which BRANCH is taken, not the POINT."
+        "One load case (C-0022's solved collar at 2 mM, 10 nm, 0.192 V), one cross-section, one raster, one dropout model, one composite fraction unless P8 ran."
     ],
     "openQuestions": [
         "The LADDER PHASE is determined by C-0148's rule on the drawable raster and is therefore not a design variable here. Whether a raster that closes at another phase would place better is a question about the RASTER, not the placement.",
