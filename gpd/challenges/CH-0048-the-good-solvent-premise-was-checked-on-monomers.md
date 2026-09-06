@@ -92,4 +92,4 @@ computed on, once `v` and `b` are coarse-grained consistently) is passed only by
 ## Provenance
 
 `gpd/results/T-21-concentrated-crossover.json`, `crossover.ConcentratedCrossoverStudyKt`,
-`src/test/kotlin/crossover/ConcentratedCrossoverTest.kt`.
+`origami-engine/src/test/kotlin/crossover/ConcentratedCrossoverTest.kt`.

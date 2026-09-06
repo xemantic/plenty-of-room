@@ -353,7 +353,9 @@ def main(argv):
         return 1 if self_test() else 0
     roots = [argument for argument in argv[1:] if not argument.startswith("-")]
     if not roots:
-        roots = ["src"]
+        # both modules: a default of "src" alone comes back clean over a corpus 120 files
+        # smaller than the one this gate was written for (LIBRARY.md)
+        roots = ["src", os.path.join("origami-engine", "src")]
     defects = check_tree(roots)
     for defect in defects:
         print(defect)

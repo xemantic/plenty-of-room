@@ -151,8 +151,8 @@ and `C-0015`'s own lesson is to sweep shapes rather than counts:
 ### Deliverables
 
 `gpd/tasks/T-110-consumed-crossover-sheet.md` (this file),
-`src/main/kotlin/structure/ConsumedCrossoverSheet.kt`,
+`origami-engine/src/main/kotlin/structure/ConsumedCrossoverSheet.kt`,
 `src/main/kotlin/structure/ConsumedCrossoverSheetStudy.kt`,
-`src/test/kotlin/structure/ConsumedCrossoverSheetTest.kt`,
+`origami-engine/src/test/kotlin/structure/ConsumedCrossoverSheetTest.kt`,
 `gpd/results/T-110-consumed-crossover-sheet.json`,
 and a claim — with a challenge against whichever standing claim the numbers move.

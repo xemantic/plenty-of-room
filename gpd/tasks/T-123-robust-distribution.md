@@ -162,7 +162,7 @@ would have to find to change it.
 
 ## Execute
 
-- `src/main/kotlin/coupling/RobustDistribution.kt` — the multi-state surrogate, the analytic
+- `origami-engine/src/main/kotlin/coupling/RobustDistribution.kt` — the multi-state surrogate, the analytic
   gradient, the smoothed minimax, the conjugate-gradient search, the level quantisation.
 - `src/main/kotlin/coupling/RobustDistributionStudy.kt` — `main`, emitting
   `gpd/results/T-123-robust-distribution.json`.

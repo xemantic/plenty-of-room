@@ -169,8 +169,8 @@ it does not apply at a free edge, and every load case in this task is dominated 
 
 ### Deliverables
 
-- `src/main/kotlin/coupling/NonUniformCoupling.kt` — the distributions, the projection, the Woodbury surrogate, the bound, the optimiser.
+- `origami-engine/src/main/kotlin/coupling/NonUniformCoupling.kt` — the distributions, the projection, the Woodbury surrogate, the bound, the optimiser.
 - `src/main/kotlin/coupling/NonUniformCouplingStudy.kt` — the study main.
-- `src/test/kotlin/coupling/NonUniformCouplingTest.kt` — the gates, written first.
+- `origami-engine/src/test/kotlin/coupling/NonUniformCouplingTest.kt` — the gates, written first.
 - `gpd/results/T-113-non-uniform-coupling.json`.
 - A claim in `gpd/claims/`, and a challenge if a standing claim is contradicted.

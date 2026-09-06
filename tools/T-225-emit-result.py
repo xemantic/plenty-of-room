@@ -36,6 +36,8 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import kotlin_sources  # noqa: E402
 RESULTS = os.path.join(ROOT, "gpd", "results")
 OUT = os.path.join(RESULTS, "T-225-departure-spelling-set.json")
 BODY = os.path.join(ROOT, "tools", "T-225-body.json")
@@ -204,12 +206,9 @@ def exponent_cost(exponent, digits=2):
 def wall_clocks():
     """A wall clock cannot be found by field NAME (`T-7` emits `waterViscosityPascalSeconds`).
     Find it in the SOURCE, and follow the variable to its use."""
-    src = os.path.join(ROOT, "src", "main", "kotlin")
     timing_files, emitting = set(), []
-    for base, _, names in os.walk(src):
-        for name in names:
-            if not name.endswith(".kt"):
-                continue
+    for path in kotlin_sources.walk_main(ROOT):
+            base, name = os.path.dirname(path), os.path.basename(path)
             path = os.path.join(base, name)
             text = open(path).read()
             if "System.nanoTime" not in text and "System.currentTimeMillis" not in text:

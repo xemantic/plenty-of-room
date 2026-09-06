@@ -162,10 +162,10 @@ the NIST PDF and remains paywalled. Its absence is carried as an open item, not 
 
 ### Code
 
-`src/main/kotlin/material/GraftedChi.kt`, additive to the `material` package
+`origami-engine/src/main/kotlin/material/GraftedChi.kt`, additive to the `material` package
 (`PegWater.kt`, `OsmoticEquationOfState.kt` and `SolventQuality.kt` are untouched).
 Entry point `material.GraftedChiStudyKt`, emitting `gpd/results/P-9-grafted-chi.json`.
-Tests in `src/test/kotlin/material/GraftedChiTest.kt`, **written first** — 25 tests.
+Tests in `origami-engine/src/test/kotlin/material/GraftedChiTest.kt`, **written first** — 25 tests.
 
 The package makes the central distinction *structural*: `ScfBrushChiFit` carries a model's own
 theta point as a required constructor parameter, so a caller cannot compare its `χ` against ½ by

@@ -13,7 +13,7 @@
 `C-0087` discharges its statistical-power gate with two statements.
 The first is that a standard error is quoted beside every probability — it is, and it is `0.0000` at 25 of 60 cells.
 The second is that the error falls as `1/√n` — and the test that demonstrates it,
-`src/test/kotlin/coupling/StapleDropoutTest.kt`, evaluates
+`origami-engine/src/test/kotlin/coupling/StapleDropoutTest.kt`, evaluates
 
 ```
 binomialStandardError(0.5, 2500) / binomialStandardError(0.5, 10000)  ==  2

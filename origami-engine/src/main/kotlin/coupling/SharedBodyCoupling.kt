@@ -258,7 +258,7 @@ fun sharedBodyModes(
  * completely free body has `H = 0` — which is why [InfluenceSurrogate.solveWithSharedBody]
  * eliminates the body rather than inverting it.
  */
-class SharedBody internal constructor(
+class SharedBody(
 
     /** `n × m`, dimensionless. */
     val shapes: Array<DoubleArray>,

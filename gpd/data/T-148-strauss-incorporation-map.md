@@ -165,4 +165,4 @@ A first reading of this material reported that `CLAUDE.md`'s `σ_rel = √(f/(1�
 the mean is `k(1 − f)`, the variance `k²f(1 − f)`, and the relative standard deviation `√(f/(1 − f))`,
 which at `f = 0.16` is **0.4364** and at `f = 0.52` is **1.0408** — the two numbers `CH-0084` publishes.
 The inverted form `√((1 − f)/f)` gives 2.29 at `f = 0.16` and is not what is quoted anywhere.
-Asserted as a gate-1 test in `src/test/kotlin/coupling/StapleDropoutTest.kt`.
+Asserted as a gate-1 test in `origami-engine/src/test/kotlin/coupling/StapleDropoutTest.kt`.

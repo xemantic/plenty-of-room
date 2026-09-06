@@ -41,6 +41,8 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import kotlin_sources  # noqa: E402
 RESULTS = os.path.join(ROOT, "gpd", "results")
 
 # Any call that puts a value through `structure/ResultRounding.kt`, at the emission boundary or
@@ -133,8 +135,8 @@ def source_census(root=ROOT):
     for name, written in sorted(entry.studies(root).items()):
         if not written:
             continue
-        source = os.path.join(root, "src", "main", "kotlin", name.replace(".", "/") + ".kt")
-        text = open(source, encoding="utf-8").read() if os.path.exists(source) else ""
+        source = kotlin_sources.resolve_main(root, name.replace(".", "/") + ".kt")
+        text = open(source, encoding="utf-8").read() if source else ""
         rows.append((name, os.path.basename(written), rounds(text)))
     return rows
 

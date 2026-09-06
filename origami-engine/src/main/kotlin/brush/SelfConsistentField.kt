@@ -577,7 +577,7 @@ val GraftedChain.contourDiffusion: Double
  * The raise is not cosmetic: above `r ≈ 1` the scheme rings on the singular grafted source hard
  * enough to make the volume fraction negative next to it.
  */
-internal fun contourSteps(
+fun contourSteps(
     chain: GraftedChain,
     spacing: Double,
     discretisation: ScfDiscretisation

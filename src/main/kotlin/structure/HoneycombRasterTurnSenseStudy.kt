@@ -200,12 +200,15 @@ fun main() {
     val senseOneCount = turns.count { it.effectiveSense == 1 }
     val senseTwoCount = turns.count { it.effectiveSense == 2 }
     val turnRecords = turns.map { turn ->
+        // bound to a local: `cell` is a public property of another module, so a `!!` on one line
+        // does not smart-cast the next one
+        val cell = turn.cell!!
         T218TurnRecord(
             index = turn.index,
             row = turn.index / 4,
             positionInRow = turn.index % 4,
-            x = turn.cell!!.x,
-            y = turn.cell.y,
+            x = cell.x,
+            y = cell.y,
             sublattice = turn.sublattice!!.name,
             arriveAzimuthDegrees = turn.arriveAzimuthDegrees,
             leaveAzimuthDegrees = turn.leaveAzimuthDegrees,

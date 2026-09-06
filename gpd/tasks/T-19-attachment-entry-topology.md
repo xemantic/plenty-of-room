@@ -236,12 +236,12 @@ Stated in advance, per §5. The outcome of each is in Verify.
 
 Code: `src/main/kotlin/structure/OrigamiMembrane.kt` — `EntryBond`, `EntryTopology` and its builders, the
 tether-pair load introduction and the compatible-split solver, all **added**, nothing existing changed;
-`src/main/kotlin/structure/JointAllowable.kt` — Strunz's single-barrier model as a function of bonded length
+`origami-engine/src/main/kotlin/structure/JointAllowable.kt` — Strunz's single-barrier model as a function of bonded length
 and loading rate; `src/main/kotlin/structure/EntryTopologyStudy.kt` — the study.
 `ShearLag.kt`, `OrigamiGrillage.kt`, `CrossoverLayout.kt`, `OrigamiSheet.kt`, `Gen1Tile.kt`, `Cholesky.kt` and
 `ResultRounding.kt` are **unchanged**.
 Tests, written first: `src/test/kotlin/structure/EntryTopologyTest.kt` (16) and
-`src/test/kotlin/structure/JointAllowableTest.kt` (9), each named for the gate it discharges.
+`origami-engine/src/test/kotlin/structure/JointAllowableTest.kt` (9), each named for the gate it discharges.
 
 ```shell
 ./gradlew test -PbuildDirectory=build-t19

@@ -274,7 +274,7 @@ class NonUniformDeflection internal constructor(
  * class the free solution and one unit-point-load solution per station, which is all the
  * superposition needs.
  */
-class InfluenceSurrogate internal constructor(
+class InfluenceSurrogate(
 
     /** The attachment stations, in nm from the tile centre. */
     val grid: List<Pair<Double, Double>>,

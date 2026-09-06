@@ -3,6 +3,24 @@
 Maintenance notes for working on this project itself.
 From time to time, it is worth to update the build tooling and dependencies.
 
+## The two modules
+
+This build has two Kotlin modules — `origami-engine`, the library, and the root project, the corpus
+([`LIBRARY.md`](LIBRARY.md)) —
+and each declares its own `kotlin { compilerOptions { … } }` block.
+
+The **versions** cannot drift, because both read `javaTarget` and `kotlinTarget` from
+[libs.versions.toml](gradle/libs.versions.toml).
+The **flags** can: `extraWarnings`, `progressiveMode`, `-Xjdk-release` and the `powerAssert`
+function list are written out twice, deliberately, so that the module has no dependency on the
+root's build script.
+Change one and change the other, or the library compiles under settings the corpus does not.
+
+The module also declares `java-test-fixtures`, because the shared test helpers
+(`Numerics.kt` and friends) live in `origami-engine/src/testFixtures/kotlin`
+and the root project's tests use them through
+`testImplementation(testFixtures(project(":origami-engine")))`.
+
 ## Update gradlew wrapper
 
 ```shell

@@ -32,16 +32,42 @@ and they were reachable only *through* the tile.
 
 Innermost first. A layer may depend only on the ones above it.
 
-| layer | package | what it holds | state |
-|---|---|---|---|
-| 1. quantities | `quantities/` | a number **and the state it was read at**; comparisons that refuse two states | **exists** |
-| 2. lattice | `lattice/` | crossover lattices behind one interface: azimuths, step, period, register departure, station ladder | **exists** |
-| 3. design | `design/` | the interchange boundary — read **and write** a scadnano `.sc`, derive the lattice facts, check buildability | **exists** (`T-266`/`C-0160` added the writer and the committed designs) |
-| 4. environment | `environment/` over `brush/`, `electrostatics/` (`material/`, `poroelastic/` not yet) | the layer, the electrolyte, the field — validatable without a tile | **exists** (`T-265`/`C-0159` added the interface and the typed regime) |
-| 5. mechanics | `structure/`, `crossover/`, `coupling/` | grillage, influence banks, prestrain-as-load | **exists** (`T-267`/`C-0161` made the grillages constructible from a design; the studies still call the `Gen1Tile` constructors, which is what kept the step additive) |
-| 6. device | `actuator/`, `stability/`, `anchoring/`, `tile/` | the force balance, the folds, the joints | exists |
-| 7. emission | `structure/ResultRounding.kt` ×6 | one rounding rule, typed records, declared inputs | **six implementations; not started** |
-| 8. corpus tools | `tools/*.py` | provenance, drift, transfer detection | exists, **belongs outside this repository** |
+| layer | package | module | what it holds | state |
+|---|---|---|---|---|
+| 1. quantities | `quantities/` | `origami-engine` | a number **and the state it was read at**; comparisons that refuse two states | **exists** |
+| 2. lattice | `lattice/` | `origami-engine` | crossover lattices behind one interface: azimuths, step, period, register departure, station ladder | **exists** |
+| 3. design | `design/` | root, and **mixed** | the interchange boundary — read **and write** a scadnano `.sc`, derive the lattice facts, check buildability | **exists** (`T-266`/`C-0160` added the writer and the committed designs) |
+| 4. environment | `environment/` over `brush/`, `electrostatics/` (`material/`, `poroelastic/` not yet) | `origami-engine` | the layer, the electrolyte, the field — validatable without a tile | **exists** (`T-265`/`C-0159` added the interface and the typed regime) |
+| 5. mechanics | `structure/`, `crossover/`, `coupling/` | split | grillage, influence banks, prestrain-as-load | **exists** (`T-267`/`C-0161` made the grillages constructible from a design; the studies still call the `Gen1Tile` constructors, which is what kept the step additive) |
+| 6. device | `actuator/`, `stability/`, `anchoring/`, `tile/` | split | the force balance, the folds, the joints | exists |
+| 7. emission | `structure/ResultRounding.kt` ×6 | `origami-engine` | one rounding rule, typed records, declared inputs | **six implementations; not started** |
+| 8. corpus tools | `tools/*.py` | root | provenance, drift, transfer detection | exists, **belongs outside this repository** |
+
+## The two modules
+
+Cutting across the layers, this repository is now two Gradle modules,
+and the boundary is the one thing here that a compiler enforces rather than a document.
+
+**`origami-engine`** holds the models — 74 main sources, 62 tests.
+**The root project** holds the corpus — the 148 studies, the claims and challenges under `gpd/`, and the gates in `tools/`.
+The root declares `api(project(":origami-engine"))`; there is no edge back, and an accidental one fails `:origami-engine:compileKotlin`.
+
+The rule is that a file is in the module when it is a model **and** its whole transitive dependency set is too.
+The second half is what decides most cases, and it is why the table above reads *split* twice:
+`structure/` is 14 files in the module and 37 in the root, `coupling/` is 8 and 24, `tile/` is 5 and 57, `anchoring/` is 1 and 84.
+Layer 3 reads *mixed* for the sharper reason that the `design/` package contains two **studies** —
+`ScaffoldSeamStudy.kt` and `SimulatedTileCensusStudy.kt` —
+and a module with a `fun main` that writes `gpd/results/` is not a library.
+Splitting that package is a step, not a move.
+
+What the extraction cost and what it forced — eleven `internal` declarations widened because `internal` is module-scoped,
+a smart cast that stops compiling across a module boundary,
+four test files that had to stay behind because they cross-check a library quantity against a corpus claim,
+and twelve `tools/` scripts scoped to `src` alone, three of which simply crashed —
+is recorded in [`LIBRARY.md`](LIBRARY.md), with the reasoning per file.
+
+**The boundary is sound but not complete**: everything in `origami-engine` belongs there,
+and not everything that belongs there is in it yet.
 
 ## What layers 1–4 buy, concretely
 

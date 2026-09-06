@@ -113,8 +113,14 @@ def _selftest():
     import os
     import re
 
+    import kotlin_sources
+
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    kotlin = open(os.path.join(root, "src", "main", "kotlin", "lattice", "LatticeTag.kt")).read()
+    # `lattice/LatticeTag.kt` is in `origami-engine` since the library was extracted, so the
+    # source root is resolved rather than assembled (LIBRARY.md)
+    tag_source = kotlin_sources.resolve_main(root, os.path.join("lattice", "LatticeTag.kt"))
+    assert tag_source is not None, "lattice/LatticeTag.kt is in neither module"
+    kotlin = open(tag_source).read()
     declared = tuple(re.findall(r'^\s+[A-Z]+\("([a-z]+)"\)[,;]$', kotlin, re.MULTILINE))
     check("the tag vocabulary matches lattice/LatticeTag.kt", declared, LATTICE_TAGS)
     for failure in failures:

@@ -17,10 +17,8 @@
 package com.xemantic.nano.plentyofroom.tile
 
 import com.xemantic.kotlin.test.assert
-import com.xemantic.nano.plentyofroom.anchoring.maximumPlanCeilingForCount
 import com.xemantic.nano.plentyofroom.isCloseTo
 import com.xemantic.nano.plentyofroom.structure.Gen1Tile
-import com.xemantic.nano.plentyofroom.structure.centroSymmetricPlacementsOn
 import kotlin.math.abs
 import kotlin.math.sqrt
 import kotlin.test.Test
@@ -240,49 +238,11 @@ class HoneycombFaceLatticeTest {
     // --- gate 5: the placement machinery is lattice-generic --------------------------------------
 
     @Test
-    fun `the square-lattice plan ceiling machinery accepts the honeycomb lattice`() {
-        // F5. `maximumPlanCeilingForCount` takes an explicit lattice, so nothing about it is
-        // square-lattice-specific; what is square-lattice-specific is the lattice GENERATOR.
-        val lattice = honeycombStationLattice(15, 112, 0, 7)
-        val ceiling = maximumPlanCeilingForCount(
-            lattice, count = 45, edgeX = 112 * Gen1Tile.RISE_PER_BASE_PAIR,
-            width = d, maximumPerRow = 6
-        )
-        assert(ceiling != null)
-        // F3 FIRES: at 45 of 90 stations a placement SKIPS stations, so the binding pitch is
-        // 42 bp and not 21, and the ceiling is ABOVE the square lattice's 8.19 nm inboard bound.
-        assert(ceiling!! > 8.19)
-    }
-
-    @Test
-    fun `the inboard bound binds only at the SATURATED count`() {
-        val lattice = honeycombStationLattice(15, 112, 0, 7)
-        val inboard = HoneycombLattice.SAME_PAIR_PERIOD_BP * Gen1Tile.RISE_PER_BASE_PAIR - d
-        val saturated = maximumPlanCeilingForCount(
-            lattice, count = 90, edgeX = 112 * Gen1Tile.RISE_PER_BASE_PAIR,
-            width = d, maximumPerRow = 6
-        )
-        assert(saturated != null)
-        assert(saturated!! < inboard)
-    }
-
-    @Test
     fun `the collinear inboard bound is the ladder less one duplex`() {
         val inboard = HoneycombLattice.SAME_PAIR_PERIOD_BP * Gen1Tile.RISE_PER_BASE_PAIR - d
         assert(inboard.isCloseTo(4.604))
         val square = 32 * Gen1Tile.RISE_PER_BASE_PAIR - Gen1Tile.INTERHELICAL_SHEET
         assert((square / inboard) > 1.77 && (square / inboard) < 1.79)
-    }
-
-    @Test
-    fun `a centro-symmetric placement family exists on the even-row honeycomb lattice`() {
-        val lattice = honeycombStationLattice(10, 112, 0, 7)
-        val found = centroSymmetricPlacementsOn(
-            lattice, edgeX = 112 * Gen1Tile.RISE_PER_BASE_PAIR, arm = 3.0, count = 20,
-            minimumPerRow = 2, maximumPerRow = 2, width = d
-        ).take(3).toList()
-        assert(found.isNotEmpty())
-        assert(found.all { it.isCentroSymmetric(10) })
     }
 
     @Test

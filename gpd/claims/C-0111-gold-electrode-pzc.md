@@ -235,7 +235,7 @@ The result file is **byte-identical across two runs**.
 The full suite is green — **2 486 tests in 133 classes, 0 failures** — on a snapshot of the working tree
 taken at 14:00 with three files a sibling agent had left mid-TDD dropped:
 `src/test/kotlin/structure/InteriorCrossoverPrestrainTest.kt`,
-`src/main/kotlin/actuator/TallGapDeviceBStudy.kt` and `src/test/kotlin/actuator/TallGapDeviceBTest.kt`.
+`src/main/kotlin/actuator/TallGapDeviceBStudy.kt` and `origami-engine/src/test/kotlin/actuator/TallGapDeviceBTest.kt`.
 
 ---
 

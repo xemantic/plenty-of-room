@@ -62,7 +62,7 @@ data class GrillageThermalFluctuation(
  * `w` is positive **downward**, compressing the polymer layer, and `x` runs along the
  * helices — the `T-5` conventions, unchanged.
  */
-class GrillageDeflection internal constructor(
+class GrillageDeflection(
     private val lattice: OrigamiGrillage,
     val coefficients: F64Array,
     private val pressure: PressureField,
@@ -745,7 +745,7 @@ class OrigamiGrillage(
     }
 
     /** The vector `b` for which `b·q` is the deflection at ([x], [y]). */
-    internal fun basisAt(x: Double, y: Double): F64Array {
+    fun basisAt(x: Double, y: Double): F64Array {
         val beam = beamOf(y)
         val element = elementOf(x)
         val length = nodeX[element + 1] - nodeX[element]
@@ -852,7 +852,7 @@ class OrigamiGrillage(
      * varies in `y` — the electrostatic edge taper — produces the rolling moment on the
      * outermost duplexes that it physically does, and not merely a vertical force.
      */
-    internal fun assembleLoad(pressure: PressureField, pointLoads: List<PointLoad>): F64Array {
+    fun assembleLoad(pressure: PressureField, pointLoads: List<PointLoad>): F64Array {
         val load = F64Array(degreesOfFreedom)
         val half = interhelicalDistance / 2.0
         for (beam in 0 until beamCount) {

@@ -43,7 +43,9 @@ So the loop is the structure of this repository:
 | [TASKS.md](TASKS.md) | The live queue. Process blockers outrank cheap wins. |
 | [JOURNAL.md](JOURNAL.md) | Every interaction, decision, and surprise, in order. |
 | [gpd/](gpd/README.md) | The record: tasks with their four stages, machine-readable results, verified claims with provenance, and challenges. |
-| `src/` | The numeric models and their entry points, in Kotlin/JVM. Tests are written first. |
+| [LIBRARY.md](LIBRARY.md) | Why this is two Gradle modules, what decided each file, and what the split forced. |
+| `origami-engine/` | The **library**: the models, in Kotlin/JVM. It reads no result file and has no entry point. |
+| `src/` | The **corpus**: the studies and their entry points, on top of the library. Tests are written first. |
 
 Status is **TRL 1–3** throughout. A claim marked `PASS` is model-consistent and traceable; nothing here is measured.
 

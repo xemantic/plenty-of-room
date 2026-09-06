@@ -43,8 +43,9 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import kotlin_sources  # noqa: E402
 RESULTS = os.path.join(ROOT, "gpd", "results")
-SOURCES = os.path.join(ROOT, "src", "main", "kotlin")
 
 DECLARATION = re.compile(r"\.withEmissionHeader\(")
 
@@ -114,8 +115,8 @@ def census(root=ROOT):
     rows = []
     written = {}
     for name, output in sorted(studies(root).items()):
-        source = os.path.join(root, "src", "main", "kotlin", name.replace(".", "/") + ".kt")
-        text = open(source, encoding="utf-8").read() if os.path.exists(source) else ""
+        source = kotlin_sources.resolve_main(root, name.replace(".", "/") + ".kt")
+        text = open(source, encoding="utf-8").read() if source else ""
         artifact = os.path.join(root, output)
         document = None
         if os.path.exists(artifact):
@@ -198,11 +199,8 @@ def literal_reads(root=ROOT):
     census_module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(census_module)
     found = {}
-    for base, _, names in os.walk(os.path.join(root, "src", "main", "kotlin")):
-        for name in sorted(names):
-            if not name.endswith(".kt"):
-                continue
-            source = os.path.join(base, name)
+    for source in kotlin_sources.walk_main(root):
+            name = os.path.basename(source)
             reads = census_module.read_literals(open(source, encoding="utf-8").read())
             if reads:
                 found[os.path.relpath(source, root)] = sorted(reads)

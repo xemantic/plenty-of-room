@@ -21,7 +21,7 @@ The evidence is strong and is not disputed: **not one of the seven claims inheri
 | the artifact was not read | the number was read and **described in a sentence written around it** — `"the binomial standard error at 10 000 draws is <value>, which is the resolution the verdict is quoted to"` |
 | the human artifact was spared | `C-0087`'s **`P3` predicate** — *"a distribution, not a point … with a binomial standard error on every exceedance probability"* — is discharged **by this statistic** |
 | a grep of the emitted file would have caught it | a grep finds `0.0000`, which is what the sentence says it is. **There is nothing textually wrong.** |
-| the degeneracy was unnoticed | `src/test/kotlin/coupling/StapleDropoutTest.kt` has asserted `binomialStandardError(1.0, 100) == 0.0` since `C-0087`. **It is tested.** |
+| the degeneracy was unnoticed | `origami-engine/src/test/kotlin/coupling/StapleDropoutTest.kt` has asserted `binomialStandardError(1.0, 100) == 0.0` since `C-0087`. **It is tested.** |
 
 So the number was **computed correctly, emitted correctly, unit-tested, read, and written about** —
 and the sentence written about it states the opposite of what it means.

@@ -135,10 +135,10 @@ and a substantial part of the reading returned **nothing**, which is itself part
 
 ## Execute
 
-`src/main/kotlin/material/SolventQuality.kt`, additive to the `material` package (`PegWater.kt` and
+`origami-engine/src/main/kotlin/material/SolventQuality.kt`, additive to the `material` package (`PegWater.kt` and
 `OsmoticEquationOfState.kt` are untouched — `T-1c` was editing them concurrently).
 Entry point `material.SolventQualitySaltStudyKt`, emitting `gpd/results/P-6-solvent-quality-vs-salt.json`.
-Tests in `src/test/kotlin/material/SolventQualityTest.kt`, written first (40 tests).
+Tests in `origami-engine/src/test/kotlin/material/SolventQualityTest.kt`, written first (40 tests).
 
 Results are carried in [`C-0007`](../claims/C-0007-solvent-quality-vs-salt.md). The short version:
 

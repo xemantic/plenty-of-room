@@ -115,7 +115,7 @@ is what makes the choice defensible, so it is measured rather than inherited —
 
 ## Execute
 
-`src/main/kotlin/brush/GraftedLayer.kt` — `bracketedRoot`.
+`origami-engine/src/main/kotlin/brush/GraftedLayer.kt` — `bracketedRoot`.
 `src/test/kotlin/brush/BracketedRootTest.kt` — nine tests, written first, five failing before the
 repair.
 

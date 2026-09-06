@@ -38,6 +38,8 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import kotlin_sources  # noqa: E402
 OUT = os.path.join(ROOT, "gpd", "results", "T-250-prose-interpolation-sweep.json")
 BODY = os.path.join(ROOT, "tools", "T-250-body.json")
 CLAIM_TEMPLATE = os.path.join(ROOT, "tools", "C-0156-claim-template.md")
@@ -196,9 +198,8 @@ def string_typed_numeric_channels(root):
         walk(hygiene._load(path))
     read = set()
     total = 0
-    for dirpath, _, names in os.walk(os.path.join(ROOT, "src", "main", "kotlin")):
-        for name in names:
-            text = open(os.path.join(dirpath, name), encoding="utf-8").read()
+    for source in kotlin_sources.walk_main(ROOT):
+            text = open(source, encoding="utf-8").read()
             for match in re.finditer(
                     r'getValue\("([^"]+)"\)\.jsonPrimitive\.content\.toDouble\(\)', text):
                 total += 1

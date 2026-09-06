@@ -66,9 +66,13 @@ from emission_header import with_emission_header  # noqa: E402
 RESULT_DIRECTORY = "gpd/results"
 RESULT_FILE = re.compile(r"^[TP]-[0-9]+[a-z]?-[a-z0-9]+(?:-[a-z0-9]+)*\.json$")
 
+# both modules, since the library was extracted (LIBRARY.md).  `origami-engine` reads no
+# result file today, so these add no edges -- but a census that cannot see a module cannot say so.
 SOURCE_ROOTS = (
     os.path.join("src", "main", "kotlin"),
     os.path.join("src", "test", "kotlin"),
+    os.path.join("origami-engine", "src", "main", "kotlin"),
+    os.path.join("origami-engine", "src", "test", "kotlin"),
 )
 
 CENSUS_FILE = os.path.join(RESULT_DIRECTORY, "P-22-result-reader-census.json")

@@ -153,7 +153,7 @@ Stated in advance, per §5. The outcome of each is in Verify.
 Code: `src/main/kotlin/structure/` — `OrigamiGrillage.kt` (the lattice), `DiscreteLatticeTileStudy.kt` (the study),
 reusing `Cholesky.kt` (extended with `forwardSolve` and `lowerColumn`, both additive), `OrigamiSheet.kt`, `PlateOnFoundation.kt`,
 `LoadPaths.kt`, `Gen1Tile.kt` and `ResultRounding.kt` unchanged.
-Tests, written first: `src/test/kotlin/structure/OrigamiGrillageTest.kt`, 21 tests named for the gate they discharge.
+Tests, written first: `origami-engine/src/test/kotlin/structure/OrigamiGrillageTest.kt`, 21 tests named for the gate they discharge.
 
 ```shell
 ./gradlew test -PbuildDirectory=build-t10

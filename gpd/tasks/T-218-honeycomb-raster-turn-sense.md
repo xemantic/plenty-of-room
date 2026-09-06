@@ -94,7 +94,7 @@ per-helix scaffold allotment, and it is checked here.
 
 ## Execute
 
-`src/main/kotlin/structure/HoneycombRasterTurnSense.kt` (model, exact integer lattice) and
+`origami-engine/src/main/kotlin/structure/HoneycombRasterTurnSense.kt` (model, exact integer lattice) and
 `structure/HoneycombRasterTurnSenseStudy.kt` (the study), tests first in
 `src/test/kotlin/structure/HoneycombRasterTurnSenseTest.kt`.
 Result: `gpd/results/T-218-honeycomb-raster-turn-sense.json`.

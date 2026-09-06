@@ -152,9 +152,9 @@ The convergence axes re-run a handful of those. Smoke-run at toy settings first,
 
 ## Execute
 
-`src/main/kotlin/actuator/TallGapDeviceB.kt` (the library) and
+`origami-engine/src/main/kotlin/actuator/TallGapDeviceB.kt` (the library) and
 `src/main/kotlin/actuator/TallGapDeviceBStudy.kt` (the entry point), every study-local type prefixed
-`TallGapDeviceB`. Tests in `src/test/kotlin/actuator/TallGapDeviceBTest.kt`, written first.
+`TallGapDeviceB`. Tests in `origami-engine/src/test/kotlin/actuator/TallGapDeviceBTest.kt`, written first.
 
 ```shell
 tools/study.sh actuator.TallGapDeviceBStudyKt

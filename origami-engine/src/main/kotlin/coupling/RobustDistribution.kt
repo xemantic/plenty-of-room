@@ -96,7 +96,7 @@ import kotlin.math.sqrt
  * while the finest quantity reported is four digits and the search's own convergence tolerances are
  * `1e-5`. So the precision thrown away is precision the answer never had.
  */
-internal const val SEARCH_DECISION_DIGITS: Int = 6
+const val SEARCH_DECISION_DIGITS: Int = 6
 
 /**
  * [value] rounded to [SEARCH_DECISION_DIGITS] significant digits — the quantisation at which the
@@ -105,7 +105,7 @@ internal const val SEARCH_DECISION_DIGITS: Int = 6
  * Ties are then genuinely equal and every tie-break in this file keeps the **earlier** candidate, so
  * the search path is a function of the inputs and not of the JIT's compilation schedule.
  */
-internal fun searchDecision(value: Double): Double {
+fun searchDecision(value: Double): Double {
     if (!value.isFinite() || value == 0.0) return value
     val scale = Math.pow(
         10.0, (SEARCH_DECISION_DIGITS - 1 - Math.floor(Math.log10(abs(value))))
@@ -149,7 +149,7 @@ class SmoothedObjective(
  * differs. That is the whole economy of this class, and it is also why a *minimax* is affordable
  * at all: one `n × n` Cholesky serves all `S` states of one candidate distribution.
  */
-class MultiStateSurrogate internal constructor(
+class MultiStateSurrogate(
 
     /** The attachment stations, in nm from the tile centre. */
     val grid: List<Pair<Double, Double>>,

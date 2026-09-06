@@ -26,7 +26,6 @@ import com.xemantic.nano.plentyofroom.structure.PointSupport
 import com.xemantic.nano.plentyofroom.structure.PressureField
 import com.xemantic.nano.plentyofroom.structure.origamiSheet
 import com.xemantic.nano.plentyofroom.structure.uniformPressure
-import com.xemantic.nano.plentyofroom.synthesis.perPathSecantCeiling
 import kotlin.math.abs
 import kotlin.test.Test
 import kotlin.test.assertFailsWith
@@ -356,19 +355,6 @@ class NonUniformCouplingTest {
         assert(uniformThree.isCloseTo(1.071, 2e-3))
         // and C-0047's free tile, which is the bar the 1 x 15 coupling fails
         assert(lattice().solve(solvedField).peakDishing(81).isCloseTo(1.511, 2e-3))
-    }
-
-    @Test
-    fun `gate 5 cross-check - C-0049's per-path secant ceiling is this task's admissible ratio times the mandate`() {
-        listOf(15, 45).forEach { paths ->
-            val ratio = admissibleStiffnessRatio(
-                Gen1Tile.DUPLEX_UNZIP_ALLOWABLE, Gen1Tile.ACCEPTABLE_STROKE, mandate, paths
-            )
-            val ceiling = perPathSecantCeiling(
-                Gen1Tile.DUPLEX_UNZIP_ALLOWABLE, paths, Gen1Tile.ACCEPTABLE_STROKE
-            )
-            assert((ratio * mandate).isCloseTo(ceiling, 1e-12))
-        }
     }
 
     @Test

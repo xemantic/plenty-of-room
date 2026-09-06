@@ -115,7 +115,7 @@ The pressure was to be read from the **contact-value theorem** at the tile, wher
 
 Code: `src/main/kotlin/electrostatics/` — new `AsymmetricGouyChapman.kt` (the 2:1 closed forms and the two cheap bounds), new `PoissonBoltzmannGap.kt` (medium profile, ion model incl. Bikerman, graded FV Newton solver, Stern series), new `NonlinearPbProfileStudy.kt` (the study). Reuses `Electrolyte.kt`, `ChargedSurface.kt`, `DnaOrigamiTile.kt`, `PolymerLayerPartitioning.kt`, `ConfinedGap.kt` unchanged.
 
-Tests, written first and watched fail: `src/test/kotlin/electrostatics/AsymmetricGouyChapmanTest.kt` (18) and `PoissonBoltzmannGapTest.kt` (19). **The 73 existing electrostatics tests are untouched and still green.**
+Tests, written first and watched fail: `origami-engine/src/test/kotlin/electrostatics/AsymmetricGouyChapmanTest.kt` (18) and `PoissonBoltzmannGapTest.kt` (19). **The 73 existing electrostatics tests are untouched and still green.**
 
 ```shell
 ./gradlew test -PbuildDirectory=build-t3a

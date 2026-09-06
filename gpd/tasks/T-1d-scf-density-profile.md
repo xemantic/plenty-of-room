@@ -220,13 +220,13 @@ Outcome:
 
 Code, in the `brush` package, tests written first:
 
-- `src/main/kotlin/brush/SelfConsistentField.kt` — `ScfDiscretisation`, `ScfWallCondition`,
+- `origami-engine/src/main/kotlin/brush/SelfConsistentField.kt` — `ScfDiscretisation`, `ScfWallCondition`,
   `ScfProfile`, and `SelfConsistentFieldLayer`, which implements the **same** `GraftedLayerModel`
   contract as `T-1c`'s `AlexanderBoxLayer` and `StrongStretchingLayer`, so the extension functions
   those models are consumed through apply here unchanged and the three answers are like for like.
 - `src/main/kotlin/brush/ScfDensityProfileStudy.kt` — the study entry point.
 
-Tests: `src/test/kotlin/brush/SelfConsistentFieldTest.kt`, 19 tests, named for the gate they discharge.
+Tests: `origami-engine/src/test/kotlin/brush/SelfConsistentFieldTest.kt`, 19 tests, named for the gate they discharge.
 
 ```shell
 ./gradlew test -PbuildDirectory=build-t1d

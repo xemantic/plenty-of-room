@@ -80,10 +80,18 @@ gpd/tasks/        Formulate + Plan, one file per task, named by NDI leaf ID wher
 gpd/results/      machine-readable run outputs (JSON), one per execution, parameters included
 gpd/claims/       verified claims: statement, provenance, validity range, acceptance verdict
 gpd/challenges/   formal challenges against standing claims, with methodological grounds
-src/main/kotlin/  numeric models and their main entry points
+origami-engine/   the LIBRARY module: models only, no entry point, no result file (LIBRARY.md)
+src/main/kotlin/  the corpus's studies and their main entry points, on top of the library
 src/test/kotlin/  the tests, written first
 third-party/      the problem definition as received, unmodified
 ```
+
+A declaration lives in `origami-engine` when it is a model **and** everything it reads is too;
+the module cannot see `anchoring`, `synthesis` or `window`, and Gradle enforces that.
+Two consequences worth knowing before you edit: `internal` is module-scoped, so widening a
+declaration for a study in the other module is an API decision rather than a keystroke; and a
+`tools/` script that assembles `src/main/kotlin` misses 137 files and reports itself clean, so
+resolve sources through `tools/kotlin_sources.py`.
 
 ## Where to start
 

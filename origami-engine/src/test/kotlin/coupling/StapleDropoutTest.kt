@@ -529,13 +529,6 @@ class StapleDropoutTest {
     // ------------------------------------------------- gate 5: the upstream station arithmetic
 
     @Test
-    fun `gate 5 - the 3 x 15 grid's rim mask is C-0058's 34 and 11`() {
-        val mask = rimMask(grid, edgeX, edgeY, 6.7)
-        assert(mask.count { it } == 34)
-        assert(mask.count { !it } == 11)
-    }
-
-    @Test
     fun `gate 5 - CH-0084's uniform reading is a 16 percent shortfall on the mandate`() {
         val k = List(45) { mandate / 45.0 }
         val p = List(45) { 0.84 }

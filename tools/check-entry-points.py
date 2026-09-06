@@ -145,6 +145,29 @@ def studies(root=ROOT):
     return found
 
 
+def library_entry_points(root=ROOT):
+    """Every `origami-engine` main source declaring `fun main`, which must be none.
+
+    `LIBRARY.md`'s second invariant is that the library has no entry point and writes no result
+    file; a study there would be a study the corpus's own emission rules do not reach.  The
+    invariant was asserted in prose and enforced by nothing, which this repository has recorded
+    six times as *a convention is not a mechanism*.
+    """
+    base = os.path.join(root, "origami-engine", "src", "main", "kotlin")
+    found = []
+    if not os.path.isdir(base):
+        return found
+    for directory, _, names in os.walk(base):
+        for name in sorted(names):
+            if not name.endswith(".kt"):
+                continue
+            path = os.path.join(directory, name)
+            with open(path, encoding="utf-8") as handle:
+                if _MAIN.search(handle.read()):
+                    found.append(os.path.relpath(path, root))
+    return sorted(found)
+
+
 def entry_point_rows(text):
     """[(study, emitted path)] for every `Entry points` row in a TASKS.md body."""
     return [(match.group(1), match.group(2)) for match in _ROW.finditer(text)]
@@ -162,6 +185,9 @@ def defects(text, found):
         elif found[study] is not None and emits != found[study]:
             reported.append(("EMITS-MISMATCH", study,
                              "row says {}, source writes {}".format(emits, found[study])))
+    for path in library_entry_points():
+        reported.append(("LIBRARY-ENTRY-POINT", path,
+                         "the library module declares fun main; see LIBRARY.md"))
     for study, emits in sorted(found.items()):
         # A study that writes no result file is not an entry point this table is about --
         # `HelloWorldApp` is the live case, and a study whose whole output is stdout would be too.
@@ -182,6 +208,11 @@ def _selftest():
 
     row = ("| `./gradlew study -Pstudy=tile.FourLayerTileStudyKt` | `T-191` | "
            "`gpd/results/T-191-four-layer-tile.json` |")
+
+    check("the library module declares no entry point (LIBRARY.md's second invariant)",
+          library_entry_points(), [])
+    check("a module with no library directory is vacuously clean, not an error",
+          library_entry_points(os.path.join(ROOT, "tools")), [])
 
     check("a well-formed row parses into its study and its file",
           entry_point_rows(row),

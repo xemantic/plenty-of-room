@@ -58,7 +58,7 @@ A map keyed on the leaf name cannot say both. A map keyed on `record/spelling` c
 
 ### 2. The rule could not reach `actuator/` at all
 
-`src/main/kotlin/actuator/ActuatorResultRounding.kt` is the second of the **six** independent rounding implementations `CLAUDE.md` records, and its KDoc says why it is a copy:
+`origami-engine/src/main/kotlin/actuator/ActuatorResultRounding.kt` is the second of the **six** independent rounding implementations `CLAUDE.md` records, and its KDoc says why it is a copy:
 
 > This is a deliberate **copy** of the pattern `structure/ResultRounding.kt` established for `T-5`, not an import of it: `T-3` owns `actuator/` and does not own `structure/`, and two agents were live in `structure/` while this ran.
 

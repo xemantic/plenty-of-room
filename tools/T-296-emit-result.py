@@ -44,12 +44,17 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import kotlin_sources  # noqa: E402
+
 RESULTS = os.path.join(ROOT, "gpd", "results")
 DESIGNS = os.path.join(ROOT, "gpd", "designs")
 DESTINATION = os.path.join(RESULTS, "T-296-zero-loop-raster-turn.json")
 
-GEN1_TILE = os.path.join(ROOT, "src", "main", "kotlin", "structure", "Gen1Tile.kt")
-MEASURED_BACKBONE = os.path.join(ROOT, "src", "main", "kotlin", "anchoring", "MeasuredBackbone.kt")
+# resolved across both modules: `Gen1Tile` is in `origami-engine` and `MeasuredBackbone` is
+# in the corpus, and which is which is not this emitter's business (LIBRARY.md)
+GEN1_TILE = kotlin_sources.resolve_main(ROOT, os.path.join("structure", "Gen1Tile.kt"))
+MEASURED_BACKBONE = kotlin_sources.resolve_main(ROOT, os.path.join("anchoring", "MeasuredBackbone.kt"))
 
 THERMAL_ENERGY = 4.141947          # pN*nm at 300 K, the project's locked constant
 RISE = 0.34                        # nm per base pair

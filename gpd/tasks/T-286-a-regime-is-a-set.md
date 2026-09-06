@@ -13,7 +13,7 @@
 ### The question, and what it is NOT
 
 `CH-0224` is a **design** challenge, not a sweep.
-It says that [`environment/Regime`](../../src/main/kotlin/environment/Regime.kt) has exactly two states — one molarity or none —
+It says that [`environment/Regime`](../../origami-engine/src/main/kotlin/environment/Regime.kt) has exactly two states — one molarity or none —
 and that the corpus is made of the two shapes it does not admit: a sweep over buffers, and a point in `(buffer, gap, bias)`.
 The consequence it measures is that the emitted block is `null` on exactly the results a `P4` gate exists to refuse.
 

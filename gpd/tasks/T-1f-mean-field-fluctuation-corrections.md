@@ -254,14 +254,14 @@ Outcome:
 
 Code, in the `brush` package, tests written first:
 
-- `src/main/kotlin/brush/FluctuationCorrection.kt` — `EdwardsCorrelation` (the screening length, the
+- `origami-engine/src/main/kotlin/brush/FluctuationCorrection.kt` — `EdwardsCorrelation` (the screening length, the
   one-loop pressure correction, the Ginzburg number, `φ**`), `ChainSwelling` (Fixman `z`, free and
   screened, and the effective segment length), `kuhnExcludedVolume`, and
   `PegWater.thermalBlobKuhnSegmentsCorrected` — the `n_K²` form, kept beside the incumbent rather
   than overwriting it, per `SESSION-PROMPT.md`'s rule that contradiction raises a challenge.
 - `src/main/kotlin/brush/FluctuationCorrectionStudy.kt` — the study entry point.
 
-Tests: `src/test/kotlin/brush/FluctuationCorrectionTest.kt`, gate-named.
+Tests: `origami-engine/src/test/kotlin/brush/FluctuationCorrectionTest.kt`, gate-named.
 
 ```shell
 ./gradlew test -PbuildDirectory=build-t1f

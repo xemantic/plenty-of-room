@@ -52,7 +52,7 @@ The cheap bound is **one regular expression over 117 files and no run**: how man
 
 **P5.** A census of **every** `reproductions[*].departure` and `convergence[*].departure` in `gpd/results/`, reported as a count of fields and of files — not the one field `C-0127` named.
 
-**P6.** The two-significant-digit rule is expressed **once, centrally and by name** in `src/main/kotlin/structure/ResultRounding.kt`, not as a bare `2` at a study's emission site. `C-0127`'s own diagnosis is that the rule was applied *per file* rather than *per record type*; a repair that fixes one more file the same way repeats the defect at a smaller scale.
+**P6.** The two-significant-digit rule is expressed **once, centrally and by name** in `origami-engine/src/main/kotlin/structure/ResultRounding.kt`, not as a bare `2` at a study's emission site. `C-0127`'s own diagnosis is that the rule was applied *per file* rather than *per record type*; a repair that fixes one more file the same way repeats the defect at a smaller scale.
 
 **P7.** Every file the task re-emits reads clean under the census. Files it does not re-emit are **reported**, not silently left.
 

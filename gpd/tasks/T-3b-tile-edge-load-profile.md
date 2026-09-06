@@ -18,7 +18,7 @@
 For the Gen-1 stack — a Manning-renormalised DNA-origami tile of finite lateral extent, held at a gap `h` above a biased electrode in 2:1 `MgCl₂` — produce, **from an actual 2-D solve** rather than from any 1-D treatment or lateral superposition formula:
 
 1. **`Π(x)`, the lateral profile of the vertical electrostatic traction on the tile**, from the tile centre-line to beyond its rim, at the §3 working gaps and buffers, and at the biases `C-0012`/`C-0017` locate as the **operating point** — not at arbitrary grid biases, an error this project has made twice (`CH-0007`, `CH-0016`);
-2. **the edge-taper parameter pair `(depth, width)` in exactly the form [`edgeTaperedPressure`](../../src/main/kotlin/structure/PlateOnFoundation.kt) consumes it**, so that `C-0006`'s and `C-0009`'s dishing follows without re-fitting anything;
+2. **the edge-taper parameter pair `(depth, width)` in exactly the form [`edgeTaperedPressure`](../../origami-engine/src/main/kotlin/structure/PlateOnFoundation.kt) consumes it**, so that `C-0006`'s and `C-0009`'s dishing follows without re-fitting anything;
 3. **the dishing that pair produces, as a fraction of the stroke**, hence the lever-versus-sensor displacement split as **one number** rather than the 11 %–369 % band `C-0012` had to quote;
 4. **the total-force correction** the edge costs, because a load that tapers at the rim is a load whose integral is smaller than `1-D pressure × footprint` — which is what every force in `C-0008` and `C-0012` is;
 5. **the consequence for §4(g)**, and whether the taper moves a [`C-0016`](../claims/C-0016-design-window.md) window edge or a [`C-0015`](../claims/C-0015-crossover-phase-and-registration.md) per-load-path force into an allowable it was previously clear of.
@@ -152,7 +152,7 @@ Code, all new, all in `src/main/kotlin/electrostatics/`:
 
 Nothing in `actuator`, `brush`, `structure`, `anchoring` or `coupling` is modified. `structure`'s `PlateOnFoundation`, `edgeTaperedPressure`, `Gen1Tile` and `origamiSheet` are **consumed read-only**, which is what makes the dishing number `C-0006`'s and not a second opinion.
 
-Tests, written first and watched fail: `src/test/kotlin/electrostatics/TileEdgeFringingTest.kt` (16) and `PoissonBoltzmannEdgeTest.kt` (22). Every existing electrostatics test is untouched, and the authoritative full-suite run through `tools/verify.sh` is green.
+Tests, written first and watched fail: `origami-engine/src/test/kotlin/electrostatics/TileEdgeFringingTest.kt` (16) and `PoissonBoltzmannEdgeTest.kt` (22). Every existing electrostatics test is untouched, and the authoritative full-suite run through `tools/verify.sh` is green.
 
 ```shell
 ./gradlew test -PbuildDirectory=build-t3b

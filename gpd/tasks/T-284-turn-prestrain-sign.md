@@ -39,7 +39,7 @@ So the whole coupled recovery the tied lattice buys rests on a binary nobody has
 short** of the exact downstream half turn; one placed `−5 bp` sits **0.25 bp past** the exact
 upstream one. The two carry the **same magnitude and opposite signs**, and which one a given turn
 takes is not a convention: it is `C-0148`'s closure condition, which this repository already models
-in [`tile/HoneycombBondClassResidues.kt`](../../src/main/kotlin/tile/HoneycombBondClassResidues.kt)
+in [`tile/HoneycombBondClassResidues.kt`](../../origami-engine/src/main/kotlin/tile/HoneycombBondClassResidues.kt)
 as `HoneycombRasterResidues.reducedResidues` — `(level − 7·class) mod 21` at every raster crossover,
 required to equal `b₀ ± 5` for **one** lattice constant `b₀`.
 

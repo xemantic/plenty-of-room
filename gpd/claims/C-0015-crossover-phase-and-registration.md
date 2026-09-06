@@ -7,7 +7,7 @@
 | **Verification type** | in-silico (`C-0009`'s beam-and-hinge grillage, re-parameterised by the staple layout's own free variables and swept completely over both) |
 | **Verdict** | **PASS** on all six items of the acceptance predicate. The lever is real, it is **registration** rather than crossover count, and it is **not** big enough on its own to clear the unzip allowable at the soft end of the foundation sweep — it misses by 0.5 %. |
 | **Maturity** | **TRL 1–3. Model-consistent and traceable. NOT empirically demonstrated.** |
-| **Provenance** | `gpd/results/T-14-crossover-phase-and-registration.json`, produced by `structure.CrossoverRegistrationStudyKt`; model in `src/main/kotlin/structure/CrossoverLayout.kt` and the additions to `OrigamiGrillage.kt`; 21 gate-named tests in `src/test/kotlin/structure/CrossoverLayoutTest.kt` |
+| **Provenance** | `gpd/results/T-14-crossover-phase-and-registration.json`, produced by `structure.CrossoverRegistrationStudyKt`; model in `origami-engine/src/main/kotlin/structure/CrossoverLayout.kt` and the additions to `OrigamiGrillage.kt`; 21 gate-named tests in `origami-engine/src/test/kotlin/structure/CrossoverLayoutTest.kt` |
 | **Conditions** | T = 300 K, aqueous buffer with Mg²⁺, `k_BT = 4.142 pN·nm`; 40 × 40.35 nm tile, 15 duplexes; 100 pN total force (§3) |
 | **Raises** | [`CH-0014`](../challenges/CH-0014-layout-sampled-not-swept.md) against [`C-0009`](C-0009-discrete-lattice-tile.md) |
 | **Challenged by** | [`CH-0033`](../challenges/CH-0033-thermal-excitation-is-not-a-load-non-uniformity.md) and [`CH-0034`](../challenges/CH-0034-flatness-count-saturates-under-the-solved-load.md), from [`C-0026`](C-0026-one-row-per-duplex.md). **No number or verdict moves** — see the banner below |
@@ -188,7 +188,7 @@ The obvious candidate rule — *"put attachments on the duplex axes, not on the 
 
 ## The five verification gates
 
-Executed as tests: `src/test/kotlin/structure/CrossoverLayoutTest.kt`, 21 tests, each named for its gate. Full detail in [`T-14`](../tasks/T-14-crossover-phase-and-registration.md#the-five-gates).
+Executed as tests: `origami-engine/src/test/kotlin/structure/CrossoverLayoutTest.kt`, 21 tests, each named for its gate. Full detail in [`T-14`](../tasks/T-14-crossover-phase-and-registration.md#the-five-gates).
 
 - **Gate 1** — the centred layout reproduces `T-10`'s construction exactly; the nominal `T-10` lattice is the phase at half a column pitch; the base-pair period is exactly the per-interface spacing; a 40 nm tile holds 7 or 8 columns at every phase; **the rank-one anchor update equals a re-assembled anchored lattice to `1e−12`**, and the batched map equals one anchor at a time to the same; the offset spread vanishes on a commensurate row count and the distinct-offset count is `s/gcd(s, N)`.
 - **Gate 2** — the phase has period `p` and not `p/2`, with the half-period shift shown to invert every parity; a phased lattice still recovers `D_⊥` as `½ k_θ (κd)²` per crossover exactly; a uniform load dishes no phased lattice; a rigid anchor takes the whole load; rows on the duplex axes beat an incommensurate row count of equal size by ×6.6 with the plate divided out, while the equal-registration control gives ×1.84.

@@ -38,7 +38,8 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SOURCES = os.path.join(ROOT, "src", "main", "kotlin")
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import kotlin_sources  # noqa: E402
 
 DIRECT = re.compile(r'File\(\s*"gpd/results/([A-Za-z0-9._-]+\.json)"\s*\)')
 JOINED = re.compile(r'File\(\s*([A-Za-z][A-Za-z0-9_.]*)\s*,\s*"([A-Za-z0-9._-]+\.json)"\s*\)')
@@ -154,11 +155,7 @@ def main(argv):
     handles = _handles()
     total = 0
     files = 0
-    for base, _, names in os.walk(SOURCES):
-        for name in sorted(names):
-            if not name.endswith(".kt"):
-                continue
-            path = os.path.join(base, name)
+    for path in kotlin_sources.walk_main(ROOT):
             text = open(path, encoding="utf-8").read()
             converted, count = convert(text, handles, written_names(text))
             if not count:

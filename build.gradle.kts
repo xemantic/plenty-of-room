@@ -813,6 +813,9 @@ tasks.named("test") {
 }
 
 dependencies {
+    // the library module; the corpus's studies and gates build on it (LIBRARY.md)
+    api(project(":origami-engine"))
+    testImplementation(testFixtures(project(":origami-engine")))
     implementation(libs.viktor)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.openrndr.math)

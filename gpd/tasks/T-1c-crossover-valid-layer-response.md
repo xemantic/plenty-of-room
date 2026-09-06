@@ -214,16 +214,16 @@ Outcome:
 
 Code, in the `brush` package, tests written first:
 
-- `src/main/kotlin/brush/InteractionFreeEnergy.kt` — the interaction free-energy family
+- `origami-engine/src/main/kotlin/brush/InteractionFreeEnergy.kt` — the interaction free-energy family
   (`PowerLawInteraction`, `AdditiveInteraction`), the Legendre transform in both directions,
   the removal of the translational term from the measured equation of state,
   the virial-coefficient conversions, and the thermal-blob diagnostic.
-- `src/main/kotlin/brush/GraftedLayer.kt` — `GraftedChain` on the measured Kuhn parameters,
+- `origami-engine/src/main/kotlin/brush/GraftedLayer.kt` — `GraftedChain` on the measured Kuhn parameters,
   `AlexanderBoxLayer` (the cheap bound) and `StrongStretchingLayer` (the generalised MWC solver),
   both minimising the *same* free energy over different profile families.
 - `src/main/kotlin/brush/CrossoverLayerStudy.kt` — the study entry point.
 
-Tests: `src/test/kotlin/brush/InteractionFreeEnergyTest.kt`, `src/test/kotlin/brush/GraftedLayerTest.kt`.
+Tests: `origami-engine/src/test/kotlin/brush/InteractionFreeEnergyTest.kt`, `origami-engine/src/test/kotlin/brush/GraftedLayerTest.kt`.
 
 ```shell
 ./gradlew test

@@ -161,7 +161,7 @@ thing the cheap bound cannot give.
 
 ## Verify — what was actually executed
 
-The five gates, as **22 gate-named tests** in `src/test/kotlin/coupling/UniformityBudgetTest.kt`.
+The five gates, as **22 gate-named tests** in `origami-engine/src/test/kotlin/coupling/UniformityBudgetTest.kt`.
 Run: `./gradlew test -PbuildDirectory=build-t17` (22/22 green) and `tools/verify.sh`
 (**931 tests in the suite, 0 failures**). The result file was produced through `tools/study.sh`
 and diffed **byte-for-byte identical** on two independent pairs of runs.

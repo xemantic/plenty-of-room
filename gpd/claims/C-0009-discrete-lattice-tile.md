@@ -7,7 +7,7 @@
 | **Verification type** | in-silico (a beam-and-hinge grillage finite-element model written for this task, calibrated against `C-0006`'s orthotropic Kirchhoff plate on a shared set of physical ingredients) |
 | **Verdict** | **PASS** on all seven items of the acceptance predicate. The continuum plate reduction is **upheld for smooth loads and rejected for point-coupled ones**, and the direction of its error is **not** the one `C-0006` predicted for every case. |
 | **Maturity** | **TRL 1–3. Model-consistent and traceable. NOT empirically demonstrated.** |
-| **Provenance** | `gpd/results/T-10-discrete-lattice-tile.json`, produced by `structure.DiscreteLatticeTileStudyKt`; model in `src/main/kotlin/structure/OrigamiGrillage.kt`; 21 gate-named tests in `src/test/kotlin/structure/OrigamiGrillageTest.kt` |
+| **Provenance** | `gpd/results/T-10-discrete-lattice-tile.json`, produced by `structure.DiscreteLatticeTileStudyKt`; model in `origami-engine/src/main/kotlin/structure/OrigamiGrillage.kt`; 21 gate-named tests in `origami-engine/src/test/kotlin/structure/OrigamiGrillageTest.kt` |
 | **Conditions** | T = 300 K, aqueous buffer with Mg²⁺, `k_BT = 4.142 pN·nm`; 40 × 40.35 nm tile (15 duplexes); 100 pN target force (§3) |
 | **Raises** | [`CH-0008`](../challenges/CH-0008-plate-conservative-about-flatness.md) against [`C-0006`](C-0006-tile-load-distribution-and-flatness.md) |
 | **Challenged by** | [`CH-0033`](../challenges/CH-0033-thermal-excitation-is-not-a-load-non-uniformity.md) and [`CH-0034`](../challenges/CH-0034-flatness-count-saturates-under-the-solved-load.md) (see the banner below); [`CH-0014`](../challenges/CH-0014-layout-sampled-not-swept.md), on four numbers that are maxima or class properties over a **sample** of the staple layout. No verdict below is overturned; the annotations are inline and marked **`CH-0014`** |
@@ -231,7 +231,7 @@ It takes `α = 25.6` — the stiffness at which `D_⊥` reaches `D_∥` and the 
 
 ## The five verification gates
 
-Executed as tests: `src/test/kotlin/structure/OrigamiGrillageTest.kt`, 21 tests, each named for its gate. Full detail in [`T-10`](../tasks/T-10-discrete-lattice-tile.md#the-five-gates).
+Executed as tests: `origami-engine/src/test/kotlin/structure/OrigamiGrillageTest.kt`, 21 tests, each named for its gate. Full detail in [`T-10`](../tasks/T-10-discrete-lattice-tile.md#the-five-gates).
 
 - **Gate 1** — a rigid translation stores exactly `½ k_f A` and nothing structural; the area Gram form returns 1, `L_x²/12`, `L_y²/12` and zero cross terms; the crossover count follows from the stated topology.
 - **Gate 2** — the three rigidity identities above; a uniform load dishes the lattice by nothing at hinge stiffnesses spanning 10³; a rigid lattice translates under a point load; quadrupling `k_f` quarters the deflection; a softer hinge softens `D_⊥` proportionally and leaves `D_∥` untouched.

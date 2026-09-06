@@ -657,7 +657,7 @@ fun GraftedLayerModel.chainLengthForHeight(
  *
  * @throws IllegalArgumentException if [low] and [high] do not bracket a sign change.
  */
-internal inline fun bracketedRoot(
+inline fun bracketedRoot(
     low: Double,
     high: Double,
     tolerance: Double = 1e-15,
@@ -713,7 +713,7 @@ internal inline fun bracketedRoot(
  *
  * `2/3` at `p = 1` (the mean-field parabola) and `0.70898` at `p = 4/5` (des Cloizeaux).
  */
-internal fun halfCircleMoment(p: Double): Double {
+fun halfCircleMoment(p: Double): Double {
     require(p > 0.0) { "p must be positive, was: $p" }
     return 0.5 * sqrt(PI) * exp(logGamma(p + 1.0) - logGamma(p + 1.5))
 }

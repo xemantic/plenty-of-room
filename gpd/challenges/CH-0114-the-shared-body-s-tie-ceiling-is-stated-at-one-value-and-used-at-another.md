@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Against** | [`C-0093`](../claims/C-0093-shared-body-coupling.md)'s **Bound 2** (*"the mandate arithmetic, which is the escape in one division"*) and the `sharedBodyPerStation` column of `mandatePlacementArithmetic` in `src/main/kotlin/coupling/SharedBodyCoupling.kt` |
+| **Against** | [`C-0093`](../claims/C-0093-shared-body-coupling.md)'s **Bound 2** (*"the mandate arithmetic, which is the escape in one division"*) and the `sharedBodyPerStation` column of `mandatePlacementArithmetic` in `origami-engine/src/main/kotlin/coupling/SharedBodyCoupling.kt` |
 | **Raised by** | [`C-0098`](../claims/C-0098-shared-body-placement-and-distribution.md) (`T-165`) |
 | **Grounds** | **an inherited bound applied outside the topology it was derived in**, and a claim whose stated cap and reported design disagree by 300× without the disagreement being named |
 | **Status** | **OPEN** |

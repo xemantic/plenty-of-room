@@ -49,7 +49,7 @@ states the resolved paths outright.
 | file | what | how read |
 |---|---|---|
 | `Science09.zip`, `NAR09.zip`, `Nature09.zip` | the three gallery archives, **unmodified** | parsed |
-| `cadnano_legacy.py` | a reader for the caDNAno **legacy** `.json` format; reads the archives without unpacking them, and **parses** the honeycomb lattice constants out of `src/main/kotlin/tile/HoneycombBondClassResidues.kt` | — |
+| `cadnano_legacy.py` | a reader for the caDNAno **legacy** `.json` format; reads the archives without unpacking them, and **parses** the honeycomb lattice constants out of `origami-engine/src/main/kotlin/tile/HoneycombBondClassResidues.kt` | — |
 | `forced_census.py` | the three forced-crossover tests (adjacency, register, alignment), **37 self-tests** | — |
 | `run_census.py` | runs the three tests over all 26 designs into `census-raw.json` | — |
 | `census-raw.json` | the full per-design census, including every forced instance | — |

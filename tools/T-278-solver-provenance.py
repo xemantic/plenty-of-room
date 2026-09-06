@@ -42,7 +42,8 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SOURCES = os.path.join(ROOT, "src", "main", "kotlin")
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import kotlin_sources  # noqa: E402
 
 # A top-level or member declaration this closure can follow to.
 DECLARATION = re.compile(
@@ -74,7 +75,7 @@ TOLERANCE_NAMES = re.compile(r"tolerance|convergence|epsilon|residual", re.IGNOR
 # corpus in a polymer study's closure. Cutting here is the difference between 158 sources and a
 # readable number, and it is a statement about the DIRECTION of the graph rather than a filter.
 EMISSION_LAYER = frozenset(
-    os.path.join(SOURCES, name)
+    kotlin_sources.resolve_main(ROOT, name)
     for name in (
         os.path.join("structure", "ResultEmission.kt"),
         os.path.join("structure", "ResultRounding.kt"),
@@ -132,7 +133,7 @@ PACKAGE = re.compile(r"^package\s+([\w.]+)", re.MULTILINE)
 IMPORT = re.compile(r"^import\s+([\w.]+)(?:\s+as\s+(\w+))?", re.MULTILINE)
 
 
-def survey(root=SOURCES):
+def survey(root=None):
     """The tree as {file: (package, {imported FQN}, {declared name})} plus a package index.
 
     KOTLIN'S OWN VISIBILITY RULE, not a file-granular approximation. `CLAUDE.md` records what the
@@ -147,11 +148,11 @@ def survey(root=SOURCES):
     files = {}
     by_package = {}
     by_fqn = {}
-    for base, _, names in os.walk(root):
-        for name in sorted(names):
-            if not name.endswith(".kt"):
-                continue
-            path = os.path.join(base, name)
+    # `root` None means every main-source root of the repository -- both modules
+    sources = kotlin_sources.walk_main(ROOT) if root is None else (
+        os.path.join(base, name)
+        for base, _, names in os.walk(root) for name in sorted(names) if name.endswith(".kt"))
+    for path in sources:
             text = blank_comments(open(path, encoding="utf-8").read())
             package = (PACKAGE.search(text) or [None, ""])[1] if PACKAGE.search(text) else ""
             imports = set()

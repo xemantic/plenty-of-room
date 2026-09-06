@@ -148,7 +148,7 @@ Code: `src/main/kotlin/structure/` — `CrossoverLayout.kt` (the phase-parameter
 `CrossoverRegistrationStudy.kt` (the study), and two additive changes to `OrigamiGrillage.kt`:
 the column layout becomes a `CrossoverLayout` with the `T-10` count-based constructor retained verbatim as a secondary constructor,
 and `solveWithAnchor` / `solveWithEachAnchor` add the rank-one anchor update.
-Tests, written first: `src/test/kotlin/structure/CrossoverLayoutTest.kt`, 21 tests named for the gate they discharge.
+Tests, written first: `origami-engine/src/test/kotlin/structure/CrossoverLayoutTest.kt`, 21 tests named for the gate they discharge.
 `Cholesky.kt`, `OrigamiSheet.kt`, `PlateOnFoundation.kt`, `Gen1Tile.kt`, `LoadPaths.kt` and `ResultRounding.kt` are unchanged.
 
 ```shell

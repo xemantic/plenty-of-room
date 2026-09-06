@@ -38,6 +38,8 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import kotlin_sources  # noqa: E402
 RESULTS = os.path.join(ROOT, "gpd", "results")
 OUT = os.path.join(RESULTS, "T-214-departure-rule-scope.json")
 
@@ -274,7 +276,9 @@ def rounding_implementations():
     for relative in ("structure/ResultRounding.kt", "actuator/ActuatorResultRounding.kt",
                      "coupling/CouplingResultRounding.kt", "window/WindowResultRounding.kt",
                      "brush/FluctuationCorrectionStudy.kt", "brush/ScfDensityProfileStudy.kt"):
-        path = os.path.join(ROOT, "src", "main", "kotlin", relative)
+        # `ResultRounding.kt` and `ActuatorResultRounding.kt` are in `origami-engine` (LIBRARY.md)
+        path = kotlin_sources.resolve_main(ROOT, relative)
+        assert path is not None, "no module declares " + relative
         with open(path, encoding="utf-8") as handle:
             source = handle.read()
         delegates = "structure.roundedForResult" in source or relative.startswith("structure/")

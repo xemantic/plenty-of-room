@@ -34,6 +34,8 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import kotlin_sources  # noqa: E402
 RESULTS = os.path.join(ROOT, "gpd", "results")
 OUT = os.path.join(RESULTS, "T-249-unrounded-prose-interpolations.json")
 BODY = os.path.join(ROOT, "tools", "T-249-body.json")
@@ -322,11 +324,8 @@ def floor_census(corpus_root):
     taken after the task has written about it counts the task's own files (`CH-0190`).
     """
     total = withfloor = 0
-    for root, _, files in os.walk(os.path.join(ROOT, "src", "main", "kotlin")):
-        for name in files:
-            if not name.endswith(".kt"):
-                continue
-            text = open(os.path.join(root, name), encoding="utf-8").read()
+    for source in kotlin_sources.walk_main(ROOT):
+            text = open(source, encoding="utf-8").read()
             for match in re.finditer(r"roundedForResult\s*\(([^)]*)\)", text, re.S):
                 arguments = match.group(1)
                 if "digitsByKey" in arguments or "DEPARTURE_DIGITS_BY_KEY" in arguments:

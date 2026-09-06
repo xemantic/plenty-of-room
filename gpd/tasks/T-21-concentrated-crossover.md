@@ -151,10 +151,10 @@ bounded to ~1100 Poisson-Boltzmann path evaluations by not re-locating folds tha
 
 ## Execute
 
-`src/main/kotlin/crossover/ConcentratedCrossover.kt` — the physics.
+`origami-engine/src/main/kotlin/crossover/ConcentratedCrossover.kt` — the physics.
 `src/main/kotlin/crossover/ConcentratedCrossoverStudy.kt` — entry point `crossover.ConcentratedCrossoverStudyKt`,
 emitting `gpd/results/T-21-concentrated-crossover.json`.
-`src/test/kotlin/crossover/ConcentratedCrossoverTest.kt` — gate-named tests, written first.
+`origami-engine/src/test/kotlin/crossover/ConcentratedCrossoverTest.kt` — gate-named tests, written first.
 
 ---
 
